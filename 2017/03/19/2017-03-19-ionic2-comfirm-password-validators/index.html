@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IONIC 2 - 确认密码 - 三·钻 TriDiamond</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
+首先这篇文章是默认您已经了解怎么,"> 
+    <meta name="author" content="三·钻 TriDiamond"> 
+    <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">三·钻 TriDiamond</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="https://tridiamond.tech"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">IONIC 2 - 确认密码</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">IONIC 2 - 确认密码</h1>
+        <div class="stuff">
+            <span>三月 19, 2017</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用<strong>FormBuilder</strong>和<strong>Validators</strong>判断密码是否一致.</p>
+<p>首先这篇文章是默认您已经了解怎么使用<strong>Angualr2</strong>的<strong>FormBuilder</strong>和<strong>Validator</strong>, 如果你还没了解这两个类的用法可以前去看<a href="https://ionicframework.com/docs/v2/resources/forms/" target="_blank" rel="noopener">Ionic2的文档</a></p>
+<h1 id="实例一个FormGroup"><a href="#实例一个FormGroup" class="headerlink" title="实例一个FormGroup"></a>实例一个<code>FormGroup</code></h1><blockquote>
+<p>第一步首先我们需要实例了FormBuilder的一个FormGroup</p>
+</blockquote>
+<ul>
+<li>这里我们定义了passwordForm的这个表格里面的input.</li>
+<li>在最后我们加入了自定义认证方法 { validator: AdvanceValidator.matchingPasswords(‘password’, ‘rePassword’) }</li>
+<li>这里我们把password, 和rePassword 传给了 AdvanceValidator 方法, 这里传的是密码和确认密码在FormGroup里面定义的名字.</li>
+<li>现在我们看看这个password.ts怎么写.</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; FormBuilder, Validators, FormGroup &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AdvanceValidator &#125; <span class="keyword">from</span> <span class="string">'../../validators/advance-validator'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'page-password'</span>,</span><br><span class="line">  templateUrl: <span class="string">'password.html'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//密码修改页</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> PasswordPage &#123;</span><br><span class="line">  passwordForm: FormGroup;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> fb: FormBuilder</span>) </span><br><span class="line">  &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.passwordForm = fb.group(&#123;</span><br><span class="line">        username: [<span class="string">''</span>, Validators.required],</span><br><span class="line">        password: [<span class="string">''</span>, Validators.compose([Validators.maxLength(<span class="number">30</span>), Validators.minLength(<span class="number">7</span>), Validators.required])],</span><br><span class="line">        rePassword: [<span class="string">''</span>, Validators.compose([Validators.maxLength(<span class="number">30</span>), Validators.minLength(<span class="number">7</span>), Validators.required])],</span><br><span class="line">    &#125;, &#123; validator: AdvanceValidator.matchingPasswords(<span class="string">'password'</span>, <span class="string">'rePassword'</span>) &#125;);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="创建自定义认证器"><a href="#创建自定义认证器" class="headerlink" title="创建自定义认证器"></a>创建自定义认证器</h1><p><img src="https://github.com/Bennygx/bennygx.github.io/blob/master/assets/images/advance-validator-screenshot.png?raw=true" alt></p>
+<ul>
+<li>我们首先在项目根目录创建 <strong>validators</strong> 的文件夹</li>
+<li>然后在里面创建 <strong>advance-validators.ts</strong> 的ts文件</li>
+<li>在 <strong>advance-validators.ts</strong> 里面编以下代码</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; FormGroup &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AdvanceValidator &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">static</span> matchingPasswords(passwordKey: <span class="built_in">string</span>, rePasswordKey: <span class="built_in">string</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">group: FormGroup</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> password = group.controls[passwordKey]; <span class="comment">//获取密码值</span></span><br><span class="line">      <span class="keyword">let</span> rePassword = group.controls[rePasswordKey]; <span class="comment">//获取确认密码值</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span>(password.value !== rePassword.value) &#123;</span><br><span class="line">        <span class="comment">//如果密码和确认密码的值不一致就返回给FormBuild rePassword有错误</span></span><br><span class="line">        <span class="keyword">return</span> rePassword.setErrors(&#123;notEquivalent: <span class="literal">true</span>&#125;) </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="前端表格示例"><a href="#前端表格示例" class="headerlink" title="前端表格示例"></a>前端表格示例</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> [<span class="attr">formGroup</span>] = <span class="string">"passwordForm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-list</span> <span class="attr">inset</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">placeholder</span>=<span class="string">"用户名"</span> <span class="attr">formControlName</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">item-right</span> *<span class="attr">ngIf</span>=<span class="string">"!passwordForm.controls.username.valid  &amp;&amp; (passwordForm.controls.username.dirty)"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"alert"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span> 用户名必填</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"新密码"</span> <span class="attr">formControlName</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">item-right</span> *<span class="attr">ngIf</span>=<span class="string">"!passwordForm.controls.password.valid  &amp;&amp; (passwordForm.controls.password.dirty)"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"alert"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span> 密码必须7个字以上</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"确认密码"</span> <span class="attr">formControlName</span>=<span class="string">"rePassword"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">item-right</span> *<span class="attr">ngIf</span>=<span class="string">"!passwordForm.controls.rePassword.valid  &amp;&amp; (passwordForm.controls.rePassword.dirty)"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"alert"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span> 密码必须一致</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

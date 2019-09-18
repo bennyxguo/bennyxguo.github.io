@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>阿里云GitLab Webhook 自动部署手册 - 三·钻 TriDiamond</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="创建与填写部署公钥创建部署公钥1sudo -Hu www ssh-keygen -t rsa
+
+
+如果创建失败首先需要创建/home/www/.ssh这个文件夹
+
+查看公钥1cat /home/ww,"> 
+    <meta name="author" content="三·钻 TriDiamond"> 
+    <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">三·钻 TriDiamond</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="https://tridiamond.tech"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">阿里云GitLab Webhook 自动部署手册</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">阿里云GitLab Webhook 自动部署手册</h1>
+        <div class="stuff">
+            <span>九月 17, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="创建与填写部署公钥"><a href="#创建与填写部署公钥" class="headerlink" title="创建与填写部署公钥"></a>创建与填写部署公钥</h2><h3 id="创建部署公钥"><a href="#创建部署公钥" class="headerlink" title="创建部署公钥"></a>创建部署公钥</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -Hu www ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果创建失败首先需要创建/home/www/.ssh这个文件夹</p>
+</blockquote>
+<h3 id="查看公钥"><a href="#查看公钥" class="headerlink" title="查看公钥"></a>查看公钥</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /home/www/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加Hook"><a href="#添加Hook" class="headerlink" title="添加Hook"></a>添加Hook</h3><p>在阿里云code.aliyun.com上的profile&gt;ssh_key里面添加公钥</p>
+<h2 id="初始化git项目文件夹"><a href="#初始化git项目文件夹" class="headerlink" title="初始化git项目文件夹"></a>初始化git项目文件夹</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -Hu www git <span class="built_in">clone</span> [git地址]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里注意, 一定要用www的身份状态要不后期无法自动git pull</p>
+</blockquote>
+<h2 id="自动部署脚本-PHP"><a href="#自动部署脚本-PHP" class="headerlink" title="自动部署脚本 (PHP)"></a>自动部署脚本 (PHP)</h2><h3 id="Shell-exec"><a href="#Shell-exec" class="headerlink" title="Shell_exec"></a>Shell_exec</h3><p>在使用这个PHP脚本的时候我们需要用到<figure class="highlight plain"><figcaption><span>php-fpm是默认屏蔽这个函数的, 所有需要在php.ini里面修改一下配置</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 找到```disable_functions```这个参数, 并且在里面去掉```shell_exec</span><br></pre></td></tr></table></figure></p>
+<h3 id="PHP-脚本"><a href="#PHP-脚本" class="headerlink" title="PHP 脚本"></a>PHP 脚本</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$token = <span class="string">'token'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!<span class="keyword">isset</span>($_GET[<span class="string">'token'</span>]) &amp;&amp; $_GET[<span class="string">'token'</span>] != $token) &#123;</span><br><span class="line">	<span class="keyword">die</span>(<span class="string">'access denied'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$json = json_decode(file_get_contents(<span class="string">'php://input'</span>), <span class="keyword">true</span>);</span><br><span class="line">$repo = $json[<span class="string">'repository'</span>][<span class="string">'name'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 只在主分支提交时且提交数大于0执行自动部署</span></span><br><span class="line"><span class="keyword">if</span> ($json[<span class="string">'ref'</span>]==<span class="string">'refs/heads/master'</span> &amp;&amp; $json[<span class="string">'total_commits_count'</span>]&gt;<span class="number">0</span>) &#123;</span><br><span class="line">	$pull_result = shell_exec(<span class="string">'cd /to/project/path/ &amp;&amp; git pull'</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ($pull_result) &#123;</span><br><span class="line">		$res_log = <span class="string">'----------pull 成功---------------'</span>.PHP_EOL;</span><br><span class="line">	    </span><br><span class="line">		$res_log .= $json[<span class="string">'user_name'</span>] . <span class="string">' 在'</span> . date(<span class="string">'Y-m-d H:i:s'</span>) . <span class="string">'向'</span> . $json[<span class="string">'repository'</span>][<span class="string">'name'</span>] . <span class="string">'项目的'</span> . $json[<span class="string">'ref'</span>] . <span class="string">'分支push了'</span> . $json[<span class="string">'total_commits_count'</span>] . <span class="string">'个commit：'</span> . PHP_EOL;</span><br><span class="line">		$res_log .= $pull_result.PHP_EOL;</span><br><span class="line"></span><br><span class="line">		file_put_contents(<span class="string">"cityconcierge-webhook-log.txt"</span>, $res_log, FILE_APPEND);<span class="comment">//追加写入</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		$res_log = <span class="string">'------------pull 失败-------------'</span>.PHP_EOL;</span><br><span class="line">	    </span><br><span class="line">		$res_log .= $json[<span class="string">'user_name'</span>] . <span class="string">' 在'</span> . date(<span class="string">'Y-m-d H:i:s'</span>) . <span class="string">'向'</span> . $json[<span class="string">'repository'</span>][<span class="string">'name'</span>] . <span class="string">'项目的'</span> . $json[<span class="string">'ref'</span>] . <span class="string">'分支push了'</span> . $json[<span class="string">'total_commits_count'</span>] . <span class="string">'个commit：'</span> . PHP_EOL;</span><br><span class="line">		$res_log .= $pull_result.PHP_EOL;</span><br><span class="line"></span><br><span class="line">		file_put_contents(<span class="string">"cityconcierge-webhook-log.txt"</span>, $res_log, FILE_APPEND);<span class="comment">//追加写入</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
