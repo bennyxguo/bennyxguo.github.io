@@ -1,0 +1,43 @@
+.else .post-count {
+    margin:25px 100px 0 80px;
+    display: flex;
+    align-content: flex-start;
+    font-size: 12px;
+    font-weight: 900;
+    color: #999;
+}
+.else .post-count span {
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.else .post-count span b {
+    margin-right: 5px;
+}
+
+#post0 .post-count {
+    margin-top:40px;
+    display: flex;
+    align-content: flex-start;
+    font-size: 12px;
+    font-weight: 900;
+    color: #fff;
+}
+#post0 .post-count span {
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#post0 .post-count span b {
+    margin-right: 5px;
+}
+
+/* Responsive style */
+@media screen and (max-width:1200px) {
+    .else .post-count {margin:15px 60px 0 60px;}
+}
+@media screen and (max-width:900px) {
+    .else .post-count {margin:15px 30px 0 20px;}
+}
