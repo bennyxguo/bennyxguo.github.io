@@ -9,13 +9,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
-    <meta name="keywords" content="Fechin,"> 
+    <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
     <meta name="description" content="因为IONIC2才刚刚开始进入正式版, 中文文档基本都是不全的, 我现在开发都是在看英文文档在开发的过程中遇到了很多文档没有描述的问题, 而且开发的过程中遇到一些框架本身没有完善的功能和存在的BUG,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_g9158mzzlbq.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/diaspora.css">
     <link rel="stylesheet" href="/css/tridiamond.css">
 </head>
@@ -44,16 +44,48 @@
 </div>
 
     <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">IONIC 2 开发笔记</h1>
-        <div class="stuff">
-            <span>二月 25, 2017</span>
-            
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
-
-
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover" style="
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
         </div>
+        <div class="else">
+            <p>二月 25, 2017</p>
+            <h3><a href="/2017/02/25/2017-02-25-ionic-dev-note/" title="IONIC 2 开发笔记">IONIC 2 开发笔记</a></h3>
+            <p>因为IONIC2才刚刚开始进入正式版, 中文文档基本都是不全的, 我现在开发都是在看英文文档在开发的过程中遇到了很多文档没有描述的问题, 而且开发的过程中遇到一些框架本身没有完善的功能和存在的B...</p>
+            
+                <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+            
+            <p class="article-count">
+                <span>
+                    <b class="iconfont icon-text2"></b>
+                    775字
+                </span>
+                <span>
+                    <b class="iconfont icon-timer__s"></b>
+                    3分钟
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    “Keep busy coding keep busy dying" - 三·钻 TriDiamond 
+                </p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
         <div class="content markdown">
             <p>因为IONIC2才刚刚开始进入正式版, 中文文档基本都是不全的, 我现在开发都是在看英文文档<br>在开发的过程中遇到了很多文档没有描述的问题, 而且开发的过程中遇到一些框架本身没有完善的功能和存在的BUG<br>我会在这个日记里面记录一些文档没有写的, 和我开发过程中遇到的一些坑和经验, 希望可以帮助那些刚刚接触IONIC2的程序猿们!</p>
 <h2 id="APP配置"><a href="#APP配置" class="headerlink" title="APP配置"></a>APP配置</h2><h3 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h3><p>因为跨域问题，在开发时如果要用到本地环境进行开发(ionic serve)，必须配置proxy</p>
@@ -63,53 +95,76 @@
 <ul>
 <li>只需要把<strong>proxyUrl</strong>改为你本地环境的API地址</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"rlph"</span>,</span><br><span class="line">  <span class="string">"app_id"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="string">"v2"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"typescript"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"proxies"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"path"</span>: <span class="string">"/api"</span>,</span><br><span class="line">      <span class="string">"proxyUrl"</span>: <span class="string">"http://api.dev"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="javascript">{
+  &quot;name&quot;: &quot;rlph&quot;,
+  &quot;app_id&quot;: &quot;&quot;,
+  &quot;v2&quot;: true,
+  &quot;typescript&quot;: true,
+  &quot;proxies&quot;: [
+    {
+      &quot;path&quot;: &quot;/api&quot;,
+      &quot;proxyUrl&quot;: &quot;http://api.dev&quot;
+    }
+  ]
+}</code></pre>
 <ul>
 <li>然后把API地址的常量制定为<strong>/api/</strong>这个proxy</li>
 </ul>
 <ul>
 <li>在根目录下<strong>/src/config.ts</strong>里面把<strong>“API_SERVER”</strong>的值改为<strong>“/api/“</strong></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export let data = &#123;</span><br><span class="line">    &quot;API_SERVER&quot; : &quot;/api/&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="上线APP配置"><a href="#上线APP配置" class="headerlink" title="上线APP配置"></a>上线APP配置</h3><ul>
+<pre><code>  export let data = {
+      &quot;API_SERVER&quot; : &quot;/api/&quot;
+  }</code></pre><h3 id="上线APP配置"><a href="#上线APP配置" class="headerlink" title="上线APP配置"></a>上线APP配置</h3><ul>
 <li>首先你需要配置真是服务器API地址<br>配置API地址是在根目录下<strong>/src/config.ts</strong>里面把<strong>“API_SERVER”</strong>的值改为线上API地址</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export let data = &#123;</span><br><span class="line">    &quot;API_SERVER&quot; : &quot;http://api.domain.com/&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="开发常见问题"><a href="#开发常见问题" class="headerlink" title="开发常见问题"></a>开发常见问题</h2><h3 id="APP-run-失败"><a href="#APP-run-失败" class="headerlink" title="APP run 失败"></a>APP run 失败</h3><p>当运行<strong>ionic run android</strong>的时候可能会遇到该报错：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Error: Failed to install apk to device: [  1%] /data/local/tmp/android-debug.apk</span><br><span class="line">[  2%] /data/local/tmp/android-debug.apk</span><br><span class="line">...</span><br><span class="line">[100%] /data/local/tmp/android-debug.apk</span><br><span class="line">        pkg: /data/local/tmp/android-debug.apk</span><br><span class="line">Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE]</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>  export let data = {
+      &quot;API_SERVER&quot; : &quot;http://api.domain.com/&quot;
+  }</code></pre><h2 id="开发常见问题"><a href="#开发常见问题" class="headerlink" title="开发常见问题"></a>开发常见问题</h2><h3 id="APP-run-失败"><a href="#APP-run-失败" class="headerlink" title="APP run 失败"></a>APP run 失败</h3><p>当运行<strong>ionic run android</strong>的时候可能会遇到该报错：</p>
+<pre><code>Error: Failed to install apk to device: [  1%] /data/local/tmp/android-debug.apk
+[  2%] /data/local/tmp/android-debug.apk
+...
+[100%] /data/local/tmp/android-debug.apk
+        pkg: /data/local/tmp/android-debug.apk
+Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE]</code></pre><ul>
 <li>此问题是因为已有签名的APP存在手机上， 需要想删除该APP才能安装测试（debug）版的apk</li>
 <li>在cmd运行以下代码即可解决问题：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall my.package.id</span><br></pre></td></tr></table></figure>
-
-<h3 id="Ionic-2-自带的native文件上传-FILE-TRANSFER-插件无法获取成功返回内容"><a href="#Ionic-2-自带的native文件上传-FILE-TRANSFER-插件无法获取成功返回内容" class="headerlink" title="Ionic 2 自带的native文件上传(FILE TRANSFER)插件无法获取成功返回内容"></a>Ionic 2 自带的native文件上传(FILE TRANSFER)插件无法获取成功返回内容</h3><p>这个是Ionic 2 核心代码里面的一个BUG, 在一下版本下是有问题的<br><strong>Ionic CLI Version: 2.2.1</strong></p>
+<pre><code>adb uninstall my.package.id</code></pre><h3 id="Ionic-2-自带的native文件上传-FILE-TRANSFER-插件无法获取成功返回内容"><a href="#Ionic-2-自带的native文件上传-FILE-TRANSFER-插件无法获取成功返回内容" class="headerlink" title="Ionic 2 自带的native文件上传(FILE TRANSFER)插件无法获取成功返回内容"></a>Ionic 2 自带的native文件上传(FILE TRANSFER)插件无法获取成功返回内容</h3><p>这个是Ionic 2 核心代码里面的一个BUG, 在一下版本下是有问题的<br><strong>Ionic CLI Version: 2.2.1</strong></p>
 <ul>
 <li>首先找到项目根目录下以下路径里面的<strong>filetransfer.d.ts</strong>文件</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node_modules\ionic-native\dist\es5\plugins\filetransfer.d.ts</span><br><span class="line">node_modules\ionic-native\dist\esm\plugins\filetransfer.d.ts</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>node_modules\ionic-native\dist\es5\plugins\filetransfer.d.ts
+node_modules\ionic-native\dist\esm\plugins\filetransfer.d.ts</code></pre><ul>
 <li>分别修改以上两个文件里面的代码</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//把这一行:</span><br><span class="line">upload(fileUrl: string, url: string, options?: FileUploadOptions, trustAllHosts?: boolean): Promise&lt;FileUploadResult | FileTransferError&gt;</span><br><span class="line">//改为: </span><br><span class="line">upload(fileUrl: string, url: string, options?: FileUploadOptions, trustAllHosts?: boolean): Promise&lt;FileUploadResult&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="在安卓下使用相册选择时-返回的图片路径不能再显示问题"><a href="#在安卓下使用相册选择时-返回的图片路径不能再显示问题" class="headerlink" title="在安卓下使用相册选择时, 返回的图片路径不能再显示问题"></a>在安卓下使用相册选择时, 返回的图片路径不能再显示问题</h3><ul>
+<pre><code>//把这一行:
+upload(fileUrl: string, url: string, options?: FileUploadOptions, trustAllHosts?: boolean): Promise&lt;FileUploadResult | FileTransferError&gt;
+//改为: 
+upload(fileUrl: string, url: string, options?: FileUploadOptions, trustAllHosts?: boolean): Promise&lt;FileUploadResult&gt;</code></pre><h3 id="在安卓下使用相册选择时-返回的图片路径不能再显示问题"><a href="#在安卓下使用相册选择时-返回的图片路径不能再显示问题" class="headerlink" title="在安卓下使用相册选择时, 返回的图片路径不能再显示问题"></a>在安卓下使用相册选择时, 返回的图片路径不能再显示问题</h3><ul>
 <li>首先在这个例子使用的是cordova-plugin-camera组件(Cordova的相机插件)</li>
 <li>首先引入需要的类</li>
 <li>FilePath 这个类就是用来修复安卓上图片URI的问题的</li>
 </ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Camera, File, FilePath &#125; <span class="keyword">from</span> <span class="string">'ionic-native'</span>;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="typescript">import { Camera, File, FilePath } from &#39;ionic-native&#39;;</code></pre>
 <ul>
 <li>使用 FilePath.resolveNativePath(imagePath) 这个方法来纠正图片URI</li>
 </ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Camera.getPicture(options).then(<span class="function">(<span class="params">imagePath</span>) =&gt;</span> &#123;</span><br><span class="line"> <span class="comment">// 特殊安卓图片库的处理</span></span><br><span class="line"> <span class="keyword">this</span>.nativeFilePath = imagePath;</span><br><span class="line"> <span class="keyword">if</span> (<span class="keyword">this</span>.pl.is(<span class="string">'android'</span>) &amp;&amp; sourceType === Camera.PictureSourceType.PHOTOLIBRARY) &#123;</span><br><span class="line">   FilePath.resolveNativePath(imagePath)</span><br><span class="line">   .then(<span class="function"><span class="params">filePath</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">this</span>.nativeFilePath = filePath;</span><br><span class="line">       <span class="keyword">let</span> currentName = imagePath.substring(imagePath.lastIndexOf(<span class="string">'/'</span>) + <span class="number">1</span>, imagePath.lastIndexOf(<span class="string">'?'</span>));</span><br><span class="line">   &#125;);</span><br><span class="line"> &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">   <span class="keyword">var</span> currentName = imagePath.substr(imagePath.lastIndexOf(<span class="string">'/'</span>) + <span class="number">1</span>);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line"> <span class="comment">// this.presentToast('选择图片失败.');</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+<pre><code class="typescript">Camera.getPicture(options).then((imagePath) =&gt; {
+ // 特殊安卓图片库的处理
+ this.nativeFilePath = imagePath;
+ if (this.pl.is(&#39;android&#39;) &amp;&amp; sourceType === Camera.PictureSourceType.PHOTOLIBRARY) {
+   FilePath.resolveNativePath(imagePath)
+   .then(filePath =&gt; {
+       this.nativeFilePath = filePath;
+       let currentName = imagePath.substring(imagePath.lastIndexOf(&#39;/&#39;) + 1, imagePath.lastIndexOf(&#39;?&#39;));
+   });
+ } else {
+   var currentName = imagePath.substr(imagePath.lastIndexOf(&#39;/&#39;) + 1);
+ }
+}, err =&gt; {
+ // this.presentToast(&#39;选择图片失败.&#39;);
+});</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -119,7 +174,7 @@
                 <ul id="audio-list" style="display:none">
                     
                         
-                            <li title='0' data-url='https://isujin.com/wp-content/uploads/2018/03/%E5%86%8D%E8%A7%81%E6%88%91%E7%9A%84%E7%88%B1%E4%BA%BA.mp3?_=1'></li>
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
                         
                     
                 </ul>
@@ -128,11 +183,11 @@
         
     <div id='gitalk-container' class="comment link"
         data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='TriDiamondBlog'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
         data-d='false'
     >查看评论</div>
 
@@ -202,5 +257,18 @@
     </div>
 </div>
 
+
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/css/dracula.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 
 </html>

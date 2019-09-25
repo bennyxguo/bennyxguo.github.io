@@ -9,17 +9,17 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
-    <meta name="keywords" content="Fechin,"> 
+    <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
     <meta name="description" content="升级步骤
 这一次的升级Ionic 3 换成了使用最新的Angular 4.0, 最新的TypeScript, 添加了懒加载和修复了一些组件的bug.
 
 
-首先更新按照以下的代码相应替换你packag,"> 
+首先更新package.json, 按照以下,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_g9158mzzlbq.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/diaspora.css">
     <link rel="stylesheet" href="/css/tridiamond.css">
 </head>
@@ -48,37 +48,165 @@
 </div>
 
     <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">IONIC 2 升级 3 教程</h1>
-        <div class="stuff">
-            <span>四月 10, 2017</span>
-            
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
-
-
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover" style="
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
         </div>
+        <div class="else">
+            <p>四月 10, 2017</p>
+            <h3><a href="/2017/04/10/2017-4-10-Ionic3-upgrade-guide/" title="IONIC 2 升级 3 教程">IONIC 2 升级 3 教程</a></h3>
+            <p>升级步骤
+这一次的升级Ionic 3 换成了使用最新的Angular 4.0, 最新的TypeScript, 添加了懒加载和修复了一些组件的bug.
+
+
+首先更新package.json, 按照...</p>
+            
+                <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
+            
+            <p class="article-count">
+                <span>
+                    <b class="iconfont icon-text2"></b>
+                    965字
+                </span>
+                <span>
+                    <b class="iconfont icon-timer__s"></b>
+                    4分钟
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    “Keep busy coding keep busy dying" - 三·钻 TriDiamond 
+                </p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
         <div class="content markdown">
             <h2 id="升级步骤"><a href="#升级步骤" class="headerlink" title="升级步骤"></a>升级步骤</h2><blockquote>
 <p>这一次的升级Ionic 3 换成了使用最新的Angular 4.0, 最新的TypeScript, 添加了懒加载和修复了一些组件的bug.</p>
 </blockquote>
 <ol>
-<li><p>首先更新<figure class="highlight plain"><figcaption><span>按照以下的代码相应替换你package.json里面的代码, 并且把你项目根目录下的```node_modules```文件夹删除掉, 然后运行```npm install``` (如果你是用淘宝镜像可以运行 ```cnpm install```)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```json</span><br><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;@angular/common&quot;: &quot;4.0.0&quot;,</span><br><span class="line">    &quot;@angular/compiler&quot;: &quot;4.0.0&quot;,</span><br><span class="line">    &quot;@angular/compiler-cli&quot;: &quot;4.0.0&quot;,</span><br><span class="line">    &quot;@angular/core&quot;: &quot;4.0.0&quot;,</span><br><span class="line">    &quot;@angular/forms&quot;: &quot;4.0.0&quot;,</span><br><span class="line">    &quot;@angular/http&quot;: &quot;4.0.0&quot;,</span><br><span class="line">    &quot;@angular/platform-browser&quot;: &quot;4.0.0&quot;,</span><br><span class="line">    &quot;@angular/platform-browser-dynamic&quot;: &quot;4.0.0&quot;,</span><br><span class="line">    &quot;@ionic-native/core&quot;: &quot;3.4.2&quot;,</span><br><span class="line">    &quot;@ionic-native/splash-screen&quot;: &quot;3.4.2&quot;,</span><br><span class="line">    &quot;@ionic-native/status-bar&quot;: &quot;3.4.2&quot;,</span><br><span class="line">    &quot;@ionic/storage&quot;: &quot;2.0.1&quot;,</span><br><span class="line">    &quot;ionic-angular&quot;: &quot;3.0.1&quot;,</span><br><span class="line">    &quot;ionicons&quot;: &quot;3.0.0&quot;,</span><br><span class="line">    &quot;rxjs&quot;: &quot;5.1.1&quot;,</span><br><span class="line">    &quot;sw-toolbox&quot;: &quot;3.4.0&quot;,</span><br><span class="line">    &quot;zone.js&quot;: &quot;^0.8.4&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;devDependencies&quot;: &#123;</span><br><span class="line">  &quot;@ionic/app-scripts&quot;: &quot;1.3.0&quot;,</span><br><span class="line">  &quot;typescript&quot;: &quot;~2.2.1&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>第二步你需要在<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 首先需要在头部引入这两个module (如果你的APP不使用HTTP可以不引入```HttpModule```)</span><br><span class="line"></span><br><span class="line">```typescript</span><br><span class="line">import &#123; BrowserModule &#125; from &apos;@angular/platform-browser&apos;;</span><br><span class="line">import &#123; HttpModule &#125; from &apos;@angular/http&apos;;</span><br></pre></td></tr></table></figure></p>
-</li>
+<li>首先更新<code>package.json</code>, 按照以下的代码相应替换你package.json里面的代码, 并且把你项目根目录下的<code>node_modules</code>文件夹删除掉, 然后运行<code>npm install</code> (如果你是用淘宝镜像可以运行 <code>cnpm install</code>)</li>
+</ol>
+<pre><code class="json">&quot;dependencies&quot;: {
+    &quot;@angular/common&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/compiler&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/core&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/forms&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/http&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;4.0.0&quot;,
+    &quot;@ionic-native/core&quot;: &quot;3.4.2&quot;,
+    &quot;@ionic-native/splash-screen&quot;: &quot;3.4.2&quot;,
+    &quot;@ionic-native/status-bar&quot;: &quot;3.4.2&quot;,
+    &quot;@ionic/storage&quot;: &quot;2.0.1&quot;,
+    &quot;ionic-angular&quot;: &quot;3.0.1&quot;,
+    &quot;ionicons&quot;: &quot;3.0.0&quot;,
+    &quot;rxjs&quot;: &quot;5.1.1&quot;,
+    &quot;sw-toolbox&quot;: &quot;3.4.0&quot;,
+    &quot;zone.js&quot;: &quot;^0.8.4&quot;
+},
+&quot;devDependencies&quot;: {
+  &quot;@ionic/app-scripts&quot;: &quot;1.3.0&quot;,
+  &quot;typescript&quot;: &quot;~2.2.1&quot;
+}</code></pre>
+<ol start="2">
+<li>第二步你需要在<code>app/app.module.ts</code>文件里面引入<code>BrowserModule</code>和<code>HttpModule</code></li>
 </ol>
 <blockquote>
-<p>在同一个文件里面找到<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```typescript</span><br><span class="line">imports: [</span><br><span class="line">  BrowserModule,</span><br><span class="line">  HttpModule,</span><br><span class="line">  IonicModule.forRoot(MyApp)</span><br><span class="line">],</span><br></pre></td></tr></table></figure></p>
+<p>首先需要在头部引入这两个module (如果你的APP不使用HTTP可以不引入<code>HttpModule</code>)</p>
 </blockquote>
+<pre><code class="typescript">import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+import { HttpModule } from &#39;@angular/http&#39;;</code></pre>
+<blockquote>
+<p>在同一个文件里面找到<code>imports</code>并且加入<code>BrowserModule</code>和<code>HttpModule</code></p>
+</blockquote>
+<pre><code class="typescript">imports: [
+  BrowserModule,
+  HttpModule,
+  IonicModule.forRoot(MyApp)
+],</code></pre>
 <ol start="3">
 <li>如果你升级到 Ionic Native 3.x, 就是CLI3. 使用 Ionic Native 3.x的话, APP打包出来会更小. 因为Ionic Native的原生插件都不自带有了, 你使用一个就要安装一个. 如果你原有的Ionic 2 项目有引入原生插件, 你就要做以下操作.</li>
 </ol>
 <blockquote>
-<p>这里用<figure class="highlight plain"><figcaption><span>你其他的插件都需要使用相同的方式做修改</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 注意您使用的所有插件都必须要在```app/app.module.ts```里面先引用了, 而且要在```app/app.modules.ts```里面的providers里面声明, 如果没有这样配置就会出现```No provider for XXXXX```这样的报错了!</span><br><span class="line"></span><br><span class="line">#### Camera插件</span><br><span class="line"></span><br><span class="line">```typescript</span><br><span class="line">// 在app/app.module.ts文件里面</span><br><span class="line">import &#123; Camera &#125; from &apos;@ionic-native/camera&apos;;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  providers: [</span><br><span class="line">    ...</span><br><span class="line">    Camera</span><br><span class="line">    ...</span><br><span class="line">  ]</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里用<code>Camera</code>和<code>Geolocation</code>这个两个原生插件作为例子, 你其他的插件都需要使用相同的方式做修改</p>
 </blockquote>
-<h4 id="Geolocation插件"><a href="#Geolocation插件" class="headerlink" title="Geolocation插件"></a>Geolocation插件</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在app/app.module.ts文件里面</span></span><br><span class="line"><span class="keyword">import</span> &#123; Geolocation &#125; <span class="keyword">from</span> <span class="string">'@ionic-native/geolocation'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Platform &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; NgZone &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123; ... &#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> MyComponent &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> geolocation: Geolocation, <span class="keyword">private</span> platform: Platform, <span class="keyword">private</span> ngZone: NgZone</span>) &#123;</span><br><span class="line"></span><br><span class="line">    platform.ready().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// get position</span></span><br><span class="line">      geolocation.getCurrentPosition().then(<span class="function"><span class="params">pos</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`lat: <span class="subst">$&#123;pos.coords.latitude&#125;</span>, lon: <span class="subst">$&#123;pos.coords.longitude&#125;</span>`</span>)</span><br><span class="line"></span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="comment">// watch position</span></span><br><span class="line">      <span class="keyword">const</span> watch = geolocation.watchPosition().subscribe(<span class="function"><span class="params">pos</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`lat: <span class="subst">$&#123;pos.coords.latitude&#125;</span>, lon: <span class="subst">$&#123;pos.coords.longitude&#125;</span>`</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Currently, observables from Ionic Native plugins</span></span><br><span class="line">        <span class="comment">// need to run inside of zone to trigger change detection</span></span><br><span class="line">        ngZone.run(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.position = pos;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// to stop watching</span></span><br><span class="line">      watch.unsubscribe();</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意您使用的所有插件都必须要在<code>app/app.module.ts</code>里面先引用了, 而且要在<code>app/app.modules.ts</code>里面的providers里面声明, 如果没有这样配置就会出现<code>No provider for XXXXX</code>这样的报错了!</p>
+</blockquote>
+<h4 id="Camera插件"><a href="#Camera插件" class="headerlink" title="Camera插件"></a>Camera插件</h4><pre><code class="typescript">// 在app/app.module.ts文件里面
+import { Camera } from &#39;@ionic-native/camera&#39;;
 
+...
+
+@NgModule({
+  ...
+
+  providers: [
+    ...
+    Camera
+    ...
+  ]
+  ...
+})
+export class AppModule { }</code></pre>
+<h4 id="Geolocation插件"><a href="#Geolocation插件" class="headerlink" title="Geolocation插件"></a>Geolocation插件</h4><pre><code class="typescript">// 在app/app.module.ts文件里面
+import { Geolocation } from &#39;@ionic-native/geolocation&#39;;
+import { Platform } from &#39;ionic-angular&#39;;
+
+import { NgZone } from &#39;@angular/core&#39;;
+
+@Component({ ... })
+export class MyComponent {
+
+  constructor(private geolocation: Geolocation, private platform: Platform, private ngZone: NgZone) {
+
+    platform.ready().then(() =&gt; {
+
+      // get position
+      geolocation.getCurrentPosition().then(pos =&gt; {
+
+        console.log(`lat: ${pos.coords.latitude}, lon: ${pos.coords.longitude}`)
+
+      });
+
+
+      // watch position
+      const watch = geolocation.watchPosition().subscribe(pos =&gt; {
+
+        console.log(`lat: ${pos.coords.latitude}, lon: ${pos.coords.longitude}`)
+
+        // Currently, observables from Ionic Native plugins
+        // need to run inside of zone to trigger change detection
+        ngZone.run(() =&gt; {
+          this.position = pos;
+        })
+
+      });
+
+      // to stop watching
+      watch.unsubscribe();
+
+    });
+
+  }
+
+}</code></pre>
 <blockquote>
 <p>更详细的文档可以参考官方的修改日记 <a href="https://github.com/driftyco/ionic-native/blob/master/README.md" target="_blank" rel="noopener">https://github.com/driftyco/ionic-native/blob/master/README.md</a></p>
 </blockquote>
@@ -86,8 +214,9 @@
 <p>旧的网格体系已经废除, 新的网格组件请参考官方文档 <a href="http://blog.ionic.io/build-awesome-desktop-apps-with-ionics-new-responsive-grid/" target="_blank" rel="noopener">http://blog.ionic.io/build-awesome-desktop-apps-with-ionics-new-responsive-grid/</a></p>
 </blockquote>
 <h4 id="标签的color属性更变"><a href="#标签的color属性更变" class="headerlink" title="标签的color属性更变"></a>标签的<code>color</code>属性更变</h4><blockquote>
-<p>以下标签的<figure class="highlight plain"><figcaption><span>现在必须要使用```ion-text```才会起效果, 详细说明请看官方文档</span><a href="http://ionicframework.com/docs/api/components/typography/Typography/" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```css</span><br><span class="line">h1[color], h2[color], h3[color], h4[color], h5[color], h6[color], a[color]:not([ion-button]):not([ion-item]):not([ion-fab]), p[color], span[color], b[color], i[color], strong[color], em[color], small[color], sub[color], sup[color]</span><br></pre></td></tr></table></figure></p>
+<p>以下标签的<code>color</code>属性在新的版本里面会不起效果了, 现在必须要使用<code>ion-text</code>才会起效果, 详细说明请看官方文档 <a href="http://ionicframework.com/docs/api/components/typography/Typography/" target="_blank" rel="noopener">http://ionicframework.com/docs/api/components/typography/Typography/</a></p>
 </blockquote>
+<pre><code class="css">h1[color], h2[color], h3[color], h4[color], h5[color], h6[color], a[color]:not([ion-button]):not([ion-item]):not([ion-fab]), p[color], span[color], b[color], i[color], strong[color], em[color], small[color], sub[color], sup[color]</code></pre>
 <h4 id="Slides组件更变"><a href="#Slides组件更变" class="headerlink" title="Slides组件更变"></a>Slides组件更变</h4><blockquote>
 <p>以下的Slides属性和方法已经正式在新版本里面移除了</p>
 </blockquote>
@@ -107,7 +236,7 @@
                 <ul id="audio-list" style="display:none">
                     
                         
-                            <li title='0' data-url='https://isujin.com/wp-content/uploads/2018/03/%E5%86%8D%E8%A7%81%E6%88%91%E7%9A%84%E7%88%B1%E4%BA%BA.mp3?_=1'></li>
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
                         
                     
                 </ul>
@@ -116,11 +245,11 @@
         
     <div id='gitalk-container' class="comment link"
         data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='TriDiamondBlog'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
         data-d='false'
     >查看评论</div>
 
@@ -190,5 +319,18 @@
     </div>
 </div>
 
+
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/css/dracula.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 
 </html>

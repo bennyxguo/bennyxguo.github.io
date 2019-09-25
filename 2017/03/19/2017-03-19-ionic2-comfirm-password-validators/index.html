@@ -9,14 +9,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
-    <meta name="keywords" content="Fechin,"> 
+    <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
     <meta name="description" content="开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
 首先这篇文章是默认您已经了解怎么,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_g9158mzzlbq.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/diaspora.css">
     <link rel="stylesheet" href="/css/tridiamond.css">
 </head>
@@ -45,16 +45,49 @@
 </div>
 
     <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">IONIC 2 - 确认密码</h1>
-        <div class="stuff">
-            <span>三月 19, 2017</span>
-            
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
-
-
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover" style="
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
         </div>
+        <div class="else">
+            <p>三月 19, 2017</p>
+            <h3><a href="/2017/03/19/2017-03-19-ionic2-comfirm-password-validators/" title="IONIC 2 - 确认密码">IONIC 2 - 确认密码</a></h3>
+            <p>开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
+首先这篇文章是默认您已经了解...</p>
+            
+                <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+            
+            <p class="article-count">
+                <span>
+                    <b class="iconfont icon-text2"></b>
+                    648字
+                </span>
+                <span>
+                    <b class="iconfont icon-timer__s"></b>
+                    3分钟
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    “Keep busy coding keep busy dying" - 三·钻 TriDiamond 
+                </p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
         <div class="content markdown">
             <p>开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用<strong>FormBuilder</strong>和<strong>Validators</strong>判断密码是否一致.</p>
 <p>首先这篇文章是默认您已经了解怎么使用<strong>Angualr2</strong>的<strong>FormBuilder</strong>和<strong>Validator</strong>, 如果你还没了解这两个类的用法可以前去看<a href="https://ionicframework.com/docs/v2/resources/forms/" target="_blank" rel="noopener">Ionic2的文档</a></p>
@@ -67,18 +100,77 @@
 <li>这里我们把password, 和rePassword 传给了 AdvanceValidator 方法, 这里传的是密码和确认密码在FormGroup里面定义的名字.</li>
 <li>现在我们看看这个password.ts怎么写.</li>
 </ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; FormBuilder, Validators, FormGroup &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AdvanceValidator &#125; <span class="keyword">from</span> <span class="string">'../../validators/advance-validator'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'page-password'</span>,</span><br><span class="line">  templateUrl: <span class="string">'password.html'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//密码修改页</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> PasswordPage &#123;</span><br><span class="line">  passwordForm: FormGroup;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> fb: FormBuilder</span>) </span><br><span class="line">  &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.passwordForm = fb.group(&#123;</span><br><span class="line">        username: [<span class="string">''</span>, Validators.required],</span><br><span class="line">        password: [<span class="string">''</span>, Validators.compose([Validators.maxLength(<span class="number">30</span>), Validators.minLength(<span class="number">7</span>), Validators.required])],</span><br><span class="line">        rePassword: [<span class="string">''</span>, Validators.compose([Validators.maxLength(<span class="number">30</span>), Validators.minLength(<span class="number">7</span>), Validators.required])],</span><br><span class="line">    &#125;, &#123; validator: AdvanceValidator.matchingPasswords(<span class="string">'password'</span>, <span class="string">'rePassword'</span>) &#125;);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="typescript">import { FormBuilder, Validators, FormGroup } from &#39;@angular/forms&#39;;
+import { AdvanceValidator } from &#39;../../validators/advance-validator&#39;;
 
+@Component({
+  selector: &#39;page-password&#39;,
+  templateUrl: &#39;password.html&#39;
+})
+
+//密码修改页
+export class PasswordPage {
+  passwordForm: FormGroup;
+
+  constructor(private fb: FormBuilder) 
+  {
+
+    this.passwordForm = fb.group({
+        username: [&#39;&#39;, Validators.required],
+        password: [&#39;&#39;, Validators.compose([Validators.maxLength(30), Validators.minLength(7), Validators.required])],
+        rePassword: [&#39;&#39;, Validators.compose([Validators.maxLength(30), Validators.minLength(7), Validators.required])],
+    }, { validator: AdvanceValidator.matchingPasswords(&#39;password&#39;, &#39;rePassword&#39;) });
+
+  }
+}</code></pre>
 <h1 id="创建自定义认证器"><a href="#创建自定义认证器" class="headerlink" title="创建自定义认证器"></a>创建自定义认证器</h1><p><img src="https://github.com/Bennygx/bennygx.github.io/blob/master/assets/images/advance-validator-screenshot.png?raw=true" alt></p>
 <ul>
 <li>我们首先在项目根目录创建 <strong>validators</strong> 的文件夹</li>
 <li>然后在里面创建 <strong>advance-validators.ts</strong> 的ts文件</li>
 <li>在 <strong>advance-validators.ts</strong> 里面编以下代码</li>
 </ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; FormGroup &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AdvanceValidator &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">static</span> matchingPasswords(passwordKey: <span class="built_in">string</span>, rePasswordKey: <span class="built_in">string</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">group: FormGroup</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> password = group.controls[passwordKey]; <span class="comment">//获取密码值</span></span><br><span class="line">      <span class="keyword">let</span> rePassword = group.controls[rePasswordKey]; <span class="comment">//获取确认密码值</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span>(password.value !== rePassword.value) &#123;</span><br><span class="line">        <span class="comment">//如果密码和确认密码的值不一致就返回给FormBuild rePassword有错误</span></span><br><span class="line">        <span class="keyword">return</span> rePassword.setErrors(&#123;notEquivalent: <span class="literal">true</span>&#125;) </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="typescript">import { FormGroup } from &#39;@angular/forms&#39;;
 
-<h1 id="前端表格示例"><a href="#前端表格示例" class="headerlink" title="前端表格示例"></a>前端表格示例</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> [<span class="attr">formGroup</span>] = <span class="string">"passwordForm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-list</span> <span class="attr">inset</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">placeholder</span>=<span class="string">"用户名"</span> <span class="attr">formControlName</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">item-right</span> *<span class="attr">ngIf</span>=<span class="string">"!passwordForm.controls.username.valid  &amp;&amp; (passwordForm.controls.username.dirty)"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"alert"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span> 用户名必填</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"新密码"</span> <span class="attr">formControlName</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">item-right</span> *<span class="attr">ngIf</span>=<span class="string">"!passwordForm.controls.password.valid  &amp;&amp; (passwordForm.controls.password.dirty)"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"alert"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span> 密码必须7个字以上</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"确认密码"</span> <span class="attr">formControlName</span>=<span class="string">"rePassword"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">item-right</span> *<span class="attr">ngIf</span>=<span class="string">"!passwordForm.controls.rePassword.valid  &amp;&amp; (passwordForm.controls.rePassword.dirty)"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"alert"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span> 密码必须一致</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+export class AdvanceValidator {
 
+    static matchingPasswords(passwordKey: string, rePasswordKey: string) {
+    return (group: FormGroup) =&gt; {
+      let password = group.controls[passwordKey]; //获取密码值
+      let rePassword = group.controls[rePasswordKey]; //获取确认密码值
+
+      if(password.value !== rePassword.value) {
+        //如果密码和确认密码的值不一致就返回给FormBuild rePassword有错误
+        return rePassword.setErrors({notEquivalent: true}) 
+      }
+    }
+  }
+}</code></pre>
+<h1 id="前端表格示例"><a href="#前端表格示例" class="headerlink" title="前端表格示例"></a>前端表格示例</h1><pre><code class="html">&lt;form [formGroup] = &quot;passwordForm&quot;&gt;
+  &lt;ion-list inset&gt;
+
+    &lt;ion-item&gt;
+      &lt;ion-input type=&quot;tel&quot; placeholder=&quot;用户名&quot; formControlName=&quot;username&quot;&gt;&lt;/ion-input&gt;
+      &lt;div item-right *ngIf=&quot;!passwordForm.controls.username.valid  &amp;&amp; (passwordForm.controls.username.dirty)&quot;&gt;
+        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 用户名必填
+      &lt;/div&gt;
+    &lt;/ion-item&gt;
+
+    &lt;ion-item&gt;
+      &lt;ion-input type=&quot;password&quot; placeholder=&quot;新密码&quot; formControlName=&quot;password&quot;&gt;&lt;/ion-input&gt;
+      &lt;div item-right *ngIf=&quot;!passwordForm.controls.password.valid  &amp;&amp; (passwordForm.controls.password.dirty)&quot; &gt;
+        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 密码必须7个字以上
+      &lt;/div&gt;
+    &lt;/ion-item&gt;
+
+    &lt;ion-item&gt;
+      &lt;ion-input type=&quot;password&quot; placeholder=&quot;确认密码&quot; formControlName=&quot;rePassword&quot;&gt;&lt;/ion-input&gt;
+      &lt;div item-right *ngIf=&quot;!passwordForm.controls.rePassword.valid  &amp;&amp; (passwordForm.controls.rePassword.dirty)&quot; &gt;
+        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 密码必须一致
+      &lt;/div&gt;
+    &lt;/ion-item&gt;
+
+  &lt;/ion-list&gt;
+&lt;/form&gt;</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -88,7 +180,7 @@
                 <ul id="audio-list" style="display:none">
                     
                         
-                            <li title='0' data-url='https://isujin.com/wp-content/uploads/2018/03/%E5%86%8D%E8%A7%81%E6%88%91%E7%9A%84%E7%88%B1%E4%BA%BA.mp3?_=1'></li>
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
                         
                     
                 </ul>
@@ -97,11 +189,11 @@
         
     <div id='gitalk-container' class="comment link"
         data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='TriDiamondBlog'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
         data-d='false'
     >查看评论</div>
 
@@ -171,5 +263,18 @@
     </div>
 </div>
 
+
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/css/dracula.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 
 </html>

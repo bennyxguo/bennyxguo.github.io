@@ -81,9 +81,11 @@ var Diaspora = {
             switch (flag) {
                 case 'push':
                     history.pushState(state, title, url)
+                    console.log('pushState');
                     break;
                 case 'replace':
                     history.replaceState(state, title, url)
+                    console.log('replaceState');
                     break;
             }
             document.title = title;
@@ -91,10 +93,14 @@ var Diaspora = {
             switch (flag) {
                 case 'push':
                     Diaspora.preview()
+                    hljs.initHighlightingOnLoad();
+                    console.log('push-preview');
                     break;
                 case 'replace':
                     window.scrollTo(0, 0)
                     Diaspora.loaded()
+                    hljs.initHighlightingOnLoad();
+                    console.log('relplace-preview');
                     break;
             }
             setTimeout(function() {
@@ -127,6 +133,9 @@ var Diaspora = {
                     'overflow-y': 'auto'
                 });
             }, 500);
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
         }, 0);
     },
     player: function() {
@@ -245,7 +254,7 @@ $(function() {
             var vibrant = new Vibrant(cover.t[0]);
             var swatches = vibrant.swatches()
             if (swatches['DarkVibrant']) {
-                $('#vibrant polygon').css('fill', swatches['DarkVibrant'].getHex())
+                // $('#vibrant polygon').css('fill', swatches['DarkVibrant'].getHex())
                 $('#vibrant div').css('background-color', swatches['DarkVibrant'].getHex())
             }
             if (swatches['Vibrant']) {
@@ -496,6 +505,6 @@ $(function() {
     if (comment.data('ae') == true){
         comment.click();
     }
-    console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/Fechin/hexo-theme-diaspora")
+    console.log("%c Github %c","background:#24272A; color:#73ddd7","","https://github.com/TriDiamond")
 })
 

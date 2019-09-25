@@ -9,14 +9,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
-    <meta name="keywords" content="Fechin,"> 
+    <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
     <meta name="description" content="添加绑定值
-首先在这个是用于绑定当前页面的导航标签123```html &amp;lt;ion-nav #myNav [root]=&amp;quot;rootPage&amp;quot;&amp;gt;&amp;lt;/ion-nav&amp;,"> 
+首先在app/app.html下加入#myNav, 这个是用于绑定当前页面的导航标签
+
+ &amp;lt;ion-nav #myNav [root]=&amp;quot;rootPage&amp;quot;&amp;g,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_g9158mzzlbq.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/diaspora.css">
     <link rel="stylesheet" href="/css/tridiamond.css">
 </head>
@@ -45,23 +47,113 @@
 </div>
 
     <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">IONIC 2 实现首页双击退出APP</h1>
-        <div class="stuff">
-            <span>四月 24, 2017</span>
-            
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
-
-
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover" style="
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
         </div>
+        <div class="else">
+            <p>四月 24, 2017</p>
+            <h3><a href="/2017/04/24/2017-04-24-listen-to-back-button/" title="IONIC 2 实现首页双击退出APP">IONIC 2 实现首页双击退出APP</a></h3>
+            <p>添加绑定值
+首先在app/app.html下加入#myNav, 这个是用于绑定当前页面的导航标签
+
+ &lt;ion-nav #myNav [root]=&quot;rootPage&quot;...</p>
+            
+                <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+            
+            <p class="article-count">
+                <span>
+                    <b class="iconfont icon-text2"></b>
+                    346字
+                </span>
+                <span>
+                    <b class="iconfont icon-timer__s"></b>
+                    1分钟
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    “Keep busy coding keep busy dying" - 三·钻 TriDiamond 
+                </p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
         <div class="content markdown">
             <h2 id="添加绑定值"><a href="#添加绑定值" class="headerlink" title="添加绑定值"></a>添加绑定值</h2><blockquote>
-<p>首先在<figure class="highlight plain"><figcaption><span>这个是用于绑定当前页面的导航标签</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```html</span><br><span class="line"> &lt;ion-nav #myNav [root]=&quot;rootPage&quot;&gt;&lt;/ion-nav&gt;</span><br></pre></td></tr></table></figure></p>
+<p>首先在<code>app/app.html</code>下加入<code>#myNav</code>, 这个是用于绑定当前页面的导航标签</p>
 </blockquote>
+<pre><code class="html"> &lt;ion-nav #myNav [root]=&quot;rootPage&quot;&gt;&lt;/ion-nav&gt;</code></pre>
 <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><blockquote>
-<p>然后在<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```typescript</span><br><span class="line">import &#123; Component, ViewChild &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; Platform, ToastController, Nav, App &#125; from &apos;ionic-angular&apos;;</span><br><span class="line">import &#123; StatusBar &#125; from &apos;@ionic-native/status-bar&apos;;</span><br><span class="line">import &#123; SplashScreen &#125; from &apos;@ionic-native/splash-screen&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  templateUrl: &apos;app.html&apos;,</span><br><span class="line">  providers: [SplashScreen, StatusBar]</span><br><span class="line">&#125;)</span><br><span class="line">export class MyApp &#123;</span><br><span class="line">  rootPage = &apos;TabsPage&apos;;</span><br><span class="line">  backButtonPressed: boolean = false;  //用于判断返回键是否触发</span><br><span class="line">  @ViewChild(&apos;myNav&apos;) nav: Nav;</span><br><span class="line"></span><br><span class="line">  constructor(public platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar, public app: App, public toastCtrl: ToastController) &#123;</span><br><span class="line">    platform.ready().then(() =&gt; &#123;</span><br><span class="line">      // Okay, so the platform is ready and our plugins are available.</span><br><span class="line">      // Here you can do any higher level native things you might need.</span><br><span class="line">      this.statusBar.styleDefault();</span><br><span class="line">      this.statusBar.backgroundColorByHexString(&apos;#661F22&apos;);</span><br><span class="line">      this.splashScreen.hide();</span><br><span class="line">      this.registerBackButtonAction(); //运行这个方法绑定返回按钮</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  registerBackButtonAction() &#123;</span><br><span class="line">    this.platform.registerBackButtonAction(() =&gt; &#123;</span><br><span class="line">      //如果想点击返回按钮隐藏toast或loading或Overlay就把下面加上</span><br><span class="line">      // this.ionicApp._toastPortal.getActive() || this.ionicApp._loadingPortal.getActive() || this.ionicApp._overlayPortal.getActive();</span><br><span class="line">      let nav = this.app.getActiveNav();</span><br><span class="line">      if (nav.canGoBack())&#123; //是否已经到了首页</span><br><span class="line">        nav.pop();</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">        this.showExit()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, 1);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //双击退出提示框</span><br><span class="line">  showExit() &#123;</span><br><span class="line">    if (this.backButtonPressed) &#123; //当触发标志为true时，即2秒内双击返回按键则退出APP</span><br><span class="line">      this.platform.exitApp();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">     this.toastCtrl.create(&#123;</span><br><span class="line">      message: &apos;再按一次退出应用&apos;,</span><br><span class="line">      duration: 2000,</span><br><span class="line">      position: &apos;middle&apos;</span><br><span class="line">     &#125;).present();</span><br><span class="line">     this.backButtonPressed = true;</span><br><span class="line">     setTimeout(() =&gt; this.backButtonPressed = false, 2000);//2秒内没有再次点击返回则将触发标志标记为false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后在<code>app.component.ts</code>做相对的改动</p>
 </blockquote>
+<pre><code class="typescript">import { Component, ViewChild } from &#39;@angular/core&#39;;
+import { Platform, ToastController, Nav, App } from &#39;ionic-angular&#39;;
+import { StatusBar } from &#39;@ionic-native/status-bar&#39;;
+import { SplashScreen } from &#39;@ionic-native/splash-screen&#39;;
+
+
+@Component({
+  templateUrl: &#39;app.html&#39;,
+  providers: [SplashScreen, StatusBar]
+})
+export class MyApp {
+  rootPage = &#39;TabsPage&#39;;
+  backButtonPressed: boolean = false;  //用于判断返回键是否触发
+  @ViewChild(&#39;myNav&#39;) nav: Nav;
+
+  constructor(public platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar, public app: App, public toastCtrl: ToastController) {
+    platform.ready().then(() =&gt; {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      this.statusBar.styleDefault();
+      this.statusBar.backgroundColorByHexString(&#39;#661F22&#39;);
+      this.splashScreen.hide();
+      this.registerBackButtonAction(); //运行这个方法绑定返回按钮
+    });
+  }
+
+  registerBackButtonAction() {
+    this.platform.registerBackButtonAction(() =&gt; {
+      //如果想点击返回按钮隐藏toast或loading或Overlay就把下面加上
+      // this.ionicApp._toastPortal.getActive() || this.ionicApp._loadingPortal.getActive() || this.ionicApp._overlayPortal.getActive();
+      let nav = this.app.getActiveNav();
+      if (nav.canGoBack()){ //是否已经到了首页
+        nav.pop();
+      }else{
+        this.showExit()
+      }
+    }, 1);
+  }
+
+  //双击退出提示框
+  showExit() {
+    if (this.backButtonPressed) { //当触发标志为true时，即2秒内双击返回按键则退出APP
+      this.platform.exitApp();
+    } else {
+     this.toastCtrl.create({
+      message: &#39;再按一次退出应用&#39;,
+      duration: 2000,
+      position: &#39;middle&#39;
+     }).present();
+     this.backButtonPressed = true;
+     setTimeout(() =&gt; this.backButtonPressed = false, 2000);//2秒内没有再次点击返回则将触发标志标记为false
+    }
+  }
+}</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -71,7 +163,7 @@
                 <ul id="audio-list" style="display:none">
                     
                         
-                            <li title='0' data-url='https://isujin.com/wp-content/uploads/2018/03/%E5%86%8D%E8%A7%81%E6%88%91%E7%9A%84%E7%88%B1%E4%BA%BA.mp3?_=1'></li>
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
                         
                     
                 </ul>
@@ -80,11 +172,11 @@
         
     <div id='gitalk-container' class="comment link"
         data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='TriDiamondBlog'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
         data-d='false'
     >查看评论</div>
 
@@ -154,5 +246,18 @@
     </div>
 </div>
 
+
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/css/dracula.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 
 </html>

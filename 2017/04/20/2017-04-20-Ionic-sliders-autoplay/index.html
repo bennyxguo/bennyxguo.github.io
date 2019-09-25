@@ -9,14 +9,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
-    <meta name="keywords" content="Fechin,"> 
+    <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
     <meta name="description" content="我们先了解一下Ionic的Sliders
 首先Ionic里面的sliders是用Swiper.js的第三方插件实现的, Ionic官方Sliders的文档里面只描述了可以直接写入html标签内的属性,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_g9158mzzlbq.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/diaspora.css">
     <link rel="stylesheet" href="/css/tridiamond.css">
 </head>
@@ -45,16 +45,49 @@
 </div>
 
     <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">IONIC 3 使用sliders轮播时拖动后autoplay失效解决方法</h1>
-        <div class="stuff">
-            <span>四月 20, 2017</span>
-            
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
-
-
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover" style="
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
         </div>
+        <div class="else">
+            <p>四月 20, 2017</p>
+            <h3><a href="/2017/04/20/2017-04-20-Ionic-sliders-autoplay/" title="IONIC 3 使用sliders轮播时拖动后autoplay失效解决方法">IONIC 3 使用sliders轮播时拖动后autoplay失效解决方法</a></h3>
+            <p>我们先了解一下Ionic的Sliders
+首先Ionic里面的sliders是用Swiper.js的第三方插件实现的, Ionic官方Sliders的文档里面只描述了可以直接写入html标签内的...</p>
+            
+                <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
+            
+            <p class="article-count">
+                <span>
+                    <b class="iconfont icon-text2"></b>
+                    234字
+                </span>
+                <span>
+                    <b class="iconfont icon-timer__s"></b>
+                    1分钟
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    “Keep busy coding keep busy dying" - 三·钻 TriDiamond 
+                </p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
         <div class="content markdown">
             <h4 id="我们先了解一下Ionic的Sliders"><a href="#我们先了解一下Ionic的Sliders" class="headerlink" title="我们先了解一下Ionic的Sliders"></a>我们先了解一下Ionic的Sliders</h4><blockquote>
 <p>首先Ionic里面的sliders是用<a href="http://idangero.us/swiper/api/#.WPhzbPB96Uk" target="_blank" rel="noopener">Swiper.js</a>的第三方插件实现的, Ionic官方Sliders的文档里面只描述了可以直接写入html标签内的属性, 有很多高级属性是没有写在文档里面的. </p>
@@ -63,11 +96,24 @@
 <p>那如果我们要用到Swiper的其他属性怎么办呢? Ionic 2.x 的时候我们是可以在options里面传入的, 但是升级Ionic 3.x.x 后sliders的options属性被移除了. 现在要改变sliders的属性我们要用到sliders类. </p>
 </blockquote>
 <h4 id="如何拖动轮播图后不让autoplay失效呢"><a href="#如何拖动轮播图后不让autoplay失效呢" class="headerlink" title="如何拖动轮播图后不让autoplay失效呢?"></a>如何拖动轮播图后不让autoplay失效呢?</h4><blockquote>
-<p>首先我们要引入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```typescript</span><br><span class="line">import &#123; ViewChild &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; Slides &#125; from &apos;ionic-angular&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>首先我们要引入<code>viewChild</code>和<code>Sliders</code></p>
 </blockquote>
+<pre><code class="typescript">import { ViewChild } from &#39;@angular/core&#39;;
+import { Slides } from &#39;ionic-angular&#39;;
+</code></pre>
 <blockquote>
-<p>然后使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```typescript</span><br><span class="line">import &#123; ViewChild &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; Slides &#125; from &apos;ionic-angular&apos;;</span><br><span class="line"></span><br><span class="line">class MyPage &#123;</span><br><span class="line">  @ViewChild(Slides) slides: Slides;</span><br><span class="line"></span><br><span class="line">  ionViewWillEnter() &#123;</span><br><span class="line">    this.slides.autoplayDisableOnInteraction = false; //禁止slider拖动后autoPlay失效</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后使用<code>ionViewWillEnter</code>在进入页面前改变sliders的<code>autoplayDisableOnInteraction</code>属性</p>
 </blockquote>
+<pre><code class="typescript">import { ViewChild } from &#39;@angular/core&#39;;
+import { Slides } from &#39;ionic-angular&#39;;
+
+class MyPage {
+  @ViewChild(Slides) slides: Slides;
+
+  ionViewWillEnter() {
+    this.slides.autoplayDisableOnInteraction = false; //禁止slider拖动后autoPlay失效
+  }
+}</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -77,7 +123,7 @@
                 <ul id="audio-list" style="display:none">
                     
                         
-                            <li title='0' data-url='https://isujin.com/wp-content/uploads/2018/03/%E5%86%8D%E8%A7%81%E6%88%91%E7%9A%84%E7%88%B1%E4%BA%BA.mp3?_=1'></li>
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
                         
                     
                 </ul>
@@ -86,11 +132,11 @@
         
     <div id='gitalk-container' class="comment link"
         data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='TriDiamondBlog'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
         data-d='false'
     >查看评论</div>
 
@@ -160,5 +206,18 @@
     </div>
 </div>
 
+
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/css/dracula.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 
 </html>

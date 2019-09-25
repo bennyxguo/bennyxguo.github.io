@@ -9,13 +9,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
-    <meta name="keywords" content="Fechin,"> 
+    <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
     <meta name="description" content="Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.所以如果要在lumen上使用laravel的passpo,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_g9158mzzlbq.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/diaspora.css">
     <link rel="stylesheet" href="/css/tridiamond.css">
 </head>
@@ -44,16 +44,48 @@
 </div>
 
     <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">Lumen 使用 laravel passport</h1>
-        <div class="stuff">
-            <span>一月 10, 2019</span>
-            
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
-
-
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover" style="
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://s2.ax1x.com/2019/09/18/noNZf1.png);">
         </div>
+        <div class="else">
+            <p>一月 10, 2019</p>
+            <h3><a href="/2019/01/10/2019-01-10-lumen-passport-usage/" title="Lumen 使用 laravel passport">Lumen 使用 laravel passport</a></h3>
+            <p>Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.所以如果要在lumen上使用laravel的pass...</p>
+            
+                <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
+            
+            <p class="article-count">
+                <span>
+                    <b class="iconfont icon-text2"></b>
+                    766字
+                </span>
+                <span>
+                    <b class="iconfont icon-timer__s"></b>
+                    3分钟
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    “Keep busy coding keep busy dying" - 三·钻 TriDiamond 
+                </p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
         <div class="content markdown">
             <p>Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.<br>所以如果要在lumen上使用laravel的passport就需要安装另外一个插件.</p>
 <h2 id="安装要求"><a href="#安装要求" class="headerlink" title="安装要求"></a>安装要求</h2><ul>
@@ -61,13 +93,31 @@
 <li>Lumen &gt;= 5.3</li>
 </ul>
 <h2 id="Composer安装lumen-passport插件"><a href="#Composer安装lumen-passport插件" class="headerlink" title="Composer安装lumen-passport插件"></a>Composer安装lumen-passport插件</h2><p>首先安装 Lumen Passport</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入项目根目录</span></span><br><span class="line">$ <span class="built_in">cd</span> lumen-app</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用composer安装插件</span></span><br><span class="line">$ composer require dusterio/lumen-passport</span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># 进入项目根目录
+$ cd lumen-app
 
+# 使用composer安装插件
+$ composer require dusterio/lumen-passport</code></pre>
 <h2 id="修改-bootstrap-bootstrap-app-php"><a href="#修改-bootstrap-bootstrap-app-php" class="headerlink" title="修改 bootstrap (bootstrap/app.php)"></a>修改 bootstrap (bootstrap/app.php)</h2><p>需要引入Laravel Passport的provider和Lumen的一些provider</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启 Facades</span></span><br><span class="line">$app-&gt;withFacades();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启 Eloquent</span></span><br><span class="line">$app-&gt;withEloquent();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启 auth 中间件</span></span><br><span class="line">$app-&gt;routeMiddleware([</span><br><span class="line">    <span class="string">'auth'</span> =&gt; App\Http\Middleware\Authenticate::class,</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注册laravel passport的provider和lumen passport的provider</span></span><br><span class="line">$app-&gt;register(Laravel\Passport\PassportServiceProvider::class);</span><br><span class="line">$app-&gt;register(Dusterio\LumenPassport\PassportServiceProvider::class);</span><br></pre></td></tr></table></figure>
+<pre><code class="php">// 开启 Facades
+$app-&gt;withFacades();
 
-<h2 id="数据表移植和安装Laravel-Passport"><a href="#数据表移植和安装Laravel-Passport" class="headerlink" title="数据表移植和安装Laravel Passport"></a>数据表移植和安装Laravel Passport</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 移植passport的数据表</span></span><br><span class="line">php artisan migrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装passport需要的配置</span></span><br><span class="line">php artisan passport:install</span><br></pre></td></tr></table></figure>
+// 开启 Eloquent
+$app-&gt;withEloquent();
 
+// 开启 auth 中间件
+$app-&gt;routeMiddleware([
+    &#39;auth&#39; =&gt; App\Http\Middleware\Authenticate::class,
+]);
+
+// 注册laravel passport的provider和lumen passport的provider
+$app-&gt;register(Laravel\Passport\PassportServiceProvider::class);
+$app-&gt;register(Dusterio\LumenPassport\PassportServiceProvider::class);</code></pre>
+<h2 id="数据表移植和安装Laravel-Passport"><a href="#数据表移植和安装Laravel-Passport" class="headerlink" title="数据表移植和安装Laravel Passport"></a>数据表移植和安装Laravel Passport</h2><pre><code class="bash"># 移植passport的数据表
+php artisan migrate
+
+# 安装passport需要的配置
+php artisan passport:install</code></pre>
 <h2 id="Lumen-Passport自带的路由"><a href="#Lumen-Passport自带的路由" class="headerlink" title="Lumen Passport自带的路由"></a>Lumen Passport自带的路由</h2><p>这个lumen-passport包已经引入了一下路由, 但是与web相关的路由因为lumen是没有web的路由的, 只有api的, 所以这个插件已经把web端的路由都去掉了.</p>
 <table>
 <thead>
@@ -177,18 +227,60 @@
 <td>auth</td>
 </tr>
 </tbody></table>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>修改 <figure class="highlight plain"><figcaption><span>里面的配置, 按照项目需要修改. 下面是一个简单的例子</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```php</span><br><span class="line">return [</span><br><span class="line">    &apos;defaults&apos; =&gt; [</span><br><span class="line">        &apos;guard&apos; =&gt; &apos;api&apos;,</span><br><span class="line">        &apos;passwords&apos; =&gt; &apos;users&apos;,</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    &apos;guards&apos; =&gt; [</span><br><span class="line">        &apos;api&apos; =&gt; [</span><br><span class="line">            &apos;driver&apos; =&gt; &apos;passport&apos;,</span><br><span class="line">            &apos;provider&apos; =&gt; &apos;users&apos;,</span><br><span class="line">        ],</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    &apos;providers&apos; =&gt; [</span><br><span class="line">        &apos;users&apos; =&gt; [</span><br><span class="line">            &apos;driver&apos; =&gt; &apos;eloquent&apos;,</span><br><span class="line">            &apos;model&apos; =&gt; \App\User::class</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">];</span><br></pre></td></tr></table></figure></p>
-<p>需要在 <figure class="highlight plain"><figcaption><span>复制到项目根目录下的```config```文件夹里面, 如果没有config文件夹, 需要手动添加一个.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后在```bootstrap/app.php```最前面加入配置应用, 因为lumen是不自动引入config里面的配置的.</span><br><span class="line">```php</span><br><span class="line">$app-&gt;configure(&apos;auth&apos;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>修改 <code>config/auth.php</code> 里面的配置, 按照项目需要修改. 下面是一个简单的例子</p>
+<pre><code class="php">return [
+    &#39;defaults&#39; =&gt; [
+        &#39;guard&#39; =&gt; &#39;api&#39;,
+        &#39;passwords&#39; =&gt; &#39;users&#39;,
+    ],
+
+    &#39;guards&#39; =&gt; [
+        &#39;api&#39; =&gt; [
+            &#39;driver&#39; =&gt; &#39;passport&#39;,
+            &#39;provider&#39; =&gt; &#39;users&#39;,
+        ],
+    ],
+
+    &#39;providers&#39; =&gt; [
+        &#39;users&#39; =&gt; [
+            &#39;driver&#39; =&gt; &#39;eloquent&#39;,
+            &#39;model&#39; =&gt; \App\User::class
+        ]
+    ]
+];</code></pre>
+<p>需要在 <code>vendor\laravel\lumen-framework\config\auth.php</code> 复制到项目根目录下的<code>config</code>文件夹里面, 如果没有config文件夹, 需要手动添加一个.</p>
+<p>然后在<code>bootstrap/app.php</code>最前面加入配置应用, 因为lumen是不自动引入config里面的配置的.</p>
+<pre><code class="php">$app-&gt;configure(&#39;auth&#39;);</code></pre>
 <h2 id="注册路由"><a href="#注册路由" class="headerlink" title="注册路由"></a>注册路由</h2><p>需要在<code>Provider\AuthServiceProviders.php</code>里面的<code>boot</code>方法里面注册路由</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Boot the authentication services for the application.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> void</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Here you may define how you wish users to be authenticated for your Lumen</span></span><br><span class="line">    <span class="comment">// application. The callback which receives the incoming request instance</span></span><br><span class="line">    <span class="comment">// should return either a User instance or null. You're free to obtain</span></span><br><span class="line">    <span class="comment">// the User instance via an API token or any other method necessary.</span></span><br><span class="line"></span><br><span class="line">    LumenPassport::routes(<span class="keyword">$this</span>-&gt;app); <span class="comment">// 注册路由</span></span><br><span class="line"></span><br><span class="line">    LumenPassport::tokensExpireIn(Carbon::now()-&gt;addDays(<span class="number">7</span>));</span><br><span class="line"></span><br><span class="line">    LumenPassport::refreshTokensExpireIn(Carbon::now()-&gt;addDays(<span class="number">30</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="php">/**
+* Boot the authentication services for the application.
+*
+* @return void
+*/
+public function boot()
+{
+    // Here you may define how you wish users to be authenticated for your Lumen
+    // application. The callback which receives the incoming request instance
+    // should return either a User instance or null. You&#39;re free to obtain
+    // the User instance via an API token or any other method necessary.
 
+    LumenPassport::routes($this-&gt;app); // 注册路由
+
+    LumenPassport::tokensExpireIn(Carbon::now()-&gt;addDays(7));
+
+    LumenPassport::refreshTokensExpireIn(Carbon::now()-&gt;addDays(30));
+}</code></pre>
 <p>简单路由注册</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dusterio\LumenPassport\LumenPassport::routes(<span class="keyword">$this</span>-&gt;app);</span><br></pre></td></tr></table></figure>
-
+<pre><code class="php">Dusterio\LumenPassport\LumenPassport::routes($this-&gt;app);</code></pre>
 <p>通用版本控制的路由</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dusterio\LumenPassport\LumenPassport::routes(<span class="keyword">$this</span>-&gt;app, [<span class="string">'prefix'</span> =&gt; <span class="string">'v1/oauth'</span>]);</span><br></pre></td></tr></table></figure>
+<pre><code class="php">Dusterio\LumenPassport\LumenPassport::routes($this-&gt;app, [&#39;prefix&#39; =&gt; &#39;v1/oauth&#39;]);</code></pre>
+<h2 id="用户模型"><a href="#用户模型" class="headerlink" title="用户模型"></a>用户模型</h2><p>需要在用户模型里面加入<code>HasApiTokens</code>的trait, 例子:</p>
+<pre><code class="php">class User extends Model implements AuthenticatableContract, AuthorizableContract
+{
+    use HasApiTokens, Authenticatable, Authorizable;
 
-<h2 id="用户模型"><a href="#用户模型" class="headerlink" title="用户模型"></a>用户模型</h2><p>需要在用户模型里面加入<figure class="highlight plain"><figcaption><span>例子:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```php</span><br><span class="line">class User extends Model implements AuthenticatableContract, AuthorizableContract</span><br><span class="line">&#123;</span><br><span class="line">    use HasApiTokens, Authenticatable, Authorizable;</span><br><span class="line"></span><br><span class="line">    /* rest of the model */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+    /* rest of the model */
+}</code></pre>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>其他的详细文档可以查看lumen-passport的插件<a href="https://github.com/dusterio/lumen-passport" target="_blank" rel="noopener">github</a></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
@@ -199,7 +291,7 @@
                 <ul id="audio-list" style="display:none">
                     
                         
-                            <li title='0' data-url='https://isujin.com/wp-content/uploads/2018/03/%E5%86%8D%E8%A7%81%E6%88%91%E7%9A%84%E7%88%B1%E4%BA%BA.mp3?_=1'></li>
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
                         
                     
                 </ul>
@@ -208,11 +300,11 @@
         
     <div id='gitalk-container' class="comment link"
         data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='TriDiamondBlog'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
         data-d='false'
     >查看评论</div>
 
@@ -282,5 +374,18 @@
     </div>
 </div>
 
+
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/css/dracula.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 
 </html>
