@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>阿里云GitLab Webhook 自动部署手册 - 三·钻 TriDiamond</title>
+    <title>GitLab Webhook 自动部署 - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
+    <meta name="description" content="“Think like an artist, develop like an artisan” by 三·钻 TriDiamond,创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
 
 如果创建失败首先需要创建/home/www/.ssh这个文件夹
 
@@ -20,8 +20,9 @@
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
-    <link rel="stylesheet" href="/css/diaspora.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="/css/tridiamond.css">
+    <link rel="stylesheet" href="/css/animate.css">
 </head>
 </html>
 <body class="loading">
@@ -32,7 +33,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" data-url="https://tridiamond.tech"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">阿里云GitLab Webhook 自动部署手册</h3>
+    <h3 class="subtitle">GitLab Webhook 自动部署</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -50,23 +51,25 @@
     <div class="section">
         <div class= article-header-wrapper>
     <div class="article-header">
-        <div class="article-cover" style="
+        <div class="article-cover animated bounceIn" style="
+            animation-delay: 600ms;
+            animation-duration: 800ms;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
                 url();">
         </div>
         <div class="else">
-            <p>九月 20, 2019</p>
-            <h3><a href="/2019/09/20/2019-01-10-aliyun-webhook-setup/" title="阿里云GitLab Webhook 自动部署手册">阿里云GitLab Webhook 自动部署手册</a></h3>
-            <p>创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
+            <p class="animated fadeInDown">九月 20, 2019</p>
+            <h3 class="animated fadeInDown"><a href="/2019/09/20/2019-01-10-aliyun-webhook-setup/" title="GitLab Webhook 自动部署">GitLab Webhook 自动部署</a></h3>
+            <p class="animated fadeInDown">创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
 
 如果创建失败首先需要创建/home/www/.ssh这个文件夹
 
 查看公钥cat /home/www...</p>
             
-                <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
             
-            <p class="article-count">
+            <p class="article-count animated fadeInDown">
                 <span>
                     <b class="iconfont icon-text2"></b>
                     424字
@@ -85,8 +88,8 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    “Keep busy coding keep busy dying" - 三·钻 TriDiamond 
-                </p> 
+                   “Think like an artist, develop like an artisan” by 三·钻 TriDiamond
+                </p>
             </div>
         </div>
     </div>
@@ -140,7 +143,7 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
 }</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
             </audio>
             
@@ -173,10 +176,20 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
     </div>
 </div>
 </body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            三·钻 TriDiamond
+        </span>.
+        💎 | Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
+    </p>
+</footer>
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
-<script src="/js/diaspora.js"></script>
+<script src="/js/obsidian.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>

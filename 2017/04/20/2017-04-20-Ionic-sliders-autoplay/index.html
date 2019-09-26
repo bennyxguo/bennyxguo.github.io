@@ -10,15 +10,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="我们先了解一下Ionic的Sliders
+    <meta name="description" content="“Think like an artist, develop like an artisan” by 三·钻 TriDiamond,我们先了解一下Ionic的Sliders
 首先Ionic里面的sliders是用Swiper.js的第三方插件实现的, Ionic官方Sliders的文档里面只描述了可以直接写入html标签内的属性,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
-    <link rel="stylesheet" href="/css/diaspora.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="/css/tridiamond.css">
+    <link rel="stylesheet" href="/css/animate.css">
 </head>
 </html>
 <body class="loading">
@@ -47,20 +48,22 @@
     <div class="section">
         <div class= article-header-wrapper>
     <div class="article-header">
-        <div class="article-cover" style="
+        <div class="article-cover animated bounceIn" style="
+            animation-delay: 600ms;
+            animation-duration: 800ms;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
                 url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
         </div>
         <div class="else">
-            <p>四月 20, 2017</p>
-            <h3><a href="/2017/04/20/2017-04-20-Ionic-sliders-autoplay/" title="IONIC 3 使用sliders轮播时拖动后autoplay失效解决方法">IONIC 3 使用sliders轮播时拖动后autoplay失效解决方法</a></h3>
-            <p>我们先了解一下Ionic的Sliders
+            <p class="animated fadeInDown">四月 20, 2017</p>
+            <h3 class="animated fadeInDown"><a href="/2017/04/20/2017-04-20-Ionic-sliders-autoplay/" title="IONIC 3 使用sliders轮播时拖动后autoplay失效解决方法">IONIC 3 使用sliders轮播时拖动后autoplay失效解决方法</a></h3>
+            <p class="animated fadeInDown">我们先了解一下Ionic的Sliders
 首先Ionic里面的sliders是用Swiper.js的第三方插件实现的, Ionic官方Sliders的文档里面只描述了可以直接写入html标签内的...</p>
             
-                <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
             
-            <p class="article-count">
+            <p class="article-count animated fadeInDown">
                 <span>
                     <b class="iconfont icon-text2"></b>
                     234字
@@ -79,8 +82,8 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    “Keep busy coding keep busy dying" - 三·钻 TriDiamond 
-                </p> 
+                   “Think like an artist, develop like an artisan” by 三·钻 TriDiamond
+                </p>
             </div>
         </div>
     </div>
@@ -116,7 +119,7 @@ class MyPage {
 }</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
             </audio>
             
@@ -149,10 +152,20 @@ class MyPage {
     </div>
 </div>
 </body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            三·钻 TriDiamond
+        </span>.
+        💎 | Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
+    </p>
+</footer>
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
-<script src="/js/diaspora.js"></script>
+<script src="/js/obsidian.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
