@@ -19,7 +19,7 @@
   opacity: 0.85;
   background-image: 
               radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.46), #100e17),
-              url(https://s2.ax1x.com/2019/09/19/nLtSiD.png);
+              url(/img/cover.jpg);
   z-index: -1;
 }
 .article .main .content {
