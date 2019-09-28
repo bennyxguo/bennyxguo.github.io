@@ -10,15 +10,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="“Think like an artist, develop like an artisan” by 三·钻 TriDiamond,"> 
+    <meta name="description" content="“Think like an artist, develop like an artisan”,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/obsidian.css">
-    <link rel="stylesheet" href="/css/tridiamond.css">
-    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
 </html>
 <body class="loading">
@@ -27,20 +26,20 @@
     <div class="nav">
     <ul id="menu-menu" class="menu">
         
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/whoami/" title="关于我" target="_blank" rel="noopener">关于我</a>
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/whoami/" title="ABOUT">ABOUT</a>
         </li>
         
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="分类" target="_blank" rel="noopener">分类</a>
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/categories/" title="CATEGORY">CATEGORY</a>
         </li>
         
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/tags/" title="标签" target="_blank" rel="noopener">标签</a>
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/tags/" title="TAGS">TAGS</a>
         </li>
         
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/archives/" title="归档" target="_blank" rel="noopener">归档</a>
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/archives/" title="ARCHIVES">ARCHIVES</a>
         </li>
         
     </ul>
@@ -56,39 +55,47 @@
 <div id="header">
     <div>
         <a class="image-logo animated fadeInDown" href="/"></a>
-        <ul id="menu-menu" class="menu">
+        <ul id="menu-menu" class="menu text-menu">
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/whoami/" title="关于我">关于我</a>
+                <a href="/whoami/" title="ABOUT">ABOUT</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/categories/" title="分类">分类</a>
+                <a href="/categories/" title="CATEGORY">CATEGORY</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/tags/" title="标签">标签</a>
+                <a href="/tags/" title="TAGS">TAGS</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/archives/" title="归档">归档</a>
+                <a href="/archives/" title="ARCHIVES">ARCHIVES</a>
             </li>
             
         </ul>
-        <!-- <div class="icon-menu switchmenu gradient-text"></div> -->
+        <div class="icon-menu switchmenu gradient-text animated fadeInDown"></div>
     </div>
 </div>
 <div id="screen">
     <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/cover.jpg" id="cover" width="1920" height="1080">
+        <!-- <div class="layer" data-depth="0.4"> -->
+            <!-- <img src="/img/cover.jpg" id="cover" width="1920" height="1080"> -->
+        <!-- </div> -->
+        <div class="cover animated fadeIn" style="
+            animation-delay: 900ms;
+            animation-duration: 2.8s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/welcome-cover.jpg);">
         </div>
     </div>
     <div id="vibrant">
-        <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
+        <!-- <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
             <polygon opacity="0.7" fill="#000" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
+        </svg> -->
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" opacity="0.7" height="100%" viewBox="0 0 1440 320"><path fill="#000" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,133.3C384,117,480,139,576,176C672,213,768,267,864,266.7C960,267,1056,213,1152,197.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> -->
+        <!-- <div></div> -->
     </div>
     
     <div id="post0">
@@ -96,7 +103,9 @@
         <h2 class="animated fadeInDown"><a href="/2019/09/20/2019-01-10-aliyun-webhook-setup/" title="GitLab Webhook 自动部署" class="posttitle">GitLab Webhook 自动部署</a></h2>
         <p class="summary animated fadeInDown">创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
 
-如果创建失败首先需要...</p>
+如果创建失败首先需要创建/home/www/.ssh这个文件夹
+
+查看公钥cat /home/www...</p>
         
             <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
         
@@ -119,7 +128,7 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    “Think like an artist, develop like an artisan” by 三·钻 TriDiamond
+                    “Think like an artist, develop like an artisan”
                 </p> 
             </div>
         </div>
@@ -136,6 +145,7 @@
 
 </body>
 <footer>
+    <!-- <svg class="bottom-wave" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1440 240"><path fill="#100e17" fill-opacity="1" d="M0,128L34.3,133.3C68.6,139,137,149,206,144C274.3,139,343,117,411,117.3C480,117,549,139,617,128C685.7,117,754,75,823,74.7C891.4,75,960,117,1029,144C1097.1,171,1166,181,1234,176C1302.9,171,1371,149,1406,138.7L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg> -->
     <p class="copyright" id="copyright">
         &copy; 2019
         <span class="gradient-text">
@@ -145,7 +155,7 @@
         Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
     </p>
 </footer>
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>

@@ -211,75 +211,78 @@ $(function() {
         $('body').addClass('touch')
     }
     if ($('#preview').length) {
-        var cover = {};
-        cover.t = $('#cover');
-        cover.w = cover.t.attr('width');
-        cover.h = cover.t.attr('height');
-        ;(cover.o = function() {
-            $('#mark').height(window.innerHeight)
-        })();
-        if (cover.t.prop('complete')) {
-            // why setTimeout ?
-            setTimeout(function() { cover.t.load() }, 0)
-        }
-        cover.t.on('load', function() {
-            ;(cover.f = function() {
-                var _w = $('#mark').width(), _h = $('#mark').height(), x, y, i, e;
-                e = (_w >= 1000 || _h >= 1000) ? 1000 : 500;
-                if (_w >= _h) {
-                    i = _w / e * 50;
-                    y = i;
-                    x = i * _w / _h;
-                } else {
-                    i = _h / e * 50;
-                    x = i;
-                    y = i * _h / _w;
-                }
-                $('.layer').css({
-                    'width': _w + x,
-                    'height': _h + y,
-                    'marginLeft': - 0.5 * x,
-                    'marginTop': - 0.5 * y
-                })
-                if (!cover.w) {
-                    cover.w = cover.t.width();
-                    cover.h = cover.t.height();
-                }
-                Obsidian.F($('#cover')[0], cover.w, cover.h)
-            })();
-            setTimeout(function() {
-                $('html, body').removeClass('loading')
-            }, 500)
-            $('#mark').parallax()
-            var vibrant = new Vibrant(cover.t[0]);
-            var swatches = vibrant.swatches()
-            if (swatches['DarkVibrant']) {
-                // $('#vibrant polygon').css('fill', swatches['DarkVibrant'].getHex())
-                $('#vibrant div').css('background-color', swatches['DarkVibrant'].getHex())
-            }
-            if (swatches['Vibrant']) {
-                $('.icon-menu').css('color', swatches['Vibrant'].getHex())
-            }
-        })
-        if (!cover.t.attr('src')) {
-            alert('Please set the post thumbnail')
-        }
-        $('#preview').css('min-height', window.innerHeight)
+    //     var cover = {};
+    //     cover.t = $('#cover');
+    //     cover.w = cover.t.attr('width');
+    //     cover.h = cover.t.attr('height');
+    //     ;(cover.o = function() {
+    //         $('#mark').height(window.innerHeight)
+    //     })();
+    //     if (cover.t.prop('complete')) {
+    //         // why setTimeout ?
+    //         setTimeout(function() { cover.t.load() }, 0)
+    //     }
+    //     cover.t.on('load', function() {
+    //         ;(cover.f = function() {
+    //             var _w = $('#mark').width(), _h = $('#mark').height(), x, y, i, e;
+    //             e = (_w >= 1000 || _h >= 1000) ? 1000 : 500;
+    //             if (_w >= _h) {
+    //                 i = _w / e * 50;
+    //                 y = i;
+    //                 x = i * _w / _h;
+    //             } else {
+    //                 i = _h / e * 50;
+    //                 x = i;
+    //                 y = i * _h / _w;
+    //             }
+    //             $('.layer').css({
+    //                 'width': _w + x,
+    //                 'height': _h + y,
+    //                 'marginLeft': - 0.5 * x,
+    //                 'marginTop': - 0.5 * y
+    //             })
+    //             if (!cover.w) {
+    //                 cover.w = cover.t.width();
+    //                 cover.h = cover.t.height();
+    //             }
+    //             Obsidian.F($('#cover')[0], cover.w, cover.h)
+    //         })();
+    //         setTimeout(function() {
+    //             $('html, body').removeClass('loading')
+    //         }, 500)
+    //         $('#mark').parallax()
+    //         var vibrant = new Vibrant(cover.t[0]);
+    //         var swatches = vibrant.swatches()
+    //         if (swatches['DarkVibrant']) {
+    //             // $('#vibrant polygon').css('fill', swatches['DarkVibrant'].getHex())
+    //             // $('#vibrant div').css('background-color', swatches['DarkVibrant'].getHex())
+    //         }
+    //         if (swatches['Vibrant']) {
+    //             $('.icon-menu').css('color', swatches['Vibrant'].getHex())
+    //         }
+    //     })
+    //     if (!cover.t.attr('src')) {
+    //         alert('Please set the post thumbnail')
+    //     }
+        // $('#preview').css('min-height', window.innerHeight)
         Obsidian.PS()
         $('.pview a').addClass('pviewa')
-        var T;
-        $(window).on('resize', function() {
-            clearTimeout(T)
-            T = setTimeout(function() {
-                if (!Obsidian.P() && location.href == Home) {
-                    cover.o()
-                    cover.f()
-                }
-                if ($('#loader').attr('class')) {
-                    Obsidian.loading()
-                }
-            }, 300)
-        })
+        // var T;
+        // $(window).on('resize', function() {
+        //     clearTimeout(T)
+        //     T = setTimeout(function() {
+        //         if (!Obsidian.P() && location.href == Home) {
+        //             cover.o()
+        //             cover.f()
+        //         }
+        //         if ($('#loader').attr('class')) {
+        //             Obsidian.loading()
+        //         }
+        //     }, 300)
+        // })
+        setTimeout(function() {
+            $('html, body').removeClass('loading')
+        }, 500);
     } else {
         $('#single').css('min-height', window.innerHeight)
         setTimeout(function() {

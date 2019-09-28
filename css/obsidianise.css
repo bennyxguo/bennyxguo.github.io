@@ -21,6 +21,8 @@
               radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.46), #100e17),
               url(/img/cover.jpg);
   z-index: -1;
+  animation-delay: 900ms;
+  animation-duration: 1.2s;
 }
 .article .main .content {
   color:#c2c2c2;

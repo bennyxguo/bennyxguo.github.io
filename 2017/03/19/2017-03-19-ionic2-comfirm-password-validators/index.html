@@ -10,16 +10,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="“Think like an artist, develop like an artisan” by 三·钻 TriDiamond,开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
+    <meta name="description" content="“Think like an artist, develop like an artisan”,开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
 首先这篇文章是默认您已经了解怎么,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/obsidian.css">
-    <link rel="stylesheet" href="/css/tridiamond.css">
-    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
 </html>
 <body class="loading">
@@ -48,9 +47,9 @@
     <div class="section">
         <div class= article-header-wrapper>
     <div class="article-header">
-        <div class="article-cover animated bounceIn" style="
+        <div class="article-cover animated fadeIn" style="
             animation-delay: 600ms;
-            animation-duration: 800ms;
+            animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
                 url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
@@ -82,7 +81,7 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                   “Think like an artist, develop like an artisan” by 三·钻 TriDiamond
+                   “Think like an artist, develop like an artisan”
                 </p>
             </div>
         </div>
@@ -126,8 +125,7 @@ export class PasswordPage {
 
   }
 }</code></pre>
-<h1 id="创建自定义认证器"><a href="#创建自定义认证器" class="headerlink" title="创建自定义认证器"></a>创建自定义认证器</h1><p><img src="https://github.com/Bennygx/bennygx.github.io/blob/master/assets/images/advance-validator-screenshot.png?raw=true" alt></p>
-<ul>
+<h1 id="创建自定义认证器"><a href="#创建自定义认证器" class="headerlink" title="创建自定义认证器"></a>创建自定义认证器</h1><ul>
 <li>我们首先在项目根目录创建 <strong>validators</strong> 的文件夹</li>
 <li>然后在里面创建 <strong>advance-validators.ts</strong> 的ts文件</li>
 <li>在 <strong>advance-validators.ts</strong> 里面编以下代码</li>
@@ -210,6 +208,7 @@ export class AdvanceValidator {
 </div>
 </body>
 <footer>
+    <!-- <svg class="bottom-wave" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1440 240"><path fill="#100e17" fill-opacity="1" d="M0,128L34.3,133.3C68.6,139,137,149,206,144C274.3,139,343,117,411,117.3C480,117,549,139,617,128C685.7,117,754,75,823,74.7C891.4,75,960,117,1029,144C1097.1,171,1166,181,1234,176C1302.9,171,1371,149,1406,138.7L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg> -->
     <p class="copyright" id="copyright">
         &copy; 2019
         <span class="gradient-text">
@@ -219,7 +218,7 @@ export class AdvanceValidator {
         Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
     </p>
 </footer>
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>

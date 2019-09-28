@@ -123,12 +123,24 @@ audio {
 #screen {
   z-index: 1;
   position: relative;
+  background: #100e17;
   border-bottom-right-radius: 200px;
+}
+
+#screen .cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.85;
 }
 
 #mark {
   width: 100%;
-  height: 560px;
+  height: 100vh;
   overflow: hidden;
   border-bottom-right-radius: 200px;
 }
@@ -156,6 +168,9 @@ audio {
 }
 
 .icon-menu {
+  display: none;
+  animation-delay: 800ms;
+  animation-duration: 1s;
   font-size: 38px;
   padding: 6px 6px 5px;
   border-radius: 2px;
@@ -192,7 +207,7 @@ audio {
 /* Screen gradient style */
 .screen-gradient-after {
   background-image: -webkit-gradient(linear,left top,right top,from(var(--primary)),to(var(--gradient-dark)));
-  background-image: linear-gradient(to right, var(--primary), var(--gradient-middle), var(--gradient-dark));
+  background-image: linear-gradient(to right, var(--primary),  var(--dark), var(--gradient-middle), var(--gradient-dark));
   position: relative;
   z-index: 0;
   border-bottom-right-radius: 180px;
@@ -232,9 +247,10 @@ audio {
 .screen-gradient-sponsor p {
   font-weight: 900;
   color: #fff;
-  font-size: 18px;
-  margin-left: 12%;
+  font-size: 20px;
   margin-bottom: 1rem;
+  max-width: 1200px;
+  padding-left: 10%;
 }
 
 body.mu .image-logo {
@@ -259,8 +275,14 @@ body.mu .image-logo {
   background-color: #100e17;
 }
 
+.background-mask {
+  position: absolute;
+  top: 100px;
+  left: 0;
+}
+
 #post0 {
-  width: 28%;
+  width: 38%;
   position: absolute;
   top: 42%;
   left: 10%;
@@ -268,13 +290,14 @@ body.mu .image-logo {
 
 #post0 p:first-child {
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 900;
   animation-delay: 500ms;
   animation-duration: 1.2s;
 }
 
 #post0 h2 {
-  font-size: 28px;
+  font-size: 36px;
   margin-top: 15px;
   animation-delay: 500ms;
   animation-duration: 1.2s;
@@ -290,7 +313,7 @@ body.mu .image-logo {
   animation-delay: 600ms;
   animation-duration: 1s;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   margin-top: 10px;
 }
 
@@ -354,7 +377,7 @@ body.mu .image-logo {
 }
 
 #post0 .post-tags-list-link {
-  color: #fff;
+  color: #9E9E9E;
 }
 
 .here {
@@ -609,8 +632,8 @@ body.touch .scrollbar {
 }
 
 ::-webkit-scrollbar {
-  width: 24px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
   background: #100e17;
   border-left: 1px solid #201c29;
 }
@@ -619,9 +642,13 @@ body.touch .scrollbar {
   background: var(--primary) !important;
   background: -webkit-linear-gradient(var(--secondary), var(--dark)) !important;
   background: linear-gradient(var(--secondary), var(--dark)) !important;
-  border-radius: 30px;
-  -webkit-box-shadow:inset 2px 2px 2px rgba(255,255,255,.25),inset -2px -2px 2px rgba(0,0,0,.25);
-  box-shadow:inset 2px 2px 2px rgba(255,255,255,.25),inset -2px -2px 2px rgba(0,0,0,.25);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
 }
 
 .nav {
@@ -702,7 +729,7 @@ footer .copyright a {
   animation-duration: 1.2s;
   display: flex;
   flex-direction: row-reverse;
-  font-size: 16px;
+  font-size: 24px;
   margin: 0 20px 20px 0;
 }
 
@@ -716,6 +743,15 @@ footer .copyright a {
   -webkit-box-decoration-break: clone !important;
   box-decoration-break: clone !important;
   transition: background 400ms ease-in;
+}
+
+.nav .menu a {
+  color: #333;
+  background: #100e17 !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-box-decoration-break: clone !important;
+  box-decoration-break: clone !important;
 }
 
 .menu a:hover {
@@ -795,7 +831,6 @@ footer .copyright a {
 .set .tag-list-item {
   display: flex;
   font-size: 17px;
-  /* text-align: left */
 }
 
 .set .category-list-item .category-list-count,
@@ -841,7 +876,7 @@ footer .copyright a {
   max-width: 768px;
   margin: 30px auto 40px;
   padding-left: 30px;
-  border-left: 3px solid #B0BEC5
+  border-left: 3px solid rgba(255, 255, 255, 0.5)
 }
 
 .timeline .timeline-title::before,
@@ -851,7 +886,7 @@ footer .copyright a {
   top: 50%;
   transform: translateY(-50%);
   border-style: solid;
-  border-color: #B0BEC5;
+  border-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   background: white;
   content: "";
@@ -879,13 +914,15 @@ footer .copyright a {
 }
 
 .timeline-title {
-  font-size: 28px
+  font-size: 28px;
+  color: #fff;
+  font-weight: 900;
 }
 
 .timeline-title::before {
   width: 12px;
   height: 12px;
-  border-width: 4px;
+  border-width: 5px;
   left: -42px
 }
 
@@ -897,7 +934,7 @@ footer .copyright a {
 .timeline-subtitle::before {
   width: 11px;
   height: 11px;
-  border-width: 3px;
+  border-width: 4px;
   left: -40px
 }
 
@@ -913,8 +950,8 @@ footer .copyright a {
   top: 50%;
   transform: translateY(-50%);
   display: inline-block;
-  font-weight: 300;
-  color: #616161;
+  font-weight: 500;
+  color: #fff;
   width: 100px
 }
 
@@ -1504,7 +1541,7 @@ h1.title {
 }
 
 .post-tags-list-link {
-  color: #fff;
+  color: #9E9E9E;
 }
 
 h1 a,
@@ -1862,6 +1899,10 @@ pre .javascript .function {
     font-size: 24px;
   }
 
+  #post0 h2+p {
+    font-size: 14px;
+  }
+
   .here {
     left: 60px;
     bottom: 50px;
@@ -1882,11 +1923,88 @@ pre .javascript .function {
   .comment .gt-btn-public .gt-btn-text:after {
     content: "";
   }
+
+  .post {
+    width: 900px;
+  }
+
+  .post .post-cover {
+    width: 420px;
+    height: 290px;
+    z-index: 0;
+  }
+
+  .else {
+    top: 10px;
+    width: 420px;
+    height: 290px;
+  }
+
+  .else p:first-child {
+    font-size: 12px;
+    margin: 50px 0 0 60px;
+  }
+
+  .else h3 {
+    font-size: 24px;
+    margin: 10px 60px 0 60px;
+  }
+
+  .else h3+p {
+    margin: 10px 60px 0 60px;
+  }
+
+  .else .post-count {margin:15px 60px 0 60px;}
+  .else .post-tags-list {
+      margin: 10px 60px 0 60px;
+  }
+
+  .screen-gradient-after {
+    border-bottom-right-radius: 0;
+  }
+
+  .article-header {
+    width: 70vw;
+    margin: 0;
+    padding: 0 30px;
+    overflow: hidden;
+  }
+  
+  .article-header .else h3 {
+    font-size: 20px;
+    line-height: 1.1;
+    margin: 10px 100px 0 0;
+  }
+  
+  .article-header .else h3+p {
+    color: #fff;
+    margin: 10px 100px 0 0;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  
+  .article-header .else .article-count {
+    margin:25px 100px 0 0;
+    display: flex;
+    align-content: flex-start;
+    font-size: 12px;
+    font-weight: 900;
+    color: #999;
+  }
+  .article-header .else .article-count span {
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .article-header .else .article-count span b {
+    margin-right: 5px;
+  }
 }
 
 @media screen and (max-width:900px) {
   #mark {
-    height: 480px;
+    height: 100vh;
   }
 
   #header>div {
@@ -1927,6 +2045,56 @@ pre .javascript .function {
   .comment .gt-btn-public .gt-btn-text:after {
     content: "";
   }
+
+  .screen-gradient-sponsor p {
+    font-weight: 900;
+    color: #fff;
+    font-size: 12px;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .post {
+    width: 100%;
+    height: 400px;
+    margin-top: 10px;
+    padding-bottom: 30px;
+  }
+
+  .post:first-of-type {
+    margin-top: 100px;
+  }
+
+  .else {
+    height: auto;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+  }
+
+  .else p:first-child {
+    margin: 30px 0 0 20px;
+  }
+
+  .else h3 {
+    font-size: 24px;
+    margin: 10px 30px 0 20px;
+  }
+
+  .else h3+p {
+    margin: 10px 30px 0 20px;
+  }
+
+  .else .post-count {margin:15px 30px 0 20px;}
+  .else .post-tags-list {
+      margin: 10px 30px 0 20px;
+  }
+
+  .screen-gradient-after {
+    border-bottom-right-radius: 0;
+  }
 }
 
 @media screen and (max-width:780px) {
@@ -1939,7 +2107,7 @@ pre .javascript .function {
   }
 
   #vibrant div {
-    opacity: 0.3;
+    opacity: 0.46;
   }
 
   #container {
@@ -1951,6 +2119,14 @@ pre .javascript .function {
     top: auto;
     width: 70%;
     left: 5%;
+  }
+
+  .text-menu {
+    display: none;
+  }
+
+  .icon-menu {
+    display: block;
   }
 
   .menu {
@@ -2006,6 +2182,11 @@ pre .javascript .function {
 
   .comment .gt-btn-public .gt-btn-text:after {
     content: "";
+  }
+
+  #screen,
+  #mark {
+    border-bottom-right-radius: 0;
   }
 }
 
