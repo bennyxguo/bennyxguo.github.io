@@ -10,10 +10,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="“Think like an artist, develop like an artisan”,"> 
+    
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/obsidian.css">
@@ -45,7 +47,7 @@
     </ul>
     <p class="copyright" id="copyright">
         &copy; 2019 三·钻 TriDiamond.
-        💎Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
     </p>
 </div>
@@ -58,19 +60,19 @@
         <ul id="menu-menu" class="menu text-menu">
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/whoami/" title="ABOUT">ABOUT</a>
+                <a href="/whoami/" title="ABOUT" class="menu-link">ABOUT</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/categories/" title="CATEGORY">CATEGORY</a>
+                <a href="/categories/" title="CATEGORY" class="menu-link">CATEGORY</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/tags/" title="TAGS">TAGS</a>
+                <a href="/tags/" title="TAGS" class="menu-link">TAGS</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/archives/" title="ARCHIVES">ARCHIVES</a>
+                <a href="/archives/" title="ARCHIVES" class="menu-link">ARCHIVES</a>
             </li>
             
         </ul>
@@ -79,32 +81,18 @@
 </div>
 <div id="screen">
     <div id="mark">
-        <!-- <div class="layer" data-depth="0.4"> -->
-            <!-- <img src="/img/cover.jpg" id="cover" width="1920" height="1080"> -->
-        <!-- </div> -->
         <div class="cover animated fadeIn" style="
             animation-delay: 900ms;
             animation-duration: 2.8s;
             background-image: 
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(/img/welcome-cover.jpg);">
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
+                url(https://s2.ax1x.com/2019/09/18/noNZf1.png);">
         </div>
-    </div>
-    <div id="vibrant">
-        <!-- <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" fill="#000" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg> -->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" opacity="0.7" height="100%" viewBox="0 0 1440 320"><path fill="#000" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,133.3C384,117,480,139,576,176C672,213,768,267,864,266.7C960,267,1056,213,1152,197.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> -->
-        <!-- <div></div> -->
     </div>
     
     <div id="post0">
         <p class="animated fadeInDown">一月 10, 2019</p>
-        <h2 class="animated fadeInDown"><a href="/2019/01/10/2019-01-10-lumen-passport-usage/" title="Lumen 使用 laravel passport" class="posttitle">Lumen 使用 laravel passport</a></h2>
-        <p class="summary animated fadeInDown">Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.所以如果要在lumen上使用laravel的pass...</p>
-        
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
-        
+        <h1 class="animated fadeInDown"><a href="/2019/01/10/2019-01-10-lumen-passport-usage/" title="Lumen 使用 laravel passport" class="posttitle">Lumen 使用 laravel passport</a></h1>
         <p class="post-count animated fadeInDown">
             <span>
                 <b class="iconfont icon-text2"></b>
@@ -115,6 +103,12 @@
                 3分钟
             </span>
         </p>
+        <div class="md-content animated fadeIn">
+            <p>Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.<br>所以如果要在lumen上使用laravel的passport...</p>
+        </div>
+        
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
+        
     </div>
     
 </div>
@@ -124,7 +118,7 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    “Think like an artist, develop like an artisan”
+                  <span class="typed-text"></span>  
                 </p> 
             </div>
         </div>
@@ -142,11 +136,6 @@
     <div class="else">
         <p>一月 10, 2019</p>
         <h3><a href="/2019/01/10/2019-01-10-lumen-multi-oauth/" title="Lumen passport实现多个用户体系下的oauth验证" class="posttitle">Lumen passport实现多个用户体系下的oauth验证</a></h3>
-        <p>这个教程是基于, lumen里面已经安装好了lumen-passport的插件, 如果还没有的话可以先到lumen使用laravel passport教程先安装.
-改写Laravel Passp...</p>
-        
-            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
-        
         <p class="post-count">
             <span>
                 <b class="iconfont icon-text2"></b>
@@ -157,6 +146,28 @@
                 3分钟
             </span>
         </p>
+        <div class="md-content">
+            <p>这个教程是基于, lumen里面已经安装好了lumen-passport的插件, 如果还没有的话可以先到<a href="/2019/01/10/2019-01-10-lumen-passport-usage/">lumen使用laravel passport教程</a>先安装.</p>
+<h2 id="改写Laravel-Passport里面的UserRepository"><a href="#改写Laravel-Passport里面的UserRepository" class="headerlink" title="改写Laravel Passport里面的UserRepository"></a>改写Laravel Passport里面的<code>UserRepository</code></h2><blockquote>
+<p>文件路径 <code>vendor\laravel\passport\src\Bridge\UserRepository.php</code></p>
+</blockquote>
+<ul>
+<li><p>首先需要改写<code>userRepositroy</code>里面的<code>getUserEntityByUserCredentials</code>方法</p>
+</li>
+<li><p>复制<code>userRepositroy</code>里面的<code>getUserEntityByUserCredentials</code>方法, 改名为<code>getEntityByUserCredentials</code></p>
+</li>
+<li><p>在新建的方法里面找到一下代码</p>
+</li>
+</ul>
+<pre><code class="php">$provider = config(&#39;auth.guards.api.provider&#39;);</code></pre>
+<p>改成一下样子</p>
+<pre><code class="php">$provider = config(&#39;auth.guards.&#39;.$provider.&#39;.provider&#39;);</code></pre>
+<ul>
+<li>然后在新的方法<code>getEntityByUserCredentials...</code></li></ul>
+        </div>
+        
+            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
+        
     </div>
 </div>
 
@@ -171,13 +182,6 @@
     <div class="else">
         <p>二月 26, 2017</p>
         <h3><a href="/2017/02/26/2017-02-26-laravel5.4-passport-and-authen/" title="Laravel 5.4 开发笔记" class="posttitle">Laravel 5.4 开发笔记</a></h3>
-        <p>Laravel最近出的Laravel5.4新加了挺多功能的, 比起我用了1年的5.1完善多了. 比较吸引我使用最新的5.4的有几点:
-
-5.4 添加了谷歌内核的浏览器模拟操作
-自带API认证类”...</p>
-        
-            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Laravel-5-4/">Laravel 5.4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li></ul>
-        
         <p class="post-count">
             <span>
                 <b class="iconfont icon-text2"></b>
@@ -188,6 +192,22 @@
                 1分钟
             </span>
         </p>
+        <div class="md-content">
+            <p>Laravel最近出的Laravel5.4新加了挺多功能的, 比起我用了1年的5.1完善多了. 比较吸引我使用最新的5.4的有几点:</p>
+<ul>
+<li>5.4 添加了谷歌内核的浏览器模拟操作</li>
+<li>自带API认证类”PASSPORT”</li>
+<li>路由自动分类, 现有有了Route自己的文件夹然后里面分类好了WEB和API的路由<br>这一篇记录会分享一些我在尝试Laravel 5.4的过程中遇到的问题和经验</li>
+</ul>
+<h2 id="开发记录"><a href="#开发记录" class="headerlink" title="开发记录"></a>开发记录</h2><h3 id="移植-Migrate-用户和API认证表格是出现sql错误"><a href="#移植-Migrate-用户和API认证表格是出现sql错误" class="headerlink" title="移植(Migrate)用户和API认证表格是出现sql错误"></a>移植(Migrate)用户和API认证表格是出现sql错误</h3><pre><code class="console">[Illuminate\Database\QueryException]                                                         
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key  
+   length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`))   </code></pre>
+<pre><code class="console">[PDOException]                                                                               
+  SQLSTATE[42000]: Syntax error or access violation...</code></pre>
+        </div>
+        
+            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Laravel-5-4/">Laravel 5.4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li></ul>
+        
     </div>
 </div>
 
@@ -207,7 +227,7 @@
         <span class="gradient-text">
             三·钻 TriDiamond
         </span>.
-        💎 | Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
     </p>
 </footer>
@@ -215,6 +235,8 @@
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -272,7 +294,7 @@
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/dracula.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -282,4 +304,25 @@
         });
     </script>
 
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
 </html>

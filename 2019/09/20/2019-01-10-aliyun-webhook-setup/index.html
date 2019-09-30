@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="“Think like an artist, develop like an artisan”,创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
+    <meta name="description" content="创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
 
 如果创建失败首先需要创建/home/www/.ssh这个文件夹
 
@@ -18,6 +18,8 @@
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/obsidian.css">
@@ -55,19 +57,11 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(/img/cover.jpg);">
+                url(https://s2.ax1x.com/2019/09/18/n7ku11.png);">
         </div>
         <div class="else">
             <p class="animated fadeInDown">九月 20, 2019</p>
             <h3 class="animated fadeInDown"><a href="/2019/09/20/2019-01-10-aliyun-webhook-setup/" title="GitLab Webhook 自动部署">GitLab Webhook 自动部署</a></h3>
-            <p class="animated fadeInDown">创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
-
-如果创建失败首先需要创建/home/www/.ssh这个文件夹
-
-查看公钥cat /home/www...</p>
-            
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
-            
             <p class="article-count animated fadeInDown">
                 <span>
                     <b class="iconfont icon-text2"></b>
@@ -78,6 +72,9 @@
                     2分钟
                 </span>
             </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
+            
         </div>
     </div>
 </div>
@@ -87,14 +84,14 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                   “Think like an artist, develop like an artisan”
+                    <span></span>  
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="article">
+<div class="article animated fadeIn">
     <div class='main'>
         <div class="content markdown">
             <h2 id="创建与填写部署公钥"><a href="#创建与填写部署公钥" class="headerlink" title="创建与填写部署公钥"></a>创建与填写部署公钥</h2><h3 id="创建部署公钥"><a href="#创建部署公钥" class="headerlink" title="创建部署公钥"></a>创建部署公钥</h3><pre><code class="bash">sudo -Hu www ssh-keygen -t rsa</code></pre>
@@ -182,7 +179,7 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
         <span class="gradient-text">
             三·钻 TriDiamond
         </span>.
-        💎 | Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
     </p>
 </footer>
@@ -190,6 +187,8 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -247,7 +246,7 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/dracula.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -257,4 +256,25 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
         });
     </script>
 
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
 </html>

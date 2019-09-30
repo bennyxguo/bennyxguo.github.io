@@ -10,10 +10,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="“Think like an artist, develop like an artisan”,"> 
+    
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/obsidian.css">
@@ -45,7 +47,7 @@
     </ul>
     <p class="copyright" id="copyright">
         &copy; 2019 三·钻 TriDiamond.
-        💎Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
     </p>
 </div>
@@ -58,19 +60,19 @@
         <ul id="menu-menu" class="menu text-menu">
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/whoami/" title="ABOUT">ABOUT</a>
+                <a href="/whoami/" title="ABOUT" class="menu-link">ABOUT</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/categories/" title="CATEGORY">CATEGORY</a>
+                <a href="/categories/" title="CATEGORY" class="menu-link">CATEGORY</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/tags/" title="TAGS">TAGS</a>
+                <a href="/tags/" title="TAGS" class="menu-link">TAGS</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/archives/" title="ARCHIVES">ARCHIVES</a>
+                <a href="/archives/" title="ARCHIVES" class="menu-link">ARCHIVES</a>
             </li>
             
         </ul>
@@ -79,35 +81,18 @@
 </div>
 <div id="screen">
     <div id="mark">
-        <!-- <div class="layer" data-depth="0.4"> -->
-            <!-- <img src="/img/cover.jpg" id="cover" width="1920" height="1080"> -->
-        <!-- </div> -->
         <div class="cover animated fadeIn" style="
             animation-delay: 900ms;
             animation-duration: 2.8s;
             background-image: 
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(/img/welcome-cover.jpg);">
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
+                url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
         </div>
-    </div>
-    <div id="vibrant">
-        <!-- <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" fill="#000" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg> -->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" opacity="0.7" height="100%" viewBox="0 0 1440 320"><path fill="#000" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,133.3C384,117,480,139,576,176C672,213,768,267,864,266.7C960,267,1056,213,1152,197.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> -->
-        <!-- <div></div> -->
     </div>
     
     <div id="post0">
         <p class="animated fadeInDown">四月 24, 2017</p>
-        <h2 class="animated fadeInDown"><a href="/2017/04/24/2017-04-24-listen-to-back-button/" title="IONIC 2 实现首页双击退出APP" class="posttitle">IONIC 2 实现首页双击退出APP</a></h2>
-        <p class="summary animated fadeInDown">添加绑定值
-首先在app/app.html下加入#myNav, 这个是用于绑定当前页面的导航标签
-
- &lt;ion-nav #myNav [root]=&quot;rootPage&quot;...</p>
-        
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
-        
+        <h1 class="animated fadeInDown"><a href="/2017/04/24/2017-04-24-listen-to-back-button/" title="IONIC 2 实现首页双击退出APP" class="posttitle">IONIC 2 实现首页双击退出APP</a></h1>
         <p class="post-count animated fadeInDown">
             <span>
                 <b class="iconfont icon-text2"></b>
@@ -118,6 +103,15 @@
                 1分钟
             </span>
         </p>
+        <div class="md-content animated fadeIn">
+            <h2 id="添加绑定值"><a href="#添加绑定值" class="headerlink" title="添加绑定值"></a>添加绑定值</h2><blockquote>
+<p>首先在<code>app/app.html</code>下加入<code>#myNav</code>, 这个是用于绑定当前页面的导航标签</p>
+</blockquote>
+<pre><code class="html"> &lt;ion-nav #myNav [root]=&quot;rootPage&quot;&gt...</code></pre>
+        </div>
+        
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+        
     </div>
     
 </div>
@@ -127,7 +121,7 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    “Think like an artist, develop like an artisan”
+                  <span class="typed-text"></span>  
                 </p> 
             </div>
         </div>
@@ -145,11 +139,6 @@
     <div class="else">
         <p>四月 20, 2017</p>
         <h3><a href="/2017/04/20/2017-04-20-Ionic-sliders-autoplay/" title="IONIC 3 使用sliders轮播时拖动后autoplay失效解决方法" class="posttitle">IONIC 3 使用sliders轮播时拖动后autoplay失效解决方法</a></h3>
-        <p>我们先了解一下Ionic的Sliders
-首先Ionic里面的sliders是用Swiper.js的第三方插件实现的, Ionic官方Sliders的文档里面只描述了可以直接写入html标签内的...</p>
-        
-            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
-        
         <p class="post-count">
             <span>
                 <b class="iconfont icon-text2"></b>
@@ -160,6 +149,27 @@
                 1分钟
             </span>
         </p>
+        <div class="md-content">
+            <h4 id="我们先了解一下Ionic的Sliders"><a href="#我们先了解一下Ionic的Sliders" class="headerlink" title="我们先了解一下Ionic的Sliders"></a>我们先了解一下Ionic的Sliders</h4><blockquote>
+<p>首先Ionic里面的sliders是用<a href="http://idangero.us/swiper/api/#.WPhzbPB96Uk" target="_blank" rel="noopener">Swiper.js</a>的第三方插件实现的, Ionic官方Sliders的文档里面只描述了可以直接写入html标签内的属性, 有很多高级属性是没有写在文档里面的. </p>
+</blockquote>
+<h4 id="要怎么改变sliders的其他属性呢"><a href="#要怎么改变sliders的其他属性呢" class="headerlink" title="要怎么改变sliders的其他属性呢?"></a>要怎么改变sliders的其他属性呢?</h4><blockquote>
+<p>那如果我们要用到Swiper的其他属性怎么办呢? Ionic 2.x 的时候我们是可以在options里面传入的, 但是升级Ionic 3.x.x 后sliders的options属性被移除了. 现在要改变sliders的属性我们要用到sliders类. </p>
+</blockquote>
+<h4 id="如何拖动轮播图后不让autoplay失效呢"><a href="#如何拖动轮播图后不让autoplay失效呢" class="headerlink" title="如何拖动轮播图后不让autoplay失效呢?"></a>如何拖动轮播图后不让autoplay失效呢?</h4><blockquote>
+<p>首先我们要引入<code>viewChild</code>和<code>Sliders</code></p>
+</blockquote>
+<pre><code class="ts">import { ViewChild } from &#39;@angular/core&#39;;
+import { Slides } from &#39;ionic-angular&#39;;
+</code></pre>
+<blockquote>
+<p>然后使用<code>ionViewWillEnter</code>在进入页面前改变sliders的<code>autoplayDisableOnInteraction</code>属性</p>
+</blockquote>
+<pre><code class="ts">import { ViewChild...</code></pre>
+        </div>
+        
+            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
+        
     </div>
 </div>
 
@@ -174,14 +184,6 @@
     <div class="else">
         <p>四月 11, 2017</p>
         <h3><a href="/2017/04/11/2017-04-11-Ionic301-ios-blackscreen-fix/" title="修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法" class="posttitle">修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法</a></h3>
-        <p>
-Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB的时候页面会出现黑屏问题。
-
-
-好消息是目前有一个暂时的修复方法。但是这个方法涉及修改Ionic核心代码，所...</p>
-        
-            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
-        
         <p class="post-count">
             <span>
                 <b class="iconfont icon-text2"></b>
@@ -192,6 +194,29 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
                 1分钟
             </span>
         </p>
+        <div class="md-content">
+            <blockquote>
+<p>Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB的时候页面会出现黑屏问题。</p>
+</blockquote>
+<blockquote>
+<p>好消息是目前有一个暂时的修复方法。但是这个方法涉及修改Ionic核心代码，所以如果你们正在使用Ionic3发布APP，可以暂时使用以下办法修复问题。</p>
+</blockquote>
+<blockquote>
+<p>在<code>node_modules/ionic-angular/components/tabs/tabs.js</code>找到一下代码 (468行)</p>
+</blockquote>
+<pre><code class="typescript">getComponent(this._linker, tab.root).then(function (viewController) {
+    if (viewController !== active.component) {
+        // Otherwise, if the page we&#39;re on is not our real root
+        // reset it to our default root type
+        return tab.setRoot(tab.root);
+    }
+}).catch(function () {
+    (void 0) /* console.debug */;
+});...</code></pre>
+        </div>
+        
+            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
+        
     </div>
 </div>
 
@@ -206,14 +231,6 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
     <div class="else">
         <p>四月 10, 2017</p>
         <h3><a href="/2017/04/10/2017-4-10-Ionic3-upgrade-guide/" title="IONIC 2 升级 3 教程" class="posttitle">IONIC 2 升级 3 教程</a></h3>
-        <p>升级步骤
-这一次的升级Ionic 3 换成了使用最新的Angular 4.0, 最新的TypeScript, 添加了懒加载和修复了一些组件的bug.
-
-
-首先更新package.json, 按照...</p>
-        
-            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
-        
         <p class="post-count">
             <span>
                 <b class="iconfont icon-text2"></b>
@@ -224,6 +241,24 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
                 4分钟
             </span>
         </p>
+        <div class="md-content">
+            <h2 id="升级步骤"><a href="#升级步骤" class="headerlink" title="升级步骤"></a>升级步骤</h2><blockquote>
+<p>这一次的升级Ionic 3 换成了使用最新的Angular 4.0, 最新的TypeScript, 添加了懒加载和修复了一些组件的bug.</p>
+</blockquote>
+<ol>
+<li>首先更新<code>package.json</code>, 按照以下的代码相应替换你package.json里面的代码, 并且把你项目根目录下的<code>node_modules</code>文件夹删除掉, 然后运行<code>npm install</code> (如果你是用淘宝镜像可以运行 <code>cnpm install</code>)</li>
+</ol>
+<pre><code class="json">&quot;dependencies&quot;: {
+    &quot;@angular/common&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/compiler&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/core&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/forms&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/http&quot...</code></pre>
+        </div>
+        
+            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
+        
     </div>
 </div>
 
@@ -243,7 +278,7 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
         <span class="gradient-text">
             三·钻 TriDiamond
         </span>.
-        💎 | Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
     </p>
 </footer>
@@ -251,6 +286,8 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -308,7 +345,7 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/dracula.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -318,4 +355,25 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
         });
     </script>
 
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
 </html>

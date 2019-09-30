@@ -10,11 +10,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="“Think like an artist, develop like an artisan”,开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
+    <meta name="description" content="开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
 首先这篇文章是默认您已经了解怎么,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/obsidian.css">
@@ -57,11 +59,6 @@
         <div class="else">
             <p class="animated fadeInDown">三月 19, 2017</p>
             <h3 class="animated fadeInDown"><a href="/2017/03/19/2017-03-19-ionic2-comfirm-password-validators/" title="IONIC 2 - 确认密码">IONIC 2 - 确认密码</a></h3>
-            <p class="animated fadeInDown">开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
-首先这篇文章是默认您已经了解...</p>
-            
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
-            
             <p class="article-count animated fadeInDown">
                 <span>
                     <b class="iconfont icon-text2"></b>
@@ -72,6 +69,9 @@
                     3分钟
                 </span>
             </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+            
         </div>
     </div>
 </div>
@@ -81,14 +81,14 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                   “Think like an artist, develop like an artisan”
+                    <span></span>  
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="article">
+<div class="article animated fadeIn">
     <div class='main'>
         <div class="content markdown">
             <p>开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用<strong>FormBuilder</strong>和<strong>Validators</strong>判断密码是否一致.</p>
@@ -214,7 +214,7 @@ export class AdvanceValidator {
         <span class="gradient-text">
             三·钻 TriDiamond
         </span>.
-        💎 | Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
     </p>
 </footer>
@@ -222,6 +222,8 @@ export class AdvanceValidator {
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -279,7 +281,7 @@ export class AdvanceValidator {
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/dracula.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -289,4 +291,25 @@ export class AdvanceValidator {
         });
     </script>
 
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
 </html>

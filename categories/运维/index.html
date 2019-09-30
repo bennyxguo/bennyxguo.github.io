@@ -10,10 +10,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="“Think like an artist, develop like an artisan”,"> 
+    
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/obsidian.css">
@@ -45,7 +47,7 @@
     </ul>
     <p class="copyright" id="copyright">
         &copy; 2019 三·钻 TriDiamond.
-        💎Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
     </p>
 </div>
@@ -58,19 +60,19 @@
         <ul id="menu-menu" class="menu text-menu">
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/whoami/" title="ABOUT">ABOUT</a>
+                <a href="/whoami/" title="ABOUT" class="menu-link">ABOUT</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/categories/" title="CATEGORY">CATEGORY</a>
+                <a href="/categories/" title="CATEGORY" class="menu-link">CATEGORY</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/tags/" title="TAGS">TAGS</a>
+                <a href="/tags/" title="TAGS" class="menu-link">TAGS</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/archives/" title="ARCHIVES">ARCHIVES</a>
+                <a href="/archives/" title="ARCHIVES" class="menu-link">ARCHIVES</a>
             </li>
             
         </ul>
@@ -79,36 +81,18 @@
 </div>
 <div id="screen">
     <div id="mark">
-        <!-- <div class="layer" data-depth="0.4"> -->
-            <!-- <img src="/img/cover.jpg" id="cover" width="1920" height="1080"> -->
-        <!-- </div> -->
         <div class="cover animated fadeIn" style="
             animation-delay: 900ms;
             animation-duration: 2.8s;
             background-image: 
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(/img/welcome-cover.jpg);">
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
+                url(https://s2.ax1x.com/2019/09/18/n7ku11.png);">
         </div>
-    </div>
-    <div id="vibrant">
-        <!-- <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" fill="#000" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg> -->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" opacity="0.7" height="100%" viewBox="0 0 1440 320"><path fill="#000" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,133.3C384,117,480,139,576,176C672,213,768,267,864,266.7C960,267,1056,213,1152,197.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> -->
-        <!-- <div></div> -->
     </div>
     
     <div id="post0">
         <p class="animated fadeInDown">九月 20, 2019</p>
-        <h2 class="animated fadeInDown"><a href="/2019/09/20/2019-01-10-aliyun-webhook-setup/" title="GitLab Webhook 自动部署" class="posttitle">GitLab Webhook 自动部署</a></h2>
-        <p class="summary animated fadeInDown">创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
-
-如果创建失败首先需要创建/home/www/.ssh这个文件夹
-
-查看公钥cat /home/www...</p>
-        
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
-        
+        <h1 class="animated fadeInDown"><a href="/2019/09/20/2019-01-10-aliyun-webhook-setup/" title="GitLab Webhook 自动部署" class="posttitle">GitLab Webhook 自动部署</a></h1>
         <p class="post-count animated fadeInDown">
             <span>
                 <b class="iconfont icon-text2"></b>
@@ -119,6 +103,16 @@
                 2分钟
             </span>
         </p>
+        <div class="md-content animated fadeIn">
+            <h2 id="创建与填写部署公钥"><a href="#创建与填写部署公钥" class="headerlink" title="创建与填写部署公钥"></a>创建与填写部署公钥</h2><h3 id="创建部署公钥"><a href="#创建部署公钥" class="headerlink" title="创建部署公钥"></a>创建部署公钥</h3><pre><code class="bash">sudo -Hu www ssh-keygen -t rsa</code></pre>
+<blockquote>
+<p>如果创建失败首先需要创建/home/www/.ssh这个文件夹</p>
+</blockquote>
+<h3 id="查看公钥"><a href="#查看公钥" class="headerlink" title="查看公钥"></a>查看公钥</h3><pre><code class="bash">cat /home/www/.ssh...</code></pre>
+        </div>
+        
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
+        
     </div>
     
 </div>
@@ -128,7 +122,7 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    “Think like an artist, develop like an artisan”
+                  <span class="typed-text"></span>  
                 </p> 
             </div>
         </div>
@@ -142,7 +136,6 @@
 </div>
 <div id="preview"></div>
 
-
 </body>
 <footer>
     <!-- <svg class="bottom-wave" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1440 240"><path fill="#100e17" fill-opacity="1" d="M0,128L34.3,133.3C68.6,139,137,149,206,144C274.3,139,343,117,411,117.3C480,117,549,139,617,128C685.7,117,754,75,823,74.7C891.4,75,960,117,1029,144C1097.1,171,1166,181,1234,176C1302.9,171,1371,149,1406,138.7L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg> -->
@@ -151,7 +144,7 @@
         <span class="gradient-text">
             三·钻 TriDiamond
         </span>.
-        💎 | Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
     </p>
 </footer>
@@ -159,6 +152,8 @@
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -216,7 +211,7 @@
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/dracula.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -226,4 +221,25 @@
         });
     </script>
 
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
 </html>

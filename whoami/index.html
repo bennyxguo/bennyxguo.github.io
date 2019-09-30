@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>三·钻 TriDiamond - “Think like an artist, develop like an artisan”</title>
+    <title>三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="“Think like an artist, develop like an artisan”,"> 
+    
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/obsidian.css">
@@ -27,14 +29,12 @@
     <div id="top">
         <a class="icon-left image-icon" href="javascript:history.back()"></a>
     </div>
-    <div class="section">
-        <div class="article">
-            <div class="main">
+    <div class="section dark-obsidian">
+        <div class="article animated fadeIn">
+            <div class="main animated fadeIn">
                 <div class="content">
                 
-                        <link rel="stylesheet" type="text/css" href="/css/obsidianise.css">
-
-<div class="my-links">
+                        <div class="my-links">
   <a class="gradient-text" href="https://github.com/TriDiamond" target="_blank" rel="noopener"><span class=" iconfont icon-github"></span></a>
   <a class="gradient-text" href="https://twitter.com/TriDiamond6" target="_blank" rel="noopener"><span class=" iconfont icon-twitter"></span></a>
   <a class="gradient-text" href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank" rel="noopener"><span class=" iconfont icon-stack-overflow"></span></a>
@@ -48,7 +48,7 @@
 
 <h4 id="关于我-Who-am-I"><a href="#关于我-Who-am-I" class="headerlink" title="关于我 Who am I"></a>关于我 Who am I</h4><img src="https://s2.ax1x.com/2019/09/19/nLtSiD.png" style="height: 50px; width: 50px; border-radius: 50%; margin-bottom: 15px">
 
-<p>欢迎来到我的博客, 我是<b style="color: #42d2ca"> <strong>三·钻 (TriDiamond)</strong> </b>,<br>从专注于 PHP 开发到入坑前端 Vue，Angular和混合APP开发，<br>慢慢升级打怪，刷副本成为一个小小的全栈开发工程师/架构师。</p>
+<p>欢迎来到我的博客, 我是<b style="color: #42d2ca"> <strong>三·钻 (TriDiamond)</strong> </b>,<br>8年里从专注于 PHP 开发到入坑前端 Vue，Angular和混合APP开发，<br>慢慢升级打怪，刷副本成为一个小小的全栈开发工程师/架构师。</p>
 <p>追求极致, 追求完美, 喜欢一个高效, 优雅, 高凝聚力的团队,<br>立志于打造最优秀的产品, 成为一名既优雅而有深度的技术人才。</p>
 <p>热爱户外旅游和接受挑战，与女朋友玩耍逛街，生活和工作平衡，有节奏感的人生。</p>
 <p>——————</p>
@@ -89,7 +89,7 @@
         <span class="gradient-text">
             三·钻 TriDiamond
         </span>.
-        💎 | Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
     </p>
 </footer>
@@ -97,6 +97,8 @@
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -154,7 +156,7 @@
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/dracula.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -164,4 +166,25 @@
         });
     </script>
 
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
 </html>

@@ -11,10 +11,73 @@
  */
 
  .hljs {
+    font-family: Rubik,Lato,lucida grande,lucida sans unicode,Tahoma,Sans-Serif;
     display: block;
+    position: relative;
     overflow-x: auto;
-    padding: 0.5em;
-    background: #282a36;
+    padding: 45px 30px 30px 30px !important; 
+    /* background: #100e17; */
+    clear: both;
+    color: #fff;
+    background: #001628;
+    font-size: 16px;
+  }
+
+  .hljs blockquote {
+    color: #fff;
+    margin: 0 0 1.1em;
+    border-left: 3px solid var(--dark);
+    border-left-width: 6px;
+    background-color: rgba(32,28,41,.75);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 15px 20px;
+    margin: 10px 0;
+  }
+  
+  .hljs code {
+    background: #001628;
+    color: #fff;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    padding: .1rem .3rem .2rem;
+    border-radius: .2rem;
+    opacity: 0.9;
+    scrollbar-color: #666;
+    scrollbar-width: .5em
+  }
+
+  .hljs code a {
+    color: var(--secondary);
+  }
+  
+  .hljs .language-mark {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    font-weight: 900;
+    color: var(--secondary);
+  }
+
+  .language-mark[ref="css"],
+  .language-mark[ref="scss"] {
+      color: #ff8a00
+  }
+
+  .language-mark[ref="html"] {
+      color: #4caf50
+  }
+
+  .language-mark[ref=JSX],
+  .language-mark[ref=JavaScript],
+  .language-mark[ref=jQuery] {
+      color: #03a9f4
+  }
+
+  .language-mark[ref=php],
+  .language-mark[ref=JavaScript],
+  .language-mark[ref=jQuery] {
+      color: #ff79c6;
   }
   
   .hljs-built_in,

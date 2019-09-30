@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Blog 三钻 PHP博客 Laravel Ionic Frontend Backend,"> 
-    <meta name="description" content="“Think like an artist, develop like an artisan”,
+    <meta name="description" content="
 Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB的时候页面会出现黑屏问题。
 
 
@@ -18,6 +18,8 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
     <link rel="stylesheet" href="/css/obsidian.css">
@@ -60,14 +62,6 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
         <div class="else">
             <p class="animated fadeInDown">四月 11, 2017</p>
             <h3 class="animated fadeInDown"><a href="/2017/04/11/2017-04-11-Ionic301-ios-blackscreen-fix/" title="修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法">修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法</a></h3>
-            <p class="animated fadeInDown">
-Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB的时候页面会出现黑屏问题。
-
-
-好消息是目前有一个暂时的修复方法。但是这个方法涉及修改Ionic核心代码，所...</p>
-            
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
-            
             <p class="article-count animated fadeInDown">
                 <span>
                     <b class="iconfont icon-text2"></b>
@@ -78,6 +72,9 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
                     1分钟
                 </span>
             </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
+            
         </div>
     </div>
 </div>
@@ -87,14 +84,14 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                   “Think like an artist, develop like an artisan”
+                    <span></span>  
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="article">
+<div class="article animated fadeIn">
     <div class='main'>
         <div class="content markdown">
             <blockquote>
@@ -172,7 +169,7 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
         <span class="gradient-text">
             三·钻 TriDiamond
         </span>.
-        💎 | Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
     </p>
 </footer>
@@ -180,6 +177,8 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -237,7 +236,7 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/dracula.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js">
+    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -247,4 +246,25 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
         });
     </script>
 
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
 </html>
