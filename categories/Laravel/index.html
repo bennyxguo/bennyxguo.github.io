@@ -17,7 +17,7 @@
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_zzm0n7wzdk.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
@@ -92,7 +92,7 @@
     
     <div id="post0">
         <p class="animated fadeInDown">一月 10, 2019</p>
-        <h1 class="animated fadeInDown"><a href="/2019/01/10/2019-01-10-lumen-passport-usage/" title="Lumen 使用 laravel passport" class="posttitle">Lumen 使用 laravel passport</a></h1>
+        <h1 class="animated fadeInDown"><a href="/2019/01/10/backends/lumen-passport-usage/" title="Lumen 使用 laravel passport" class="posttitle">Lumen 使用 laravel passport</a></h1>
         
             <p class="post-count animated fadeInDown">
                 
@@ -105,6 +105,12 @@
                     <span>
                         <b class="iconfont icon-timer__s"></b>
                         6 mins.
+                    </span>
+                
+                
+                    <span id="/2019/01/10/backends/lumen-passport-usage/" class="leancloud_visitors" data-flag-title="">
+                        <b class="iconfont icon-read"></b>
+                        <i class="leancloud-visitors-count">1000000</i>
                     </span>
                 
             </p>
@@ -143,7 +149,7 @@
     </div>
     <div class="else">
         <p>一月 10, 2019</p>
-        <h3><a href="/2019/01/10/2019-01-10-lumen-multi-oauth/" title="Lumen passport实现多个用户体系下的oauth验证" class="posttitle">Lumen passport实现多个用户体系下的oauth验证</a></h3>
+        <h3><a href="/2019/01/10/backends/lumen-multi-oauth/" title="Lumen passport实现多个用户体系下的oauth验证" class="posttitle">Lumen passport实现多个用户体系下的oauth验证</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
@@ -156,6 +162,12 @@
                     <span>
                         <b class="iconfont icon-timer__s"></b>
                         5 mins.
+                    </span>
+                
+                
+                    <span id="/2019/01/10/backends/lumen-multi-oauth/" class="leancloud_visitors" data-flag-title="">
+                        <b class="iconfont icon-read"></b>
+                        <i class="leancloud-visitors-count">1000000</i>
                     </span>
                 
             </p>
@@ -188,7 +200,7 @@
     </div>
     <div class="else">
         <p>二月 26, 2017</p>
-        <h3><a href="/2017/02/26/2017-02-26-laravel5.4-passport-and-authen/" title="Laravel 5.4 开发笔记" class="posttitle">Laravel 5.4 开发笔记</a></h3>
+        <h3><a href="/2017/02/26/backends/laravel5.4-passport-and-authen/" title="Laravel 5.4 开发笔记" class="posttitle">Laravel 5.4 开发笔记</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
@@ -201,6 +213,12 @@
                     <span>
                         <b class="iconfont icon-timer__s"></b>
                         2 mins.
+                    </span>
+                
+                
+                    <span id="/2017/02/26/backends/laravel5.4-passport-and-authen/" class="leancloud_visitors" data-flag-title="">
+                        <b class="iconfont icon-read"></b>
+                        <i class="leancloud-visitors-count">1000000</i>
                     </span>
                 
             </p>
@@ -247,6 +265,7 @@
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -335,4 +354,29 @@
         });
     }
 </script>
+
+
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+
+        var valine = new Valine();
+
+        function initValine() {
+            valine.init({
+                el: '#vcomments',
+                appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
+                appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: true
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        })
+    </script>
+
 </html>

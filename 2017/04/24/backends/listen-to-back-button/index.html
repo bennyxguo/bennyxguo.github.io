@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Laravel 5.4 开发笔记 - 三·钻 TriDiamond</title>
+    <title>IONIC 2 实现首页双击退出APP - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="Laravel最近出的Laravel5.4新加了挺多功能的, 比起我用了1年的5.1完善多了. 比较吸引我使用最新的5.4的有几点:
+    <meta name="description" content="添加绑定值
+首先在app/app.html下加入#myNav, 这个是用于绑定当前页面的导航标签
 
-5.4 添加了谷歌内核的浏览器模拟操作
-自带API认证类”PA,"> 
+ &amp;lt;ion-nav #myNav [root]=&amp;quot;rootPage&amp;quot;&amp;g,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_zzm0n7wzdk.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
@@ -33,7 +33,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" data-url="https://tridiamond.tech"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">Laravel 5.4 开发笔记</h3>
+    <h3 class="subtitle">IONIC 2 实现首页双击退出APP</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -56,17 +56,17 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(https://s2.ax1x.com/2019/09/18/noYn41.png);">
+                url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
         </div>
         <div class="else">
-            <p class="animated fadeInDown">二月 26, 2017</p>
-            <h3 class="animated fadeInDown"><a href="/2017/02/26/2017-02-26-laravel5.4-passport-and-authen/" title="Laravel 5.4 开发笔记">Laravel 5.4 开发笔记</a></h3>
+            <p class="animated fadeInDown">四月 24, 2017</p>
+            <h3 class="animated fadeInDown"><a href="/2017/04/24/backends/listen-to-back-button/" title="IONIC 2 实现首页双击退出APP">IONIC 2 实现首页双击退出APP</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b>
-                        1.9k
+                        2.4k
                     </span>
                     
                     
@@ -75,10 +75,16 @@
                         2 mins.
                     </span>
                     
+                    
+                        <span id="/2017/04/24/backends/listen-to-back-button/" class="leancloud_visitors" data-flag-title="IONIC 2 实现首页双击退出APP">
+                            <b class="iconfont icon-read"></b>
+                            <i class="leancloud-visitors-count">1000000</i>
+                        </span>
+                    
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-5-4/">Laravel 5.4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
             
         </div>
     </div>
@@ -96,38 +102,69 @@
     </div>
 </div>
 
-<div class="article animated fadeIn">
+<div class="article">
     <div class='main'>
-        <div class="content markdown">
-            <p>Laravel最近出的Laravel5.4新加了挺多功能的, 比起我用了1年的5.1完善多了. 比较吸引我使用最新的5.4的有几点:</p>
-<ul>
-<li>5.4 添加了谷歌内核的浏览器模拟操作</li>
-<li>自带API认证类”PASSPORT”</li>
-<li>路由自动分类, 现有有了Route自己的文件夹然后里面分类好了WEB和API的路由<br>这一篇记录会分享一些我在尝试Laravel 5.4的过程中遇到的问题和经验</li>
-</ul>
-<h2 id="开发记录"><a href="#开发记录" class="headerlink" title="开发记录"></a>开发记录</h2><h3 id="移植-Migrate-用户和API认证表格是出现sql错误"><a href="#移植-Migrate-用户和API认证表格是出现sql错误" class="headerlink" title="移植(Migrate)用户和API认证表格是出现sql错误"></a>移植(Migrate)用户和API认证表格是出现sql错误</h3><pre><code class="console">[Illuminate\Database\QueryException]                                                         
-  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key  
-   length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`))   </code></pre>
-<pre><code class="console">[PDOException]                                                                               
-  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key  
-   length is 767 bytes  </code></pre>
-<p>解决办法就是在<strong>app/Providers/AppServiceProvider.php</strong>的这个文件里面的<strong>boot</strong>方法里面添加一下代码:</p>
-<pre><code class="php">use Illuminate\Support\Facades\Schema;
+        <div class="content markdown animated fadeIn slower">
+            <h2 id="添加绑定值"><a href="#添加绑定值" class="headerlink" title="添加绑定值"></a>添加绑定值</h2><blockquote>
+<p>首先在<code>app/app.html</code>下加入<code>#myNav</code>, 这个是用于绑定当前页面的导航标签</p>
+</blockquote>
+<pre><code class="html"> &lt;ion-nav #myNav [root]=&quot;rootPage&quot;&gt;&lt;/ion-nav&gt;</code></pre>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><blockquote>
+<p>然后在<code>app.component.ts</code>做相对的改动</p>
+</blockquote>
+<pre><code class="ts">import { Component, ViewChild } from &#39;@angular/core&#39;;
+import { Platform, ToastController, Nav, App } from &#39;ionic-angular&#39;;
+import { StatusBar } from &#39;@ionic-native/status-bar&#39;;
+import { SplashScreen } from &#39;@ionic-native/splash-screen&#39;;
 
-function boot()
-{
-    Schema::defaultStringLength(191);
-}</code></pre>
-<h3 id="怎么不使用Laravel5-4自带的用户登录字段"><a href="#怎么不使用Laravel5-4自带的用户登录字段" class="headerlink" title="怎么不使用Laravel5.4自带的用户登录字段"></a>怎么不使用Laravel5.4自带的用户登录字段</h3><p>每次使用laravel自带的用户认证体系都会纠结, 怎么不用它自带的email作为用户名!<br>这次适用Laravel5.4 又遇到了这个问题, 而且解决办法和5.1,5.2的不一样了, 因为Laravel的Auth Provider变动了.<br>解决办法就是在自带的<strong>User.php</strong>(用户模型)里面使用<strong>findForPassport</strong>, 参考一下例子:</p>
-<pre><code class="php">class User extends Authenticatable
-{
-    use HasApiTokens, Notifiable;
 
-    // ... some code
+@Component({
+  templateUrl: &#39;app.html&#39;,
+  providers: [SplashScreen, StatusBar]
+})
+export class MyApp {
+  rootPage = &#39;TabsPage&#39;;
+  backButtonPressed: boolean = false;  //用于判断返回键是否触发
+  @ViewChild(&#39;myNav&#39;) nav: Nav;
 
-    public function findForPassport($username) {
-        return $this-&gt;where(&#39;id&#39;, $username)-&gt;first();
+  constructor(public platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar, public app: App, public toastCtrl: ToastController) {
+    platform.ready().then(() =&gt; {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      this.statusBar.styleDefault();
+      this.statusBar.backgroundColorByHexString(&#39;#661F22&#39;);
+      this.splashScreen.hide();
+      this.registerBackButtonAction(); //运行这个方法绑定返回按钮
+    });
+  }
+
+  registerBackButtonAction() {
+    this.platform.registerBackButtonAction(() =&gt; {
+      //如果想点击返回按钮隐藏toast或loading或Overlay就把下面加上
+      // this.ionicApp._toastPortal.getActive() || this.ionicApp._loadingPortal.getActive() || this.ionicApp._overlayPortal.getActive();
+      let nav = this.app.getActiveNav();
+      if (nav.canGoBack()){ //是否已经到了首页
+        nav.pop();
+      }else{
+        this.showExit()
+      }
+    }, 1);
+  }
+
+  //双击退出提示框
+  showExit() {
+    if (this.backButtonPressed) { //当触发标志为true时，即2秒内双击返回按键则退出APP
+      this.platform.exitApp();
+    } else {
+     this.toastCtrl.create({
+      message: &#39;再按一次退出应用&#39;,
+      duration: 2000,
+      position: &#39;middle&#39;
+     }).present();
+     this.backButtonPressed = true;
+     setTimeout(() =&gt; this.backButtonPressed = false, 2000);//2秒内没有再次点击返回则将触发标志标记为false
     }
+  }
 }</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
@@ -143,21 +180,37 @@ function boot()
                     
                 </ul>
             
+            
+            
+                <div id="vcomments"></div>
+            
         </div>
-        
-    <div id='gitalk-container' class="comment link"
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d=''
-    >查看评论</div>
-
-
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://s2.ax1x.com/2019/09/19/nLtSiD.png" height=300 width=300></img>
+                    <p>三·钻 TriDiamond</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                </div>
+                <ul>
+                    <li><a href="/">11 <p>文章</p></a></li>
+                    <li><a href="/categories">4 <p>分类</p></a></li>
+                    <li><a href="/tags">13 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+                
+                
+                    <div class="box sticky animated fadeInRight faster">
+                        <div id="toc" class="subbox">
+                            <h4>目录</h4>
+                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加绑定值"><span class="toc-number">1.</span> <span class="toc-text">添加绑定值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">2.</span> <span class="toc-text">代码实现</span></a></li></ol>
+                        </div>
+                    </div>
+                
+            
+        </div>
     </div>
-    
 </div>
 
 
@@ -181,6 +234,7 @@ function boot()
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -269,4 +323,29 @@ function boot()
         });
     }
 </script>
+
+
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+
+        var valine = new Valine();
+
+        function initValine() {
+            valine.init({
+                el: '#vcomments',
+                appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
+                appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: true
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        })
+    </script>
+
 </html>

@@ -17,7 +17,7 @@
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_zzm0n7wzdk.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
@@ -57,7 +57,7 @@
         </div>
         <div class="else">
             <p class="animated fadeInDown">一月 10, 2019</p>
-            <h3 class="animated fadeInDown"><a href="/2019/01/10/2019-01-10-lumen-passport-usage/" title="Lumen 使用 laravel passport">Lumen 使用 laravel passport</a></h3>
+            <h3 class="animated fadeInDown"><a href="/2019/01/10/backends/lumen-passport-usage/" title="Lumen 使用 laravel passport">Lumen 使用 laravel passport</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
@@ -71,6 +71,12 @@
                         <b class="iconfont icon-timer__s"></b>
                         6 mins.
                     </span>
+                    
+                    
+                        <span id="/2019/01/10/backends/lumen-passport-usage/" class="leancloud_visitors" data-flag-title="Lumen 使用 laravel passport">
+                            <b class="iconfont icon-read"></b>
+                            <i class="leancloud-visitors-count">1000000</i>
+                        </span>
                     
                 </p>
             
@@ -93,9 +99,9 @@
     </div>
 </div>
 
-<div class="article animated fadeIn">
+<div class="article">
     <div class='main'>
-        <div class="content markdown">
+        <div class="content markdown animated fadeIn slower">
             <p>Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.<br>所以如果要在lumen上使用laravel的passport就需要安装另外一个插件.</p>
 <h2 id="安装要求"><a href="#安装要求" class="headerlink" title="安装要求"></a>安装要求</h2><ul>
 <li>PHP &gt;= 5.6.3</li>
@@ -305,21 +311,37 @@ public function boot()
                     
                 </ul>
             
+            
+            
+                <div id="vcomments"></div>
+            
         </div>
-        
-    <div id='gitalk-container' class="comment link"
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d=''
-    >查看评论</div>
-
-
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://s2.ax1x.com/2019/09/19/nLtSiD.png" height=300 width=300></img>
+                    <p>三·钻 TriDiamond</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                </div>
+                <ul>
+                    <li><a href="/">11 <p>文章</p></a></li>
+                    <li><a href="/categories">4 <p>分类</p></a></li>
+                    <li><a href="/tags">13 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+                
+                
+                    <div class="box sticky animated fadeInRight faster">
+                        <div id="toc" class="subbox">
+                            <h4>目录</h4>
+                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装要求"><span class="toc-number">1.</span> <span class="toc-text">安装要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Composer安装lumen-passport插件"><span class="toc-number">2.</span> <span class="toc-text">Composer安装lumen-passport插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-bootstrap-bootstrap-app-php"><span class="toc-number">3.</span> <span class="toc-text">修改 bootstrap (bootstrap/app.php)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据表移植和安装Laravel-Passport"><span class="toc-number">4.</span> <span class="toc-text">数据表移植和安装Laravel Passport</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lumen-Passport自带的路由"><span class="toc-number">5.</span> <span class="toc-text">Lumen Passport自带的路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">6.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注册路由"><span class="toc-number">7.</span> <span class="toc-text">注册路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户模型"><span class="toc-number">8.</span> <span class="toc-text">用户模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">9.</span> <span class="toc-text">其他</span></a></li></ol>
+                        </div>
+                    </div>
+                
+            
+        </div>
     </div>
-    
 </div>
 
 
@@ -343,6 +365,7 @@ public function boot()
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -431,4 +454,29 @@ public function boot()
         });
     }
 </script>
+
+
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+
+        var valine = new Valine();
+
+        function initValine() {
+            valine.init({
+                el: '#vcomments',
+                appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
+                appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: true
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        })
+    </script>
+
 </html>

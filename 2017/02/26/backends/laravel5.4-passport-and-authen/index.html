@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>IONIC 2 - 确认密码 - 三·钻 TriDiamond</title>
+    <title>Laravel 5.4 开发笔记 - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
-首先这篇文章是默认您已经了解怎么,"> 
+    <meta name="description" content="Laravel最近出的Laravel5.4新加了挺多功能的, 比起我用了1年的5.1完善多了. 比较吸引我使用最新的5.4的有几点:
+
+5.4 添加了谷歌内核的浏览器模拟操作
+自带API认证类”PA,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_zzm0n7wzdk.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
@@ -31,7 +33,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" data-url="https://tridiamond.tech"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">IONIC 2 - 确认密码</h3>
+    <h3 class="subtitle">Laravel 5.4 开发笔记</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -54,29 +56,35 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
+                url(https://s2.ax1x.com/2019/09/18/noYn41.png);">
         </div>
         <div class="else">
-            <p class="animated fadeInDown">三月 19, 2017</p>
-            <h3 class="animated fadeInDown"><a href="/2017/03/19/2017-03-19-ionic2-comfirm-password-validators/" title="IONIC 2 - 确认密码">IONIC 2 - 确认密码</a></h3>
+            <p class="animated fadeInDown">二月 26, 2017</p>
+            <h3 class="animated fadeInDown"><a href="/2017/02/26/backends/laravel5.4-passport-and-authen/" title="Laravel 5.4 开发笔记">Laravel 5.4 开发笔记</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b>
-                        4k
+                        1.9k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b>
-                        4 mins.
+                        2 mins.
                     </span>
+                    
+                    
+                        <span id="/2017/02/26/backends/laravel5.4-passport-and-authen/" class="leancloud_visitors" data-flag-title="Laravel 5.4 开发笔记">
+                            <b class="iconfont icon-read"></b>
+                            <i class="leancloud-visitors-count">1000000</i>
+                        </span>
                     
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-5-4/">Laravel 5.4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li></ul>
             
         </div>
     </div>
@@ -94,90 +102,39 @@
     </div>
 </div>
 
-<div class="article animated fadeIn">
+<div class="article">
     <div class='main'>
-        <div class="content markdown">
-            <p>开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用<strong>FormBuilder</strong>和<strong>Validators</strong>判断密码是否一致.</p>
-<p>首先这篇文章是默认您已经了解怎么使用<strong>Angualr2</strong>的<strong>FormBuilder</strong>和<strong>Validator</strong>, 如果你还没了解这两个类的用法可以前去看<a href="https://ionicframework.com/docs/v2/resources/forms/" target="_blank" rel="noopener">Ionic2的文档</a></p>
-<h1 id="实例一个FormGroup"><a href="#实例一个FormGroup" class="headerlink" title="实例一个FormGroup"></a>实例一个<code>FormGroup</code></h1><blockquote>
-<p>第一步首先我们需要实例了FormBuilder的一个FormGroup</p>
-</blockquote>
+        <div class="content markdown animated fadeIn slower">
+            <p>Laravel最近出的Laravel5.4新加了挺多功能的, 比起我用了1年的5.1完善多了. 比较吸引我使用最新的5.4的有几点:</p>
 <ul>
-<li>这里我们定义了passwordForm的这个表格里面的input.</li>
-<li>在最后我们加入了自定义认证方法 { validator: AdvanceValidator.matchingPasswords(‘password’, ‘rePassword’) }</li>
-<li>这里我们把password, 和rePassword 传给了 AdvanceValidator 方法, 这里传的是密码和确认密码在FormGroup里面定义的名字.</li>
-<li>现在我们看看这个password.ts怎么写.</li>
+<li>5.4 添加了谷歌内核的浏览器模拟操作</li>
+<li>自带API认证类”PASSPORT”</li>
+<li>路由自动分类, 现有有了Route自己的文件夹然后里面分类好了WEB和API的路由<br>这一篇记录会分享一些我在尝试Laravel 5.4的过程中遇到的问题和经验</li>
 </ul>
-<pre><code class="typescript">import { FormBuilder, Validators, FormGroup } from &#39;@angular/forms&#39;;
-import { AdvanceValidator } from &#39;../../validators/advance-validator&#39;;
+<h2 id="开发记录"><a href="#开发记录" class="headerlink" title="开发记录"></a>开发记录</h2><h3 id="移植-Migrate-用户和API认证表格是出现sql错误"><a href="#移植-Migrate-用户和API认证表格是出现sql错误" class="headerlink" title="移植(Migrate)用户和API认证表格是出现sql错误"></a>移植(Migrate)用户和API认证表格是出现sql错误</h3><pre><code class="console">[Illuminate\Database\QueryException]                                                         
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key  
+   length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`))   </code></pre>
+<pre><code class="console">[PDOException]                                                                               
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key  
+   length is 767 bytes  </code></pre>
+<p>解决办法就是在<strong>app/Providers/AppServiceProvider.php</strong>的这个文件里面的<strong>boot</strong>方法里面添加一下代码:</p>
+<pre><code class="php">use Illuminate\Support\Facades\Schema;
 
-@Component({
-  selector: &#39;page-password&#39;,
-  templateUrl: &#39;password.html&#39;
-})
-
-//密码修改页
-export class PasswordPage {
-  passwordForm: FormGroup;
-
-  constructor(private fb: FormBuilder) 
-  {
-
-    this.passwordForm = fb.group({
-        username: [&#39;&#39;, Validators.required],
-        password: [&#39;&#39;, Validators.compose([Validators.maxLength(30), Validators.minLength(7), Validators.required])],
-        rePassword: [&#39;&#39;, Validators.compose([Validators.maxLength(30), Validators.minLength(7), Validators.required])],
-    }, { validator: AdvanceValidator.matchingPasswords(&#39;password&#39;, &#39;rePassword&#39;) });
-
-  }
+function boot()
+{
+    Schema::defaultStringLength(191);
 }</code></pre>
-<h1 id="创建自定义认证器"><a href="#创建自定义认证器" class="headerlink" title="创建自定义认证器"></a>创建自定义认证器</h1><ul>
-<li>我们首先在项目根目录创建 <strong>validators</strong> 的文件夹</li>
-<li>然后在里面创建 <strong>advance-validators.ts</strong> 的ts文件</li>
-<li>在 <strong>advance-validators.ts</strong> 里面编以下代码</li>
-</ul>
-<pre><code class="typescript">import { FormGroup } from &#39;@angular/forms&#39;;
+<h3 id="怎么不使用Laravel5-4自带的用户登录字段"><a href="#怎么不使用Laravel5-4自带的用户登录字段" class="headerlink" title="怎么不使用Laravel5.4自带的用户登录字段"></a>怎么不使用Laravel5.4自带的用户登录字段</h3><p>每次使用laravel自带的用户认证体系都会纠结, 怎么不用它自带的email作为用户名!<br>这次适用Laravel5.4 又遇到了这个问题, 而且解决办法和5.1,5.2的不一样了, 因为Laravel的Auth Provider变动了.<br>解决办法就是在自带的<strong>User.php</strong>(用户模型)里面使用<strong>findForPassport</strong>, 参考一下例子:</p>
+<pre><code class="php">class User extends Authenticatable
+{
+    use HasApiTokens, Notifiable;
 
-export class AdvanceValidator {
+    // ... some code
 
-    static matchingPasswords(passwordKey: string, rePasswordKey: string) {
-    return (group: FormGroup) =&gt; {
-      let password = group.controls[passwordKey]; //获取密码值
-      let rePassword = group.controls[rePasswordKey]; //获取确认密码值
-
-      if(password.value !== rePassword.value) {
-        //如果密码和确认密码的值不一致就返回给FormBuild rePassword有错误
-        return rePassword.setErrors({notEquivalent: true}) 
-      }
+    public function findForPassport($username) {
+        return $this-&gt;where(&#39;id&#39;, $username)-&gt;first();
     }
-  }
 }</code></pre>
-<h1 id="前端表格示例"><a href="#前端表格示例" class="headerlink" title="前端表格示例"></a>前端表格示例</h1><pre><code class="html">&lt;form [formGroup] = &quot;passwordForm&quot;&gt;
-  &lt;ion-list inset&gt;
-
-    &lt;ion-item&gt;
-      &lt;ion-input type=&quot;tel&quot; placeholder=&quot;用户名&quot; formControlName=&quot;username&quot;&gt;&lt;/ion-input&gt;
-      &lt;div item-right *ngIf=&quot;!passwordForm.controls.username.valid  &amp;&amp; (passwordForm.controls.username.dirty)&quot;&gt;
-        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 用户名必填
-      &lt;/div&gt;
-    &lt;/ion-item&gt;
-
-    &lt;ion-item&gt;
-      &lt;ion-input type=&quot;password&quot; placeholder=&quot;新密码&quot; formControlName=&quot;password&quot;&gt;&lt;/ion-input&gt;
-      &lt;div item-right *ngIf=&quot;!passwordForm.controls.password.valid  &amp;&amp; (passwordForm.controls.password.dirty)&quot; &gt;
-        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 密码必须7个字以上
-      &lt;/div&gt;
-    &lt;/ion-item&gt;
-
-    &lt;ion-item&gt;
-      &lt;ion-input type=&quot;password&quot; placeholder=&quot;确认密码&quot; formControlName=&quot;rePassword&quot;&gt;&lt;/ion-input&gt;
-      &lt;div item-right *ngIf=&quot;!passwordForm.controls.rePassword.valid  &amp;&amp; (passwordForm.controls.rePassword.dirty)&quot; &gt;
-        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 密码必须一致
-      &lt;/div&gt;
-    &lt;/ion-item&gt;
-
-  &lt;/ion-list&gt;
-&lt;/form&gt;</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -192,21 +149,37 @@ export class AdvanceValidator {
                     
                 </ul>
             
+            
+            
+                <div id="vcomments"></div>
+            
         </div>
-        
-    <div id='gitalk-container' class="comment link"
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d=''
-    >查看评论</div>
-
-
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://s2.ax1x.com/2019/09/19/nLtSiD.png" height=300 width=300></img>
+                    <p>三·钻 TriDiamond</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                </div>
+                <ul>
+                    <li><a href="/">11 <p>文章</p></a></li>
+                    <li><a href="/categories">4 <p>分类</p></a></li>
+                    <li><a href="/tags">13 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+                
+                
+                    <div class="box sticky animated fadeInRight faster">
+                        <div id="toc" class="subbox">
+                            <h4>目录</h4>
+                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发记录"><span class="toc-number">1.</span> <span class="toc-text">开发记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#移植-Migrate-用户和API认证表格是出现sql错误"><span class="toc-number">1.1.</span> <span class="toc-text">移植(Migrate)用户和API认证表格是出现sql错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么不使用Laravel5-4自带的用户登录字段"><span class="toc-number">1.2.</span> <span class="toc-text">怎么不使用Laravel5.4自带的用户登录字段</span></a></li></ol></li></ol>
+                        </div>
+                    </div>
+                
+            
+        </div>
     </div>
-    
 </div>
 
 
@@ -230,6 +203,7 @@ export class AdvanceValidator {
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -318,4 +292,29 @@ export class AdvanceValidator {
         });
     }
 </script>
+
+
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+
+        var valine = new Valine();
+
+        function initValine() {
+            valine.init({
+                el: '#vcomments',
+                appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
+                appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: true
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        })
+    </script>
+
 </html>

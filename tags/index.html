@@ -17,7 +17,7 @@
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_zzm0n7wzdk.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
@@ -35,7 +35,7 @@
                 <div class="content">
                 
                     <div class="set">
-  <a href="/tags/Angular-2/" style="font-size: 19.5px; color: #7f7f7f">Angular 2</a> <a href="/tags/Angular-4/" style="font-size: 30.5px; color: #404040">Angular 4</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #9e9e9e">Gitlab</a> <a href="/tags/Hybird-App/" style="font-size: 36px; color: #212121">Hybird App</a> <a href="/tags/Ionic-2/" style="font-size: 25px; color: #606060">Ionic 2</a> <a href="/tags/Ionic-3/" style="font-size: 25px; color: #606060">Ionic 3</a> <a href="/tags/Laravel-5-4/" style="font-size: 14px; color: #9e9e9e">Laravel 5.4</a> <a href="/tags/Laravel-Passport/" style="font-size: 25px; color: #606060">Laravel Passport</a> <a href="/tags/Lumen/" style="font-size: 19.5px; color: #7f7f7f">Lumen</a> <a href="/tags/Webhook/" style="font-size: 14px; color: #9e9e9e">Webhook</a>
+  <a href="/tags/Angular-2/" style="font-size: 19.5px; color: #7f7f7f">Angular 2</a> <a href="/tags/Angular-4/" style="font-size: 30.5px; color: #404040">Angular 4</a> <a href="/tags/Console/" style="font-size: 14px; color: #9e9e9e">Console</a> <a href="/tags/Debugging/" style="font-size: 14px; color: #9e9e9e">Debugging</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #9e9e9e">Gitlab</a> <a href="/tags/Hybird-App/" style="font-size: 36px; color: #212121">Hybird App</a> <a href="/tags/Ionic-2/" style="font-size: 25px; color: #606060">Ionic 2</a> <a href="/tags/Ionic-3/" style="font-size: 25px; color: #606060">Ionic 3</a> <a href="/tags/JavaScript/" style="font-size: 14px; color: #9e9e9e">JavaScript</a> <a href="/tags/Laravel-5-4/" style="font-size: 14px; color: #9e9e9e">Laravel 5.4</a> <a href="/tags/Laravel-Passport/" style="font-size: 25px; color: #606060">Laravel Passport</a> <a href="/tags/Lumen/" style="font-size: 19.5px; color: #7f7f7f">Lumen</a> <a href="/tags/Webhook/" style="font-size: 14px; color: #9e9e9e">Webhook</a>
 </div>
 
                 
@@ -63,6 +63,7 @@
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -151,4 +152,29 @@
         });
     }
 </script>
+
+
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+
+        var valine = new Valine();
+
+        function initValine() {
+            valine.init({
+                el: '#vcomments',
+                appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
+                appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: true
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        })
+    </script>
+
 </html>

@@ -5,23 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>IONIC 2 升级 3 教程 - 三·钻 TriDiamond</title>
+    <title>IONIC 2 - 确认密码 - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="升级步骤
-这一次的升级Ionic 3 换成了使用最新的Angular 4.0, 最新的TypeScript, 添加了懒加载和修复了一些组件的bug.
-
-
-首先更新package.json, 按照以下,"> 
+    <meta name="description" content="开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
+首先这篇文章是默认您已经了解怎么,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_zzm0n7wzdk.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
@@ -34,7 +31,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" data-url="https://tridiamond.tech"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">IONIC 2 升级 3 教程</h3>
+    <h3 class="subtitle">IONIC 2 - 确认密码</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -60,26 +57,32 @@
                 url(https://s2.ax1x.com/2019/09/18/n7E8Wd.png);">
         </div>
         <div class="else">
-            <p class="animated fadeInDown">四月 10, 2017</p>
-            <h3 class="animated fadeInDown"><a href="/2017/04/10/2017-4-10-Ionic3-upgrade-guide/" title="IONIC 2 升级 3 教程">IONIC 2 升级 3 教程</a></h3>
+            <p class="animated fadeInDown">三月 19, 2017</p>
+            <h3 class="animated fadeInDown"><a href="/2017/03/19/frontends/ionic2-comfirm-password-validators/" title="IONIC 2 - 确认密码">IONIC 2 - 确认密码</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b>
-                        6k
+                        4k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b>
-                        5 mins.
+                        4 mins.
                     </span>
+                    
+                    
+                        <span id="/2017/03/19/frontends/ionic2-comfirm-password-validators/" class="leancloud_visitors" data-flag-title="IONIC 2 - 确认密码">
+                            <b class="iconfont icon-read"></b>
+                            <i class="leancloud-visitors-count">1000000</i>
+                        </span>
                     
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
             
         </div>
     </div>
@@ -97,141 +100,90 @@
     </div>
 </div>
 
-<div class="article animated fadeIn">
+<div class="article">
     <div class='main'>
-        <div class="content markdown">
-            <h2 id="升级步骤"><a href="#升级步骤" class="headerlink" title="升级步骤"></a>升级步骤</h2><blockquote>
-<p>这一次的升级Ionic 3 换成了使用最新的Angular 4.0, 最新的TypeScript, 添加了懒加载和修复了一些组件的bug.</p>
-</blockquote>
-<ol>
-<li>首先更新<code>package.json</code>, 按照以下的代码相应替换你package.json里面的代码, 并且把你项目根目录下的<code>node_modules</code>文件夹删除掉, 然后运行<code>npm install</code> (如果你是用淘宝镜像可以运行 <code>cnpm install</code>)</li>
-</ol>
-<pre><code class="json">&quot;dependencies&quot;: {
-    &quot;@angular/common&quot;: &quot;4.0.0&quot;,
-    &quot;@angular/compiler&quot;: &quot;4.0.0&quot;,
-    &quot;@angular/compiler-cli&quot;: &quot;4.0.0&quot;,
-    &quot;@angular/core&quot;: &quot;4.0.0&quot;,
-    &quot;@angular/forms&quot;: &quot;4.0.0&quot;,
-    &quot;@angular/http&quot;: &quot;4.0.0&quot;,
-    &quot;@angular/platform-browser&quot;: &quot;4.0.0&quot;,
-    &quot;@angular/platform-browser-dynamic&quot;: &quot;4.0.0&quot;,
-    &quot;@ionic-native/core&quot;: &quot;3.4.2&quot;,
-    &quot;@ionic-native/splash-screen&quot;: &quot;3.4.2&quot;,
-    &quot;@ionic-native/status-bar&quot;: &quot;3.4.2&quot;,
-    &quot;@ionic/storage&quot;: &quot;2.0.1&quot;,
-    &quot;ionic-angular&quot;: &quot;3.0.1&quot;,
-    &quot;ionicons&quot;: &quot;3.0.0&quot;,
-    &quot;rxjs&quot;: &quot;5.1.1&quot;,
-    &quot;sw-toolbox&quot;: &quot;3.4.0&quot;,
-    &quot;zone.js&quot;: &quot;^0.8.4&quot;
-},
-&quot;devDependencies&quot;: {
-  &quot;@ionic/app-scripts&quot;: &quot;1.3.0&quot;,
-  &quot;typescript&quot;: &quot;~2.2.1&quot;
-}</code></pre>
-<ol start="2">
-<li>第二步你需要在<code>app/app.module.ts</code>文件里面引入<code>BrowserModule</code>和<code>HttpModule</code></li>
-</ol>
-<blockquote>
-<p>首先需要在头部引入这两个module (如果你的APP不使用HTTP可以不引入<code>HttpModule</code>)</p>
-</blockquote>
-<pre><code class="typescript">import { BrowserModule } from &#39;@angular/platform-browser&#39;;
-import { HttpModule } from &#39;@angular/http&#39;;</code></pre>
-<blockquote>
-<p>在同一个文件里面找到<code>imports</code>并且加入<code>BrowserModule</code>和<code>HttpModule</code></p>
-</blockquote>
-<pre><code class="typescript">imports: [
-  BrowserModule,
-  HttpModule,
-  IonicModule.forRoot(MyApp)
-],</code></pre>
-<ol start="3">
-<li>如果你升级到 Ionic Native 3.x, 就是CLI3. 使用 Ionic Native 3.x的话, APP打包出来会更小. 因为Ionic Native的原生插件都不自带有了, 你使用一个就要安装一个. 如果你原有的Ionic 2 项目有引入原生插件, 你就要做以下操作.</li>
-</ol>
-<blockquote>
-<p>这里用<code>Camera</code>和<code>Geolocation</code>这个两个原生插件作为例子, 你其他的插件都需要使用相同的方式做修改</p>
-</blockquote>
-<blockquote>
-<p>注意您使用的所有插件都必须要在<code>app/app.module.ts</code>里面先引用了, 而且要在<code>app/app.modules.ts</code>里面的providers里面声明, 如果没有这样配置就会出现<code>No provider for XXXXX</code>这样的报错了!</p>
-</blockquote>
-<h4 id="Camera插件"><a href="#Camera插件" class="headerlink" title="Camera插件"></a>Camera插件</h4><pre><code class="typescript">// 在app/app.module.ts文件里面
-import { Camera } from &#39;@ionic-native/camera&#39;;
-
-...
-
-@NgModule({
-  ...
-
-  providers: [
-    ...
-    Camera
-    ...
-  ]
-  ...
-})
-export class AppModule { }</code></pre>
-<h4 id="Geolocation插件"><a href="#Geolocation插件" class="headerlink" title="Geolocation插件"></a>Geolocation插件</h4><pre><code class="typescript">// 在app/app.module.ts文件里面
-import { Geolocation } from &#39;@ionic-native/geolocation&#39;;
-import { Platform } from &#39;ionic-angular&#39;;
-
-import { NgZone } from &#39;@angular/core&#39;;
-
-@Component({ ... })
-export class MyComponent {
-
-  constructor(private geolocation: Geolocation, private platform: Platform, private ngZone: NgZone) {
-
-    platform.ready().then(() =&gt; {
-
-      // get position
-      geolocation.getCurrentPosition().then(pos =&gt; {
-
-        console.log(`lat: ${pos.coords.latitude}, lon: ${pos.coords.longitude}`)
-
-      });
-
-
-      // watch position
-      const watch = geolocation.watchPosition().subscribe(pos =&gt; {
-
-        console.log(`lat: ${pos.coords.latitude}, lon: ${pos.coords.longitude}`)
-
-        // Currently, observables from Ionic Native plugins
-        // need to run inside of zone to trigger change detection
-        ngZone.run(() =&gt; {
-          this.position = pos;
-        })
-
-      });
-
-      // to stop watching
-      watch.unsubscribe();
-
-    });
-
-  }
-
-}</code></pre>
-<blockquote>
-<p>更详细的文档可以参考官方的修改日记 <a href="https://github.com/driftyco/ionic-native/blob/master/README.md" target="_blank" rel="noopener">https://github.com/driftyco/ionic-native/blob/master/README.md</a></p>
-</blockquote>
-<h2 id="组件Component更变"><a href="#组件Component更变" class="headerlink" title="组件Component更变"></a>组件<code>Component</code>更变</h2><h4 id="新网格"><a href="#新网格" class="headerlink" title="新网格"></a>新网格</h4><blockquote>
-<p>旧的网格体系已经废除, 新的网格组件请参考官方文档 <a href="http://blog.ionic.io/build-awesome-desktop-apps-with-ionics-new-responsive-grid/" target="_blank" rel="noopener">http://blog.ionic.io/build-awesome-desktop-apps-with-ionics-new-responsive-grid/</a></p>
-</blockquote>
-<h4 id="标签的color属性更变"><a href="#标签的color属性更变" class="headerlink" title="标签的color属性更变"></a>标签的<code>color</code>属性更变</h4><blockquote>
-<p>以下标签的<code>color</code>属性在新的版本里面会不起效果了, 现在必须要使用<code>ion-text</code>才会起效果, 详细说明请看官方文档 <a href="http://ionicframework.com/docs/api/components/typography/Typography/" target="_blank" rel="noopener">http://ionicframework.com/docs/api/components/typography/Typography/</a></p>
-</blockquote>
-<pre><code class="css">h1[color], h2[color], h3[color], h4[color], h5[color], h6[color], a[color]:not([ion-button]):not([ion-item]):not([ion-fab]), p[color], span[color], b[color], i[color], strong[color], em[color], small[color], sub[color], sup[color]</code></pre>
-<h4 id="Slides组件更变"><a href="#Slides组件更变" class="headerlink" title="Slides组件更变"></a>Slides组件更变</h4><blockquote>
-<p>以下的Slides属性和方法已经正式在新版本里面移除了</p>
+        <div class="content markdown animated fadeIn slower">
+            <p>开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用<strong>FormBuilder</strong>和<strong>Validators</strong>判断密码是否一致.</p>
+<p>首先这篇文章是默认您已经了解怎么使用<strong>Angualr2</strong>的<strong>FormBuilder</strong>和<strong>Validator</strong>, 如果你还没了解这两个类的用法可以前去看<a href="https://ionicframework.com/docs/v2/resources/forms/" target="_blank" rel="noopener">Ionic2的文档</a></p>
+<h1 id="实例一个FormGroup"><a href="#实例一个FormGroup" class="headerlink" title="实例一个FormGroup"></a>实例一个<code>FormGroup</code></h1><blockquote>
+<p>第一步首先我们需要实例了FormBuilder的一个FormGroup</p>
 </blockquote>
 <ul>
-<li>Slides的input的<code>options</code>属性已经废除, 请使用标签的属性;</li>
-<li>Slide的事件<code>ionWillChange</code>方法已经废除, 请使用<code>ionSlideWillChange</code>;</li>
-<li>Slide的事件<code>ionDidChange</code>方法已经废除, 请使用<code>ionSlideDidChange</code>;</li>
-<li>Slide的事件<code>ionDrag</code>方法已经废除, 请使用<code>ionSlideDrag</code>;</li>
-<li>Slides的<code>getSlider()</code>方法已经废除, 请使用<code>ion-slides</code>实例;</li>
+<li>这里我们定义了passwordForm的这个表格里面的input.</li>
+<li>在最后我们加入了自定义认证方法 { validator: AdvanceValidator.matchingPasswords(‘password’, ‘rePassword’) }</li>
+<li>这里我们把password, 和rePassword 传给了 AdvanceValidator 方法, 这里传的是密码和确认密码在FormGroup里面定义的名字.</li>
+<li>现在我们看看这个password.ts怎么写.</li>
 </ul>
+<pre><code class="typescript">import { FormBuilder, Validators, FormGroup } from &#39;@angular/forms&#39;;
+import { AdvanceValidator } from &#39;../../validators/advance-validator&#39;;
+
+@Component({
+  selector: &#39;page-password&#39;,
+  templateUrl: &#39;password.html&#39;
+})
+
+//密码修改页
+export class PasswordPage {
+  passwordForm: FormGroup;
+
+  constructor(private fb: FormBuilder) 
+  {
+
+    this.passwordForm = fb.group({
+        username: [&#39;&#39;, Validators.required],
+        password: [&#39;&#39;, Validators.compose([Validators.maxLength(30), Validators.minLength(7), Validators.required])],
+        rePassword: [&#39;&#39;, Validators.compose([Validators.maxLength(30), Validators.minLength(7), Validators.required])],
+    }, { validator: AdvanceValidator.matchingPasswords(&#39;password&#39;, &#39;rePassword&#39;) });
+
+  }
+}</code></pre>
+<h1 id="创建自定义认证器"><a href="#创建自定义认证器" class="headerlink" title="创建自定义认证器"></a>创建自定义认证器</h1><ul>
+<li>我们首先在项目根目录创建 <strong>validators</strong> 的文件夹</li>
+<li>然后在里面创建 <strong>advance-validators.ts</strong> 的ts文件</li>
+<li>在 <strong>advance-validators.ts</strong> 里面编以下代码</li>
+</ul>
+<pre><code class="typescript">import { FormGroup } from &#39;@angular/forms&#39;;
+
+export class AdvanceValidator {
+
+    static matchingPasswords(passwordKey: string, rePasswordKey: string) {
+    return (group: FormGroup) =&gt; {
+      let password = group.controls[passwordKey]; //获取密码值
+      let rePassword = group.controls[rePasswordKey]; //获取确认密码值
+
+      if(password.value !== rePassword.value) {
+        //如果密码和确认密码的值不一致就返回给FormBuild rePassword有错误
+        return rePassword.setErrors({notEquivalent: true}) 
+      }
+    }
+  }
+}</code></pre>
+<h1 id="前端表格示例"><a href="#前端表格示例" class="headerlink" title="前端表格示例"></a>前端表格示例</h1><pre><code class="html">&lt;form [formGroup] = &quot;passwordForm&quot;&gt;
+  &lt;ion-list inset&gt;
+
+    &lt;ion-item&gt;
+      &lt;ion-input type=&quot;tel&quot; placeholder=&quot;用户名&quot; formControlName=&quot;username&quot;&gt;&lt;/ion-input&gt;
+      &lt;div item-right *ngIf=&quot;!passwordForm.controls.username.valid  &amp;&amp; (passwordForm.controls.username.dirty)&quot;&gt;
+        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 用户名必填
+      &lt;/div&gt;
+    &lt;/ion-item&gt;
+
+    &lt;ion-item&gt;
+      &lt;ion-input type=&quot;password&quot; placeholder=&quot;新密码&quot; formControlName=&quot;password&quot;&gt;&lt;/ion-input&gt;
+      &lt;div item-right *ngIf=&quot;!passwordForm.controls.password.valid  &amp;&amp; (passwordForm.controls.password.dirty)&quot; &gt;
+        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 密码必须7个字以上
+      &lt;/div&gt;
+    &lt;/ion-item&gt;
+
+    &lt;ion-item&gt;
+      &lt;ion-input type=&quot;password&quot; placeholder=&quot;确认密码&quot; formControlName=&quot;rePassword&quot;&gt;&lt;/ion-input&gt;
+      &lt;div item-right *ngIf=&quot;!passwordForm.controls.rePassword.valid  &amp;&amp; (passwordForm.controls.rePassword.dirty)&quot; &gt;
+        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 密码必须一致
+      &lt;/div&gt;
+    &lt;/ion-item&gt;
+
+  &lt;/ion-list&gt;
+&lt;/form&gt;</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -246,21 +198,37 @@ export class MyComponent {
                     
                 </ul>
             
+            
+            
+                <div id="vcomments"></div>
+            
         </div>
-        
-    <div id='gitalk-container' class="comment link"
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d=''
-    >查看评论</div>
-
-
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://s2.ax1x.com/2019/09/19/nLtSiD.png" height=300 width=300></img>
+                    <p>三·钻 TriDiamond</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                </div>
+                <ul>
+                    <li><a href="/">11 <p>文章</p></a></li>
+                    <li><a href="/categories">4 <p>分类</p></a></li>
+                    <li><a href="/tags">13 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+                
+                
+                    <div class="box sticky animated fadeInRight faster">
+                        <div id="toc" class="subbox">
+                            <h4>目录</h4>
+                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实例一个FormGroup"><span class="toc-number">1.</span> <span class="toc-text">实例一个FormGroup</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建自定义认证器"><span class="toc-number">2.</span> <span class="toc-text">创建自定义认证器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端表格示例"><span class="toc-number">3.</span> <span class="toc-text">前端表格示例</span></a></li></ol>
+                        </div>
+                    </div>
+                
+            
+        </div>
     </div>
-    
 </div>
 
 
@@ -284,6 +252,7 @@ export class MyComponent {
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -372,4 +341,29 @@ export class MyComponent {
         });
     }
 </script>
+
+
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+
+        var valine = new Valine();
+
+        function initValine() {
+            valine.init({
+                el: '#vcomments',
+                appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
+                appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: true
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        })
+    </script>
+
 </html>

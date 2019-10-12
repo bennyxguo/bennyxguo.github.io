@@ -5,23 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>GitLab Webhook 自动部署 - 三·钻 TriDiamond</title>
+    <title>使用Console技巧提高JS调试技能 - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
-
-如果创建失败首先需要创建/home/www/.ssh这个文件夹
-
-查看公钥cat /home/www/.,"> 
+    <meta name="description" content="其实 JavaScript 给到我们很多调试工具来调试代码，那问问你自己，你又知道多少呢？用到多少呢？
+大部分前端开发在JavaScript调试代码的常规用法都是直接console.log，直接输出,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_zzm0n7wzdk.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
@@ -34,7 +31,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" data-url="https://tridiamond.tech"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">GitLab Webhook 自动部署</h3>
+    <h3 class="subtitle">使用Console技巧提高JS调试技能</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -57,29 +54,35 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(https://s2.ax1x.com/2019/09/18/n7ku11.png);">
+                url(https://s2.ax1x.com/2019/10/11/ubyRD1.jpg);">
         </div>
         <div class="else">
-            <p class="animated fadeInDown">九月 20, 2019</p>
-            <h3 class="animated fadeInDown"><a href="/2019/09/20/2019-01-10-aliyun-webhook-setup/" title="GitLab Webhook 自动部署">GitLab Webhook 自动部署</a></h3>
+            <p class="animated fadeInDown">十月 11, 2019</p>
+            <h3 class="animated fadeInDown"><a href="/2019/10/11/frontends/javascript-debugging-skills-console/" title="使用Console技巧提高JS调试技能">使用Console技巧提高JS调试技能</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b>
-                        2.9k
+                        306
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b>
-                        3 mins.
+                        1 mins.
                     </span>
+                    
+                    
+                        <span id="/2019/10/11/frontends/javascript-debugging-skills-console/" class="leancloud_visitors" data-flag-title="使用Console技巧提高JS调试技能">
+                            <b class="iconfont icon-read"></b>
+                            <i class="leancloud-visitors-count">1000000</i>
+                        </span>
                     
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Console/">Console</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Debugging/">Debugging</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
             
         </div>
     </div>
@@ -97,52 +100,12 @@
     </div>
 </div>
 
-<div class="article animated fadeIn">
+<div class="article">
     <div class='main'>
-        <div class="content markdown">
-            <h2 id="创建与填写部署公钥"><a href="#创建与填写部署公钥" class="headerlink" title="创建与填写部署公钥"></a>创建与填写部署公钥</h2><h3 id="创建部署公钥"><a href="#创建部署公钥" class="headerlink" title="创建部署公钥"></a>创建部署公钥</h3><pre><code class="bash">sudo -Hu www ssh-keygen -t rsa</code></pre>
-<blockquote>
-<p>如果创建失败首先需要创建/home/www/.ssh这个文件夹</p>
-</blockquote>
-<h3 id="查看公钥"><a href="#查看公钥" class="headerlink" title="查看公钥"></a>查看公钥</h3><pre><code class="bash">cat /home/www/.ssh/id_rsa.pub</code></pre>
-<h3 id="添加Hook"><a href="#添加Hook" class="headerlink" title="添加Hook"></a>添加Hook</h3><p>在阿里云code.aliyun.com上的profile&gt;ssh_key里面添加公钥</p>
-<h2 id="初始化git项目文件夹"><a href="#初始化git项目文件夹" class="headerlink" title="初始化git项目文件夹"></a>初始化git项目文件夹</h2><pre><code class="bash">sudo -Hu www git clone [git地址]</code></pre>
-<blockquote>
-<p>这里注意, 一定要用www的身份状态要不后期无法自动git pull</p>
-</blockquote>
-<h2 id="自动部署脚本-PHP"><a href="#自动部署脚本-PHP" class="headerlink" title="自动部署脚本 (PHP)"></a>自动部署脚本 (PHP)</h2><h3 id="Shell-exec"><a href="#Shell-exec" class="headerlink" title="Shell_exec"></a>Shell_exec</h3><p>在使用这个PHP脚本的时候我们需要用到<code>shell_exec</code>php的原生函数, php-fpm是默认屏蔽这个函数的, 所有需要在php.ini里面修改一下配置</p>
-<blockquote>
-<p>找到<code>disable_functions</code>这个参数, 并且在里面去掉<code>shell_exec</code></p>
-</blockquote>
-<h3 id="PHP-脚本"><a href="#PHP-脚本" class="headerlink" title="PHP 脚本"></a>PHP 脚本</h3><pre><code class="php">$token = &#39;token&#39;;
-
-if (!isset($_GET[&#39;token&#39;]) &amp;&amp; $_GET[&#39;token&#39;] != $token) {
-    die(&#39;access denied&#39;);
-}
-
-$json = json_decode(file_get_contents(&#39;php://input&#39;), true);
-$repo = $json[&#39;repository&#39;][&#39;name&#39;];
-
-// 只在主分支提交时且提交数大于0执行自动部署
-if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;total_commits_count&#39;]&gt;0) {
-    $pull_result = shell_exec(&#39;cd /to/project/path/ &amp;&amp; git pull&#39;);
-
-    if ($pull_result) {
-        $res_log = &#39;----------pull 成功---------------&#39;.PHP_EOL;
-
-        $res_log .= $json[&#39;user_name&#39;] . &#39; 在&#39; . date(&#39;Y-m-d H:i:s&#39;) . &#39;向&#39; . $json[&#39;repository&#39;][&#39;name&#39;] . &#39;项目的&#39; . $json[&#39;ref&#39;] . &#39;分支push了&#39; . $json[&#39;total_commits_count&#39;] . &#39;个commit：&#39; . PHP_EOL;
-        $res_log .= $pull_result.PHP_EOL;
-
-        file_put_contents(&quot;cityconcierge-webhook-log.txt&quot;, $res_log, FILE_APPEND);//追加写入
-    } else {
-        $res_log = &#39;------------pull 失败-------------&#39;.PHP_EOL;
-
-        $res_log .= $json[&#39;user_name&#39;] . &#39; 在&#39; . date(&#39;Y-m-d H:i:s&#39;) . &#39;向&#39; . $json[&#39;repository&#39;][&#39;name&#39;] . &#39;项目的&#39; . $json[&#39;ref&#39;] . &#39;分支push了&#39; . $json[&#39;total_commits_count&#39;] . &#39;个commit：&#39; . PHP_EOL;
-        $res_log .= $pull_result.PHP_EOL;
-
-        file_put_contents(&quot;cityconcierge-webhook-log.txt&quot;, $res_log, FILE_APPEND);//追加写入
-    }
-}</code></pre>
+        <div class="content markdown animated fadeIn slower">
+            <p>其实 JavaScript 给到我们很多调试工具来调试代码，那问问你自己，你又知道多少呢？用到多少呢？</p>
+<p>大部分前端开发在JavaScript调试代码的常规用法都是直接<code>console.log</code>，直接输出某一个变量或者返回数据里面的对象数据。当然毋庸置疑这样输出来调试是没有问题的。但是不是最优雅的方式来调试代码，其实还有更好的办法。作为一个有追求的技术人才，有更好的调试方式为什么不去使用呢？</p>
+<p><img src="https://s2.ax1x.com/2019/10/11/ubREy4.png" alt="“输出个hello world”"></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -157,21 +120,30 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
                     
                 </ul>
             
+            
+            
+                <div id="vcomments"></div>
+            
         </div>
-        
-    <div id='gitalk-container' class="comment link"
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d=''
-    >查看评论</div>
-
-
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://s2.ax1x.com/2019/09/19/nLtSiD.png" height=300 width=300></img>
+                    <p>三·钻 TriDiamond</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                </div>
+                <ul>
+                    <li><a href="/">11 <p>文章</p></a></li>
+                    <li><a href="/categories">4 <p>分类</p></a></li>
+                    <li><a href="/tags">13 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+                
+                
+            
+        </div>
     </div>
-    
 </div>
 
 
@@ -195,6 +167,7 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 <script src="/photoswipe/photoswipe.min.js"></script>
@@ -283,4 +256,29 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
         });
     }
 </script>
+
+
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+
+        var valine = new Valine();
+
+        function initValine() {
+            valine.init({
+                el: '#vcomments',
+                appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
+                appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: true
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        })
+    </script>
+
 </html>
