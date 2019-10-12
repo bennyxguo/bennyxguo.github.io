@@ -11,7 +11,7 @@
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
     <meta name="description" content="其实 JavaScript 给到我们很多调试工具来调试代码，那问问你自己，你又知道多少呢？用到多少呢？
-大部分前端开发在JavaScript调试代码的常规用法都是直接console.log，直接输出,"> 
+大部分前端开发在 JavaScript 调试代码的常规用法都是直接console.log，直接,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -64,13 +64,13 @@
                     
                         <span>
                         <b class="iconfont icon-text2"></b>
-                        306
+                        6.8k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b>
-                        1 mins.
+                        6 mins.
                     </span>
                     
                     
@@ -103,9 +103,168 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <p>其实 JavaScript 给到我们很多调试工具来调试代码，那问问你自己，你又知道多少呢？用到多少呢？</p>
-<p>大部分前端开发在JavaScript调试代码的常规用法都是直接<code>console.log</code>，直接输出某一个变量或者返回数据里面的对象数据。当然毋庸置疑这样输出来调试是没有问题的。但是不是最优雅的方式来调试代码，其实还有更好的办法。作为一个有追求的技术人才，有更好的调试方式为什么不去使用呢？</p>
-<p><img src="https://s2.ax1x.com/2019/10/11/ubREy4.png" alt="“输出个hello world”"></p>
+            <p>其实 <strong>JavaScript</strong> 给到我们很多调试工具来调试代码，那问问你自己，你又知道多少呢？用到多少呢？</p>
+<p>大部分前端开发在 <strong>JavaScript</strong> 调试代码的常规用法都是直接<code>console.log</code>，直接输出某一个变量或者返回数据里面的对象数据。当然毋庸置疑这样输出来调试是没有问题的。但是不是最优雅的方式来调试代码，其实还有更好的办法。作为一个有追求的技术人才，有更好的调试方式为什么不去使用呢？</p>
+<p><img src="https://s2.ax1x.com/2019/10/11/ubREy4.png" alt="Console输出Hello"></p>
+<p>我们先来了解清楚浏览器的<code>console</code>。浏览器的<code>console</code>对象有提供自带的调试控制台。<code>console</code>对象只能在浏览器的JavaScript中使用，也就是说客户端应用可用而服务端应用不可用。它的作用或者效果会根据不同的浏览器而不同，但是基础使用方式和功能是基本一致的。不过<code>console</code>是可以在任何前端语言或者框架中使用。</p>
+<hr>
+<h2 id="console-log"><a href="#console-log" class="headerlink" title="console.log"></a>console.log</h2><p>最常用的使用方式就是<code>console.log</code>，对前端开发工程师来说就是家常便饭了。以下是一个简单的使用例子。</p>
+<pre><code class="js">function sayHello(name) {
+  console.log(name)
+}
+
+sayHello(&#39;Indrek&#39;)</code></pre>
+<blockquote>
+<p>以上<code>sayHello</code>方法接收一个名字，然后在控制台输出出来。</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/10/12/ujmEr9.png" alt="Console输出名字"></p>
+<p>现在我们开始玩以下更有趣的调试方法。加入我们现在想知道<code>sayHello</code>这个方法被调用了多少次，这样我们应该怎么调试呢？其实有一个很简单的办法就是使用<code>console.count()</code>.</p>
+<hr>
+<h2 id="console-count"><a href="#console-count" class="headerlink" title="console.count"></a>console.count</h2><p><code>count()</code>方法会输出某一个<code>标示</code>被调用了几次。如果没有穿任何参数，<code>count()</code>默认为使用默认标示<code>defaut</code>。</p>
+<pre><code class="js">function sayHello(name) {
+  console.count()
+  console.log(name)
+}
+
+sayHello(&quot;Indrek&quot;)
+sayHello(&quot;William&quot;)
+sayHello(&quot;Kelly&quot;) </code></pre>
+<blockquote>
+<p>以上代码就会在控制台输出以下结果：</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/10/12/ujm7ZR.png" alt="统计了sayHello方法被调用的次数"></p>
+<p>上面的例子实现了统计某一个方法被调用的次数，那如果我们想统计每个同名字(<code>name</code>)的在这个方法里面被调用了多少次呢？要调试这种其实也很简单，只要直接吧<code>name</code>直接传入<code>count</code>就可以了。</p>
+<pre><code class="js">function sayHello(name) {
+  console.count(name)
+}
+
+sayHello(&quot;Indrek&quot;)
+sayHello(&quot;William&quot;)
+sayHello(&quot;Kelly&quot;)
+sayHello(&quot;Indrek&quot;)</code></pre>
+<p><code>‍(∩｀-´)⊃━☆ﾟ.*・｡ﾟ</code> 巴拉巴拉！就是那么简单，我们就可以跟踪同名的参数在<code>sayHello</code>方法里面被调用的次数了！</p>
+<p><img src="https://s2.ax1x.com/2019/10/13/uj1xhR.png" alt="统计同名的参数在`sayHello`方法里面被调用的次数"></p>
+<hr>
+<h2 id="console-warn"><a href="#console-warn" class="headerlink" title="console.warn"></a>console.warn</h2><p>这个控台答应方法会输出一个警告信息。在你开发APIs或者开发工具的时候使用。<code>console.warn</code>这个方法在你需要警告用户的时候特别实用，例如漏掉了某个参数或者是让开发者知道你的API/插件包的版本已经失效的时候使用。</p>
+<pre><code class="js">function sayHello(name) {
+  if(!name) {
+    console.warn(&quot;No name given&quot;)
+  }
+}
+
+sayHello()</code></pre>
+<blockquote>
+<p>上面的代码检测了<code>sayHello</code>方法的参数是否漏传。如果<code>name</code>参数没有传，一个警告消息就会被打印到控制台中。让开发者可以思考问题出在哪里。</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/10/13/uj85Q0.png" alt="一个警告消息就会被打印到控制台中。让开发者可以思考问题出在哪里"></p>
+<hr>
+<h2 id="console-table"><a href="#console-table" class="headerlink" title="console.table"></a>console.table</h2><p>如果是我们在调试数组或者对象时，<code>console.table</code>是一个非常实用的调试方法来在控制台打印数据。数组里面的每一个元素都会在表格的行里面展示。以下是的水果名数组作为一个例子，如果我们把这个数组传入<code>console.table</code>，我们会看到一个含有这个水果名数据以表格的方式在控制台被打印出来。</p>
+<pre><code class="js">const fruits = [&quot;kiwi&quot;, &quot;banana&quot;, &quot;strawberry&quot;]
+
+console.table(fruits)</code></pre>
+<blockquote>
+<p>我们一起来围观以下在控制台里面的展示效果</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/10/13/ujGlkQ.png" alt="数据以表格的形式打印在控制台"></p>
+<p>看到了这个，你会不会灵光一闪想到mmp，如果是一个很大的数组这种表格化的展示方式是多么的实用啊！对的！例如一个上百个数据的数组，我们使用这种调试方法来打印就很方便了。为了可以让我们用双眼见证这个说法的真实性，我们用代码说话吧！</p>
+<pre><code class="js">const fruits = [
+  &quot;Apple&quot;,
+  &quot;Watermelon&quot;,
+  &quot;Orange&quot;,
+  &quot;Pear&quot;,
+  &quot;Cherry&quot;,
+  &quot;Strawberry&quot;,
+  &quot;Nectarine&quot;,
+  &quot;Grape&quot;,
+  &quot;Mango&quot;,
+  &quot;Blueberry&quot;,
+  &quot;Pomegranate&quot;,
+  &quot;Carambola&quot;,
+  &quot;Plum&quot;,
+  &quot;Banana&quot;,
+  &quot;Raspberry&quot;,
+  &quot;Mandarin&quot;,
+  &quot;Jackfruit&quot;,
+  &quot;Papaya&quot;,
+  &quot;Kiwi&quot;,
+  &quot;Pineapple&quot;,
+  &quot;Lime&quot;,
+  &quot;Lemon&quot;,
+  &quot;Apricot&quot;,
+  &quot;Grapefruit&quot;,
+  &quot;Melon&quot;,
+  &quot;Coconut&quot;,
+  &quot;Avocado&quot;,
+  &quot;Peach&quot;
+];
+
+console.table(fruits);</code></pre>
+<p>我们使用<code>console.table</code>来打印一下上面这个大数组试试看吧。</p>
+<p><img src="https://s2.ax1x.com/2019/10/13/ujGvNQ.png" alt="使用表格化方式在控制台打印数据"></p>
+<blockquote>
+<p>这种展示方式简直就是一目了然！这样妈妈再也不用担心我们调试数据的时候蒙圈了！<code>՞༘✡ (๑ •̀ㅂ•́)و✧</code></p>
+</blockquote>
+<p>但是问题少年们，我们可是有梦想的工程师，如果是用来调试<code>对象</code>会是怎么样呢？来吧亲自动手丰衣足食，上代码！</p>
+<pre><code class="js">const pets = {
+  name: &quot;Simon&quot;,
+  type: &quot;cat&quot;
+};
+
+console.table(pets);</code></pre>
+<p>注意了兄弟姐妹们，现在我们打印的是对象不是数组。在控制台的表格现在有两个键值<code>name</code>和<code>type</code>。之前是0，1，2，3，4…</p>
+<p><img src="https://s2.ax1x.com/2019/10/13/ujtOHK.png" alt="控制台表格化打印对象数据"></p>
+<p>这种方式可以替代普遍使用的直接用log打印对象数据，表格化的展示相对还是更加清晰的。问题少年再次发问，如果我们想多个对象一起打印呢？</p>
+<pre><code class="js">const pets = {
+  name: &quot;Simon&quot;,
+  type: &quot;cat&quot;
+};
+
+const person = {
+  firstName: &quot;Indrek&quot;,
+  lastName: &quot;Lasn&quot;
+}
+
+console.table(pets, person);</code></pre>
+<p>与预想一致，两个不同键值的对象被才分成两个表格在控制台打印出来了。</p>
+<p><img src="https://s2.ax1x.com/2019/10/13/ujNQuq.png" alt="两个对象一起打印"></p>
+<p>如果我们不想分开两个表格打印，可否在一个表格显示呢？可以的！只要把两个对象放入一个数组就ok了。</p>
+<pre><code class="js">const pets = {
+  name: &quot;Simon&quot;,
+  type: &quot;cat&quot;
+};
+
+const person = {
+  firstName: &quot;Indrek&quot;,
+  lastName: &quot;Lasn&quot;
+}
+
+console.table([pets, person]);</code></pre>
+<p>现在我们看到两个对象在一个表格里面展示了，键值被放在表格的头部了，因为键值在两个对象里面是不一样的。</p>
+<p><img src="https://s2.ax1x.com/2019/10/13/ujNtC4.png" alt="两个对象在一个表格里面打印"></p>
+<hr>
+<h2 id="console-group"><a href="#console-group" class="headerlink" title="console.group"></a>console.group</h2><p>当我们是在调试集合（sets）或者是关联数据（linked-data），可以使用嵌套组来优化你的控制台输出。使用<code>console.group()</code>来创建一个嵌套的组。</p>
+<pre><code class="js">
+console.log(&quot;This is the first level&quot;);
+console.group();
+console.log(&quot;Level 2&quot;);
+console.group();
+console.log(&quot;Level 3&quot;);
+console.warn(&quot;More of level 3&quot;);
+console.groupEnd();
+console.log(&quot;Back to level 2&quot;);
+console.groupEnd();
+console.log(&quot;Back to the first level&quot;);</code></pre>
+<p>以下是一个嵌套的层级提示输出，在调试关联或者层级数据的时候特别实用。</p>
+<p><img src="https://s2.ax1x.com/2019/10/13/ujNy5D.png" alt></p>
+<blockquote>
+<p>使用<code>console.groupCollapsed()</code>可以把所有嵌套的层级收起来，使用鼠标点击时可以展开查看。</p>
+</blockquote>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>作为一名优秀的程序员，我们应该尽量在合适的场景或者合适的情况下运用在提供到给我的调试工具。所以这一篇文章提到的调试方式，我们应该在开发调试的过程中多合理运用，习惯后我们会发现调试起来会更加敏捷和高效。</p>
+<hr>
+<blockquote>
+<p>签字：<br> <b>人生无常，写的了一行是一行～ <br> Code now or never~ </b> <br> <i><small> – 三·钻 TriDiamond<small></small></small></i></p>
+</blockquote>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -131,6 +290,11 @@
                     <img src="https://s2.ax1x.com/2019/09/19/nLtSiD.png" height=300 width=300></img>
                     <p>三·钻 TriDiamond</p>
                     <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
                 </div>
                 <ul>
                     <li><a href="/">11 <p>文章</p></a></li>
@@ -140,6 +304,13 @@
             </div>
             
                 
+                
+                    <div class="box sticky animated fadeInRight faster">
+                        <div id="toc" class="subbox">
+                            <h4>目录</h4>
+                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#console-log"><span class="toc-number">1.</span> <span class="toc-text">console.log</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-count"><span class="toc-number">2.</span> <span class="toc-text">console.count</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-warn"><span class="toc-number">3.</span> <span class="toc-text">console.warn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-table"><span class="toc-number">4.</span> <span class="toc-text">console.table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-group"><span class="toc-number">5.</span> <span class="toc-text">console.group</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li></ol>
+                        </div>
+                    </div>
                 
             
         </div>
