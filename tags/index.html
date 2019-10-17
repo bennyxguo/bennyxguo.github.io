@@ -17,7 +17,7 @@
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_0wwj85c9fst.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_7jr8c7mf4wi.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
@@ -27,12 +27,12 @@
     <div id="loader"></div>
     <div id="single" class="page">
     <div id="top">
-        <a class="icon-left image-icon" href="javascript:history.back()"></a>
+        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
     </div>
     <div class="section dark-obsidian">
         <div class="article animated fadeIn">
             <div class="main animated fadeIn">
-                <div class="content">
+                <div class="md-content content">
                 
                     <div class="set">
   <a href="/tags/Angular-2/" style="font-size: 19.5px; color: #7f7f7f">Angular 2</a> <a href="/tags/Angular-4/" style="font-size: 30.5px; color: #404040">Angular 4</a> <a href="/tags/Console/" style="font-size: 14px; color: #9e9e9e">Console</a> <a href="/tags/Debugging/" style="font-size: 14px; color: #9e9e9e">Debugging</a> <a href="/tags/Gitlab/" style="font-size: 14px; color: #9e9e9e">Gitlab</a> <a href="/tags/Hybird-App/" style="font-size: 36px; color: #212121">Hybird App</a> <a href="/tags/Ionic-2/" style="font-size: 25px; color: #606060">Ionic 2</a> <a href="/tags/Ionic-3/" style="font-size: 25px; color: #606060">Ionic 3</a> <a href="/tags/JavaScript/" style="font-size: 14px; color: #9e9e9e">JavaScript</a> <a href="/tags/Laravel-5-4/" style="font-size: 14px; color: #9e9e9e">Laravel 5.4</a> <a href="/tags/Laravel-Passport/" style="font-size: 25px; color: #606060">Laravel Passport</a> <a href="/tags/Lumen/" style="font-size: 19.5px; color: #7f7f7f">Lumen</a> <a href="/tags/Webhook/" style="font-size: 14px; color: #9e9e9e">Webhook</a>
@@ -65,17 +65,16 @@
         </span>
     </p>
 </footer>
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -130,6 +129,8 @@
 
 
 
+
+
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/dracula.css">
     <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
@@ -170,7 +171,8 @@
 
         var valine = new Valine();
 
-        function initValine() {
+        function initValine(path) {
+            if (!path) path = window.location.pathname;
             let language = 'zh-CN';
             if (!language) {
                 language = 'en';
@@ -186,6 +188,7 @@
                 avatar: 'mp',
                 placeholder: 'Leave your throughs behind~',
                 visitor: 'true',
+                path: path,
                 lang: language
             });
         }

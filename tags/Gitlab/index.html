@@ -17,7 +17,7 @@
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_0wwj85c9fst.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_7jr8c7mf4wi.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 </head>
@@ -33,7 +33,7 @@
         </li>
         
         <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="CATEGORY">CATEGORY</a>
+            <a href="/categories/" title="CATEGORIES">CATEGORIES</a>
         </li>
         
         <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
@@ -64,7 +64,7 @@
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/categories/" title="CATEGORY" class="menu-link">CATEGORY</a>
+                <a href="/categories/" title="CATEGORIES" class="menu-link">CATEGORIES</a>
             </li>
             
             <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
@@ -76,7 +76,7 @@
             </li>
             
         </ul>
-        <div class="icon-menu switchmenu gradient-text animated fadeInDown"></div>
+        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
     </div>
 </div>
 <div id="screen">
@@ -90,9 +90,12 @@
         </div>
     </div>
     
-    <div id="post0">
-        <p class="animated fadeInDown">九月 20, 2019</p>
-        <h1 class="animated fadeInDown"><a href="/2019/09/20/server/aliyun-webhook-setup/" title="GitLab Webhook 自动部署" class="posttitle">GitLab Webhook 自动部署</a></h1>
+    <div id="post0" class="else">
+        <p class="animated fadeInDown">
+            <a href="/categories/运维"><b>「 </b>运维<b> 」</b></a>
+            九月 20, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/09/20/server/aliyun-webhook-setup/" title="GitLab Webhook 自动部署" class="posttitle">GitLab Webhook 自动部署</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
@@ -115,19 +118,19 @@
                 
             </p>
         
-        <div class="md-content animated fadeIn">
-            
-                <h2 id="创建与填写部署公钥"><a href="#创建与填写部署公钥" class="headerlink" title="创建与填写部署公钥"></a>创建与填写部署公钥</h2><h3 id="创建部署公钥"><a href="#创建部署公钥" class="headerlink" title="创建部署公钥"></a>创建部署公钥</h3><pre><code class="bash">sudo -Hu www ssh-keygen -t rsa</code></pre>
-<blockquote>
-<p>如果创建失败首先需要创建/home/www/.ssh这个文件夹</p>
-</blockquote>
-<h3 id="查看公钥"><a href="#查看公钥" class="headerlink" title="查看公钥"></a>查看公钥</h3><pre><code class="bash">cat /home/www/.ssh...</code></pre>
-            
-            <span class="read-more gradient-text"><a href="/2019/09/20/server/aliyun-webhook-setup/" title="查看全文" class="posttitle">查看全文</a></span>
-        </div>
         
             <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
         
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="创建部署公钥"><a href="#创建部署公钥" class="headerlink" title="创建部署公钥"></a>创建部署公钥</h3><pre><code class="bash">sudo -Hu www ssh-keygen -t rsa</code></pre>
+<blockquote>
+<p>如果创建失败首先需要创建/home/www/.ssh这个文件夹</p>
+</blockquote>
+<h3 id="查看公钥"><a href="#查看公钥" class="headerlink" title="查看公钥"></a>查看公钥</h3><pre><code class="bash">cat /home/www/.ssh/id_rsa...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/09/20/server/aliyun-webhook-setup/" title="查看全文" class="posttitle">查看全文</a></span>
+        </div>
     </div>
     
 </div>
@@ -172,17 +175,16 @@
         </span>
     </p>
 </footer>
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -237,6 +239,8 @@
 
 
 
+
+
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/dracula.css">
     <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
@@ -277,7 +281,8 @@
 
         var valine = new Valine();
 
-        function initValine() {
+        function initValine(path) {
+            if (!path) path = window.location.pathname;
             let language = 'zh-CN';
             if (!language) {
                 language = 'en';
@@ -293,6 +298,7 @@
                 avatar: 'mp',
                 placeholder: 'Leave your throughs behind~',
                 visitor: 'true',
+                path: path,
                 lang: language
             });
         }
