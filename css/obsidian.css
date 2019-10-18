@@ -1770,6 +1770,12 @@ h1.title {
   align-content: center;
   color: #fff;
 }
+.else .post-count span i {
+  margin-right: 5px;
+  color: #7a7a8c;
+  font-weight: 900;
+  font-style: normal;
+}
 .else .post-count span b {
   font-size: 20px;
   color: #7a7a8c;
@@ -2325,6 +2331,9 @@ pre .keyword {
     display: block;
     padding-top: 0;
     grid-gap: 2rem;
+  }
+  .article .main .sidebar {
+    display: none;
   }
   .comment .gt-btn-public .gt-btn-text:after {
     content: "";

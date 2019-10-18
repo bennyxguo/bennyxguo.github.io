@@ -69,20 +69,21 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
                 <p class="post-count animated fadeInDown">
                     
                         <span>
-                        <b class="iconfont icon-text2"></b>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
                         1.3k
                     </span>
                     
                     
                         <span>
-                        <b class="iconfont icon-timer__s"></b>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
                         1 mins.
                     </span>
                     
                     
-                        <span id="/2017/04/11/frontends/Ionic301-ios-blackscreen-fix/" class="leancloud_visitors" data-flag-title="修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法">
-                            <b class="iconfont icon-read"></b>
-                            <i class="leancloud-visitors-count">1000000</i>
+                    
+                        <span id="busuanzi_container_page_pv">
+                            <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                            <span id="busuanzi_value_page_pv">0</span>
                         </span>
                     
                 </p>
@@ -157,8 +158,19 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
                 </ul>
             
             
+                
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='TriDiamondBlog'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >留言</div>
+
+
             
-                <div id="vcomments"></div>
             
         </div>
         <div class="sidebar">
@@ -216,6 +228,17 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
 <link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
 <script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
@@ -271,6 +294,8 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
 
 
 
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
 
 
 
@@ -310,37 +335,5 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
     }
 </script>
 
-
-    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-    <script>
-
-        var valine = new Valine();
-
-        function initValine(path) {
-            if (!path) path = window.location.pathname;
-            let language = 'zh-CN';
-            if (!language) {
-                language = 'en';
-            } else {
-                language = language.toLowerCase();
-            }
-            valine.init({
-                el: '#vcomments',
-                appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
-                appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
-                notify: 'false',
-                verify: 'false',
-                avatar: 'mp',
-                placeholder: 'Leave your throughs behind~',
-                visitor: 'true',
-                path: path,
-                lang: language
-            });
-        }
-
-        $(document).ready(function () {
-            initValine();
-        });
-    </script>
 
 </html>

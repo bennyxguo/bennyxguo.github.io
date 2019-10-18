@@ -282,7 +282,12 @@ var Obsidian = {
         });
         Obsidian.setCodeRowWithLang();
         Obsidian.tocSpy(200);
-        initValine();
+        if ($('#vcomments').length) {
+            initValine();
+        }
+        if ($('span[id^="busuanzi_"]').length) {
+            initialBusuanzi();
+        }
         buildImgCaption();
         utiliseBgColor('article');
     },
