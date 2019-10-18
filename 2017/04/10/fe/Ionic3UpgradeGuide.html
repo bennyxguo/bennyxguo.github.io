@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法 - 三·钻 TriDiamond</title>
+    <title>IONIC 2 升级 3 教程 - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="
-Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB的时候页面会出现黑屏问题。
+    <meta name="description" content="升级步骤
+这一次的升级Ionic 3 换成了使用最新的Angular 4.0, 最新的TypeScript, 添加了懒加载和修复了一些组件的bug.
 
 
-好消息是目前有一个暂时的修复方法。但是这个方法涉及修改Ionic核心代码，所以如,"> 
+首先更新package.json, 按照以下,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -34,7 +34,7 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://tridiamond.me"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法</h3>
+    <h3 class="subtitle">IONIC 2 升级 3 教程</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -60,22 +60,24 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
         </div>
         <div class="else">
             <p class="animated fadeInDown">
-                <a href="/categories/Ionic"><b>「 </b>IONIC<b> 」</b> </a>
-                四月 11, 2017
+                
+                    <a href="/categories/Ionic"><b>「 </b>IONIC<b> 」</b></a>
+                
+                四月 10, 2017
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2017/04/11/frontends/Ionic301-ios-blackscreen-fix/" title="修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法">修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2017/04/10/fe/Ionic3UpgradeGuide.html" title="IONIC 2 升级 3 教程">IONIC 2 升级 3 教程</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        1.3k
+                        6k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        1 mins.
+                        5 mins.
                     </span>
                     
                     
@@ -109,39 +111,138 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <blockquote>
-<p>Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB的时候页面会出现黑屏问题。</p>
+            <h2 id="升级步骤"><a href="#升级步骤" class="headerlink" title="升级步骤"></a>升级步骤</h2><blockquote>
+<p>这一次的升级Ionic 3 换成了使用最新的Angular 4.0, 最新的TypeScript, 添加了懒加载和修复了一些组件的bug.</p>
+</blockquote>
+<ol>
+<li>首先更新<code>package.json</code>, 按照以下的代码相应替换你package.json里面的代码, 并且把你项目根目录下的<code>node_modules</code>文件夹删除掉, 然后运行<code>npm install</code> (如果你是用淘宝镜像可以运行 <code>cnpm install</code>)</li>
+</ol>
+<pre><code class="json">&quot;dependencies&quot;: {
+    &quot;@angular/common&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/compiler&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/core&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/forms&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/http&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;4.0.0&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;4.0.0&quot;,
+    &quot;@ionic-native/core&quot;: &quot;3.4.2&quot;,
+    &quot;@ionic-native/splash-screen&quot;: &quot;3.4.2&quot;,
+    &quot;@ionic-native/status-bar&quot;: &quot;3.4.2&quot;,
+    &quot;@ionic/storage&quot;: &quot;2.0.1&quot;,
+    &quot;ionic-angular&quot;: &quot;3.0.1&quot;,
+    &quot;ionicons&quot;: &quot;3.0.0&quot;,
+    &quot;rxjs&quot;: &quot;5.1.1&quot;,
+    &quot;sw-toolbox&quot;: &quot;3.4.0&quot;,
+    &quot;zone.js&quot;: &quot;^0.8.4&quot;
+},
+&quot;devDependencies&quot;: {
+  &quot;@ionic/app-scripts&quot;: &quot;1.3.0&quot;,
+  &quot;typescript&quot;: &quot;~2.2.1&quot;
+}</code></pre>
+<ol start="2">
+<li>第二步你需要在<code>app/app.module.ts</code>文件里面引入<code>BrowserModule</code>和<code>HttpModule</code></li>
+</ol>
+<blockquote>
+<p>首先需要在头部引入这两个module (如果你的APP不使用HTTP可以不引入<code>HttpModule</code>)</p>
+</blockquote>
+<pre><code class="typescript">import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+import { HttpModule } from &#39;@angular/http&#39;;</code></pre>
+<blockquote>
+<p>在同一个文件里面找到<code>imports</code>并且加入<code>BrowserModule</code>和<code>HttpModule</code></p>
+</blockquote>
+<pre><code class="typescript">imports: [
+  BrowserModule,
+  HttpModule,
+  IonicModule.forRoot(MyApp)
+],</code></pre>
+<ol start="3">
+<li>如果你升级到 Ionic Native 3.x, 就是CLI3. 使用 Ionic Native 3.x的话, APP打包出来会更小. 因为Ionic Native的原生插件都不自带有了, 你使用一个就要安装一个. 如果你原有的Ionic 2 项目有引入原生插件, 你就要做以下操作.</li>
+</ol>
+<blockquote>
+<p>这里用<code>Camera</code>和<code>Geolocation</code>这个两个原生插件作为例子, 你其他的插件都需要使用相同的方式做修改</p>
 </blockquote>
 <blockquote>
-<p>好消息是目前有一个暂时的修复方法。但是这个方法涉及修改Ionic核心代码，所以如果你们正在使用Ionic3发布APP，可以暂时使用以下办法修复问题。</p>
+<p>注意您使用的所有插件都必须要在<code>app/app.module.ts</code>里面先引用了, 而且要在<code>app/app.modules.ts</code>里面的providers里面声明, 如果没有这样配置就会出现<code>No provider for XXXXX</code>这样的报错了!</p>
 </blockquote>
+<h4 id="Camera插件"><a href="#Camera插件" class="headerlink" title="Camera插件"></a>Camera插件</h4><pre><code class="typescript">// 在app/app.module.ts文件里面
+import { Camera } from &#39;@ionic-native/camera&#39;;
+
+...
+
+@NgModule({
+  ...
+
+  providers: [
+    ...
+    Camera
+    ...
+  ]
+  ...
+})
+export class AppModule { }</code></pre>
+<h4 id="Geolocation插件"><a href="#Geolocation插件" class="headerlink" title="Geolocation插件"></a>Geolocation插件</h4><pre><code class="typescript">// 在app/app.module.ts文件里面
+import { Geolocation } from &#39;@ionic-native/geolocation&#39;;
+import { Platform } from &#39;ionic-angular&#39;;
+
+import { NgZone } from &#39;@angular/core&#39;;
+
+@Component({ ... })
+export class MyComponent {
+
+  constructor(private geolocation: Geolocation, private platform: Platform, private ngZone: NgZone) {
+
+    platform.ready().then(() =&gt; {
+
+      // get position
+      geolocation.getCurrentPosition().then(pos =&gt; {
+
+        console.log(`lat: ${pos.coords.latitude}, lon: ${pos.coords.longitude}`)
+
+      });
+
+
+      // watch position
+      const watch = geolocation.watchPosition().subscribe(pos =&gt; {
+
+        console.log(`lat: ${pos.coords.latitude}, lon: ${pos.coords.longitude}`)
+
+        // Currently, observables from Ionic Native plugins
+        // need to run inside of zone to trigger change detection
+        ngZone.run(() =&gt; {
+          this.position = pos;
+        })
+
+      });
+
+      // to stop watching
+      watch.unsubscribe();
+
+    });
+
+  }
+
+}</code></pre>
 <blockquote>
-<p>在<code>node_modules/ionic-angular/components/tabs/tabs.js</code>找到一下代码 (468行)</p>
+<p>更详细的文档可以参考官方的修改日记 <a href="https://github.com/driftyco/ionic-native/blob/master/README.md" target="_blank" rel="noopener">https://github.com/driftyco/ionic-native/blob/master/README.md</a></p>
 </blockquote>
-<pre><code class="typescript">getComponent(this._linker, tab.root).then(function (viewController) {
-    if (viewController !== active.component) {
-        // Otherwise, if the page we&#39;re on is not our real root
-        // reset it to our default root type
-        return tab.setRoot(tab.root);
-    }
-}).catch(function () {
-    (void 0) /* console.debug */;
-});</code></pre>
-<blockquote>
-<p>把以上代码改为</p>
+<h2 id="组件Component更变"><a href="#组件Component更变" class="headerlink" title="组件Component更变"></a>组件<code>Component</code>更变</h2><h4 id="新网格"><a href="#新网格" class="headerlink" title="新网格"></a>新网格</h4><blockquote>
+<p>旧的网格体系已经废除, 新的网格组件请参考官方文档 <a href="http://blog.ionic.io/build-awesome-desktop-apps-with-ionics-new-responsive-grid/" target="_blank" rel="noopener">http://blog.ionic.io/build-awesome-desktop-apps-with-ionics-new-responsive-grid/</a></p>
 </blockquote>
-<pre><code class="typescript">getComponent(this._linker, tab.root).then(function (viewController) {
-    if (viewController.component !== active.component) {
-        // Otherwise, if the page we&#39;re on is not our real root
-        // reset it to our default root type
-        return tab.setRoot(tab.root);
-    }
-}).catch(function () {
-    (void 0) /* console.debug */;
-});</code></pre>
-<blockquote>
-<p>以上解决办法来自于github上面的一个大神 <a href="https://github.com/driftyco/ionic/pull/11084" target="_blank" rel="noopener">https://github.com/driftyco/ionic/pull/11084</a></p>
+<h4 id="标签的color属性更变"><a href="#标签的color属性更变" class="headerlink" title="标签的color属性更变"></a>标签的<code>color</code>属性更变</h4><blockquote>
+<p>以下标签的<code>color</code>属性在新的版本里面会不起效果了, 现在必须要使用<code>ion-text</code>才会起效果, 详细说明请看官方文档 <a href="http://ionicframework.com/docs/api/components/typography/Typography/" target="_blank" rel="noopener">http://ionicframework.com/docs/api/components/typography/Typography/</a></p>
 </blockquote>
+<pre><code class="css">h1[color], h2[color], h3[color], h4[color], h5[color], h6[color], a[color]:not([ion-button]):not([ion-item]):not([ion-fab]), p[color], span[color], b[color], i[color], strong[color], em[color], small[color], sub[color], sup[color]</code></pre>
+<h4 id="Slides组件更变"><a href="#Slides组件更变" class="headerlink" title="Slides组件更变"></a>Slides组件更变</h4><blockquote>
+<p>以下的Slides属性和方法已经正式在新版本里面移除了</p>
+</blockquote>
+<ul>
+<li>Slides的input的<code>options</code>属性已经废除, 请使用标签的属性;</li>
+<li>Slide的事件<code>ionWillChange</code>方法已经废除, 请使用<code>ionSlideWillChange</code>;</li>
+<li>Slide的事件<code>ionDidChange</code>方法已经废除, 请使用<code>ionSlideDidChange</code>;</li>
+<li>Slide的事件<code>ionDrag</code>方法已经废除, 请使用<code>ionSlideDrag</code>;</li>
+<li>Slides的<code>getSlider()</code>方法已经废除, 请使用<code>ion-slides</code>实例;</li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -186,12 +287,19 @@ Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB�
                 </div>
                 <ul>
                     <li><a href="/">11 <p>文章</p></a></li>
-                    <li><a href="/categories">4 <p>分类</p></a></li>
+                    <li><a href="/categories">3 <p>分类</p></a></li>
                     <li><a href="/tags">13 <p>标签</p></a></li>
                 </ul>
             </div>
             
                 
+                
+                    <div class="box sticky animated fadeInRight faster">
+                        <div id="toc" class="subbox">
+                            <h4>目录</h4>
+                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#升级步骤"><span class="toc-number">1.</span> <span class="toc-text">升级步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Camera插件"><span class="toc-number">1.0.1.</span> <span class="toc-text">Camera插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Geolocation插件"><span class="toc-number">1.0.2.</span> <span class="toc-text">Geolocation插件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件Component更变"><span class="toc-number">2.</span> <span class="toc-text">组件Component更变</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#新网格"><span class="toc-number">2.0.1.</span> <span class="toc-text">新网格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标签的color属性更变"><span class="toc-number">2.0.2.</span> <span class="toc-text">标签的color属性更变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Slides组件更变"><span class="toc-number">2.0.3.</span> <span class="toc-text">Slides组件更变</span></a></li></ol></li></ol></li></ol>
+                        </div>
+                    </div>
                 
             
         </div>

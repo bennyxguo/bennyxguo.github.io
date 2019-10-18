@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>IONIC 2 实现首页双击退出APP - 三·钻 TriDiamond</title>
+    <title>修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法 - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="添加绑定值
-首先在app/app.html下加入#myNav, 这个是用于绑定当前页面的导航标签
+    <meta name="description" content="
+Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB的时候页面会出现黑屏问题。
 
- &amp;lt;ion-nav #myNav [root]=&amp;quot;rootPage&amp;quot;&amp;g,"> 
+
+好消息是目前有一个暂时的修复方法。但是这个方法涉及修改Ionic核心代码，所以如,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -33,7 +34,7 @@
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://tridiamond.me"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">IONIC 2 实现首页双击退出APP</h3>
+    <h3 class="subtitle">修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -59,22 +60,24 @@
         </div>
         <div class="else">
             <p class="animated fadeInDown">
-                <a href="/categories/Ionic"><b>「 </b>IONIC<b> 」</b> </a>
-                四月 24, 2017
+                
+                    <a href="/categories/Ionic"><b>「 </b>IONIC<b> 」</b></a>
+                
+                四月 11, 2017
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2017/04/24/frontends/listen-to-back-button/" title="IONIC 2 实现首页双击退出APP">IONIC 2 实现首页双击退出APP</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2017/04/11/fe/IonicIosBlackscreenFix.html" title="修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法">修复 Ionic 3.0.1 在IOS点击Tabs多次出现黑屏问题方法</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        2.4k
+                        1.3k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        2 mins.
+                        1 mins.
                     </span>
                     
                     
@@ -87,7 +90,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-3/">Ionic 3</a></li></ul>
             
         </div>
     </div>
@@ -108,67 +111,39 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h2 id="添加绑定值"><a href="#添加绑定值" class="headerlink" title="添加绑定值"></a>添加绑定值</h2><blockquote>
-<p>首先在<code>app/app.html</code>下加入<code>#myNav</code>, 这个是用于绑定当前页面的导航标签</p>
+            <blockquote>
+<p>Ionic 3.0.1 在IOS存在的一个严重的BUG，在IOS下多次重复点击TAB的时候页面会出现黑屏问题。</p>
 </blockquote>
-<pre><code class="html"> &lt;ion-nav #myNav [root]=&quot;rootPage&quot;&gt;&lt;/ion-nav&gt;</code></pre>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><blockquote>
-<p>然后在<code>app.component.ts</code>做相对的改动</p>
+<blockquote>
+<p>好消息是目前有一个暂时的修复方法。但是这个方法涉及修改Ionic核心代码，所以如果你们正在使用Ionic3发布APP，可以暂时使用以下办法修复问题。</p>
 </blockquote>
-<pre><code class="ts">import { Component, ViewChild } from &#39;@angular/core&#39;;
-import { Platform, ToastController, Nav, App } from &#39;ionic-angular&#39;;
-import { StatusBar } from &#39;@ionic-native/status-bar&#39;;
-import { SplashScreen } from &#39;@ionic-native/splash-screen&#39;;
-
-
-@Component({
-  templateUrl: &#39;app.html&#39;,
-  providers: [SplashScreen, StatusBar]
-})
-export class MyApp {
-  rootPage = &#39;TabsPage&#39;;
-  backButtonPressed: boolean = false;  //用于判断返回键是否触发
-  @ViewChild(&#39;myNav&#39;) nav: Nav;
-
-  constructor(public platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar, public app: App, public toastCtrl: ToastController) {
-    platform.ready().then(() =&gt; {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.statusBar.backgroundColorByHexString(&#39;#661F22&#39;);
-      this.splashScreen.hide();
-      this.registerBackButtonAction(); //运行这个方法绑定返回按钮
-    });
-  }
-
-  registerBackButtonAction() {
-    this.platform.registerBackButtonAction(() =&gt; {
-      //如果想点击返回按钮隐藏toast或loading或Overlay就把下面加上
-      // this.ionicApp._toastPortal.getActive() || this.ionicApp._loadingPortal.getActive() || this.ionicApp._overlayPortal.getActive();
-      let nav = this.app.getActiveNav();
-      if (nav.canGoBack()){ //是否已经到了首页
-        nav.pop();
-      }else{
-        this.showExit()
-      }
-    }, 1);
-  }
-
-  //双击退出提示框
-  showExit() {
-    if (this.backButtonPressed) { //当触发标志为true时，即2秒内双击返回按键则退出APP
-      this.platform.exitApp();
-    } else {
-     this.toastCtrl.create({
-      message: &#39;再按一次退出应用&#39;,
-      duration: 2000,
-      position: &#39;middle&#39;
-     }).present();
-     this.backButtonPressed = true;
-     setTimeout(() =&gt; this.backButtonPressed = false, 2000);//2秒内没有再次点击返回则将触发标志标记为false
+<blockquote>
+<p>在<code>node_modules/ionic-angular/components/tabs/tabs.js</code>找到一下代码 (468行)</p>
+</blockquote>
+<pre><code class="typescript">getComponent(this._linker, tab.root).then(function (viewController) {
+    if (viewController !== active.component) {
+        // Otherwise, if the page we&#39;re on is not our real root
+        // reset it to our default root type
+        return tab.setRoot(tab.root);
     }
-  }
-}</code></pre>
+}).catch(function () {
+    (void 0) /* console.debug */;
+});</code></pre>
+<blockquote>
+<p>把以上代码改为</p>
+</blockquote>
+<pre><code class="typescript">getComponent(this._linker, tab.root).then(function (viewController) {
+    if (viewController.component !== active.component) {
+        // Otherwise, if the page we&#39;re on is not our real root
+        // reset it to our default root type
+        return tab.setRoot(tab.root);
+    }
+}).catch(function () {
+    (void 0) /* console.debug */;
+});</code></pre>
+<blockquote>
+<p>以上解决办法来自于github上面的一个大神 <a href="https://github.com/driftyco/ionic/pull/11084" target="_blank" rel="noopener">https://github.com/driftyco/ionic/pull/11084</a></p>
+</blockquote>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -213,19 +188,12 @@ export class MyApp {
                 </div>
                 <ul>
                     <li><a href="/">11 <p>文章</p></a></li>
-                    <li><a href="/categories">4 <p>分类</p></a></li>
+                    <li><a href="/categories">3 <p>分类</p></a></li>
                     <li><a href="/tags">13 <p>标签</p></a></li>
                 </ul>
             </div>
             
                 
-                
-                    <div class="box sticky animated fadeInRight faster">
-                        <div id="toc" class="subbox">
-                            <h4>目录</h4>
-                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加绑定值"><span class="toc-number">1.</span> <span class="toc-text">添加绑定值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">2.</span> <span class="toc-text">代码实现</span></a></li></ol>
-                        </div>
-                    </div>
                 
             
         </div>

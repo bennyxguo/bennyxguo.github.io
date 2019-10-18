@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lumen 使用 laravel passport - 三·钻 TriDiamond</title>
+    <title>Laravel 5.4 开发笔记 - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.所以如果要在lumen上使用laravel的passpo,"> 
+    <meta name="description" content="Laravel最近出的Laravel5.4新加了挺多功能的, 比起我用了1年的5.1完善多了. 比较吸引我使用最新的5.4的有几点:
+
+5.4 添加了谷歌内核的浏览器模拟操作
+自带API认证类”PA,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -30,7 +33,7 @@
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://tridiamond.me"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">Lumen 使用 laravel passport</h3>
+    <h3 class="subtitle">Laravel 5.4 开发笔记</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -52,26 +55,28 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(https://res.cloudinary.com/tridiamond/image/upload/v1571213684/blog/lumn_cover_uujop9.png);">
+                url(https://s2.ax1x.com/2019/09/18/noYn41.png);">
         </div>
         <div class="else">
             <p class="animated fadeInDown">
-                <a href="/categories/Laravel"><b>「 </b>LARAVEL<b> 」</b> </a>
-                一月 10, 2019
+                
+                    <a href="/categories/Laravel"><b>「 </b>LARAVEL<b> 」</b></a>
+                
+                二月 26, 2017
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/01/10/backends/lumen-passport-usage/" title="Lumen 使用 laravel passport">Lumen 使用 laravel passport</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2017/02/26/be/laravel5.4-passport-and-authen.html" title="Laravel 5.4 开发笔记">Laravel 5.4 开发笔记</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        6.5k
+                        1.9k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        6 mins.
+                        2 mins.
                     </span>
                     
                     
@@ -84,7 +89,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-5-4/">Laravel 5.4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li></ul>
             
         </div>
     </div>
@@ -105,201 +110,36 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <p>Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.<br>所以如果要在lumen上使用laravel的passport就需要安装另外一个插件.</p>
-<h2 id="安装要求"><a href="#安装要求" class="headerlink" title="安装要求"></a>安装要求</h2><ul>
-<li>PHP &gt;= 5.6.3</li>
-<li>Lumen &gt;= 5.3</li>
+            <p>Laravel最近出的Laravel5.4新加了挺多功能的, 比起我用了1年的5.1完善多了. 比较吸引我使用最新的5.4的有几点:</p>
+<ul>
+<li>5.4 添加了谷歌内核的浏览器模拟操作</li>
+<li>自带API认证类”PASSPORT”</li>
+<li>路由自动分类, 现有有了Route自己的文件夹然后里面分类好了WEB和API的路由<br>这一篇记录会分享一些我在尝试Laravel 5.4的过程中遇到的问题和经验</li>
 </ul>
-<h2 id="Composer安装lumen-passport插件"><a href="#Composer安装lumen-passport插件" class="headerlink" title="Composer安装lumen-passport插件"></a>Composer安装lumen-passport插件</h2><p>首先安装 Lumen Passport</p>
-<pre><code class="bash"># 进入项目根目录
-$ cd lumen-app
+<h2 id="开发记录"><a href="#开发记录" class="headerlink" title="开发记录"></a>开发记录</h2><h3 id="移植-Migrate-用户和API认证表格是出现sql错误"><a href="#移植-Migrate-用户和API认证表格是出现sql错误" class="headerlink" title="移植(Migrate)用户和API认证表格是出现sql错误"></a>移植(Migrate)用户和API认证表格是出现sql错误</h3><pre><code class="console">[Illuminate\Database\QueryException]                                                         
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key  
+   length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`))   </code></pre>
+<pre><code class="console">[PDOException]                                                                               
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key  
+   length is 767 bytes  </code></pre>
+<p>解决办法就是在<strong>app/Providers/AppServiceProvider.php</strong>的这个文件里面的<strong>boot</strong>方法里面添加一下代码:</p>
+<pre><code class="php">use Illuminate\Support\Facades\Schema;
 
-# 使用composer安装插件
-$ composer require dusterio/lumen-passport</code></pre>
-<h2 id="修改-bootstrap-bootstrap-app-php"><a href="#修改-bootstrap-bootstrap-app-php" class="headerlink" title="修改 bootstrap (bootstrap/app.php)"></a>修改 bootstrap (bootstrap/app.php)</h2><p>需要引入Laravel Passport的provider和Lumen的一些provider</p>
-<pre><code class="php">// 开启 Facades
-$app-&gt;withFacades();
-
-// 开启 Eloquent
-$app-&gt;withEloquent();
-
-// 开启 auth 中间件
-$app-&gt;routeMiddleware([
-    &#39;auth&#39; =&gt; App\Http\Middleware\Authenticate::class,
-]);
-
-// 注册laravel passport的provider和lumen passport的provider
-$app-&gt;register(Laravel\Passport\PassportServiceProvider::class);
-$app-&gt;register(Dusterio\LumenPassport\PassportServiceProvider::class);</code></pre>
-<h2 id="数据表移植和安装Laravel-Passport"><a href="#数据表移植和安装Laravel-Passport" class="headerlink" title="数据表移植和安装Laravel Passport"></a>数据表移植和安装Laravel Passport</h2><pre><code class="bash"># 移植passport的数据表
-php artisan migrate
-
-# 安装passport需要的配置
-php artisan passport:install</code></pre>
-<h2 id="Lumen-Passport自带的路由"><a href="#Lumen-Passport自带的路由" class="headerlink" title="Lumen Passport自带的路由"></a>Lumen Passport自带的路由</h2><p>这个lumen-passport包已经引入了一下路由, 但是与web相关的路由因为lumen是没有web的路由的, 只有api的, 所以这个插件已经把web端的路由都去掉了.</p>
-<table>
-<thead>
-<tr>
-<th>Verb</th>
-<th>Path</th>
-<th>NamedRoute</th>
-<th>Controller</th>
-<th>Action</th>
-<th>Middleware</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>POST</td>
-<td>/oauth/token</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\AccessTokenController</td>
-<td>issueToken</td>
-<td>-</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/oauth/tokens</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController</td>
-<td>forUser</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>/oauth/tokens/{token_id}</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController</td>
-<td>destroy</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>/oauth/token/refresh</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\TransientTokenController</td>
-<td>refresh</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/oauth/clients</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\ClientController</td>
-<td>forUser</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>/oauth/clients</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\ClientController</td>
-<td>store</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>/oauth/clients/{client_id}</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\ClientController</td>
-<td>update</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>/oauth/clients/{client_id}</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\ClientController</td>
-<td>destroy</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/oauth/scopes</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\ScopeController</td>
-<td>all</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/oauth/personal-access-tokens</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\PersonalAccessTokenController</td>
-<td>forUser</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>/oauth/personal-access-tokens</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\PersonalAccessTokenController</td>
-<td>store</td>
-<td>auth</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>/oauth/personal-access-tokens/{token_id}</td>
-<td></td>
-<td>\Laravel\Passport\Http\Controllers\PersonalAccessTokenController</td>
-<td>destroy</td>
-<td>auth</td>
-</tr>
-</tbody></table>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>修改 <code>config/auth.php</code> 里面的配置, 按照项目需要修改. 下面是一个简单的例子</p>
-<pre><code class="php">return [
-    &#39;defaults&#39; =&gt; [
-        &#39;guard&#39; =&gt; &#39;api&#39;,
-        &#39;passwords&#39; =&gt; &#39;users&#39;,
-    ],
-
-    &#39;guards&#39; =&gt; [
-        &#39;api&#39; =&gt; [
-            &#39;driver&#39; =&gt; &#39;passport&#39;,
-            &#39;provider&#39; =&gt; &#39;users&#39;,
-        ],
-    ],
-
-    &#39;providers&#39; =&gt; [
-        &#39;users&#39; =&gt; [
-            &#39;driver&#39; =&gt; &#39;eloquent&#39;,
-            &#39;model&#39; =&gt; \App\User::class
-        ]
-    ]
-];</code></pre>
-<p>需要在 <code>vendor\laravel\lumen-framework\config\auth.php</code> 复制到项目根目录下的<code>config</code>文件夹里面, 如果没有config文件夹, 需要手动添加一个.</p>
-<p>然后在<code>bootstrap/app.php</code>最前面加入配置应用, 因为lumen是不自动引入config里面的配置的.</p>
-<pre><code class="php">$app-&gt;configure(&#39;auth&#39;);</code></pre>
-<h2 id="注册路由"><a href="#注册路由" class="headerlink" title="注册路由"></a>注册路由</h2><p>需要在<code>Provider\AuthServiceProviders.php</code>里面的<code>boot</code>方法里面注册路由</p>
-<pre><code class="php">/**
-* Boot the authentication services for the application.
-*
-* @return void
-*/
-public function boot()
+function boot()
 {
-    // Here you may define how you wish users to be authenticated for your Lumen
-    // application. The callback which receives the incoming request instance
-    // should return either a User instance or null. You&#39;re free to obtain
-    // the User instance via an API token or any other method necessary.
-
-    LumenPassport::routes($this-&gt;app); // 注册路由
-
-    LumenPassport::tokensExpireIn(Carbon::now()-&gt;addDays(7));
-
-    LumenPassport::refreshTokensExpireIn(Carbon::now()-&gt;addDays(30));
+    Schema::defaultStringLength(191);
 }</code></pre>
-<p>简单路由注册</p>
-<pre><code class="php">Dusterio\LumenPassport\LumenPassport::routes($this-&gt;app);</code></pre>
-<p>通用版本控制的路由</p>
-<pre><code class="php">Dusterio\LumenPassport\LumenPassport::routes($this-&gt;app, [&#39;prefix&#39; =&gt; &#39;v1/oauth&#39;]);</code></pre>
-<h2 id="用户模型"><a href="#用户模型" class="headerlink" title="用户模型"></a>用户模型</h2><p>需要在用户模型里面加入<code>HasApiTokens</code>的trait, 例子:</p>
-<pre><code class="php">class User extends Model implements AuthenticatableContract, AuthorizableContract
+<h3 id="怎么不使用Laravel5-4自带的用户登录字段"><a href="#怎么不使用Laravel5-4自带的用户登录字段" class="headerlink" title="怎么不使用Laravel5.4自带的用户登录字段"></a>怎么不使用Laravel5.4自带的用户登录字段</h3><p>每次使用laravel自带的用户认证体系都会纠结, 怎么不用它自带的email作为用户名!<br>这次适用Laravel5.4 又遇到了这个问题, 而且解决办法和5.1,5.2的不一样了, 因为Laravel的Auth Provider变动了.<br>解决办法就是在自带的<strong>User.php</strong>(用户模型)里面使用<strong>findForPassport</strong>, 参考一下例子:</p>
+<pre><code class="php">class User extends Authenticatable
 {
-    use HasApiTokens, Authenticatable, Authorizable;
+    use HasApiTokens, Notifiable;
 
-    /* rest of the model */
+    // ... some code
+
+    public function findForPassport($username) {
+        return $this-&gt;where(&#39;id&#39;, $username)-&gt;first();
+    }
 }</code></pre>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>其他的详细文档可以查看lumen-passport的插件<a href="https://github.com/dusterio/lumen-passport" target="_blank" rel="noopener">github</a></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -344,7 +184,7 @@ public function boot()
                 </div>
                 <ul>
                     <li><a href="/">11 <p>文章</p></a></li>
-                    <li><a href="/categories">4 <p>分类</p></a></li>
+                    <li><a href="/categories">3 <p>分类</p></a></li>
                     <li><a href="/tags">13 <p>标签</p></a></li>
                 </ul>
             </div>
@@ -354,7 +194,7 @@ public function boot()
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>目录</h4>
-                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装要求"><span class="toc-number">1.</span> <span class="toc-text">安装要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Composer安装lumen-passport插件"><span class="toc-number">2.</span> <span class="toc-text">Composer安装lumen-passport插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-bootstrap-bootstrap-app-php"><span class="toc-number">3.</span> <span class="toc-text">修改 bootstrap (bootstrap/app.php)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据表移植和安装Laravel-Passport"><span class="toc-number">4.</span> <span class="toc-text">数据表移植和安装Laravel Passport</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lumen-Passport自带的路由"><span class="toc-number">5.</span> <span class="toc-text">Lumen Passport自带的路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">6.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注册路由"><span class="toc-number">7.</span> <span class="toc-text">注册路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户模型"><span class="toc-number">8.</span> <span class="toc-text">用户模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">9.</span> <span class="toc-text">其他</span></a></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发记录"><span class="toc-number">1.</span> <span class="toc-text">开发记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#移植-Migrate-用户和API认证表格是出现sql错误"><span class="toc-number">1.1.</span> <span class="toc-text">移植(Migrate)用户和API认证表格是出现sql错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么不使用Laravel5-4自带的用户登录字段"><span class="toc-number">1.2.</span> <span class="toc-text">怎么不使用Laravel5.4自带的用户登录字段</span></a></li></ol></li></ol>
                         </div>
                     </div>
                 

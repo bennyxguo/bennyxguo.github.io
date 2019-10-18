@@ -612,7 +612,9 @@ $(function () {
                         hljs.highlightBlock(block);
                     });
                     Obsidian.setCodeRowWithLang();
-                    initValine()
+                    if ($('#vcomments').length) {
+                        initValine();
+                    }
                 }, function () {
                     tag.html(tag.attr('data-load-more')).data('status', 'loaded')
                 })
