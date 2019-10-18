@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>IONIC 2 实现首页双击退出APP - 三·钻 TriDiamond</title>
+    <title>IONIC 2 开发笔记 - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="添加绑定值
-首先在app/app.html下加入#myNav, 这个是用于绑定当前页面的导航标签
-
- &amp;lt;ion-nav #myNav [root]=&amp;quot;rootPage&amp;quot;&amp;g,"> 
+    <meta name="description" content="因为IONIC2才刚刚开始进入正式版, 中文文档基本都是不全的, 我现在开发都是在看英文文档在开发的过程中遇到了很多文档没有描述的问题, 而且开发的过程中遇到一些框架本身没有完善的功能和存在的BUG,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -33,7 +30,7 @@
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://tridiamond.me"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">IONIC 2 实现首页双击退出APP</h3>
+    <h3 class="subtitle">IONIC 2 开发笔记</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -62,21 +59,21 @@
                 
                     <a href="/categories/Ionic"><b>「 </b>IONIC<b> 」</b></a>
                 
-                四月 24, 2017
+                二月 25, 2017
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2017/04/24/fe/listen-to-back-button.html" title="IONIC 2 实现首页双击退出APP">IONIC 2 实现首页双击退出APP</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2017/02/25/ionic/dev-note.html" title="IONIC 2 开发笔记">IONIC 2 开发笔记</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        2.4k
+                        4.1k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        2 mins.
+                        4 mins.
                     </span>
                     
                     
@@ -89,7 +86,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-4/">Angular 4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
             
         </div>
     </div>
@@ -110,67 +107,85 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h2 id="添加绑定值"><a href="#添加绑定值" class="headerlink" title="添加绑定值"></a>添加绑定值</h2><blockquote>
-<p>首先在<code>app/app.html</code>下加入<code>#myNav</code>, 这个是用于绑定当前页面的导航标签</p>
-</blockquote>
-<pre><code class="html"> &lt;ion-nav #myNav [root]=&quot;rootPage&quot;&gt;&lt;/ion-nav&gt;</code></pre>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><blockquote>
-<p>然后在<code>app.component.ts</code>做相对的改动</p>
-</blockquote>
-<pre><code class="ts">import { Component, ViewChild } from &#39;@angular/core&#39;;
-import { Platform, ToastController, Nav, App } from &#39;ionic-angular&#39;;
-import { StatusBar } from &#39;@ionic-native/status-bar&#39;;
-import { SplashScreen } from &#39;@ionic-native/splash-screen&#39;;
-
-
-@Component({
-  templateUrl: &#39;app.html&#39;,
-  providers: [SplashScreen, StatusBar]
-})
-export class MyApp {
-  rootPage = &#39;TabsPage&#39;;
-  backButtonPressed: boolean = false;  //用于判断返回键是否触发
-  @ViewChild(&#39;myNav&#39;) nav: Nav;
-
-  constructor(public platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar, public app: App, public toastCtrl: ToastController) {
-    platform.ready().then(() =&gt; {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.statusBar.backgroundColorByHexString(&#39;#661F22&#39;);
-      this.splashScreen.hide();
-      this.registerBackButtonAction(); //运行这个方法绑定返回按钮
-    });
-  }
-
-  registerBackButtonAction() {
-    this.platform.registerBackButtonAction(() =&gt; {
-      //如果想点击返回按钮隐藏toast或loading或Overlay就把下面加上
-      // this.ionicApp._toastPortal.getActive() || this.ionicApp._loadingPortal.getActive() || this.ionicApp._overlayPortal.getActive();
-      let nav = this.app.getActiveNav();
-      if (nav.canGoBack()){ //是否已经到了首页
-        nav.pop();
-      }else{
-        this.showExit()
-      }
-    }, 1);
-  }
-
-  //双击退出提示框
-  showExit() {
-    if (this.backButtonPressed) { //当触发标志为true时，即2秒内双击返回按键则退出APP
-      this.platform.exitApp();
-    } else {
-     this.toastCtrl.create({
-      message: &#39;再按一次退出应用&#39;,
-      duration: 2000,
-      position: &#39;middle&#39;
-     }).present();
-     this.backButtonPressed = true;
-     setTimeout(() =&gt; this.backButtonPressed = false, 2000);//2秒内没有再次点击返回则将触发标志标记为false
+            <p>因为IONIC2才刚刚开始进入正式版, 中文文档基本都是不全的, 我现在开发都是在看英文文档<br>在开发的过程中遇到了很多文档没有描述的问题, 而且开发的过程中遇到一些框架本身没有完善的功能和存在的BUG</p>
+<p>我会在这个日记里面记录一些文档没有写的, 和我开发过程中遇到的一些坑和经验, 希望可以帮助那些刚刚接触IONIC2的程序猿们!</p>
+<h2 id="APP配置"><a href="#APP配置" class="headerlink" title="APP配置"></a>APP配置</h2><h3 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h3><p>因为跨域问题，在开发时如果要用到本地环境进行开发(ionic serve)，必须配置proxy</p>
+<ul>
+<li>Proxy位于项目根目录下的 <strong>ionic.config.json</strong></li>
+</ul>
+<ul>
+<li>只需要把<strong>proxyUrl</strong>改为你本地环境的API地址</li>
+</ul>
+<pre><code class="javascript">{
+  &quot;name&quot;: &quot;rlph&quot;,
+  &quot;app_id&quot;: &quot;&quot;,
+  &quot;v2&quot;: true,
+  &quot;typescript&quot;: true,
+  &quot;proxies&quot;: [
+    {
+      &quot;path&quot;: &quot;/api&quot;,
+      &quot;proxyUrl&quot;: &quot;http://api.dev&quot;
     }
-  }
+  ]
 }</code></pre>
+<ul>
+<li>然后把API地址的常量制定为<strong>/api/</strong>这个proxy</li>
+</ul>
+<ul>
+<li>在根目录下<strong>/src/config.ts</strong>里面把<strong>“API_SERVER”</strong>的值改为<strong>“/api/“</strong></li>
+</ul>
+<pre><code>  export let data = {
+      &quot;API_SERVER&quot; : &quot;/api/&quot;
+  }</code></pre><h3 id="上线APP配置"><a href="#上线APP配置" class="headerlink" title="上线APP配置"></a>上线APP配置</h3><ul>
+<li>首先你需要配置真是服务器API地址<br>配置API地址是在根目录下<strong>/src/config.ts</strong>里面把<strong>“API_SERVER”</strong>的值改为线上API地址</li>
+</ul>
+<pre><code>  export let data = {
+      &quot;API_SERVER&quot; : &quot;http://api.domain.com/&quot;
+  }</code></pre><h2 id="开发常见问题"><a href="#开发常见问题" class="headerlink" title="开发常见问题"></a>开发常见问题</h2><h3 id="APP-run-失败"><a href="#APP-run-失败" class="headerlink" title="APP run 失败"></a>APP run 失败</h3><p>当运行<strong>ionic run android</strong>的时候可能会遇到该报错：</p>
+<pre><code>Error: Failed to install apk to device: [  1%] /data/local/tmp/android-debug.apk
+[  2%] /data/local/tmp/android-debug.apk
+...
+[100%] /data/local/tmp/android-debug.apk
+        pkg: /data/local/tmp/android-debug.apk
+Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE]</code></pre><ul>
+<li>此问题是因为已有签名的APP存在手机上， 需要想删除该APP才能安装测试（debug）版的apk</li>
+<li>在cmd运行以下代码即可解决问题：</li>
+</ul>
+<pre><code>adb uninstall my.package.id</code></pre><h3 id="Ionic-2-自带的native文件上传-FILE-TRANSFER-插件无法获取成功返回内容"><a href="#Ionic-2-自带的native文件上传-FILE-TRANSFER-插件无法获取成功返回内容" class="headerlink" title="Ionic 2 自带的native文件上传(FILE TRANSFER)插件无法获取成功返回内容"></a>Ionic 2 自带的native文件上传(FILE TRANSFER)插件无法获取成功返回内容</h3><p>这个是Ionic 2 核心代码里面的一个BUG, 在一下版本下是有问题的<br><strong>Ionic CLI Version: 2.2.1</strong></p>
+<ul>
+<li>首先找到项目根目录下以下路径里面的<strong>filetransfer.d.ts</strong>文件</li>
+</ul>
+<pre><code>node_modules\ionic-native\dist\es5\plugins\filetransfer.d.ts
+node_modules\ionic-native\dist\esm\plugins\filetransfer.d.ts</code></pre><ul>
+<li>分别修改以上两个文件里面的代码</li>
+</ul>
+<pre><code>//把这一行:
+upload(fileUrl: string, url: string, options?: FileUploadOptions, trustAllHosts?: boolean): Promise&lt;FileUploadResult | FileTransferError&gt;
+//改为: 
+upload(fileUrl: string, url: string, options?: FileUploadOptions, trustAllHosts?: boolean): Promise&lt;FileUploadResult&gt;</code></pre><h3 id="在安卓下使用相册选择时-返回的图片路径不能再显示问题"><a href="#在安卓下使用相册选择时-返回的图片路径不能再显示问题" class="headerlink" title="在安卓下使用相册选择时, 返回的图片路径不能再显示问题"></a>在安卓下使用相册选择时, 返回的图片路径不能再显示问题</h3><ul>
+<li>首先在这个例子使用的是cordova-plugin-camera组件(Cordova的相机插件)</li>
+<li>首先引入需要的类</li>
+<li>FilePath 这个类就是用来修复安卓上图片URI的问题的</li>
+</ul>
+<pre><code class="typescript">import { Camera, File, FilePath } from &#39;ionic-native&#39;;</code></pre>
+<ul>
+<li>使用 FilePath.resolveNativePath(imagePath) 这个方法来纠正图片URI</li>
+</ul>
+<pre><code class="typescript">Camera.getPicture(options).then((imagePath) =&gt; {
+ // 特殊安卓图片库的处理
+ this.nativeFilePath = imagePath;
+ if (this.pl.is(&#39;android&#39;) &amp;&amp; sourceType === Camera.PictureSourceType.PHOTOLIBRARY) {
+   FilePath.resolveNativePath(imagePath)
+   .then(filePath =&gt; {
+       this.nativeFilePath = filePath;
+       let currentName = imagePath.substring(imagePath.lastIndexOf(&#39;/&#39;) + 1, imagePath.lastIndexOf(&#39;?&#39;));
+   });
+ } else {
+   var currentName = imagePath.substr(imagePath.lastIndexOf(&#39;/&#39;) + 1);
+ }
+}, err =&gt; {
+ // this.presentToast(&#39;选择图片失败.&#39;);
+});</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -215,7 +230,7 @@ export class MyApp {
                 </div>
                 <ul>
                     <li><a href="/">11 <p>文章</p></a></li>
-                    <li><a href="/categories">3 <p>分类</p></a></li>
+                    <li><a href="/categories">4 <p>分类</p></a></li>
                     <li><a href="/tags">13 <p>标签</p></a></li>
                 </ul>
             </div>
@@ -225,7 +240,7 @@ export class MyApp {
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>目录</h4>
-                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加绑定值"><span class="toc-number">1.</span> <span class="toc-text">添加绑定值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">2.</span> <span class="toc-text">代码实现</span></a></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#APP配置"><span class="toc-number">1.</span> <span class="toc-text">APP配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#域名配置"><span class="toc-number">1.1.</span> <span class="toc-text">域名配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上线APP配置"><span class="toc-number">1.2.</span> <span class="toc-text">上线APP配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发常见问题"><span class="toc-number">2.</span> <span class="toc-text">开发常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#APP-run-失败"><span class="toc-number">2.1.</span> <span class="toc-text">APP run 失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ionic-2-自带的native文件上传-FILE-TRANSFER-插件无法获取成功返回内容"><span class="toc-number">2.2.</span> <span class="toc-text">Ionic 2 自带的native文件上传(FILE TRANSFER)插件无法获取成功返回内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在安卓下使用相册选择时-返回的图片路径不能再显示问题"><span class="toc-number">2.3.</span> <span class="toc-text">在安卓下使用相册选择时, 返回的图片路径不能再显示问题</span></a></li></ol></li></ol>
                         </div>
                     </div>
                 

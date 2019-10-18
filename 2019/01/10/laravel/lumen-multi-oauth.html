@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>GitLab Webhook 自动部署 - 三·钻 TriDiamond</title>
+    <title>Lumen passport实现多个用户体系下的oauth验证 - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="创建与填写部署公钥创建部署公钥sudo -Hu www ssh-keygen -t rsa
-
-如果创建失败首先需要创建/home/www/.ssh这个文件夹
-
-查看公钥cat /home/www/.,"> 
+    <meta name="description" content="这个教程是基于, lumen里面已经安装好了lumen-passport的插件, 如果还没有的话可以先到lumen使用laravel passport教程先安装.
+改写Laravel Passpor,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -34,7 +31,7 @@
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://tridiamond.me"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">GitLab Webhook 自动部署</h3>
+    <h3 class="subtitle">Lumen passport实现多个用户体系下的oauth验证</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -56,28 +53,28 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(https://s2.ax1x.com/2019/09/18/n7ku11.png);">
+                url(https://res.cloudinary.com/tridiamond/image/upload/v1571213684/blog/lumn_cover_uujop9.png);">
         </div>
         <div class="else">
             <p class="animated fadeInDown">
                 
-                    <a href="/categories/运维"><b>「 </b>运维<b> 」</b></a>
+                    <a href="/categories/Laravel"><b>「 </b>LARAVEL<b> 」</b></a>
                 
-                九月 20, 2019
+                一月 10, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/09/20/server/aliyun-webhook-setup.html" title="GitLab Webhook 自动部署">GitLab Webhook 自动部署</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/01/10/laravel/lumen-multi-oauth.html" title="Lumen passport实现多个用户体系下的oauth验证">Lumen passport实现多个用户体系下的oauth验证</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        2.9k
+                        5.5k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        3 mins.
+                        5 mins.
                     </span>
                     
                     
@@ -90,7 +87,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Gitlab/">Gitlab</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Webhook/">Webhook</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
             
         </div>
     </div>
@@ -111,47 +108,129 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h2 id="创建与填写部署公钥"><a href="#创建与填写部署公钥" class="headerlink" title="创建与填写部署公钥"></a>创建与填写部署公钥</h2><h3 id="创建部署公钥"><a href="#创建部署公钥" class="headerlink" title="创建部署公钥"></a>创建部署公钥</h3><pre><code class="bash">sudo -Hu www ssh-keygen -t rsa</code></pre>
-<blockquote>
-<p>如果创建失败首先需要创建/home/www/.ssh这个文件夹</p>
+            <p>这个教程是基于, lumen里面已经安装好了lumen-passport的插件, 如果还没有的话可以先到<a href="/2019/01/10/2019-01-10-lumen-passport-usage/">lumen使用laravel passport教程</a>先安装.</p>
+<h2 id="改写Laravel-Passport里面的UserRepository"><a href="#改写Laravel-Passport里面的UserRepository" class="headerlink" title="改写Laravel Passport里面的UserRepository"></a>改写Laravel Passport里面的<code>UserRepository</code></h2><blockquote>
+<p>文件路径 <code>vendor\laravel\passport\src\Bridge\UserRepository.php</code></p>
 </blockquote>
-<h3 id="查看公钥"><a href="#查看公钥" class="headerlink" title="查看公钥"></a>查看公钥</h3><pre><code class="bash">cat /home/www/.ssh/id_rsa.pub</code></pre>
-<h3 id="添加Hook"><a href="#添加Hook" class="headerlink" title="添加Hook"></a>添加Hook</h3><p>在阿里云code.aliyun.com上的profile&gt;ssh_key里面添加公钥</p>
-<h2 id="初始化git项目文件夹"><a href="#初始化git项目文件夹" class="headerlink" title="初始化git项目文件夹"></a>初始化git项目文件夹</h2><pre><code class="bash">sudo -Hu www git clone [git地址]</code></pre>
-<blockquote>
-<p>这里注意, 一定要用www的身份状态要不后期无法自动git pull</p>
+<ul>
+<li><p>首先需要改写<code>userRepositroy</code>里面的<code>getUserEntityByUserCredentials</code>方法</p>
+</li>
+<li><p>复制<code>userRepositroy</code>里面的<code>getUserEntityByUserCredentials</code>方法, 改名为<code>getEntityByUserCredentials</code></p>
+</li>
+<li><p>在新建的方法里面找到一下代码</p>
+</li>
+</ul>
+<pre><code class="php">$provider = config(&#39;auth.guards.api.provider&#39;);</code></pre>
+<p>改成一下样子</p>
+<pre><code class="php">$provider = config(&#39;auth.guards.&#39;.$provider.&#39;.provider&#39;);</code></pre>
+<ul>
+<li>然后在新的方法<code>getEntityByUserCredentials</code>的参数里面添加新的参数<code>$provider</code></li>
+</ul>
+<pre><code class="php">public function getEntityByUserCredentials($username, $password, $grantType, 
+  ClientEntityInterface $clientEntity, $provider) {
+      //...
+}</code></pre>
+<h2 id="修改oauth2-server里面的PasswordGrand"><a href="#修改oauth2-server里面的PasswordGrand" class="headerlink" title="修改oauth2-server里面的PasswordGrand"></a>修改oauth2-server里面的PasswordGrand</h2><blockquote>
+<p>文件路径 <code>vendor\league\oauth2-server\src\Grant\PasswordGrant.php</code></p>
 </blockquote>
-<h2 id="自动部署脚本-PHP"><a href="#自动部署脚本-PHP" class="headerlink" title="自动部署脚本 (PHP)"></a>自动部署脚本 (PHP)</h2><h3 id="Shell-exec"><a href="#Shell-exec" class="headerlink" title="Shell_exec"></a>Shell_exec</h3><p>在使用这个PHP脚本的时候我们需要用到<code>shell_exec</code>php的原生函数, php-fpm是默认屏蔽这个函数的, 所有需要在php.ini里面修改一下配置</p>
-<blockquote>
-<p>找到<code>disable_functions</code>这个参数, 并且在里面去掉<code>shell_exec</code></p>
-</blockquote>
-<h3 id="PHP-脚本"><a href="#PHP-脚本" class="headerlink" title="PHP 脚本"></a>PHP 脚本</h3><pre><code class="php">$token = &#39;token&#39;;
+<ul>
+<li>修改<code>validateUser</code>方法里面的这一串代码:</li>
+</ul>
+<pre><code class="php">$user = $this-&gt;userRepository-&gt;getEntityByUserCredentials(
+    $username,
+    $password,
+    $this-&gt;getIdentifier(),
+    $client,
+    $provider // 新加的provider字段
+);</code></pre>
+<ul>
+<li>在同一个方法里面加入新参数的获取</li>
+</ul>
+<pre><code class="php"> $provider = $this-&gt;getRequestParameter(&#39;provider&#39;, $request);
 
-if (!isset($_GET[&#39;token&#39;]) &amp;&amp; $_GET[&#39;token&#39;] != $token) {
-    die(&#39;access denied&#39;);
-}
+ if (is_null($provider)) {
+ throw OAuthServerException::invalidRequest(&#39;provider&#39;);
+ }</code></pre>
+<h2 id="在auth-php配置里面加入新的guard"><a href="#在auth-php配置里面加入新的guard" class="headerlink" title="在auth.php配置里面加入新的guard"></a>在auth.php配置里面加入新的guard</h2><p>首先需要加入新的guard配置</p>
+<pre><code class="php">&#39;guards&#39; =&gt; [
+    // 原有的api guard
+    &#39;api&#39; =&gt; [
+        &#39;driver&#39; =&gt; &#39;passport&#39;,
+        &#39;provider&#39; =&gt; &#39;users&#39;,
+    ],
+    // 新加的admin-api guard
+    &#39;admin-api&#39; =&gt; [
+        &#39;driver&#39; =&gt; &#39;passport&#39;,
+        &#39;provider&#39; =&gt; &#39;admins&#39;,
+    ],
+],</code></pre>
+<p>添加新<code>admin-api</code> guard的provider</p>
+<pre><code class="php">&#39;providers&#39; =&gt; [
+    &#39;users&#39; =&gt; [
+        &#39;driver&#39; =&gt; &#39;eloquent&#39;,
+        &#39;model&#39; =&gt; \App\Models\General\MemberLogin::class
+    ],
+    // 新加的admins provider对应不用的用户模型
+    &#39;admins&#39; =&gt; [
+        &#39;driver&#39; =&gt; &#39;eloquent&#39;,
+        &#39;model&#39; =&gt; \App\Models\Backend\Manager::class
+    ]
+],</code></pre>
+<h2 id="路由middleware使用"><a href="#路由middleware使用" class="headerlink" title="路由middleware使用"></a>路由middleware使用</h2><p>区别在于middleware, 上文加入的新<code>admin-api</code>guard, 在新的路由里面就可以使用<code>auth:admin-api</code>的权限验证中间件理实现权限控制了!</p>
+<pre><code class="php">/*
+|--------------------------------------------------------------------------
+| Admin API版本 v1 路由
+|--------------------------------------------------------------------------.
+|
+| prefix admin/api/api版本号
+| namespace Api\api版本号
+|
+*/
+$app-&gt;group([&#39;prefix&#39; =&gt; &#39;admin/api/v1&#39;, &#39;namespace&#39; =&gt; &#39;AdminApi\V1&#39;], function ($app) {
 
-$json = json_decode(file_get_contents(&#39;php://input&#39;), true);
-$repo = $json[&#39;repository&#39;][&#39;name&#39;];
+    // ================ 不受登录权限控制的接口路由 ================ //
+    //测试
+    $app-&gt;get(&#39;test&#39;, &#39;ExampleController@test&#39;);
 
-// 只在主分支提交时且提交数大于0执行自动部署
-if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;total_commits_count&#39;]&gt;0) {
-    $pull_result = shell_exec(&#39;cd /to/project/path/ &amp;&amp; git pull&#39;);
+    // ================ 受登录权限控制的接口路由 ================ //
+    $app-&gt;group([&#39;middleware&#39; =&gt; &#39;auth:admin-api&#39;], function ($app) {
+        //测试
+        $app-&gt;get(&#39;test2&#39;, function(){
+            return &#39;oauth test&#39;;
+        });
+        //测试
+        $app-&gt;get(&#39;test3&#39;, &#39;ExampleController@test&#39;);
+    });
 
-    if ($pull_result) {
-        $res_log = &#39;----------pull 成功---------------&#39;.PHP_EOL;
+});</code></pre>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>使用了多个guard的时候, 在使用laravel默认的<code>$request-&gt;user()</code>, 这个方法默认是使用<code>api</code>guard的, 可以在<code>auth.php</code>配置里面看到默认guard的配置.</p>
+<pre><code class="php">/*
+|--------------------------------------------------------------------------
+| Authentication Defaults
+|--------------------------------------------------------------------------
+|
+| This option controls the default authentication &quot;guard&quot; and password
+| reset options for your application. You may change these defaults
+| as required, but they&#39;re a perfect start for most applications.
+|
+*/
 
-        $res_log .= $json[&#39;user_name&#39;] . &#39; 在&#39; . date(&#39;Y-m-d H:i:s&#39;) . &#39;向&#39; . $json[&#39;repository&#39;][&#39;name&#39;] . &#39;项目的&#39; . $json[&#39;ref&#39;] . &#39;分支push了&#39; . $json[&#39;total_commits_count&#39;] . &#39;个commit：&#39; . PHP_EOL;
-        $res_log .= $pull_result.PHP_EOL;
+&#39;defaults&#39; =&gt; [
+    &#39;guard&#39; =&gt; env(&#39;AUTH_GUARD&#39;, &#39;api&#39;),
+    &#39;passwords&#39; =&gt; &#39;users&#39;,
+],</code></pre>
+<p>所以在使用新的<code>admin-api</code> guard的时候在使用<code>$request-&gt;user()</code>时需要加入对应的guard. 例子:</p>
+<pre><code class="php">namespace App\Http\Controllers\AdminApi\V1;
 
-        file_put_contents(&quot;cityconcierge-webhook-log.txt&quot;, $res_log, FILE_APPEND);//追加写入
-    } else {
-        $res_log = &#39;------------pull 失败-------------&#39;.PHP_EOL;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
-        $res_log .= $json[&#39;user_name&#39;] . &#39; 在&#39; . date(&#39;Y-m-d H:i:s&#39;) . &#39;向&#39; . $json[&#39;repository&#39;][&#39;name&#39;] . &#39;项目的&#39; . $json[&#39;ref&#39;] . &#39;分支push了&#39; . $json[&#39;total_commits_count&#39;] . &#39;个commit：&#39; . PHP_EOL;
-        $res_log .= $pull_result.PHP_EOL;
-
-        file_put_contents(&quot;cityconcierge-webhook-log.txt&quot;, $res_log, FILE_APPEND);//追加写入
+class ExampleController extends Controller
+{
+    public function test(Request $request)
+    {
+        $request-&gt;user(&#39;admin-api&#39;)-&gt;toArray(); // 获取到admin-api下的用户信息
     }
 }</code></pre>
 
@@ -198,7 +277,7 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
                 </div>
                 <ul>
                     <li><a href="/">11 <p>文章</p></a></li>
-                    <li><a href="/categories">3 <p>分类</p></a></li>
+                    <li><a href="/categories">4 <p>分类</p></a></li>
                     <li><a href="/tags">13 <p>标签</p></a></li>
                 </ul>
             </div>
@@ -208,7 +287,7 @@ if ($json[&#39;ref&#39;]==&#39;refs/heads/master&#39; &amp;&amp; $json[&#39;tota
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>目录</h4>
-                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建与填写部署公钥"><span class="toc-number">1.</span> <span class="toc-text">创建与填写部署公钥</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建部署公钥"><span class="toc-number">1.1.</span> <span class="toc-text">创建部署公钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看公钥"><span class="toc-number">1.2.</span> <span class="toc-text">查看公钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加Hook"><span class="toc-number">1.3.</span> <span class="toc-text">添加Hook</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化git项目文件夹"><span class="toc-number">2.</span> <span class="toc-text">初始化git项目文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动部署脚本-PHP"><span class="toc-number">3.</span> <span class="toc-text">自动部署脚本 (PHP)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Shell-exec"><span class="toc-number">3.1.</span> <span class="toc-text">Shell_exec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-脚本"><span class="toc-number">3.2.</span> <span class="toc-text">PHP 脚本</span></a></li></ol></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#改写Laravel-Passport里面的UserRepository"><span class="toc-number">1.</span> <span class="toc-text">改写Laravel Passport里面的UserRepository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改oauth2-server里面的PasswordGrand"><span class="toc-number">2.</span> <span class="toc-text">修改oauth2-server里面的PasswordGrand</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在auth-php配置里面加入新的guard"><span class="toc-number">3.</span> <span class="toc-text">在auth.php配置里面加入新的guard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由middleware使用"><span class="toc-number">4.</span> <span class="toc-text">路由middleware使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-number">5.</span> <span class="toc-text">注意事项</span></a></li></ol>
                         </div>
                     </div>
                 

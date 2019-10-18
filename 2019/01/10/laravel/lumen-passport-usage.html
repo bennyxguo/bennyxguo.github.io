@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>IONIC 2 - 确认密码 - 三·钻 TriDiamond</title>
+    <title>Lumen 使用 laravel passport - 三·钻 TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用FormBuilder和Validators判断密码是否一致.
-首先这篇文章是默认您已经了解怎么,"> 
+    <meta name="description" content="Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.所以如果要在lumen上使用laravel的passpo,"> 
     <meta name="author" content="三·钻 TriDiamond"> 
     <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -31,7 +30,7 @@
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://tridiamond.me"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">IONIC 2 - 确认密码</h3>
+    <h3 class="subtitle">Lumen 使用 laravel passport</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -53,28 +52,28 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(https://res.cloudinary.com/tridiamond/image/upload/v1571186961/blog/ionic_cover_hvzkwo.png);">
+                url(https://res.cloudinary.com/tridiamond/image/upload/v1571213684/blog/lumn_cover_uujop9.png);">
         </div>
         <div class="else">
             <p class="animated fadeInDown">
                 
-                    <a href="/categories/Ionic"><b>「 </b>IONIC<b> 」</b></a>
+                    <a href="/categories/Laravel"><b>「 </b>LARAVEL<b> 」</b></a>
                 
-                三月 19, 2017
+                一月 10, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2017/03/19/fe/ionic2ComfirmPasswordValidators.html" title="IONIC 2 - 确认密码">IONIC 2 - 确认密码</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/01/10/laravel/lumen-passport-usage.html" title="Lumen 使用 laravel passport">Lumen 使用 laravel passport</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        4k
+                        6.5k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        4 mins.
+                        6 mins.
                     </span>
                     
                     
@@ -87,7 +86,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hybird-App/">Hybird App</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ionic-2/">Ionic 2</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
             
         </div>
     </div>
@@ -108,87 +107,201 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <p>开发过程中一般在注册或者修改密码都要写一个密码确认的表格, 这篇文章就是记录怎么在Ionic2里面使用<strong>FormBuilder</strong>和<strong>Validators</strong>判断密码是否一致.</p>
-<p>首先这篇文章是默认您已经了解怎么使用<strong>Angualr2</strong>的<strong>FormBuilder</strong>和<strong>Validator</strong>, 如果你还没了解这两个类的用法可以前去看<a href="https://ionicframework.com/docs/v2/resources/forms/" target="_blank" rel="noopener">Ionic2的文档</a></p>
-<h1 id="实例一个FormGroup"><a href="#实例一个FormGroup" class="headerlink" title="实例一个FormGroup"></a>实例一个<code>FormGroup</code></h1><blockquote>
-<p>第一步首先我们需要实例了FormBuilder的一个FormGroup</p>
-</blockquote>
-<ul>
-<li>这里我们定义了passwordForm的这个表格里面的input.</li>
-<li>在最后我们加入了自定义认证方法 { validator: AdvanceValidator.matchingPasswords(‘password’, ‘rePassword’) }</li>
-<li>这里我们把password, 和rePassword 传给了 AdvanceValidator 方法, 这里传的是密码和确认密码在FormGroup里面定义的名字.</li>
-<li>现在我们看看这个password.ts怎么写.</li>
+            <p>Lumen是laravel的简洁版, 把laravel里面深重的依赖都去掉了, 所以直接安装laravel的passport是无法正常使用的.<br>所以如果要在lumen上使用laravel的passport就需要安装另外一个插件.</p>
+<h2 id="安装要求"><a href="#安装要求" class="headerlink" title="安装要求"></a>安装要求</h2><ul>
+<li>PHP &gt;= 5.6.3</li>
+<li>Lumen &gt;= 5.3</li>
 </ul>
-<pre><code class="typescript">import { FormBuilder, Validators, FormGroup } from &#39;@angular/forms&#39;;
-import { AdvanceValidator } from &#39;../../validators/advance-validator&#39;;
+<h2 id="Composer安装lumen-passport插件"><a href="#Composer安装lumen-passport插件" class="headerlink" title="Composer安装lumen-passport插件"></a>Composer安装lumen-passport插件</h2><p>首先安装 Lumen Passport</p>
+<pre><code class="bash"># 进入项目根目录
+$ cd lumen-app
 
-@Component({
-  selector: &#39;page-password&#39;,
-  templateUrl: &#39;password.html&#39;
-})
+# 使用composer安装插件
+$ composer require dusterio/lumen-passport</code></pre>
+<h2 id="修改-bootstrap-bootstrap-app-php"><a href="#修改-bootstrap-bootstrap-app-php" class="headerlink" title="修改 bootstrap (bootstrap/app.php)"></a>修改 bootstrap (bootstrap/app.php)</h2><p>需要引入Laravel Passport的provider和Lumen的一些provider</p>
+<pre><code class="php">// 开启 Facades
+$app-&gt;withFacades();
 
-//密码修改页
-export class PasswordPage {
-  passwordForm: FormGroup;
+// 开启 Eloquent
+$app-&gt;withEloquent();
 
-  constructor(private fb: FormBuilder) 
-  {
+// 开启 auth 中间件
+$app-&gt;routeMiddleware([
+    &#39;auth&#39; =&gt; App\Http\Middleware\Authenticate::class,
+]);
 
-    this.passwordForm = fb.group({
-        username: [&#39;&#39;, Validators.required],
-        password: [&#39;&#39;, Validators.compose([Validators.maxLength(30), Validators.minLength(7), Validators.required])],
-        rePassword: [&#39;&#39;, Validators.compose([Validators.maxLength(30), Validators.minLength(7), Validators.required])],
-    }, { validator: AdvanceValidator.matchingPasswords(&#39;password&#39;, &#39;rePassword&#39;) });
+// 注册laravel passport的provider和lumen passport的provider
+$app-&gt;register(Laravel\Passport\PassportServiceProvider::class);
+$app-&gt;register(Dusterio\LumenPassport\PassportServiceProvider::class);</code></pre>
+<h2 id="数据表移植和安装Laravel-Passport"><a href="#数据表移植和安装Laravel-Passport" class="headerlink" title="数据表移植和安装Laravel Passport"></a>数据表移植和安装Laravel Passport</h2><pre><code class="bash"># 移植passport的数据表
+php artisan migrate
 
-  }
+# 安装passport需要的配置
+php artisan passport:install</code></pre>
+<h2 id="Lumen-Passport自带的路由"><a href="#Lumen-Passport自带的路由" class="headerlink" title="Lumen Passport自带的路由"></a>Lumen Passport自带的路由</h2><p>这个lumen-passport包已经引入了一下路由, 但是与web相关的路由因为lumen是没有web的路由的, 只有api的, 所以这个插件已经把web端的路由都去掉了.</p>
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>Path</th>
+<th>NamedRoute</th>
+<th>Controller</th>
+<th>Action</th>
+<th>Middleware</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>POST</td>
+<td>/oauth/token</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\AccessTokenController</td>
+<td>issueToken</td>
+<td>-</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/oauth/tokens</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController</td>
+<td>forUser</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/oauth/tokens/{token_id}</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController</td>
+<td>destroy</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/oauth/token/refresh</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\TransientTokenController</td>
+<td>refresh</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/oauth/clients</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\ClientController</td>
+<td>forUser</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/oauth/clients</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\ClientController</td>
+<td>store</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>/oauth/clients/{client_id}</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\ClientController</td>
+<td>update</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/oauth/clients/{client_id}</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\ClientController</td>
+<td>destroy</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/oauth/scopes</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\ScopeController</td>
+<td>all</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/oauth/personal-access-tokens</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\PersonalAccessTokenController</td>
+<td>forUser</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/oauth/personal-access-tokens</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\PersonalAccessTokenController</td>
+<td>store</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/oauth/personal-access-tokens/{token_id}</td>
+<td></td>
+<td>\Laravel\Passport\Http\Controllers\PersonalAccessTokenController</td>
+<td>destroy</td>
+<td>auth</td>
+</tr>
+</tbody></table>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>修改 <code>config/auth.php</code> 里面的配置, 按照项目需要修改. 下面是一个简单的例子</p>
+<pre><code class="php">return [
+    &#39;defaults&#39; =&gt; [
+        &#39;guard&#39; =&gt; &#39;api&#39;,
+        &#39;passwords&#39; =&gt; &#39;users&#39;,
+    ],
+
+    &#39;guards&#39; =&gt; [
+        &#39;api&#39; =&gt; [
+            &#39;driver&#39; =&gt; &#39;passport&#39;,
+            &#39;provider&#39; =&gt; &#39;users&#39;,
+        ],
+    ],
+
+    &#39;providers&#39; =&gt; [
+        &#39;users&#39; =&gt; [
+            &#39;driver&#39; =&gt; &#39;eloquent&#39;,
+            &#39;model&#39; =&gt; \App\User::class
+        ]
+    ]
+];</code></pre>
+<p>需要在 <code>vendor\laravel\lumen-framework\config\auth.php</code> 复制到项目根目录下的<code>config</code>文件夹里面, 如果没有config文件夹, 需要手动添加一个.</p>
+<p>然后在<code>bootstrap/app.php</code>最前面加入配置应用, 因为lumen是不自动引入config里面的配置的.</p>
+<pre><code class="php">$app-&gt;configure(&#39;auth&#39;);</code></pre>
+<h2 id="注册路由"><a href="#注册路由" class="headerlink" title="注册路由"></a>注册路由</h2><p>需要在<code>Provider\AuthServiceProviders.php</code>里面的<code>boot</code>方法里面注册路由</p>
+<pre><code class="php">/**
+* Boot the authentication services for the application.
+*
+* @return void
+*/
+public function boot()
+{
+    // Here you may define how you wish users to be authenticated for your Lumen
+    // application. The callback which receives the incoming request instance
+    // should return either a User instance or null. You&#39;re free to obtain
+    // the User instance via an API token or any other method necessary.
+
+    LumenPassport::routes($this-&gt;app); // 注册路由
+
+    LumenPassport::tokensExpireIn(Carbon::now()-&gt;addDays(7));
+
+    LumenPassport::refreshTokensExpireIn(Carbon::now()-&gt;addDays(30));
 }</code></pre>
-<h1 id="创建自定义认证器"><a href="#创建自定义认证器" class="headerlink" title="创建自定义认证器"></a>创建自定义认证器</h1><ul>
-<li>我们首先在项目根目录创建 <strong>validators</strong> 的文件夹</li>
-<li>然后在里面创建 <strong>advance-validators.ts</strong> 的ts文件</li>
-<li>在 <strong>advance-validators.ts</strong> 里面编以下代码</li>
-</ul>
-<pre><code class="typescript">import { FormGroup } from &#39;@angular/forms&#39;;
+<p>简单路由注册</p>
+<pre><code class="php">Dusterio\LumenPassport\LumenPassport::routes($this-&gt;app);</code></pre>
+<p>通用版本控制的路由</p>
+<pre><code class="php">Dusterio\LumenPassport\LumenPassport::routes($this-&gt;app, [&#39;prefix&#39; =&gt; &#39;v1/oauth&#39;]);</code></pre>
+<h2 id="用户模型"><a href="#用户模型" class="headerlink" title="用户模型"></a>用户模型</h2><p>需要在用户模型里面加入<code>HasApiTokens</code>的trait, 例子:</p>
+<pre><code class="php">class User extends Model implements AuthenticatableContract, AuthorizableContract
+{
+    use HasApiTokens, Authenticatable, Authorizable;
 
-export class AdvanceValidator {
-
-    static matchingPasswords(passwordKey: string, rePasswordKey: string) {
-    return (group: FormGroup) =&gt; {
-      let password = group.controls[passwordKey]; //获取密码值
-      let rePassword = group.controls[rePasswordKey]; //获取确认密码值
-
-      if(password.value !== rePassword.value) {
-        //如果密码和确认密码的值不一致就返回给FormBuild rePassword有错误
-        return rePassword.setErrors({notEquivalent: true}) 
-      }
-    }
-  }
+    /* rest of the model */
 }</code></pre>
-<h1 id="前端表格示例"><a href="#前端表格示例" class="headerlink" title="前端表格示例"></a>前端表格示例</h1><pre><code class="html">&lt;form [formGroup] = &quot;passwordForm&quot;&gt;
-  &lt;ion-list inset&gt;
-
-    &lt;ion-item&gt;
-      &lt;ion-input type=&quot;tel&quot; placeholder=&quot;用户名&quot; formControlName=&quot;username&quot;&gt;&lt;/ion-input&gt;
-      &lt;div item-right *ngIf=&quot;!passwordForm.controls.username.valid  &amp;&amp; (passwordForm.controls.username.dirty)&quot;&gt;
-        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 用户名必填
-      &lt;/div&gt;
-    &lt;/ion-item&gt;
-
-    &lt;ion-item&gt;
-      &lt;ion-input type=&quot;password&quot; placeholder=&quot;新密码&quot; formControlName=&quot;password&quot;&gt;&lt;/ion-input&gt;
-      &lt;div item-right *ngIf=&quot;!passwordForm.controls.password.valid  &amp;&amp; (passwordForm.controls.password.dirty)&quot; &gt;
-        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 密码必须7个字以上
-      &lt;/div&gt;
-    &lt;/ion-item&gt;
-
-    &lt;ion-item&gt;
-      &lt;ion-input type=&quot;password&quot; placeholder=&quot;确认密码&quot; formControlName=&quot;rePassword&quot;&gt;&lt;/ion-input&gt;
-      &lt;div item-right *ngIf=&quot;!passwordForm.controls.rePassword.valid  &amp;&amp; (passwordForm.controls.rePassword.dirty)&quot; &gt;
-        &lt;ion-icon name=&quot;alert&quot;&gt;&lt;/ion-icon&gt; 密码必须一致
-      &lt;/div&gt;
-    &lt;/ion-item&gt;
-
-  &lt;/ion-list&gt;
-&lt;/form&gt;</code></pre>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>其他的详细文档可以查看lumen-passport的插件<a href="https://github.com/dusterio/lumen-passport" target="_blank" rel="noopener">github</a></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -233,7 +346,7 @@ export class AdvanceValidator {
                 </div>
                 <ul>
                     <li><a href="/">11 <p>文章</p></a></li>
-                    <li><a href="/categories">3 <p>分类</p></a></li>
+                    <li><a href="/categories">4 <p>分类</p></a></li>
                     <li><a href="/tags">13 <p>标签</p></a></li>
                 </ul>
             </div>
@@ -243,7 +356,7 @@ export class AdvanceValidator {
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>目录</h4>
-                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实例一个FormGroup"><span class="toc-number">1.</span> <span class="toc-text">实例一个FormGroup</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建自定义认证器"><span class="toc-number">2.</span> <span class="toc-text">创建自定义认证器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端表格示例"><span class="toc-number">3.</span> <span class="toc-text">前端表格示例</span></a></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装要求"><span class="toc-number">1.</span> <span class="toc-text">安装要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Composer安装lumen-passport插件"><span class="toc-number">2.</span> <span class="toc-text">Composer安装lumen-passport插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-bootstrap-bootstrap-app-php"><span class="toc-number">3.</span> <span class="toc-text">修改 bootstrap (bootstrap/app.php)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据表移植和安装Laravel-Passport"><span class="toc-number">4.</span> <span class="toc-text">数据表移植和安装Laravel Passport</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lumen-Passport自带的路由"><span class="toc-number">5.</span> <span class="toc-text">Lumen Passport自带的路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">6.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注册路由"><span class="toc-number">7.</span> <span class="toc-text">注册路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户模型"><span class="toc-number">8.</span> <span class="toc-text">用户模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">9.</span> <span class="toc-text">其他</span></a></li></ol>
                         </div>
                     </div>
                 
