@@ -1754,6 +1754,9 @@ h1.title {
   opacity: 0.9;
   margin: 0 5px;
 }
+.else .md-content em {
+  color: #5d5d5d;
+}
 .else .post-count {
   margin: 15px 100px 0 0;
   display: flex;
@@ -1982,6 +1985,9 @@ h1.title {
 }
 .content p {
   margin: 0 0 2em;
+}
+.content em {
+  color: #9e9e9e;
 }
 .content ul {
   margin: 10px 0;

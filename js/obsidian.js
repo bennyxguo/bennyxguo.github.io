@@ -683,7 +683,7 @@ $(function () {
                 } else {
                     hash = $(e.target).attr('href')
                 }
-                to = $(".content :header").find('[href=' + hash + ']')
+                to = $(".content :header").find('[href="' + hash + '"]')
                 $("html,body").animate({
                     scrollTop: to.offset().top - 80
                 }, 300);

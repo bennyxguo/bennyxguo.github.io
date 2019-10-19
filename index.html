@@ -85,11 +85,71 @@
             animation-duration: 2.8s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
-                url(https://res.cloudinary.com/tridiamond/image/upload/v1571154304/blog/javascript_console_nyqvkf.jpg);">
+                url(https://res.cloudinary.com/tridiamond/image/upload/v1571416466/blog/how-to-write-a-service_ixkzuz.jpg);">
         </div>
     </div>
     
     <div id="post0" class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/后端架构"><b>「 </b>后端架构<b> 」</b></a>
+            
+            十月 19, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/19/backend/how-to-write-a-service.html" title="真正的`服务层`是怎么写的?" class="posttitle">真正的`服务层`是怎么写的?</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        10k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        9 mins.
+                    </span>
+                
+                
+            </p>
+        
+        
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Architecture/">Architecture</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/PHP/">PHP</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Service/">Service</a></li></ul>
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>其实很多系统架构里面都有服务层，但是服务对很多开发人员来说都有很多不同的定义和写法。甚至在我待过的公司里都有不同的写法和编写模式。每个人每个团队每个项目都有对服务不同的理解。那到底什么是服务，怎么理解才是对的呢？</p>
+<p>你们有没有过无数个夜晚里严重怀疑人生，琢磨着到底哪一种服务才是对的？哪一种才是最好的写法，哪一种才能达到服务的真正意义？因为这种执着，我开始在国外的各种网站，大神们写过的开源大项目里面和文章里面总结出一个大多数研发伙伴们认可的理解方式和编写方式。</p>
+<p>要理解什么是服务，我们先来给<code>服务</code>一个<code>定义</code>，在系统架构里面处于什么<code>角色</code>，<code>作用</code>是什么。...</p>
+            
+            <span class="read-more gradient-text"><a href="/2019/10/19/backend/how-to-write-a-service.html" title="查看全文" class="posttitle">查看全文</a></span>
+        </div>
+    </div>
+    
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                  <span class="typed-text"></span>
+                </p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="primary">
+        
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(https://res.cloudinary.com/tridiamond/image/upload/v1571154304/blog/javascript_console_nyqvkf.jpg);">
+    </div>
+    <div class="else">
         <p class="animated fadeInDown">
             
                 <a href="/categories/前端"><b>「 </b>前端<b> 」</b></a>
@@ -113,37 +173,24 @@
                 
                 
             </p>
-        
-        
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Console/">Console</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Debugging/">Debugging</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Console/">Console</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Debugging/">Debugging</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+            
         
         <div class="md-content animated fadeIn">
             
                 <p>其实 <strong>JavaScript</strong> 给到我们很多调试工具来调试代码，那问问你自己，你又知道多少呢？用到多少呢？</p>
 <p>大部分前端开发在 <strong>JavaScript</strong> 调试代码的常规用法都是直接<code>console.log</code>，直接输出某一个变量或者返回数据里面的对象数据。当然毋庸置疑这样输出来调试是没有问题的。但是不是最优雅的方式来调试代码，其实还有更好的办法。作为一个有追求的技术人才，有更好的调试方式为什么不去使用呢？</p>
 <p></p>
-<p>我们先来了解清楚浏览器的<code>console</code>。浏览器的<code>console</code>对象有提供自带的调试控制台。<code>console</code>对象只能在浏览器的JavaScript中使用，也就是说客户端应用可用而服务端应用不可用。它的作用或者效果会根据不同的浏览器而不同，但是基础使用方式和功能是基本一致的。不过<code>console</code>是可以在任何前端语言或者框架中使用。...</p>
+<p>我们先来了解清楚浏览器的<code>console</code>。浏览器的<code>console</code>对象有提供自带的调试控制台。<code>console...</code></p>
             
             <span class="read-more gradient-text"><a href="/2019/10/11/frontend/debugging-skills-console.html" title="查看全文" class="posttitle">查看全文</a></span>
         </div>
     </div>
-    
 </div>
 
-<div class="screen-gradient-after">
-    <div class="screen-gradient-content">
-        <div class="screen-gradient-content-inside">
-            <div class="bold-underline-links screen-gradient-sponsor">
-                <p>
-                  <span class="typed-text"></span>
-                </p> 
-            </div>
-        </div>
-    </div>
-</div>
 
-    <div id="primary">
-        
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:
@@ -560,57 +607,6 @@ import { Platform, ToastController, Nav, App } ...</code></pre>
 <li>在最后我们加入了自定义认证方法...</li></ul>
             
             <span class="read-more gradient-text"><a href="/2017/03/19/ionic/comfirm-password-validators.html" title="查看全文" class="posttitle">查看全文</a></span>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="post" id="post">
-    <div class="post-cover" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(https://s2.ax1x.com/2019/09/18/noYn41.png);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="/categories/Laravel"><b>「 </b>LARAVEL<b> 」</b></a>
-            
-            二月 26, 2017
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2017/02/26/laravel/laravel5.4-passport-and-authen.html" title="Laravel 5.4 开发笔记" class="posttitle">Laravel 5.4 开发笔记</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        1.9k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        2 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-5-4/">Laravel 5.4</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Laravel-Passport/">Laravel Passport</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <p>Laravel最近出的Laravel5.4新加了挺多功能的, 比起我用了1年的5.1完善多了. 比较吸引我使用最新的5.4的有几点:</p>
-<ul>
-<li>5.4 添加了谷歌内核的浏览器模拟操作</li>
-<li>自带API认证类”PASSPORT”</li>
-<li>路由自动分类, 现有有了Route自己的文件夹然后里面分类好了WEB和API的路由<br>这一篇记录会分享一些我在尝试Laravel 5.4的过程中遇到的问题和经验</li>
-</ul>
-<h3 id="移植-Migrate-用户和API认证表格是出现sql错误"><a href="#移植-Migrate-用户和API认证表格是出现sql错误" class="headerlink" title="移植(Migrate)用户和API认证表格是出现sql错误"></a>移植(Migrate)用户和API认证表格是出现sql错误</h3><pre><code class="console">[Illuminate\Database\QueryException...</code></pre>
-            
-            <span class="read-more gradient-text"><a href="/2017/02/26/laravel/laravel5.4-passport-and-authen.html" title="查看全文" class="posttitle">查看全文</a></span>
         </div>
     </div>
 </div>
