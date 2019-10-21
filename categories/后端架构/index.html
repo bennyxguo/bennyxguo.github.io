@@ -119,9 +119,20 @@
         
         <div class="md-content animated fadeIn">
             
-                <p>其实很多系统架构里面都有服务层，但是服务对很多开发人员来说都有很多不同的定义和写法。甚至在我待过的公司里都有不同的写法和编写模式。每个人每个团队每个项目都有对服务不同的理解。那到底什么是服务，怎么理解才是对的呢？</p>
+                <p>272</p>
+<p>其实很多系统架构里面都有服务层，但是服务对很多开发人员来说都有很多不同的定义和写法。甚至在我待过的公司里都有不同的写法和编写模式。每个人每个团队每个项目都有对服务不同的理解。那到底什么是服务，怎么理解才是对的呢？</p>
 <p>你们有没有过无数个夜晚里严重怀疑人生，琢磨着到底哪一种服务才是对的？哪一种才是最好的写法，哪一种才能达到服务的真正意义？因为这种执着，我开始在国外的各种网站，大神们写过的开源大项目里面和文章里面总结出一个大多数研发伙伴们认可的理解方式和编写方式。</p>
-<p>要理解什么是服务，我们先来给<code>服务</code>一个<code>定义</code>，在系统架构里面处于什么<code>角色</code>，<code>作用</code>是什么。...</p>
+<p>要理解什么是服务，我们先来给<code>服务</code>一个<code>定义</code>，在系统架构里面处于什么<code>角色</code>，<code>作用</code>是什么。</p>
+<hr>
+<blockquote>
+<p><code>角色</code>：服务是系统架构里面的业务处理层。<br><code>作用</code>：主要是为了高度解耦和封装不同场景的业务和功能到对应的服务，然而达到高度中心化的业务代码。</p>
+</blockquote>
+<p>这个定义没毛病吧？赞同的童鞋在评论里举个手哈 👋。<br>好，有了一个优雅高尚的<code>服务定义</code>，我们来用一个通俗易懂的例子来理解服务。</p>
+<hr>
+<ul>
+<li>假设<code>人</code>是一个<code>控制器</code>，现在拿到了一个<code>衣服对象</code>的<code>参数</code>，然后人拥有一个<code>洗衣服</code>的<code>方法</code></li>
+<li>现在人需要洗衣服，但是手洗效率太低了，所以我们写了一个多功能的<code>洗衣机服务</code>给到人去使用</li>
+<li><code>洗衣机</code>这个服务里...</li></ul>
             
             <span class="read-more gradient-text"><a href="/2019/10/19/backend/how-to-write-a-service.html" title="查看全文" class="posttitle">查看全文</a></span>
         </div>
@@ -164,7 +175,7 @@
         Theme
         <span class="gradient-text">
             <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
-            <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="1.3.1" target="_blank" rel="noopener">1.3.1</a></small>
+            <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="1.3.2" target="_blank" rel="noopener">1.3.2</a></small>
         </span>
     </p>
 </footer>
@@ -244,6 +255,16 @@
 </div>
 
 
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
 
 
 

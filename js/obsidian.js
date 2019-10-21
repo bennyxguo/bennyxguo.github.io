@@ -434,10 +434,22 @@ var Obsidian = {
             else if (tocHeight <= thisTop)
                 toc.scrollTop(tocTop + thisTop + link.outerHeight() - tocHeight);
         });
+    },
+    reactToWindowHeight: function () {
+        const postSpacing = 315;
+        var winHeight = $(window).height();
+        var firstPostHeight = $('#post0').height();
+        if (firstPostHeight + postSpacing > winHeight) {
+            $('#mark').css('height', firstPostHeight + postSpacing + 'px');
+            $('#screen').css('height', firstPostHeight + postSpacing + 'px');
+        }
     }
 };
 
 $(function () {
+    if ($('#post0').length) {
+        Obsidian.reactToWindowHeight();
+    }
     if (Obsidian.P()) {
         $('body').addClass('touch')
     }
