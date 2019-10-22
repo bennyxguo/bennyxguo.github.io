@@ -28,28 +28,6 @@
   background: -webkit-linear-gradient(to right, var(--dark), var(--secondary), var(--primary)) !important;
   background: linear-gradient(to right, var(--dark), var(--secondary), var(--primary)) !important;
 }
-@-webkit-keyframes loading {
-  0% {
-    -webkit-transform: scale(0.3);
-  }
-  50% {
-    -webkit-transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(0.3);
-  }
-}
-@-moz-keyframes loading {
-  0% {
-    -moz-transform: scale(0.3);
-  }
-  50% {
-    -moz-transform: scale(1);
-  }
-  100% {
-    -moz-transform: scale(0.3);
-  }
-}
 /* Responsive style */
 body {
   margin: 0;
@@ -64,24 +42,19 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-body:before {
+body .la-ball-atom {
   position: absolute;
-  content: '';
-  width: 24px;
-  height: 24px;
   left: 50%;
   top: 50%;
-  margin-left: -7px;
-  margin-top: -7px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-animation: loading 2s ease-out forwards infinite;
-  -moz-animation: loading 2s ease-out forwards infinite;
-  display: none;
+  display: block;
+  transform: translate(-50%, -50%);
+  color: #64d6e2;
+}
+body .la-ball-atom > div:nth-child(1) {
+  color: var(--dark);
   background: var(--primary) !important;
-  background: -webkit-linear-gradient(-45deg, var(--primary), var(--secondary), var(--dark)) !important;
-  background: linear-gradient(-45deg, var(--primary), var(--secondary), var(--dark)) !important;
+  background: -webkit-linear-gradient(to right, var(--primary), var(--secondary), var(--dark)) !important;
+  background: linear-gradient(to right, var(--primary), var(--secondary), var(--dark)) !important;
 }
 div {
   margin: 0;
@@ -217,7 +190,7 @@ body.loading {
   overflow: hidden;
   transition: all 400ms ease-in-out;
 }
-body.loading:before {
+body.loading .la-ball-atom {
   display: block;
 }
 body.loading #container {
