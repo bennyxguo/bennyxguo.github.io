@@ -19,8 +19,9 @@
     <link rel="icon" href="/img/favicon.png"> 
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_7jr8c7mf4wi.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nuy6s3evgdk.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="/css/ball-atom.min.css">
 </head>
@@ -38,19 +39,19 @@
     <div class="scrollbar gradient-bg-rev"></div>
 <div id="top" style="display: block;">
     <div class="bar" style="width: 0;"></div>
-    <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://tridiamond.me"></a>
-    <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+    <a id="home-icon" class="image-icon icon-home iconfont animated fadeIn" href="javascript:;" data-url="https://tridiamond.me"></a>
+    <div id="play-icon" title="Play/Pause" class="iconfont icon-play animated fadeIn"></div>
     <h3 class="subtitle">IONIC 2 实现首页双击退出APP</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
 <!--        </div>-->
-<!--        <div>-->
-<!--            <div class="share">-->
-<!--                <a title="Get qrcode" id="qr-icon" href="javascript:;" class="iconfont icon-QRcode-o"></a>-->
-<!--            </div>-->
-<!--            <div id="qr"></div>-->
-<!--        </div>-->
+        <div>
+            <div class="share animated fadeIn">
+                <a href="javascript:;" class="iconfont icon-share1"></a>
+                <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -274,6 +275,7 @@ export class MyApp {
 <script src="/js/jquery.truncate.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
 
     <script src="/js/busuanzi.min.js"></script>
