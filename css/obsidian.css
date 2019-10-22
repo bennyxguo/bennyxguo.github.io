@@ -276,10 +276,6 @@ audio {
   animation-delay: 1.6s;
   animation-duration: 800ms;
 }
-.animated {
-  animation-delay: 1.2s;
-  animation-duration: 800ms;
-}
 .la-ball-atom {
   color: #64d6e2 !important;
 }
@@ -535,6 +531,10 @@ body.touch .article {
   display: none;
   transition: display 400ms ease-in-out;
 }
+.icon-home {
+  animation-delay: 800ms;
+  animation-duration: 1.2s;
+}
 .icon-play {
   position: absolute;
   left: 70px;
@@ -549,6 +549,8 @@ body.touch .article {
   -webkit-box-decoration-break: clone !important;
   box-decoration-break: clone !important;
   transition: display 400ms ease-in-out;
+  animation-delay: 800ms;
+  animation-duration: 1.2s;
 }
 .icon-pause {
   position: absolute;
@@ -565,6 +567,8 @@ body.touch .article {
   -webkit-box-decoration-break: clone !important;
   box-decoration-break: clone !important;
   transition: display 400ms ease-in-out;
+  animation-delay: 800ms;
+  animation-duration: 1.2s;
 }
 .icon-images {
   position: absolute;
@@ -579,6 +583,12 @@ body.touch .article {
   -webkit-box-decoration-break: clone !important;
   box-decoration-break: clone !important;
   left: 100px;
+  animation-delay: 800ms;
+  animation-duration: 1.2s;
+}
+.icon-share1 {
+  animation-delay: 800ms;
+  animation-duration: 1.2s;
 }
 .icon-images.active {
   color: #ef6d57;
@@ -613,6 +623,8 @@ body.touch .article {
 }
 .share {
   position: relative;
+  animation-delay: 800ms;
+  animation-duration: 1.2s;
 }
 .share >a {
   display: inline-block;
