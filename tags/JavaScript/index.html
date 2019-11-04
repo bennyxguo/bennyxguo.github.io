@@ -16,19 +16,23 @@
     <link rel="icon" href="/img/favicon.png"> 
     <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nuy6s3evgdk.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_xjbfxy4nzcj.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
     <link rel="stylesheet" href="/css/obsidian.css">
     <link rel="stylesheet" href="/css/ball-atom.min.css">
 </head>
 </html>
 <body class="loading">
-    <div class="la-ball-atom la-2x">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
     <span id="config-title" style="display:none">三·钻 TriDiamond</span>
     <div id="loader"></div>
@@ -93,7 +97,7 @@
             animation-duration: 2.8s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
-                url(https://res.cloudinary.com/tridiamond/image/upload/v1571154304/blog/javascript_console_nyqvkf.jpg);">
+                url(https://res.cloudinary.com/tridiamond/image/upload/v1572613799/blog/simplify-your-javascript-with_acr2px.jpg);">
         </div>
     </div>
     
@@ -104,7 +108,7 @@
             
             十一月 02, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/11/02/frontend/simplify-your-javascript-with.html" title="JavaScript中更简便的数组处理函数- 使用.map()，.reduce()，.filter()" class="posttitle">JavaScript中更简便的数组处理函数- 使用.map()，.reduce()，.filter()</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/02/frontend/simplify-your-javascript-with.html" title="JavaScript中更简便的数组处理函数.map()，.reduce()，.filter()" class="posttitle">JavaScript中更简便的数组处理函数.map()，.reduce()，.filter()</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
@@ -223,12 +227,12 @@
         <span class="gradient-text">
             <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
         </span>
-        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.3.4" target="_blank" rel="noopener">v1.3.4</a></small>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.3.5" target="_blank" rel="noopener">v1.3.5</a></small>
     </p>
 </footer>
 
-    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
-    <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
 
 <script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
@@ -237,6 +241,25 @@
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
 
 
     <script src="/js/busuanzi.min.js"></script>
@@ -316,18 +339,6 @@
 
 
 
-
-    <!-- Highlight.js -->
-    <link rel="stylesheet" href="/css/dracula.css">
-    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('pre code').forEach((block) => {
-                hljs.highlightBlock(block);
-            });
-        });
-    </script>
 
 
 <script>
