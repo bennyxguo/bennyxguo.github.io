@@ -846,6 +846,7 @@ $(function () {
         const articleMenuHeight = 51;
         const menuHeight = 70;
         const header = document.querySelector('#header');
+        const logoImg = document.querySelector('.logo > img');
 
         const handler = () => {
             let newOffset = window.scrollY || window.pageYOffset;
@@ -870,9 +871,16 @@ $(function () {
                     }
                     header.style.background = 'transparent';
                     header.style.borderBottom = '0px';
+                    if (!logoImg.classList.contains('spin')) {
+                        logoImg.classList.add('spin');
+                        setTimeout(function () {
+                            logoImg.classList.remove('spin');
+                        }, 2000)
+                    }
                 }
             }
             const topHeader = document.querySelector('#top');
+            const imageIcon = document.querySelector('.image-icon');
             if (topHeader && $('.scrollbar').length && !$('.icon-images').hasClass('active')) {
                 if (newOffset > articleMenuHeight) {
                     if (newOffset > articleRefOffset) {
@@ -887,6 +895,12 @@ $(function () {
                     articleRefOffset = newOffset;
                 } else {
                     $('.subtitle').fadeOut()
+                    if (!imageIcon.classList.contains('spin')) {
+                        imageIcon.classList.add('spin');
+                        setTimeout(function () {
+                            imageIcon.classList.remove('spin');
+                        }, 2000)
+                    }
                 }
                 var wt = $(window).scrollTop(),
                     tw = $('#top').width(),
