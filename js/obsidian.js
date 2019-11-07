@@ -860,8 +860,9 @@ $(function () {
                         header.classList.add('animateIn');
                     }
                     header.style.paddingTop = '20px';
-                    header.style.background = 'rgba(16,14,23,.86)';
+                    header.style.background = 'rgba(16,14,23,1)';
                     header.style.borderBottom = '1px solid #201c29';
+                    header.style.boxShadow = '0 0 30px rgba(0, 0, 0, 1)';
                     refOffset = newOffset;
                 } else {
                     if ($(window).width() <= 780) {
@@ -871,6 +872,7 @@ $(function () {
                     }
                     header.style.background = 'transparent';
                     header.style.borderBottom = '0px';
+                    header.style.boxShadow = 'none';
                     if (!logoImg.classList.contains('spin')) {
                         logoImg.classList.add('spin');
                         setTimeout(function () {
@@ -880,7 +882,7 @@ $(function () {
                 }
             }
             const topHeader = document.querySelector('#top');
-            const imageIcon = document.querySelector('.image-icon');
+            const homeIcon = document.querySelector('#home-icon');
             if (topHeader && $('.scrollbar').length && !$('.icon-images').hasClass('active')) {
                 if (newOffset > articleMenuHeight) {
                     if (newOffset > articleRefOffset) {
@@ -895,10 +897,10 @@ $(function () {
                     articleRefOffset = newOffset;
                 } else {
                     $('.subtitle').fadeOut()
-                    if (!imageIcon.classList.contains('spin')) {
-                        imageIcon.classList.add('spin');
+                    if (!homeIcon.classList.contains('spin')) {
+                        homeIcon.classList.add('spin');
                         setTimeout(function () {
-                            imageIcon.classList.remove('spin');
+                            homeIcon.classList.remove('spin');
                         }, 2000)
                     }
                 }
@@ -1156,6 +1158,44 @@ $(function () {
                 $(".comment").removeClass("link")
                 gitalk.render('gitalk-container')
                 Obsidian.loaded();
+                return false;
+                break;
+            case (tag.indexOf('category-list-child') != -1):
+                tag = $(e.target);
+                var categoryMask = $('.category-mask'),
+                    categoryDisplay = categoryMask.css('display'),
+                    set = $('.set'),
+                    clone = $('.clone-element')
+                    setHeight = set.height();
+
+                if (categoryDisplay == 'none') {
+                    tag.parent('.category-list-item').addClass('active');
+                    tag.find(".category-list-item").each(function () {
+                        $(this).addClass('sub-active');
+                    })
+                    clone.append(set.html()).show();
+                    clone.css('top', set.offset().top)
+                    clone.css('left', set.offset().left)
+                    set.empty().css('height', setHeight + 'px');
+                    $('.category-mask').fadeIn(500);
+                }
+                return false;
+                break;
+            case (tag.indexOf('category-mask') != -1):
+                var set = $('.set');
+                var clone = $('.clone-element');
+                set.append(clone.html()).css('height', 'auto');
+                clone.empty().hide();
+                $('.category-list-item.active').each(function () {
+                    var that = $(this);
+                    setTimeout(function () {
+                        that.removeClass('active');
+                    }, 400)
+                    $(".sub-active").each(function() {
+                        $(this).removeClass('sub-active');
+                    })
+                })
+                $('.category-mask').fadeOut(500);
                 return false;
                 break;
             default:

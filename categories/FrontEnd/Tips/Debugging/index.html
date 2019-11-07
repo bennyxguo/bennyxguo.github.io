@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Category: FrontEnd - 三·钻 - TriDiamond</title>
+    <title>Category: Debugging - 三·钻 - TriDiamond</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
@@ -99,7 +99,7 @@
             animation-duration: 2.8s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
-                url(https://res.cloudinary.com/tridiamond/image/upload/v1572613799/blog/simplify-your-javascript-with_acr2px.jpg);">
+                url(https://res.cloudinary.com/tridiamond/image/upload/v1571154304/blog/javascript_console_nyqvkf.jpg);">
         </div>
     </div>
     
@@ -107,68 +107,6 @@
         <p class="animated fadeInDown">
             
                 <a href="/categories/FrontEnd"><b>「 </b>FRONTEND<b> 」</b></a>
-            
-            十一月 02, 2019
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/11/02/frontend/simplify-your-javascript-with.html" title="JavaScript中更简便的数组处理函数.map()，.reduce()，.filter()" class="posttitle">JavaScript中更简便的数组处理函数.map()，.reduce()，.filter()</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        9.3k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        8 mins.
-                    </span>
-                
-                
-            </p>
-        
-        
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ES6/">ES6</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-        
-        <div class="md-content animated fadeIn">
-            
-                <p>如果你刚接触JavaScript可能你还没有听说过<code>.map()</code>，<code>.reduce()</code>，<code>.filter()</code>。或者听说过，看过别人用过但是自己在实际项目中没有用过。在国内很多开发项目都是需要考虑IE8的兼容，为了兼容很多JavaScript好用的方法和技巧都被埋没了。但是我发现近几年开始，很多开发项目已经完全抛弃了IE这个魔鬼了。如果你不需要兼容古老的IE浏览器了，那就要开始熟悉一下这几个方法来处理数组。</p>
-<blockquote>
-<p>注意这遍文章说的的3个方法其实在很多其他语言都可以使用到，因为这几个方法和使用概念在很多其他语言都是存在的。...</p></blockquote>
-            
-            <span class="read-more gradient-text"><a href="/2019/11/02/frontend/simplify-your-javascript-with.html" title="查看全文" class="posttitle">查看全文</a></span>
-        </div>
-    </div>
-    
-</div>
-
-<div class="screen-gradient-after">
-    <div class="screen-gradient-content">
-        <div class="screen-gradient-content-inside">
-            <div class="bold-underline-links screen-gradient-sponsor">
-                <p>
-                  <span class="typed-text"></span>
-                </p> 
-            </div>
-        </div>
-    </div>
-</div>
-
-    <div id="primary">
-        
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(https://res.cloudinary.com/tridiamond/image/upload/v1571154304/blog/javascript_console_nyqvkf.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="/categories/FrontEnd">
-                  <b>「 </b>FRONTEND<b> 」</b>
-                </a>
             
             十月 11, 2019
         </p>
@@ -189,23 +127,37 @@
                 
                 
             </p>
-            
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Console/">Console</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Debugging/">Debugging</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-            
+        
+        
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Console/">Console</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Debugging/">Debugging</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
                 <p>其实 <strong>JavaScript</strong> 给到我们很多调试工具来调试代码，那问问你自己，你又知道多少呢？用到多少呢？</p>
 <p>大部分前端开发在 <strong>JavaScript</strong> 调试代码的常规用法都是直接<code>console.log</code>，直接输出某一个变量或者返回数据里面的对象数据。当然毋庸置疑这样输出来调试是没有问题的。但是不是最优雅的方式来调试代码，其实还有更好的办法。作为一个有追求的技术人才，有更好的调试方式为什么不去使用呢？</p>
 <p></p>
-<p>我们先来了解清楚浏览器的<code>console</code>。浏览器的<code>console</code>对象有提供自带的调试控制台。<code>console...</code></p>
+<p>我们先来了解清楚浏览器的<code>console</code>。浏览器的<code>console</code>对象有提供自带的调试控制台。<code>console</code>对象只能在浏览器的JavaScript中使用，也就是说客户端应用可用而服务端应用不可用。它的作用或者效果会根据不同的浏览器而不同，但是基础使用方式和功能是基本一致的。不过<code>console</code>是可以在任何前端语言或者框架中使用。...</p>
             
             <span class="read-more gradient-text"><a href="/2019/10/11/frontend/debugging-skills-console.html" title="查看全文" class="posttitle">查看全文</a></span>
         </div>
     </div>
+    
 </div>
 
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                  <span class="typed-text"></span>
+                </p> 
+            </div>
+        </div>
+    </div>
+</div>
 
+    <div id="primary">
+        
     </div>
     
 </div>
