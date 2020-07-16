@@ -1,0 +1,640 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>如何高效学习数据结构与算法 - 三·钻 TriDiamond</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="前言
+本文是个人基于覃超老师的《算法训练营》的学习笔记，此笔记的内容都是学习后的个人记录、个人总结、理解和思想。仅供参考学习。
+
+很多同学在大学的时候会觉得数据结构与算法很枯燥，很多小伙伴都不愿意听,"> 
+    <meta name="author" content="三·钻 TriDiamond"> 
+    <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">三·钻 TriDiamond</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://tridiamond.me">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">如何高效学习数据结构与算法</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://img-blog.csdnimg.cn/20200716155435583.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Algorithm"><b>「
+                    </b>ALGORITHM<b> 」</b></a>
+                
+                五月 23, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/05/23/algorithm/algorithm-intro.html" title="如何高效学习数据结构与算法" class="">如何高效学习数据结构与算法</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    9.9k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    9 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Data-Structure/" rel="tag">Data Structure</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>本文是个人基于覃超老师的《算法训练营》的学习笔记，此笔记的内容都是学习后的个人记录、个人总结、理解和思想。仅供参考学习。</p>
+</blockquote>
+<p>很多同学在大学的时候会觉得数据结构与算法很枯燥，很多小伙伴都不愿意听这门课程。甚至以前还觉得能开发一个项目就能成为一个合格的程序员。但是学会算法，或者接触过数据结构与算法后，发现懂这门知识的程序员编写出来的代码相对有更高的质量。代码的性能、写法、底层逻辑和解决问题的能力都会高于不懂数据结构与算法的程序员。</p>
+<p>到了如今，如果想成为一个高级开发工程师或者进入大厂，不论岗位是前端、后端还是 AI，算法都是重中之重。也无论我们需要进入的公司的岗位是否最后是做算法工程师，前提面试就需要考算法。所以<code>小时不学算法，长大掉头发</code>。</p>
+<p>这系列的《<strong>算法学习笔记</strong>》，与大家一起重温或者学习数据结构与算法。</p>
+<blockquote>
+<p>这里也赠送大家一句话：</p>
+<p>“<code>好记性不如烂笔头，好记性更不如好笔记</code>“</p>
+<p>愿大家在技术银河中终身漂泊学习时，习惯编写自己的笔记，以后这些笔记必定成为我们最珍贵的宝藏！✨</p>
+</blockquote>
+<h1 id="如何系统化学习算法"><a href="#如何系统化学习算法" class="headerlink" title="如何系统化学习算法"></a>如何系统化学习算法</h1><p>深入到精通一门知识的我们都需要一个系统化的学习方法，如果这门知识越是有难度，前期就越是枯燥无味，或者甚至觉得很困难。所以学习算法也是一样的：</p>
+<ul>
+<li><strong>枯燥无味</strong><ul>
+<li>所以需要系统化学习；</li>
+<li>小步快跑的方式进行学习；</li>
+<li>不懂就找答案不要埋头苦学；</li>
+</ul>
+</li>
+<li><strong>不牢固</strong><ul>
+<li>越是庞大的知识，越学就会越觉得之前学到的知识忘的差不多了；</li>
+<li>其实就是缺乏知识的稳固性；</li>
+</ul>
+</li>
+<li><strong>预习</strong><ul>
+<li>学习任何一门知识，都要先了解和预习这门知识；</li>
+<li>同理，在学习一门新的开发语言时，我们都会先来一个<code>hello world</code>；</li>
+</ul>
+</li>
+<li><strong>坚持 leetcode 刷题</strong><ul>
+<li>要学会算法，并且稳固这一门知识，不断的<strong>刻意练习</strong>是重中之重；</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="系统化的效果"><a href="#系统化的效果" class="headerlink" title="系统化的效果"></a>系统化的效果</h1><p>系统化学习和拿起一本书最终的效果是不一样的。很多时候我们开始学习一门知识，我们都会看：《xxx 深入浅出》、《xxx 指南》和《从 0 到 1 学会 xxx》，其实里面的知识是很庞大的。只靠知识是无法支撑我们的实战和经验的，所以我们需要<strong>系统化的学习方法</strong>最终达到的目标也是不一样的，例如：</p>
+<ul>
+<li>提升到职业顶尖水平</li>
+<li>通过一线互联网大厂的面试</li>
+<li>要有 Leetcode 300+ 刷题量</li>
+</ul>
+<blockquote>
+<p>推荐阅读《Outliner》这本书中的<strong>学习方法</strong></p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="精通一个领域"><a href="#精通一个领域" class="headerlink" title="精通一个领域"></a>精通一个领域</h1><p>前面说到，任何一个领域的知识都是很庞大的。而且只靠看书，看文章学习都是不够的。所以一套好的学习方法，可以为我们打开一扇大门。而且在打开这扇大门的同时不会因为艰苦、困难、煎熬或者是枯燥而最后放弃。</p>
+<ul>
+<li>切碎知识点 Chunk it up<ul>
+<li>庖丁解牛</li>
+<li>脉络相连 - 从根部开始学习，到分支，再到树叶。让每一个知识点都有关联关系</li>
+</ul>
+</li>
+<li>刻意练习 Deliberate Practicing</li>
+<li>反馈 Feedback</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="数据结构有什么？"><a href="#数据结构有什么？" class="headerlink" title="数据结构有什么？"></a>数据结构有什么？</h1><ul>
+<li>一维：<ul>
+<li>基础： 数组 array (string)，链表 linked list</li>
+<li>高级：栈 stack，队列 queue， 双端队列 duque，集合 set，映射 map (hash or map)，等等</li>
+</ul>
+</li>
+<li>二维：<ul>
+<li>基础：树 tree, 图 graph</li>
+<li>高级：二叉搜索树 binary search tree（红黑树 red-black tree, AVL），堆 heap，并查集 disjoint set，字典树 Trie</li>
+</ul>
+</li>
+<li>特殊：<ul>
+<li>位运算 Bitwise，步隆过滤器 BloomFilter</li>
+<li>LRU Cache (缓存)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200523211014620.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<center>参考：覃超老师的《数据库脑图》</center>
+
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="算法有什么？"><a href="#算法有什么？" class="headerlink" title="算法有什么？"></a>算法有什么？</h1><p>任何的高级算法与数据结构都会转换成 If Else，for 循环，其实也是最朴素的计算机的知识，没有什么 AI，人工智能的知识。高级算法重点是找到<code>重复单元</code>。</p>
+<ul>
+<li>跳转语句 (Branch) ：If-else，switch</li>
+<li>循环 (Iteration) ：for, which，while loop</li>
+<li>递归 (Recursion) ： Divide &amp; Conquer, Backtrace</li>
+<li>搜索 (Search) ：深度优先搜索 Depth first search，广度优先搜索 Breadth first search，启发式搜索 A*</li>
+<li>动态规划 (Dynamic Programming)</li>
+<li>二分查找 (Binary Search)</li>
+<li>贪心 (Greedy)</li>
+<li>数学 (Math)，几何 (Geometry)</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200523211749822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<center>参考：覃超老师的《算法脑图》</center>
+
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="刻意练习-Deliberate-practice"><a href="#刻意练习-Deliberate-practice" class="headerlink" title="刻意练习 - Deliberate practice"></a>刻意练习 - Deliberate practice</h1><p>无论是科学家、国家运动员、技术专家还是游戏职业选手，他们的优秀的背后都有一个共同点：<code>刻意练习</code>。</p>
+<p><strong>什么是刻意练习？</strong></p>
+<ul>
+<li>刻意练习 - 过遍数，持续多边形的练习，用数遍达到质变！（五毒神掌）；</li>
+<li>练习不擅长的地方；</li>
+<li>如果感到不舒服、不爽、枯燥的话，那证明我们正在爬坡，正在提升！</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="反馈-Feedback"><a href="#反馈-Feedback" class="headerlink" title="反馈 - Feedback"></a>反馈 - Feedback</h1><p>很多时候在学习中，特别是在自学的过程，我们永远不知道自己的学习的成果是怎么样的。或者我们有时候会遇到难点但是无法突破，甚至有时候我们以为自己很努力，或者已经很强了。但是其实还只是坐井观天而已。所以我们在学习的时候需要<code>反馈</code>。所谓的反馈有几种：</p>
+<ul>
+<li>即时反馈<ul>
+<li>学会使用一门语言；</li>
+<li>能写出能执行的代码；</li>
+<li>能写出一个项目；</li>
+<li>能实现一个功能；</li>
+</ul>
+</li>
+<li>主动型反馈<ul>
+<li>高手代码（Github、LeetCode）；</li>
+<li>第一视角止步（看视频，看高手写的代码，学习思路）；</li>
+</ul>
+</li>
+<li>被动式反馈（高手指点）<ul>
+<li>代码审查 code review；</li>
+<li>例如：教练看你打，给你反馈；</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="切题四件套"><a href="#切题四件套" class="headerlink" title="切题四件套"></a>切题四件套</h1><p>我个人认为也可以叫<code>解题四大法则</code>：</p>
+<ul>
+<li>理解题目（Clarification）<ul>
+<li>在 LeetCode 看题后，先思考，认真确认和理解题目；</li>
+<li>避免忽略了一些条件或者是误解题目；</li>
+<li>面试的时候更加应该跟面试官确认清楚题目、条件、场景等；</li>
+</ul>
+</li>
+<li>多种解题方案（Possible solutions）<ul>
+<li>对比时间和空间复杂度 compare (time/spaace)</li>
+<li>最优解 optimal (加强)</li>
+</ul>
+</li>
+<li>多编写（Coding）<ul>
+<li>代码反复练习和编写；</li>
+<li>每一种解法都反复练习和编写；</li>
+</ul>
+</li>
+<li>多测试案例（Test cases）<ul>
+<li>在 LeetCode 上可以改变测试案例；</li>
+<li>多测试几种案例，确保自己的代码可以适应各种特殊情况；</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="刷题方式（五毒神掌）"><a href="#刷题方式（五毒神掌）" class="headerlink" title="刷题方式（五毒神掌）"></a>刷题方式（五毒神掌）</h1><h2 id="第一遍"><a href="#第一遍" class="headerlink" title="第一遍"></a>第一遍</h2><ul>
+<li>5 分钟：读题 + 思考；</li>
+<li>5 分钟过后，没有思路就直接看解法；</li>
+<li>记录多个解题方法，比较解题方法的优弊；</li>
+<li>尝试默写代码，训练刻意手写代码；</li>
+</ul>
+<h2 id="第二遍"><a href="#第二遍" class="headerlink" title="第二遍"></a>第二遍</h2><ul>
+<li>自己编写，这时候就不要再看题解了；</li>
+<li>LeetCode 提交代码，确保能通过；</li>
+<li>有 Bug 没有关系，重复 debug 到通过为止；</li>
+<li>编写出多种解题方法；</li>
+<li>持续优化 - 重点是 <code>执行时间</code> （可参考 LeetCode 中打败了多少的人，也可以点击比较优秀的人，学习更好的写法）；</li>
+</ul>
+<h2 id="第三遍"><a href="#第三遍" class="headerlink" title="第三遍"></a>第三遍</h2><ul>
+<li>过了一天后，再重复做题；</li>
+<li>根据自己不熟悉的题目与程度做专项练习；</li>
+<li>专项练习就是针对自己不熟悉的种类的题，从而刻意练习哪一种题；</li>
+</ul>
+<h2 id="第四篇"><a href="#第四篇" class="headerlink" title="第四篇"></a>第四篇</h2><ul>
+<li>过了一周后，再反复练习；</li>
+</ul>
+<h2 id="第五遍"><a href="#第五遍" class="headerlink" title="第五遍"></a>第五遍</h2><ul>
+<li>面试前，提前 2-3 周开始重复练习；</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这篇笔记中，我们记录了一下关键知识重点点：</p>
+<ul>
+<li><strong>如何深入学习一门知识</strong><ul>
+<li>通过系统化学习一门知识；</li>
+<li>最高效和持续的学习算法就是通过系统化的学习；</li>
+<li>这里推荐大家，真的想学好一个技术，最好的方法就是找对老师，找对课程，找对人；</li>
+</ul>
+</li>
+<li><strong>如何攻破庞大的知识体系变成编程职业高手</strong><ul>
+<li>切碎知识点与建立脉络</li>
+<li>刻意练习</li>
+<li>反馈</li>
+</ul>
+</li>
+<li><strong>数据结构中有什么？</strong> - 看脑图</li>
+<li><strong>算法中有什么？</strong>- 看脑图</li>
+<li><strong>算法练习方法</strong><ul>
+<li>切题四件套</li>
+<li>五毒神掌</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>我是<font color="#60AAF8"><b>三钻</b></font>，一个在<font color="#60AAF8"><b>技术银河</b></font>中和你们一起来终身漂泊学习。<br>点赞是力量，关注是认可，评论是关爱！下期再见 👋！</p>
+</blockquote>
+<blockquote>
+<p>公众号《技术银河》回复”算法资料”可以获得 PDF 版和脑图资料！</p>
+</blockquote>
+<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><ul>
+<li><p>📖<a href="https://blog.csdn.net/TriDiamond6/article/details/106424061" target="_blank" rel="noopener">《分析时间与空间复杂度《三钻数据结构与算法笔记》》</a> — 算法的核心时间和空间复杂度，《数据结构与算法》都是围绕着这个核心开展的。它的存在也是为了解决我们在编程的过程中性能问题，同时也让我们有更高级的思维和思路，写出更优质的程序。</p>
+</li>
+<li><p>📖<a href="https://blog.csdn.net/TriDiamond6/article/details/105915758" target="_blank" rel="noopener">《28 关学会 HTML 与 HTML5 基础》</a> — 一个系列的文章和大家一起闯关进攻前端全方位知识点。没有闯过这些关卡的童鞋，无论前端能力如何，这个可以锻炼我们自己，也可以深入知道我们自己的前端水平和差距。想学习前端的童鞋可以从零开始学习，一起排除困难共同打开前端大门！</p>
+</li>
+<li><p>📖<a href="https://blog.csdn.net/TriDiamond6/article/details/106048140" target="_blank" rel="noopener">《44 关深入浅出 CSS 基础之第一篇》</a> — 这周我们一起闯过了 22 关，下一期我们会一起把剩余的 22 关完成。学习是一种像爬山一样的过程，要经历过漫长的上坡路，一步一个脚印。“路漫漫其修远兮，吾将上下而求索。”， 在追寻知识的道路上，前方的道路还很漫长，但我们将百折不挠，不遗余力地，上天下地的去追求和探索。让我们继续坚持学习，终身学习成长。在大前端的时代爬到技术的巅峰，做一个有深度的技术人员。</p>
+</li>
+<li><p>🔥<a href="https://blog.csdn.net/TriDiamond6/article/details/105131371" target="_blank" rel="noopener">《前端必看的 8 个 HTML+CSS 技巧》</a> — CSS 是一个很独特的语言。看起来非常简单，但是某种特殊效果看似简单，实现起来就颇有难度。这篇文章主要是给在学习前端的童鞋分享一些新的 CSS 技巧，一些在前端教程和培训课堂中不会讲到的知识。第二就是让还在前端开发这条道路上的童鞋们，重新燃起对前端排版和特效的热爱和热情！🔥</p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>三·钻 TriDiamond</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">30 <p>文章</p></a></li>
+                    <li><a href="/categories">13 <p>分类</p></a></li>
+                    <li><a href="/tags">40 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何系统化学习算法"><span class="toc-number">2.</span> <span class="toc-text">如何系统化学习算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统化的效果"><span class="toc-number">3.</span> <span class="toc-text">系统化的效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#精通一个领域"><span class="toc-number">4.</span> <span class="toc-text">精通一个领域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据结构有什么？"><span class="toc-number">5.</span> <span class="toc-text">数据结构有什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算法有什么？"><span class="toc-number">6.</span> <span class="toc-text">算法有什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刻意练习-Deliberate-practice"><span class="toc-number">7.</span> <span class="toc-text">刻意练习 - Deliberate practice</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#反馈-Feedback"><span class="toc-number">8.</span> <span class="toc-text">反馈 - Feedback</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#切题四件套"><span class="toc-number">9.</span> <span class="toc-text">切题四件套</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刷题方式（五毒神掌）"><span class="toc-number">10.</span> <span class="toc-text">刷题方式（五毒神掌）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一遍"><span class="toc-number">10.1.</span> <span class="toc-text">第一遍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二遍"><span class="toc-number">10.2.</span> <span class="toc-text">第二遍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三遍"><span class="toc-number">10.3.</span> <span class="toc-text">第三遍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四篇"><span class="toc-number">10.4.</span> <span class="toc-text">第四篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五遍"><span class="toc-number">10.5.</span> <span class="toc-text">第五遍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">11.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐阅读"><span class="toc-number">11.1.</span> <span class="toc-text">推荐阅读</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            三·钻 TriDiamond
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.4" target="_blank" rel="noopener">v1.4.4</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+</html>

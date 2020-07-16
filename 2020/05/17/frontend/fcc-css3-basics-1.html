@@ -1,0 +1,1180 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>44关学习CSS与CSS3基础「一」 - 三·钻 TriDiamond</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="「前言」欢迎回来三钻的FCC前端教程，上一篇文章我们通过 28 关学会了 HTML 与 HTML5 网页开发基础。这一期我们一起攻破前端第二大知识点《CSS 基础入门》。因为这一课一共有 44 关，,"> 
+    <meta name="author" content="三·钻 TriDiamond"> 
+    <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">三·钻 TriDiamond</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://tridiamond.me">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">44关学习CSS与CSS3基础「一」</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://img-blog.csdnimg.cn/20200716154757108.png) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/FrontEnd"><b>「
+                    </b>FRONTEND<b> 」</b></a>
+                
+                五月 17, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/05/17/frontend/fcc-css3-basics-1.html" title="44关学习CSS与CSS3基础「一」" class="">44关学习CSS与CSS3基础「一」</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    52k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    47 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Free-Code-Camp/" rel="tag">Free Code Camp</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/HTML-CSS/" rel="tag">HTML&CSS</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="「前言」"><a href="#「前言」" class="headerlink" title="「前言」"></a>「前言」</h1><p>欢迎回来三钻的<code>FCC前端教程</code>，<a href="https://tridiamond.blog.csdn.net/article/details/105915758" target="_blank" rel="noopener">上一篇文章</a>我们通过 28 关学会了 HTML 与 HTML5 网页开发基础。这一期我们一起攻破前端第二大知识点《CSS 基础入门》。因为这一课一共有 44 关，我把文章分成两期更新。敬请期待！</p>
+<h1 id="「CSS-基础知识」"><a href="#「CSS-基础知识」" class="headerlink" title="「CSS 基础知识」"></a>「CSS 基础知识」</h1><p><code>Cascading Style Sheet</code>缩写为 CSS，顾名思义就是<code>层叠样式表</code>的意思。CSS 是 HTML 中的一个样式表，告诉浏览器网页上的文字和其他内容是如何展示的。</p>
+<h2 id="理解-CSS"><a href="#理解-CSS" class="headerlink" title="理解 CSS"></a>理解 CSS</h2><p>以上是一个官方的定义。我们用一个更简单的方式理解 CSS 到底是一个什么东东：</p>
+<blockquote>
+<p>如果 HTML 是骨架，那 CSS 就是装饰这个骨架的一层皮和身上的装饰品。我们可以通过 CSS 控制皮肤的颜色，毛孔的粗细。甚至还可以控制我们装饰品上的特效，动效等等（有 LED 灯的口罩也是一种特效）。</p>
+</blockquote>
+<p>回归 HTML 中的 CSS，我们可以使用 CSS 控制哪些东西呢？</p>
+<ul>
+<li><strong>color</strong>：颜色</li>
+<li><strong>fonts</strong>：字体</li>
+<li><strong>positioning</strong>：定位</li>
+<li><strong>spacing</strong>：间隙</li>
+<li><strong>sizing</strong>：大小</li>
+<li><strong>decoration</strong>：装饰</li>
+<li><strong>transition</strong>：过渡/特效/动效</li>
+</ul>
+<h2 id="应用方式"><a href="#应用方式" class="headerlink" title="应用方式"></a>应用方式</h2><blockquote>
+<p>我们一共有 3 种应用 CSS 样式的方法。</p>
+<ol>
+<li>我们可以在 HTML 元素行内的<code>style</code>中编写样式；</li>
+<li>在 HTML 文档中添加<code>&lt;style&gt;</code>标签，然后在标签内编写 CSS 代码；</li>
+<li>把 CSS 样式单独写入一个<code>CSS</code>样式文件，然后在需要使用的 HTML 文档中使用<code>&lt;link&gt;</code>引入。</li>
+</ol>
+</blockquote>
+<p>一般项目中都会选择使用第三种方式，因为比较大型的前端页面，很多样式都是<strong>有重复性的</strong>，应用引入型的 CSS 样式，我们就可以把通用的写在一起然后在所有 HTML 中引入即可，不需要重复编写。并且可以把 CSS<strong>分类存放</strong>，<strong>提高可读性</strong>和<strong>可维护性</strong>。</p>
+<h2 id="CSS-原理"><a href="#CSS-原理" class="headerlink" title="CSS 原理"></a>CSS 原理</h2><p>CSS 背后的原理是，使用 CSS 选择器选中 DOM（文档对象模型）里面的某个 HTML 元素。然后将各种 CSS 样式和属性应用到该元素中，从而改变元素在页面中的展现方式或者样式。</p>
+<blockquote>
+<p>在本节中，我们将学会如何应用 CSS 样式到 CatPhotoApp 的元素中，从而将它从简单的文本装修成一个页面。让我们立即开始吧！</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第一关」改变文字颜色"><a href="#「第一关」改变文字颜色" class="headerlink" title="「第一关」改变文字颜色"></a>「第一关」改变文字颜色</h1><blockquote>
+<p>关卡名：<code>Change the Color of Text</code></p>
+</blockquote>
+<h5 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>我们这一关来尝试改变文本中一些文字的颜色；</li>
+<li>我们可以给<code>h2</code>元素添加<code>style</code>属性，然后使用样式属性改变文字颜色；</li>
+<li><code>color</code>就是用来定义文字颜色的样式属性；</li>
+</ul>
+<p>以下例子演示如何给<code>h2</code>应用一个蓝色字体颜色的代码：</p>
+<pre><code class="html">&lt;h2 style=&quot;color: blue;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code></pre>
+<blockquote>
+<p><strong>注意：</strong> 在行内样式中，所有样式属性结束后需要加上一个<code>;</code>符号，代表这一个样式属性定义结束。然后后面还可以加入更多的样式属性。</p>
+</blockquote>
+<h5 id="过关目标"><a href="#过关目标" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>改变<code>h2</code>的文字颜色为红色(<code>red</code>)；</li>
+</ul>
+<h5 id="过关条件"><a href="#过关条件" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>h2</code>元素中需要有<code>style</code>属性；</li>
+<li><code>h2</code>元素的<code>color</code>样式属性应该赋予<code>red</code>这个值；</li>
+<li><code>style</code>属性值里的样式属性应该以<code>;</code>符号结束；</li>
+</ul>
+<h5 id="学会了什么？"><a href="#学会了什么？" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>行内添加<code>style</code>样式属性;</li>
+<li>字体颜色样式属性<code>color</code>;</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200514110356406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第二关」使用-CSS-选择器改变元素样式"><a href="#「第二关」使用-CSS-选择器改变元素样式" class="headerlink" title="「第二关」使用 CSS 选择器改变元素样式"></a>「第二关」使用 CSS 选择器改变元素样式</h1><blockquote>
+<p>关卡名：<code>Change the Color of Text</code></p>
+</blockquote>
+<h5 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>CSS 有几百种样式属性可应用到一个 HTML 元素中，来改变它在页面中的显示方式。</li>
+<li>上一关编写的<code>&lt;h2 style=&quot;color: red;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code>，这里我们使用行内样式，使用了文字颜色样式来单独改变<code>h2</code>元素中的文字。</li>
+<li>这种应用方式只能单独针对 HTML 中某一个元素进行样式影响，但是更好的方式是使用 CSS 样式表。</li>
+</ul>
+<p>在代码的最顶端加入<code>style</code>标签：</p>
+<pre><code class="html">&lt;style&gt;&lt;/style&gt;</code></pre>
+<p>在<code>style</code>中，使用<strong>CSS 选择器</strong>选中所有<code>h2</code>标签，并且给所有<code>h2</code>标签加入字体颜色样式属性<code>color: red</code>：</p>
+<pre><code class="html">&lt;style&gt;
+  h2 {
+    color: red;
+  }
+&lt;/style&gt;</code></pre>
+<blockquote>
+<p><strong>注意：</strong> 选择器名中的样式元素必须用两个大括号包裹着 (开始<code>{</code>与结束<code>}</code>)。在样式属性的最后必须加入一个分号<code>;</code>来结束。</p>
+</blockquote>
+<h5 id="过关目标-1"><a href="#过关目标-1" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>删除<code>h2</code>行内样式;</li>
+<li>在代码顶部加入<code>style</code>样式表代码区;</li>
+<li>在样式代码区使用 CSS 选择器把所有<code>h2</code>元素内的字体改变为蓝色<code>blue</code>;</li>
+</ul>
+<h5 id="过关条件-1"><a href="#过关条件-1" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>h2</code>元素中的<code>style</code>属性需要被移除；</li>
+<li>需要创建一个<code>style</code>元素；</li>
+<li><code>h2</code>元素中的文字应该是蓝色<code>blue</code>的；</li>
+<li>样式表中的样式属性都应该遵循规范，有<strong>大括号</strong>和结束时的<strong>分号</strong>；</li>
+<li><code>style</code>元素有接受标签；</li>
+</ul>
+<h5 id="学会了什么？-1"><a href="#学会了什么？-1" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>使用<code>style</code>元素</li>
+<li>CSS 样式元素规范</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-1"><a href="#答案-1" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/2020051414272899.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第三关」使用-CSS-类"><a href="#「第三关」使用-CSS-类" class="headerlink" title="「第三关」使用 CSS 类"></a>「第三关」使用 CSS 类</h1><blockquote>
+<p>关卡名：<code>Use a CSS Class to Style an Element</code></p>
+</blockquote>
+<h5 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>CSS 中的类是为了解决服用样式的问题；</li>
+</ul>
+<p><strong>类声明例子：</strong></p>
+<pre><code class="html">&lt;style&gt;
+  .blue-text {
+    color: blue;
+  }
+&lt;/style&gt;</code></pre>
+<ul>
+<li>在<code>style</code>元素中我们编写了一个<code>.blue-text</code>CSS 类（CSS 类需要在我们的名字前加入<code>.</code>符号, 然后 CSS 类的命名规范必须使用<code>-</code>分割）；</li>
+<li>接着我们可以把这个类加入 HTML 元素中，比如：<code>&lt;h2 class=&quot;blue-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</code>；</li>
+<li>只要给我们需要应用字体颜色为蓝色的 HTML 元素上加入<code>class=&quot;blue-text&quot;</code>，即可获得该 CSS 类的样式属性。</li>
+<li>记住在 HTML 中加入类，是不需要<code>.</code>这个符号在最前面的。</li>
+</ul>
+<h5 id="过关目标-2"><a href="#过关目标-2" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>在<code>style</code>元素中，把<code>h2</code>CSS 选择器改为<code>.red-text</code>；</li>
+<li>并且把颜色值从<code>blue</code>改为<code>red</code>;</li>
+</ul>
+<h5 id="过关条件-2"><a href="#过关条件-2" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>h2</code>元素的问题应该是红色的；</li>
+<li><code>h2</code>元素应该拥有一个<code>red-text</code>的类；</li>
+<li><code>style</code>样式表中有定义一个<code>.red-text</code>，并且样式属性<code>color</code>的值为<code>red</code>;</li>
+<li>不允许在<code>h2</code>中使用行内<code>style</code>属性来改变元素的字体颜色；</li>
+</ul>
+<h5 id="学会了什么？-2"><a href="#学会了什么？-2" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>在 CSS 样式表中定义类；</li>
+<li>在 HTML 元素中加入类；</li>
+<li>用类改变 HTML 元素的样式；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-2"><a href="#答案-2" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200514145149216.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第四关」使用-CSS-类改变多个元素样式"><a href="#「第四关」使用-CSS-类改变多个元素样式" class="headerlink" title="「第四关」使用 CSS 类改变多个元素样式"></a>「第四关」使用 CSS 类改变多个元素样式</h1><blockquote>
+<p>关卡名：<code>Change the Color of Text</code></p>
+</blockquote>
+<h5 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>一个类可以赋予给多个元素，让所有被赋予同一个类的元素拥有同一套样式；</li>
+</ul>
+<blockquote>
+<p>几年前<code>twitter</code>公司很火的前端框架<code>bootstrap</code>，就是结合很多这种分类好的的类，让我们在 HTML 元素中组合使用就可以快速布局网页。所以合理的分类好不同种类的类，然后给他们一种特定用途，有利于 CSS 开发时提高代码复用性，提高可读性和可维护性。</p>
+</blockquote>
+<h5 id="过关目标-3"><a href="#过关目标-3" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>给代码中第一个<code>p</code>元素也加入<code>red-text</code>类;</li>
+</ul>
+<h5 id="过关条件-3"><a href="#过关条件-3" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>h2</code>元素的文字应该是红色；</li>
+<li><code>h2</code>元素应该拥有一个<code>red-text</code>类属性；</li>
+<li>第一个<code>p</code>元素的内容应该是红色；</li>
+<li>第二和第三个<code>p</code>元素的内容颜色应该不是红色；</li>
+<li>第一个<code>p</code>元素应该拥有一个<code>red-text</code>类属性；</li>
+</ul>
+<h5 id="学会了什么？-3"><a href="#学会了什么？-3" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>用类名对多个 HTML 元素赋予同一个样式；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-3"><a href="#答案-3" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200514150120127.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第五关」改变文字大小"><a href="#「第五关」改变文字大小" class="headerlink" title="「第五关」改变文字大小"></a>「第五关」改变文字大小</h1><blockquote>
+<p>关卡名：<code>Change the Color of Text</code></p>
+</blockquote>
+<h5 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>字体大小是<code>font-size</code>样式属性控制的；</li>
+</ul>
+<pre><code class="css">h1 {
+  font-size: 30px;
+}</code></pre>
+<h5 id="过关目标-4"><a href="#过关目标-4" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>在<code>style</code>元素中，<code>.red-text</code>下方加入<code>p</code>元素选择器；</li>
+<li>在<code>p</code>选择器中加入<code>font-size</code>样式属性，并且把值设置为<code>16px</code>（16 像素）；</li>
+</ul>
+<h5 id="过关条件-4"><a href="#过关条件-4" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li>在<code>style</code>元素中为<code>p</code>元素的内容的字体改为<code>16px</code>的大小；</li>
+</ul>
+<h5 id="学会了什么？-4"><a href="#学会了什么？-4" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>改变元素字体大小；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-4"><a href="#答案-4" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200514153424512.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第六关」改变元素字体"><a href="#「第六关」改变元素字体" class="headerlink" title="「第六关」改变元素字体"></a>「第六关」改变元素字体</h1><blockquote>
+<p>关卡名：<code>Set the Font Family of an Element</code></p>
+</blockquote>
+<h5 id="知识点-5"><a href="#知识点-5" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>使用<code>font-family</code>样式属性，我们可以定义一个元素所使用的字体；</li>
+<li>举例，如果我们想<code>h2</code>元素使用<code>sans-serif</code>字体，在 CSS 中需要这么些：</li>
+</ul>
+<pre><code class="css">h2 {
+  font-family: sans-serif;
+}</code></pre>
+<h5 id="过关目标-5"><a href="#过关目标-5" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>让所有<code>p</code>元素使用<code>monospace</code>字体；</li>
+</ul>
+<h5 id="过关条件-5"><a href="#过关条件-5" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li>所有<code>p</code>元素都使用<code>monospace</code>字体；</li>
+</ul>
+<h5 id="学会了什么？-5"><a href="#学会了什么？-5" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>使用 CSS 样式属性制定元素使用的字体；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-5"><a href="#答案-5" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/2020051415471048.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第七关」引入-Google-字体"><a href="#「第七关」引入-Google-字体" class="headerlink" title="「第七关」引入 Google 字体"></a>「第七关」引入 Google 字体</h1><blockquote>
+<p>关卡名：<code>Import a Google Font</code></p>
+</blockquote>
+<h5 id="知识点-6"><a href="#知识点-6" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>在我们的操作系统中，会有很多通用的字体可以使用。但是除了这些字体之外我们还可以引入自定义字体，也叫<code>web fonts</code>网页字体。</li>
+<li>在项目中，有一些设计师会使用一些特殊的字体，主要是为了提高整体页面的美观和协调，这种也是非常常见的。</li>
+<li>这个时候我们就需要在 HTML 中引入字体了。</li>
+<li>这个关卡我们使用了<code>Google Fonts</code>库（顾名思义，就是使用谷歌公司提供的公开字体库 - 也就是免费使用的）</li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong> 如果我们无法访问谷歌字体的话，这一关是无法过的，只能跳过。但是作为开发人员，我们是有办法的。（你们懂的 😂）</p>
+</blockquote>
+<ul>
+<li>要引入谷歌字体，我们只需要在 HTML 中加入谷歌字体的 URL；</li>
+<li>这个关卡中我们需要引入谷歌字体库中的<code>Lobster</code>字体；</li>
+<li>我们只需要复制黏贴以下代码，加入到我们代码的顶端即可（如果是在正常的 HTML 文件格式中，就是加入到<code>&lt;meta&gt;&lt;/meta&gt;</code>标签之中）；</li>
+</ul>
+<pre><code class="html">&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</code></pre>
+<ul>
+<li>现在我们可以在 CSS 中使用<code>font-family: Lobster;</code>, <code>font-family</code>字体属性值的格式是: <code>font-family: FAMILY_NAME, GENERIC_NAME;</code>;</li>
+<li>里面的<code>FAMILY_NAME</code>就是指定的字体名，如果这个字体找不到，或者语言不适应的话，就会往后面定义的字体进行应用；</li>
+<li>换言之<code>GENERIC_NAME</code>就是后备字体，可以用<code>,</code>分割输入多个，这个也会在下一关详细解说；</li>
+<li>如果我们的字体名中含有空格，那我们就需要用<strong>双引号</strong>包裹着，例如：<code>&quot;Open Sans&quot;</code>。因为<code>Lobster</code>这个字体不存在这种情况，所以不需要使用双引号；</li>
+</ul>
+<h5 id="过关目标-6"><a href="#过关目标-6" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>创建一个<code>font-family</code>CSS 规则，并且使用<code>Lobster</code>字体。必须保证我们的<code>h2</code>元素应用了这个字体定义。</li>
+</ul>
+<h5 id="过关条件-6"><a href="#过关条件-6" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li>引入了谷歌字体库中的<code>Lobster</code>字体；</li>
+<li><code>h2</code>元素中的字体使用了<code>Lobster</code>字体；</li>
+<li>使用<code>h2</code>CSS 选择器的来改变字体；</li>
+<li>其他<code>p</code>元素应该保持原来的<code>monospace</code>字体；</li>
+</ul>
+<h5 id="学会了什么？-6"><a href="#学会了什么？-6" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>引入谷歌字体;</li>
+<li>使用谷歌字体;</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-6"><a href="#答案-6" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200514162145246.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第八关」定义字体如何往后取用"><a href="#「第八关」定义字体如何往后取用" class="headerlink" title="「第八关」定义字体如何往后取用"></a>「第八关」定义字体如何往后取用</h1><blockquote>
+<p>关卡名：<code>Specify How Fonts Should Degrade</code></p>
+</blockquote>
+<h5 id="知识点-7"><a href="#知识点-7" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>浏览器中有好几个可用的默认的字体，最普通的字体有：<code>monospace</code>, <code>serif</code> 和 <code>sans-serif</code>；</li>
+<li>当一个字体不存在或者无法使用时，我们可以告诉浏览器<strong>“往后取用”</strong>下一个指定的字体；</li>
+<li>举例：如果<code>Helvetic</code>作为我们的默认字体，当这个字体无法使用的时候自动往后选择使用<code>sans-serif</code>字体，这种场景我们就需要用以下方式：</li>
+</ul>
+<pre><code class="css">p {
+  font-family: Helvetica, sans-serif;
+}</code></pre>
+<p><code>Generic font family</code>的字体名是没有大小写限制的，只要名字正确就可以了。并且不需要双引号，因为它们是 CSS 关键词而已。</p>
+<h5 id="过关目标-7"><a href="#过关目标-7" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>首先给<code>h2</code>追加<code>monospace</code>字体，让<code>h2</code>元素拥有默认字体为<code>Lobster</code>，备用自己为<code>monospace</code>；</li>
+<li>上一关卡，我们使用<code>link</code>标签引入了谷歌字体库中的<code>Lobster</code>字体。这里我们注释掉这个引用，从而<code>Lobster</code>这个字体就变成无法使用了，所以<code>h2</code>元素中就会往后取用<code>monospcae</code>字体；</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>： 如果我们的电脑中安装了<code>Lobster</code>字体，那这个例子中的<code>Lobster</code>字体是可用的，自然就无法看到浏览器往后取用的效果了。</p>
+</blockquote>
+<h5 id="过关条件-7"><a href="#过关条件-7" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>h2</code>元素使用<code>Lobster</code>字体；</li>
+<li>当<code>Lobster</code>字体无法使用时，<code>h2</code>元素应该往后取用<code>monospace</code>字体；</li>
+<li>注释掉谷歌字体库的引用，在<code>link</code>标签的签名加入<code>&lt;!--</code>和在结尾加入<code>--&gt;</code>；</li>
+<li>注释的结尾必须有<code>--&gt;</code>；</li>
+</ul>
+<h5 id="学会了什么？-7"><a href="#学会了什么？-7" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>给 HTML 元素追加后备字体；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-7"><a href="#答案-7" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200514174718492.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第九关」控制图片大小"><a href="#「第九关」控制图片大小" class="headerlink" title="「第九关」控制图片大小"></a>「第九关」控制图片大小</h1><blockquote>
+<p>关卡名：<code>Size Your Images</code></p>
+</blockquote>
+<h5 id="知识点-8"><a href="#知识点-8" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>CSS 中有一个样式属性叫<code>width</code>（宽度），顾名思义这个元素是用来控制元素的宽度的；</li>
+<li>与字体大小一样，我们使用<code>px</code>（像素）为单位来定义图片的宽度</li>
+<li>举例：如果我们创建一个 CSS 类<code>larger-image</code>，并且使用这个类来把 HTML 元素的宽度定义为 500 像素，我们就用以下写法：</li>
+</ul>
+<pre><code class="css">&lt;style&gt;
+  .larger-image {
+    width: 500px;
+  }
+&lt;/style&gt;</code></pre>
+<h5 id="过关目标-8"><a href="#过关目标-8" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>创建一个<code>smaller-image</code>的 CSS 类，并且用这个类来缩小一个图片的大小为 100 像素宽；</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：因为浏览器的设置，有一些用户会默认把网页放大缩小了，不是默认的 100%。如果是的话，请还原 100%伸缩值后才能正常通过此关哦！</p>
+</blockquote>
+<h5 id="过关条件-8"><a href="#过关条件-8" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>img</code>元素需要有<code>smaller-imge</code>类；</li>
+<li><code>img</code>元素应该是<code>100px</code>宽，并且浏览器缩放是在 100%；</li>
+</ul>
+<h5 id="学会了什么？-8"><a href="#学会了什么？-8" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>控制元素宽度</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-8"><a href="#答案-8" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200515085031226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十关」添加元素边框"><a href="#「第十关」添加元素边框" class="headerlink" title="「第十关」添加元素边框"></a>「第十关」添加元素边框</h1><blockquote>
+<p>关卡名：<code>Add Borders Around Your Elements</code></p>
+</blockquote>
+<h5 id="知识点-9"><a href="#知识点-9" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>CSS 边框有这些属性：<code>style</code>, <code>color</code> 和 <code>width</code>；</li>
+<li>举例：如果我们想给一个 HTML 元素创建一个红色的，5 像素边框，我们就需要用这样一个 CSS 类来实现；</li>
+</ul>
+<pre><code class="css">&lt;style&gt;
+  .thin-red-border {
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+  }
+&lt;/style&gt;</code></pre>
+<p>还有一种更简单快捷的写法：</p>
+<pre><code class="css">&lt;style&gt;
+.thin-red-border {
+  border: 5px red solid;
+}
+&lt;/style&gt;</code></pre>
+<h5 id="过关目标-9"><a href="#过关目标-9" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>创建一个类叫<code>thick-green-border</code>；</li>
+<li>这个 CSS 类给 HTML 元素加入一个 10px，实线（solid）和绿色（green）的边框；</li>
+<li>给我们的猫咪图片加入这个类；</li>
+</ul>
+<blockquote>
+<p><strong>记住</strong>：我们是可以给 HTML 元素中的<code>class</code>属性添加多个类，只要使用空格分隔即可。如：<br><code>&lt;img class=&quot;class1 class2&quot;&gt;</code></p>
+</blockquote>
+<h5 id="过关条件-9"><a href="#过关条件-9" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>img</code>元素需要有<code>smaller-imge</code>类；</li>
+<li><code>img</code>元素需要有<code>thick-green-border</code>类；</li>
+<li>图片应有一个 10px 宽的边框；</li>
+<li>图片应有一个实线的边框样式；</li>
+<li>图片应有一个绿色的边框样式；</li>
+</ul>
+<h5 id="学会了什么？-9"><a href="#学会了什么？-9" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>给元素添加边框；</li>
+<li>给边框加入宽度，线的样式和颜色；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-9"><a href="#答案-9" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200515103353182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十一关」使用-border-radius-实现圆边"><a href="#「第十一关」使用-border-radius-实现圆边" class="headerlink" title="「第十一关」使用 border-radius 实现圆边"></a>「第十一关」使用 border-radius 实现圆边</h1><blockquote>
+<p>关卡名：<code>Add Rounded Corners with border-radius</code></p>
+</blockquote>
+<h5 id="知识点-10"><a href="#知识点-10" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>我们的喵咪图片现在是直角边的；</li>
+<li>我们可以使用<code>border-radius</code>把图片的四个角改圆边；</li>
+</ul>
+<h5 id="过关目标-10"><a href="#过关目标-10" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>我们可以给<code>border-radius</code>一个弧度像素值；</li>
+<li>现在给我们的猫咪图片一个<code>10px</code>的<code>border-radius</code>；</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：这一关中，是有多个接单方案的：</p>
+<ol>
+<li>在<code>.thick-green-border</code>中添加<code>border-radius</code>；</li>
+<li>在<code>.smaller-image</code>中添加<code>border-radius</code>；</li>
+</ol>
+</blockquote>
+<h5 id="过关条件-10"><a href="#过关条件-10" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>img</code>元素需要有<code>thick-green-border</code>类；</li>
+<li>图片应有一个 10px 的边框弧度；</li>
+</ul>
+<h5 id="学会了什么？-10"><a href="#学会了什么？-10" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>给属性边框弧度；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-10"><a href="#答案-10" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200515110109963.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十二关」实现圆形图片"><a href="#「第十二关」实现圆形图片" class="headerlink" title="「第十二关」实现圆形图片"></a>「第十二关」实现圆形图片</h1><blockquote>
+<p>关卡名：<code>Make Circular Images with a border-radius</code></p>
+</blockquote>
+<h5 id="知识点-11"><a href="#知识点-11" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>CSS 的<code>border-radius</code>属性不止可以使用像素为单位，我们还可以使用百分比；</li>
+</ul>
+<h5 id="过关目标-11"><a href="#过关目标-11" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>给我们的猫咪图片一个<code>50%</code>的<code>border-radius</code>；</li>
+</ul>
+<h5 id="过关条件-11"><a href="#过关条件-11" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li>图片应有一个<code>50%</code>的边框弧度；</li>
+<li>图片的边框弧度必须是一个百分比值<code>50%</code>；</li>
+</ul>
+<h5 id="学会了什么？-11"><a href="#学会了什么？-11" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>给元素添加百分比弧度值；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-11"><a href="#答案-11" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200515110600282.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十三关」给元素一个背景颜色"><a href="#「第十三关」给元素一个背景颜色" class="headerlink" title="「第十三关」给元素一个背景颜色"></a>「第十三关」给元素一个背景颜色</h1><blockquote>
+<p>关卡名：<code>Give a Background Color to a div Element</code></p>
+</blockquote>
+<h5 id="知识点-12"><a href="#知识点-12" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>我们可以使用<code>background-color</code>属性来设置一个元素的背景颜色；</li>
+<li>举例：如果我们想给一个元素绿色（<code>green</code>）的背景，我们就要给予这个元素一个<code>background-color</code>属性；</li>
+</ul>
+<pre><code class="css">.green-background {
+  background-color: green;
+}</code></pre>
+<h5 id="过关目标-12"><a href="#过关目标-12" class="headerlink" title="过关目标"></a>过关目标</h5><p>Create a class called <code>silver-background</code> with the <code>background-color</code> of silver. Assign this class to your <code>div</code> element.</p>
+<ul>
+<li>创建一个 CSS 类<code>silver-background</code>，其中加入<code>background-color</code>属性和属性值为<code>silver</code>；</li>
+<li>然后把这个类加入到<code>div</code>元素的<code>class</code>属性中；</li>
+</ul>
+<h5 id="过关条件-12"><a href="#过关条件-12" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>div</code>元素应有一个<code>silver-background</code>类；</li>
+<li><code>div</code>元素应有银色（silver）背景颜色；</li>
+<li><code>style</code>标签中应该有一个<code>.silver-background</code>类选择器，并且有<code>background-color</code>属性和属性值为<code>silver</code>；</li>
+</ul>
+<h5 id="学会了什么？-12"><a href="#学会了什么？-12" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>给元素添加背景颜色；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-12"><a href="#答案-12" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200515111343722.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十四关」给元素-ID-值"><a href="#「第十四关」给元素-ID-值" class="headerlink" title="「第十四关」给元素 ID 值"></a>「第十四关」给元素 ID 值</h1><blockquote>
+<p>关卡名：<code>Set the id of an Element</code></p>
+</blockquote>
+<h5 id="知识点-13"><a href="#知识点-13" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>除了<code>class</code>CSS 类属性，我们还可以给每一个 HTML 元素一个<code>id</code>属性；</li>
+<li><code>id</code>属性是有好几个实用的用途的：我们可以用<code>id</code>选择器来给一个元素 CSS 样式属性，同时也可以让 JavaScript 找到指定<code>id</code>的元素，并且对此进行修改等；</li>
+<li>记住，<code>id</code>属性的属性值应该是唯一的；</li>
+<li>浏览器不会强制要求<code>id</code>的唯一性，但是在实践中被广大认可<code>id</code>是需要唯一的，所以不要在多个一个元素中赋予同一个<code>id</code>属性；</li>
+</ul>
+<p>举例：在我们的<code>h2</code>元素中添加一个<code>id</code>属性<code>cat-photo-app</code>：</p>
+<pre><code class="html">&lt;h2 id=&quot;cat-photo-app&quot;&gt;&lt;/h2&gt;</code></pre>
+<h5 id="过关目标-13"><a href="#过关目标-13" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>给<code>form</code>元素添加一个<code>id</code>属性值<code>cat-photo-form</code>；</li>
+</ul>
+<h5 id="过关条件-13"><a href="#过关条件-13" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li>表格元素中需要有个<code>id</code>属性值为<code>cat-photo-form</code>；</li>
+</ul>
+<h5 id="学会了什么？-13"><a href="#学会了什么？-13" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>给元素添加<code>id</code>属性；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-13"><a href="#答案-13" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200515113512927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十五关」使用-ID-更改元素样式"><a href="#「第十五关」使用-ID-更改元素样式" class="headerlink" title="「第十五关」使用 ID 更改元素样式"></a>「第十五关」使用 ID 更改元素样式</h1><blockquote>
+<p>关卡名：<code>Use an id Attribute to Style an Element</code></p>
+</blockquote>
+<h5 id="知识点-14"><a href="#知识点-14" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li><code>id</code>属性与 CSS 类一样可以为他们绑上 CSS 样式；</li>
+<li>但是区别是<code>id</code>是无法复用，只能给予一个元素（源自于我们上一关所说的原因）；</li>
+<li>在权重之中<code>id</code>在样式表中相对比 CSS 类，它有更好的权重，如果<code>class</code>和<code>id</code>的样式同时给予一个元素，那<code>id</code>的样式会覆盖类的样式；</li>
+</ul>
+<p>举例：我们现在给一个<code>id</code>属性为<code>cat-photo-element</code>，然后给这个<code>id</code>属性在样式表中绑定一个背景颜色<code>background-color</code>为绿色<code>green</code>。</p>
+<pre><code class="css">#cat-photo-element {
+  background-color: green;
+}</code></pre>
+<blockquote>
+<p><strong>注意</strong>：在我们的样式表<code>&lt;style&gt;</code>中，我们用<code>. + 类</code>名来声明类的样式，但是如果是<code>id</code>的话我们会用<code># + id名</code>来声明<code>id</code>的样式。</p>
+</blockquote>
+<h5 id="过关目标-14"><a href="#过关目标-14" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>现在尝试给我们的<code>form</code>元素一个<code>id</code>属性，属性值为<code>cat-photo-form</code>；</li>
+<li>并且在样式表中给予这个<code>id</code>一个绿色（<code>green</code>）的背景颜色；</li>
+</ul>
+<h5 id="过关条件-14"><a href="#过关条件-14" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>form</code>元素中应有一个<code>id</code>属性为<code>cat-photo-form</code>；</li>
+<li><code>form</code>元素的背景颜色应该是绿色的；</li>
+<li><code>form</code>元素应有<code>id</code>属性；</li>
+<li><code>form</code>元素中不能有<code>class</code>或者<code>style</code>；</li>
+</ul>
+<h5 id="学会了什么？-14"><a href="#学会了什么？-14" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>使用<code>id</code>属性；</li>
+<li>在样式表中声明<code>id</code>属性的样式；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-14"><a href="#答案-14" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200515141645329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十六关」给元素添加内边距"><a href="#「第十六关」给元素添加内边距" class="headerlink" title="「第十六关」给元素添加内边距"></a>「第十六关」给元素添加内边距</h1><blockquote>
+<p>关卡名：<code>Adjust the Padding of an Element</code></p>
+</blockquote>
+<h5 id="知识点-15"><a href="#知识点-15" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>我们把 Cat Photo App 放一边，先来学习更多的 HTML 样式；</li>
+<li>可能大家都注意到了，HTML 的元素基本上都是一个个像积木一样的正方形盒子组成的；</li>
+<li>在排版中最常用的三大属性，它们是用来控制 HTML 元素之间的空隙的：<code>padding</code>（内边距），<code>margin</code>（外边距）和<code>border</code>（ 边框）；</li>
+<li>一个元素的<code>padding</code>，控制一个元素内容四边的空间，还有内容与<code>border</code>边框的距离；</li>
+<li>在预览区中的蓝色与红色盒子被包裹在一个黄色盒子之中，我们应该注意到，红色盒子的<code>padding</code>比蓝色盒子的边距要宽；</li>
+</ul>
+<p>如果想更深入的理解内容与<code>margin</code>，<code>padding</code>和<code>border</code>之间距离，我们需要一个更好的图解方式，请看下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200515153110673.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>上图中有 3 组颜色，从内到外：<font color="blue">蓝色</font>是<code>content</code>(内容部分)，<font color="green">绿色</font>部分是<code>padding</code>(内边距)，<font color="#FFC300">黄色</font>部分是<code>border</code>(边框)，最外面的<font color="#FF5733">橙色</font>部分是<code>margin</code>(外边距)。通过这个图，我们就能清晰理解这些边距的实际产生的距离的效果。</p>
+<ul>
+<li>这里我们可以看到，当我们加大蓝色盒子的<code>padding</code>，盒子内容里面的字体与边框的距离就越远；</li>
+</ul>
+<h5 id="过关目标-15"><a href="#过关目标-15" class="headerlink" title="过关目标"></a>过关目标</h5><p>Change the <code>padding</code> of your blue box to match that of your red box.</p>
+<ul>
+<li>改变蓝色盒子的<code>padding</code>，从而让蓝色盒子与红色盒子的<code>padding</code>一致；</li>
+</ul>
+<h5 id="过关条件-15"><a href="#过关条件-15" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li>蓝色盒子的<code>padding</code>应改为<code>20px</code>；</li>
+</ul>
+<h5 id="学会了什么？-15"><a href="#学会了什么？-15" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>使用<code>padding</code>（内边距），<code>margin</code>（外边距）和<code>border</code>(边框)；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-15"><a href="#答案-15" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/2020051516424180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十七关」调整元素外边距"><a href="#「第十七关」调整元素外边距" class="headerlink" title="「第十七关」调整元素外边距"></a>「第十七关」调整元素外边距</h1><blockquote>
+<p>关卡名：<code>Adjust the Margin of an Element</code></p>
+</blockquote>
+<h5 id="知识点-16"><a href="#知识点-16" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>一个元素的<code>margin</code>(外边距)，控制这个元素与周围元素之间的空间；</li>
+<li>所以我们可以看到黄色盒子内的蓝色盒子与红色盒子，红色盒子拥有一个更大的<code>margin</code>，同时让红色盒子看起来更小了；</li>
+<li>当我们加大蓝色盒子的<code>margin</code>的时候，也会看到同等的变化。因为蓝色盒子与周边元素的间距会加大，同时蓝色盒子的<code>content</code>内容可以用的空间就需要伸缩适应。最后蓝色盒子就会变小了；</li>
+</ul>
+<p>为了更好的理解为什么内容区域宽高会变动，我们先来看看红色盒子的空间信息：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200515170336559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>首先这个例子中，红色盒子的<code>content</code>内容区域是没有给宽高的，所以会根据浏览器窗口大小适应。也就是说，内容区域是一个弹性宽高盒子。这个时候我们给了<code>20px</code>的<code>padding</code>，<code>5px</code>的<code>border</code>，<code>20px</code>的<code>margin</code>。那盒子的总宽高是多少？</p>
+<p>这个时候盒子的总宽高 = <code>content宽高</code> + <code>padding</code> + <code>border</code> + <code>margin</code> 对吧？</p>
+<p>假设现在浏览器窗口的宽度是<code>1000px</code>，这里我们先假设外层没有一个黄色盒子，这个红色盒子可以填满这个浏览器宽度。这个时候红色盒子的<code>content</code>宽度就是:</p>
+<blockquote>
+<p>1000 - 20*2 (左右的<code>margin</code>外边距) - 5*2(左右的<code>border</code>边框) - 20*2(左右的<code>padding</code>内边距) = 910px。</p>
+</blockquote>
+<p>如果现在我把浏览器窗口变成 800px 呢？安装刚刚的公式我们会得出 710px，对内容部分少了 200px。</p>
+<p>好了按照我们刚刚的公式，现在浏览器窗口宽度不变，只把<code>margin</code>外边距加大，这个时候内容是不是也会变？因为最终内容区域的大小都是受到<code>margin</code>，<code>border</code>和<code>padding</code>的总额所影响的？所以在上面的例子里面我们发现加大了蓝色盒子的<code>margin</code>后，蓝色盒子显然是变小了。因为我们加大了<code>margin</code>。</p>
+<p>同时也是因为我们看到的盒子大小是基于盒子的边框，不是真的在看盒子的<code>content</code>内容部分。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<p>如果我们给盒子一个宽高后，我们加大<code>padding</code>时盒子就会变大。甚至有时候在排版的过程中，使用<code>padding</code>就会发现盒子会超出了父级的元素盒子。这里我们可以深入解说一下<strong>CSS 中的两种<code>盒模型</code></strong>：</p>
+<p><strong>盒模型</strong>：<code>标准盒模型</code></p>
+<ul>
+<li>盒子宽度 = 内容的宽度</li>
+<li>盒子高度 = 内容的高度</li>
+</ul>
+<blockquote>
+<p>其他间距都是额外加入的，会影响盒子总体呈现的宽高</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200515172457162.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<blockquote>
+<p>如果不希望使用盒子的<code>padding</code>的时候影响盒子总体大小，我们就要把盒子变成<code>IE盒模型</code></p>
+<p>在盒子的 CSS 中添加<code>box-sizing: border-box</code></p>
+</blockquote>
+<p><strong>盒模型</strong>：<code>IE盒模型</code></p>
+<ul>
+<li>盒子宽度 = border + padding + 内容的宽度</li>
+<li>盒子高度 = border + padding + 内容的高度</li>
+</ul>
+<blockquote>
+<p>盒子的框高包含了边框和内边距，所以整体的盒子高度不受<code>padding</code>和<code>border</code>影响。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200515172930443.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<h5 id="过关目标-16"><a href="#过关目标-16" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>改变蓝色盒子的<code>margin</code>，从而让蓝色盒子和红色盒子又一样的展示效果；</li>
+</ul>
+<h5 id="过关条件-16"><a href="#过关条件-16" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>blue-box</code>类应有<code>20px</code>的<code>margin</code>；</li>
+</ul>
+<h5 id="学会了什么？-16"><a href="#学会了什么？-16" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li><code>margin</code>的使用；</li>
+<li><code>padding</code>对盒子的宽高的影响；</li>
+<li><code>标准盒模型</code>和<code>IE盒模型</code>；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-16"><a href="#答案-16" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200516212158648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十八关」给元素负外边框"><a href="#「第十八关」给元素负外边框" class="headerlink" title="「第十八关」给元素负外边框"></a>「第十八关」给元素负外边框</h1><blockquote>
+<p>关卡名：<code>Add a Negative Margin to an Element</code></p>
+</blockquote>
+<h5 id="知识点-17"><a href="#知识点-17" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>一个元素的<code>margin</code>控制它的周边与它的边框之间的空隙；</li>
+<li>如果我们给一个元素一个负数的<code>margin</code>，这个元素会变大；</li>
+</ul>
+<blockquote>
+<p>所以给一个元素负<code>margin</code>就会变大？是，也不是！<strong>但是为什么呢？<code>margin</code>是外边框，不应该会对元素的内容产生大小变动呀？</strong></p>
+</blockquote>
+<p>要回答这个疑问，我们首先来看看改为负<code>margin</code>之前和之后是怎么样的：</p>
+<p><img src="https://img-blog.csdnimg.cn/2020051700262255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/20200517002916282.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<ul>
+<li>首先第一最外层的<strong>黄色盒子</strong>没有定义宽高，所以它是<strong>自适应浏览器窗口宽高</strong>；</li>
+<li>第二我们没有给<strong>蓝色盒子</strong>定义宽高，所以它的内容宽高也是<strong>跟随着父级宽高</strong>；</li>
+<li>蓝色盒子原本的<code>margin</code>是<code>20px</code>，那盒子的宽度就是<code>149 (内容)</code> + <code>20+20 (左右内边距)</code> + <code>5+5 (左右边框)</code> = <code>199px</code>，最后还有左右的<code>20px</code>的<code>margin</code>；</li>
+<li>蓝色黑子换成了<code>margin</code>为<code>-15px</code>后，这时宽度就是 <code>219 (内容)</code> + <code>20+20 (左右内边距)</code> + <code>5+5 (左右边框)</code> = <code>269px</code>，最后左右的<code>-15px</code>的<code>margin</code>；</li>
+<li>以上就是最后在浏览器的盒子属性的区别，这两个之中哪个的数值变了呢？对内容的宽度变了！为什么呢？</li>
+<li><code>219</code> - <code>149</code> = <code>70px</code>，那这 70 像素的增加是从哪里来的呢？</li>
+<li>对的！就是<code>-15px</code>和<code>20px</code>的区别。因为蓝色盒子没有定义宽度，所以宽度是自适应的。从左右负 15 来算一共给这个盒子左右各增加了 15 像素的空间。然后原本是 20 像素的边框现在没有了，所以另外再加了左右 20 像素的距离。一共就是<code>15+15+20+20</code> = <code>70</code>。就是这样我们的内容就多了<code>70px</code>的宽度，所以蓝色盒子总体来说是不是宽度扩大了<code>70px</code>呢？懂了！</li>
+</ul>
+<blockquote>
+<p>问题来了，为什么刚刚说给一个元素的<code>margin</code>变化时，<code>会，也不会</code>导致元素放大呢？主要原因是因为我们这个例子中的蓝色盒子没有给宽度。如果给了宽度，盒子正数的<code>margin</code>和负数<code>margin</code>都不会影响这个盒子的宽的。所以<strong>只有当这个盒子的宽度是自适应的时候才会导致盒子变大变小</strong>哦。</p>
+</blockquote>
+<h5 id="过关目标-17"><a href="#过关目标-17" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>给蓝色盒子一个负<code>margin</code>，让它与红色盒子的呈现样式一样；</li>
+<li>把蓝色盒子的<code>margin</code>改为<code>-15px</code>，从而让蓝色盒子与红色盒子一样占了黄色盒子的总宽度；</li>
+</ul>
+<h5 id="过关条件-17"><a href="#过关条件-17" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>blue-gox</code>的类应有一个<code>-15px</code>的<code>margin</code>；</li>
+</ul>
+<h5 id="学会了什么？-17"><a href="#学会了什么？-17" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>给元素负<code>margin</code>；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-17"><a href="#答案-17" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200517010824638.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第十九关」给元素每个边缘不同的内边距"><a href="#「第十九关」给元素每个边缘不同的内边距" class="headerlink" title="「第十九关」给元素每个边缘不同的内边距"></a>「第十九关」给元素每个边缘不同的内边距</h1><blockquote>
+<p>关卡名：<code>Add Different Padding to Each Side of an Element</code></p>
+</blockquote>
+<h5 id="知识点-18"><a href="#知识点-18" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>有时候我们需要自定义一个元素，并且要给一个元素每个边缘一个不同的<code>padding</code>；</li>
+<li>CSS 让我们可以控制一个元素 4 个边的内边距，控制的属性分别是：<code>padding-top (上)</code>、<code>padding-right (右)</code>、<code>padding-bottom (下)</code>和<code>padding-left (左)</code>；</li>
+</ul>
+<h5 id="过关目标-18"><a href="#过关目标-18" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>给予我们蓝色盒子的<strong>顶部</strong>与<strong>左边</strong><code>40px</code>的<code>padding</code>, 然后<strong>底部</strong>和<strong>右边</strong><code>20px</code>；</li>
+</ul>
+<h5 id="过关条件-18"><a href="#过关条件-18" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>blue-box</code>类中应有<code>40px</code>的<code>padding-top</code>；</li>
+<li><code>blue-box</code>类中应有<code>20px</code>的<code>padding-right</code>；</li>
+<li><code>blue-box</code>类中应有<code>20px</code>的<code>padding-bottom</code>；</li>
+<li><code>blue-box</code>类中应有<code>40px</code>的<code>padding-left</code>；</li>
+</ul>
+<h5 id="学会了什么？-18"><a href="#学会了什么？-18" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>单独给每一个边缘不同的内边距；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-18"><a href="#答案-18" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200517014532808.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第二十关」给元素每个边缘不同的外边距"><a href="#「第二十关」给元素每个边缘不同的外边距" class="headerlink" title="「第二十关」给元素每个边缘不同的外边距"></a>「第二十关」给元素每个边缘不同的外边距</h1><blockquote>
+<p>关卡名：<code>Add Different Margins to Each Side of an Element</code></p>
+</blockquote>
+<h5 id="知识点-19"><a href="#知识点-19" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>有时候我们需要自定义一个元素，并且要给一个元素每个边缘一个不同的<code>margin</code>；</li>
+<li>CSS 让我们可以控制一个元素 4 个边的外边距，控制的属性分别是：<code>margin-top (上)</code>、<code>margin-right (右)</code>、<code>margin-bottom (下)</code>和<code>margin-left (左)</code>；</li>
+</ul>
+<h5 id="过关目标-19"><a href="#过关目标-19" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>给予我们蓝色盒子的<strong>顶部</strong>与<strong>左边</strong><code>40px</code>的<code>margin</code>, 然后<strong>底部</strong>和<strong>右边</strong><code>20px</code>；</li>
+</ul>
+<h5 id="过关条件-19"><a href="#过关条件-19" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>blue-box</code>类中应有<code>40px</code>的<code>margin-top</code>；</li>
+<li><code>blue-box</code>类中应有<code>20px</code>的<code>margin-right</code>；</li>
+<li><code>blue-box</code>类中应有<code>20px</code>的<code>margin-bottom</code>；</li>
+<li><code>blue-box</code>类中应有<code>40px</code>的<code>margin-left</code>；</li>
+</ul>
+<h5 id="学会了什么？-19"><a href="#学会了什么？-19" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>单独给每一个边缘不同的外边距；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-19"><a href="#答案-19" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200517125928189.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第二十一关」使用顺时针语法指定元素内边距"><a href="#「第二十一关」使用顺时针语法指定元素内边距" class="headerlink" title="「第二十一关」使用顺时针语法指定元素内边距"></a>「第二十一关」使用顺时针语法指定元素内边距</h1><blockquote>
+<p>关卡名：<code>Use Clockwise Notation to Specify the Padding of an Element</code></p>
+</blockquote>
+<h5 id="知识点-20"><a href="#知识点-20" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>除了使用<code>padding-top (上)</code>、<code>padding-right (右)</code>、<code>padding-bottom (下)</code>和<code>padding-left (左)</code>来给一个元素特定的内边距；</li>
+<li>我们还可以在一行内写完一个元素的出内边距：<code>padding: 10px 20px 10px 20px;</code>；</li>
+<li>这里面的四个数值顺时针的从上到左旋转来分配的：上，右，下，左；</li>
+</ul>
+<p><strong>其他语法：</strong></p>
+<pre><code class="css">/* 应用于四个边 */
+padding: 1em;
+
+/* 垂直方向| 水平方向*/
+padding: 5% 10%;
+
+/* 顶部| 水平方向| 底部*/
+padding: 1em 2em 2em;
+
+/* 顶部| 右边| 底部| 左边*/
+padding: 2px 1em 0 1em;</code></pre>
+<h5 id="过关目标-20"><a href="#过关目标-20" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>顺时针语法指定<code>.blue-box</code>类的顶部和左边<code>padding</code>为<code>40px</code>，然后底部和右边<code>padding</code>为<code>20px</code>；</li>
+</ul>
+<h5 id="过关条件-20"><a href="#过关条件-20" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>blue-box</code>类中应有<code>40px</code>的顶部<code>padding</code>；</li>
+<li><code>blue-box</code>类中应有<code>20px</code>的右边<code>padding</code>；</li>
+<li><code>blue-box</code>类中应有<code>20px</code>的底部<code>padding</code>；</li>
+<li><code>blue-box</code>类中应有<code>40px</code>的左边<code>padding</code>；</li>
+<li>使用顺时针语法来分配<code>padding</code>；</li>
+</ul>
+<h5 id="学会了什么？-20"><a href="#学会了什么？-20" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>使用顺时针语法给元素分配内边距；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-20"><a href="#答案-20" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/2020051713245681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「第二十二关」使用顺时针语法指定元素外边距"><a href="#「第二十二关」使用顺时针语法指定元素外边距" class="headerlink" title="「第二十二关」使用顺时针语法指定元素外边距"></a>「第二十二关」使用顺时针语法指定元素外边距</h1><blockquote>
+<p>关卡名：<code>Use Clockwise Notation to Specify the Margin of an Element</code></p>
+</blockquote>
+<h5 id="知识点-21"><a href="#知识点-21" class="headerlink" title="知识点"></a>知识点</h5><ul>
+<li>除了<code>padding</code>可以使用顺时针语法，<code>margin</code>也一样可以；</li>
+<li>除了使用<code>margin-top (上)</code>、<code>margin-right (右)</code>、<code>margin-bottom (下)</code>和<code>margin-left (左)</code>来给一个元素特定的外边距；</li>
+<li>我们还可以在一行内写完一个元素的出外边距：<code>margin: 10px 20px 10px 20px;</code>；</li>
+<li>这里面的四个数值顺时针的从上到左旋转来分配的：上，右，下，左；</li>
+</ul>
+<p><strong>其他语法：</strong></p>
+<pre><code class="css">margin: 5%; /* 所有的边都是 5% 的边距 */
+
+margin: 10px; /* 所有的边都是 10像素 的边距 */
+
+margin: 1.6em 20px; /* 上和下边是 1.6字距, 左和右是 20像素 边距 */
+
+margin: 10px 3% 1em; /* 上边 10像素, 左和右 3%, 下边 1字距 边距 */
+
+margin: 10px 3px 30px 5px; /* 上边 10像素, 右边 3像素, bottom 30px, left 5px margin */
+
+margin: 1em auto; /* 上和下边 1字距 边距, 该盒子是水平居中的 */
+
+margin: auto; /* 该盒子是水平居中的, 上下边距为0 */</code></pre>
+<blockquote>
+<p>在现代浏览器中，如果要把一些东西水平居中，使用 <code>display:flex; justify-content: center;</code> .</p>
+<p>然而, 在一些老的浏览器，如 IE8-9, 这些是不可用的. 想要把一个元素在其父元素中居中, 使用 <code>margin: 0 auto;</code></p>
+</blockquote>
+<h5 id="过关目标-21"><a href="#过关目标-21" class="headerlink" title="过关目标"></a>过关目标</h5><ul>
+<li>顺时针语法指定<code>.blue-box</code>类的顶部和左边<code>margin</code>为<code>40px</code>，然后底部和右边<code>margin</code>为<code>20px</code>；</li>
+</ul>
+<h5 id="过关条件-21"><a href="#过关条件-21" class="headerlink" title="过关条件"></a>过关条件</h5><ul>
+<li><code>blue-box</code>类中应有<code>40px</code>的顶部<code>margin</code>；</li>
+<li><code>blue-box</code>类中应有<code>20px</code>的右边<code>margin</code>；</li>
+<li><code>blue-box</code>类中应有<code>20px</code>的底部<code>margin</code>；</li>
+<li><code>blue-box</code>类中应有<code>40px</code>的左边<code>margin</code>；</li>
+<li>使用顺时针语法来分配<code>margin</code>；</li>
+</ul>
+<h5 id="学会了什么？-21"><a href="#学会了什么？-21" class="headerlink" title="学会了什么？"></a>学会了什么？</h5><p>这关卡主要教会我们：</p>
+<ol>
+<li>使用顺时针语法给元素分配外边距；</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200504230328260.png" alt=""></p>
+<h5 id="答案-21"><a href="#答案-21" class="headerlink" title="答案"></a>答案</h5><p><img src="https://img-blog.csdnimg.cn/20200517133101287.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="「待续」总结"><a href="#「待续」总结" class="headerlink" title="「待续」总结"></a>「待续」总结</h1><p><img src="https://img-blog.csdnimg.cn/20200517140828852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>这周我们一起闯过了 22 关，下一期我们会一起把剩余的 22 关完成。学习是一种像爬山一样的过程，要经历过漫长的上坡路，一步一个脚印。“<strong>路漫漫其修远兮，吾将上下而求索。</strong>”， 在追寻知识的道路上，前方的道路还很漫长，但我们将百折不挠，不遗余力地，上天下地的去追求和探索。让我们继续坚持学习，终身学习成长。在大前端的时代爬到技术的巅峰，做一个有深度的技术人员。</p>
+<blockquote>
+<p>我是<font color="#60AAF8"><b>三钻</b></font>，一个在<font color="#60AAF8"><b>技术银河</b></font>中等和你们一起来终身漂泊学习。<br>点赞是力量，关注是认可，评论是关爱！下期再见 👋！</p>
+</blockquote>
+<h2 id="系列阅读"><a href="#系列阅读" class="headerlink" title="系列阅读"></a>系列阅读</h2><ol>
+<li>🔥<a href="https://blog.csdn.net/TriDiamond6/article/details/105915758" target="_blank" rel="noopener">《勇闯 28 个关卡学会 HTML 与 HTML5 基础》</a> — 这周我们一起闯过了 22 关，下一期我们会一起把剩余的 22 关完成。学习是一种像爬山一样的过程，要经历过漫长的上坡路，一步一个脚印。“路漫漫其修远兮，吾将上下而求索。”， 在追寻知识的道路上，前方的道路还很漫长，但我们将百折不挠，不遗余力地，上天下地的去追求和探索。让我们继续坚持学习，终身学习成长。在大前端的时代爬到技术的巅峰，做一个有深度的技术人员。</li>
+</ol>
+<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><ul>
+<li>🔥<a href="https://blog.csdn.net/TriDiamond6/article/details/105131371" target="_blank" rel="noopener">《前端必看的 8 个 HTML+CSS 技巧》</a> — CSS 是一个很独特的语言。看起来非常简单，但是某种特殊效果看似简单，实现起来就颇有难度。这篇文章主要是给在学习前端的童鞋分享一些新的 CSS 技巧，一些在前端教程和培训课堂中不会讲到的知识。第二就是让还在前端开发这条道路上的童鞋们，重新燃起对前端排版和特效的热爱和热情！</li>
+<li>🔥<a href="https://blog.csdn.net/TriDiamond6/article/details/105131371" target="_blank" rel="noopener">《带你体验 Vue2 和 Vue3 开发组件有什么区别》</a> — 使用 Vue2 和 Vue3 开发一个简单的表格组件来展示一下 Vue2 和 Vue3 开发组件的区别。看完这文章后，你将会有一个概念 Vue2 和 Vue3 开发组件时的区别，并且为 Vue3 的开发之路做好准备。</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>三·钻 TriDiamond</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">30 <p>文章</p></a></li>
+                    <li><a href="/categories">13 <p>分类</p></a></li>
+                    <li><a href="/tags">40 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#「前言」"><span class="toc-number">1.</span> <span class="toc-text">「前言」</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「CSS-基础知识」"><span class="toc-number">2.</span> <span class="toc-text">「CSS 基础知识」</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#理解-CSS"><span class="toc-number">2.1.</span> <span class="toc-text">理解 CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用方式"><span class="toc-number">2.2.</span> <span class="toc-text">应用方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-原理"><span class="toc-number">2.3.</span> <span class="toc-text">CSS 原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第一关」改变文字颜色"><span class="toc-number">3.</span> <span class="toc-text">「第一关」改变文字颜色</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第二关」使用-CSS-选择器改变元素样式"><span class="toc-number">4.</span> <span class="toc-text">「第二关」使用 CSS 选择器改变元素样式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第三关」使用-CSS-类"><span class="toc-number">5.</span> <span class="toc-text">「第三关」使用 CSS 类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第四关」使用-CSS-类改变多个元素样式"><span class="toc-number">6.</span> <span class="toc-text">「第四关」使用 CSS 类改变多个元素样式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第五关」改变文字大小"><span class="toc-number">7.</span> <span class="toc-text">「第五关」改变文字大小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第六关」改变元素字体"><span class="toc-number">8.</span> <span class="toc-text">「第六关」改变元素字体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第七关」引入-Google-字体"><span class="toc-number">9.</span> <span class="toc-text">「第七关」引入 Google 字体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第八关」定义字体如何往后取用"><span class="toc-number">10.</span> <span class="toc-text">「第八关」定义字体如何往后取用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第九关」控制图片大小"><span class="toc-number">11.</span> <span class="toc-text">「第九关」控制图片大小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十关」添加元素边框"><span class="toc-number">12.</span> <span class="toc-text">「第十关」添加元素边框</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十一关」使用-border-radius-实现圆边"><span class="toc-number">13.</span> <span class="toc-text">「第十一关」使用 border-radius 实现圆边</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十二关」实现圆形图片"><span class="toc-number">14.</span> <span class="toc-text">「第十二关」实现圆形图片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十三关」给元素一个背景颜色"><span class="toc-number">15.</span> <span class="toc-text">「第十三关」给元素一个背景颜色</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十四关」给元素-ID-值"><span class="toc-number">16.</span> <span class="toc-text">「第十四关」给元素 ID 值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十五关」使用-ID-更改元素样式"><span class="toc-number">17.</span> <span class="toc-text">「第十五关」使用 ID 更改元素样式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十六关」给元素添加内边距"><span class="toc-number">18.</span> <span class="toc-text">「第十六关」给元素添加内边距</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十七关」调整元素外边距"><span class="toc-number">19.</span> <span class="toc-text">「第十七关」调整元素外边距</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十八关」给元素负外边框"><span class="toc-number">20.</span> <span class="toc-text">「第十八关」给元素负外边框</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第十九关」给元素每个边缘不同的内边距"><span class="toc-number">21.</span> <span class="toc-text">「第十九关」给元素每个边缘不同的内边距</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第二十关」给元素每个边缘不同的外边距"><span class="toc-number">22.</span> <span class="toc-text">「第二十关」给元素每个边缘不同的外边距</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第二十一关」使用顺时针语法指定元素内边距"><span class="toc-number">23.</span> <span class="toc-text">「第二十一关」使用顺时针语法指定元素内边距</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「第二十二关」使用顺时针语法指定元素外边距"><span class="toc-number">24.</span> <span class="toc-text">「第二十二关」使用顺时针语法指定元素外边距</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#「待续」总结"><span class="toc-number">25.</span> <span class="toc-text">「待续」总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#系列阅读"><span class="toc-number">25.1.</span> <span class="toc-text">系列阅读</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐阅读"><span class="toc-number">25.2.</span> <span class="toc-text">推荐阅读</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            三·钻 TriDiamond
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.4" target="_blank" rel="noopener">v1.4.4</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+</html>

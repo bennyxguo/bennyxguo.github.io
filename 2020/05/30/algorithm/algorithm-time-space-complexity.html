@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>分析时间复杂度与空间复杂度 - 三·钻 TriDiamond</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="
+本文是覃超老师的《算法训练营》的学习笔记，此笔记的内容包含了学习后的个人记录、个人总结、理解和思想。从而更好的学习算法。
+
+前言学习任何一门知识的时候，我们需要分析清楚这门知识的核心是什么，从而在,"> 
+    <meta name="author" content="三·钻 TriDiamond"> 
+    <link rel="alternative" href="atom.xml" title="三·钻 TriDiamond" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">三·钻 TriDiamond</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://tridiamond.me">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">分析时间复杂度与空间复杂度</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(https://img-blog.csdnimg.cn/20200716155917692.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Algorithm"><b>「
+                    </b>ALGORITHM<b> 」</b></a>
+                
+                五月 30, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/05/30/algorithm/algorithm-time-space-complexity.html" title="分析时间复杂度与空间复杂度" class="">分析时间复杂度与空间复杂度</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    9.9k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    9 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Space-Complexity/" rel="tag">Space Complexity</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Time-Complexity/" rel="tag">Time Complexity</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p>本文是覃超老师的《算法训练营》的学习笔记，此笔记的内容包含了学习后的个人记录、个人总结、理解和思想。从而更好的学习算法。</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>学习任何一门知识的时候，我们需要分析清楚这门知识的核心是什么，从而在这个核心中我们可以得到什么。如果我们是盲目的吸收知识，其实很多知识我们都是在目前场景、工作、生活中无法使用的。也是因为学习之后无法运用，所以我们很快就会遗忘，或者是在学习的过程中很容易就会放弃。</p>
+<blockquote>
+<p>在一生的学习的过程中，发现学习我们急需使用或者能给我们及时带来价值的知识，我们会学的更加牢固，更加能坚持学习。</p>
+</blockquote>
+<p><strong>学习《数据结构与算法》这门知识的核心是什么？又能得到什么呢？</strong></p>
+<ol>
+<li>弄懂编程的底层逻辑；</li>
+<li>在编程的过程中，拥有一个哆啦 A 梦一样百宝工具袋；</li>
+<li>在遇到性能问题的时候，有算法的思维逻辑和规则来解决问题；</li>
+<li>提高编程思维；</li>
+</ol>
+<p>这篇笔记记录了算法的核心<code>时间和空间复杂度</code>，《数据结构与算法》都是围绕着这个核心开展的。它的存在也是为了解决我们在编程的过程中性能问题，同时也让我们有更高级的思维和思路，写出更优质的程序。</p>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="复杂度指标-Big-O-Notation"><a href="#复杂度指标-Big-O-Notation" class="headerlink" title="复杂度指标 Big O Notation"></a>复杂度指标 Big O Notation</h1><ul>
+<li><strong>O (1):</strong> 常数复杂度 - Constant Complexity</li>
+<li><strong>O (log n):</strong> 对数复杂度 - Logarithmic Complexity</li>
+<li><strong>O (n):</strong> 线性复杂度 - Linear Complexity</li>
+<li><strong>O (n^2):</strong> 平方复杂度 - N square Complexity</li>
+<li><strong>O (2^n):</strong> 指数 - Exponential Growth</li>
+<li><strong>O (n!):</strong> 阶乘 - Factorial</li>
+</ul>
+<h2 id="如何看时间复杂度"><a href="#如何看时间复杂度" class="headerlink" title="如何看时间复杂度"></a>如何看时间复杂度</h2><ul>
+<li>分析函数；</li>
+<li>根据 n 的不同情况会运行多少次；</li>
+<li>最后得出一个平均的运行次数的量级；</li>
+</ul>
+<h2 id="Complexity-例子"><a href="#Complexity-例子" class="headerlink" title="Complexity 例子"></a>Complexity 例子</h2><p><strong>O (1)</strong> - 常数复杂度</p>
+<pre><code class="javascript">let n = 1000;
+console.log(&#39;Hello - your input is: &#39; + n);</code></pre>
+<p><strong>O (N)</strong> - 线性复杂度</p>
+<pre><code class="javascript">for (let i = 1; i &lt;= n; i++) {
+  console.log(&#39;Hello world - your input is: &#39; + i);
+}</code></pre>
+<p><strong>O (N^2)</strong></p>
+<pre><code class="javascript">for (let i = 1; i &lt;= n; i++) {
+  for (let j = 1; j &lt;= n; j++) {
+    console.log(&#39;Hello world - your input is: &#39; + i + &#39; and &#39; + j);
+  }
+}</code></pre>
+<blockquote>
+<p>那如果我们不是嵌套两层<code>for</code>循环，是把两个循环分开来存放呢？这种方式时间复杂度是？</p>
+</blockquote>
+<pre><code class="javascript">for (let i = 1; i &lt;= n; i++) {
+  console.log(&#39;Hello world - your i input is: &#39; + i);
+}
+
+for (let j = 1; j &lt;= n; j++) {
+  console.log(&#39;Hello world - your j input is: &#39; + j);
+}</code></pre>
+<p>很多小伙伴应该猜到了，就是<strong>2* n</strong>次的复杂度，那就是<strong>O(2n)</strong>。其实还是<code>O(n)</code>的时间复杂度。</p>
+<p><strong>O(log(n))</strong></p>
+<pre><code class="javascript">for (let i = 1; i &lt; n; i = i * 2) {
+  console.log(&#39;Hello world - your input is: &#39; + i);
+}</code></pre>
+<p><strong>O(k^n)</strong></p>
+<pre><code class="javascript">// Fibonacci递归
+function fib(n) {
+  if (n &lt;= 2) return n;
+  return fib(n - 1) + fib(n - 2);
+}</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200529135532302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="时间复杂度曲线"><a href="#时间复杂度曲线" class="headerlink" title="时间复杂度曲线"></a>时间复杂度曲线</h2><ul>
+<li><code>y</code>轴是<code>Operations</code>就是操作复杂度的指数；</li>
+<li><code>x</code>轴是<code>Elements</code>就是<code>n</code>我们的循环次数 ；</li>
+<li>这里我们可以看到在<code>n</code>比较小的时候，复杂度是相对稳定的；</li>
+<li>但是当<code>n</code>越来越大时，Big-O 复杂度就会急速飙升；</li>
+</ul>
+<blockquote>
+<p>所以在我们写程序的时候，如果能把时间和空间复杂度从<code>O(n^2)</code>降到<code>O(n)</code>或者<code>O(1)</code>后，我们得到的优化收益是非常高的！</p>
+</blockquote>
+<ul>
+<li>在编写程序的时候一定要注意到它的时间和空间复杂度，这样编写的时候就能预测出这段代码的性能级别；</li>
+<li>用最简洁的时间和空间复杂度完成这段程序；</li>
+<li>这样就是最顶尖的职业编程选手了；</li>
+<li>因为复杂度越高，程序损耗的时间（处理时间）和资源（内存）就越大；</li>
+</ul>
+<h3 id="降低时间和空间复杂度"><a href="#降低时间和空间复杂度" class="headerlink" title="降低时间和空间复杂度"></a>降低时间和空间复杂度</h3><p><strong>我们用个例子就可以看到如何在编程中降低复杂度：</strong></p>
+<blockquote>
+<p>计算：1 + 2 + 3 + … + n</p>
+</blockquote>
+<p>方法一： 循环 1 到 n 然后累加 (时间复杂度 <code>O(n)</code>)</p>
+<pre><code class="javascript">let sum = 0;
+for (let i = 1; i &lt; n; i++) {
+  sum += i;
+}
+console.log(sum);</code></pre>
+<p>方法二： 求和公式 <code>sum = n(n+1)/2</code> (时间复杂度 <code>O(1)</code>)</p>
+<pre><code class="javascript">let sum = (n * (n + 1)) / 2;
+console.log(sum);</code></pre>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li>在做题或者面试的时候先<code>确认题目</code>，确保一切的条件和题目的理解无误；</li>
+<li><code>想出所有可能</code>的解决方案；</li>
+<li>同时<code>比较每个方法</code>的时间和空间复杂度；</li>
+<li>接下来<code>找出最优</code>的解决方案（时间最快，内存使用最少）</li>
+</ol>
+</blockquote>
+<h3 id="判断时间和空间复杂度"><a href="#判断时间和空间复杂度" class="headerlink" title="判断时间和空间复杂度"></a>判断时间和空间复杂度</h3><p><strong>斐波那契（Fibonacci）例子</strong></p>
+<blockquote>
+<p>公式：F(n) = F(n - 1) + F(n - 2)</p>
+</blockquote>
+<p>我们可以直接使用递归来解题：</p>
+<pre><code class="javascript">function fib(n) {
+  if (n &lt;= 2) return n;
+  return fib(n - 1) + fib(n - 2);
+}</code></pre>
+<ul>
+<li>这个<code>fib</code>斐波那契函数中是一个<code>递归</code>；</li>
+<li>每一次传入一个<code>n</code>值时，都会循环递归<code>fib</code>方法来一层一层往下计算；</li>
+<li>最后到达<code>n</code>小于 2，返回最后的<code>n</code>值；</li>
+</ul>
+<blockquote>
+<p>那针对这个递归，我们怎么计算它的时间复杂度呢？</p>
+</blockquote>
+<ul>
+<li>要推断出这个程序的<code>复杂度</code>，首先我们要知道具体在这个函数中程序做了什么；</li>
+<li>我们距离现在传入<code>n</code>为<code>6</code>，那就是运行<code>fib(6)</code></li>
+<li>这个时候<code>6</code>被传入这个方法，然后返回的就是<code>fib(5)</code>+<code>fib(4)</code>，这时<code>fib(5)</code>和<code>fib(4)</code>就会再进入<code>fib</code>函数，这里就分开了两个分支了。以此类推我们就会出现以下一个树状过程：</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200529135500244.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<ul>
+<li>通过上图展开来的树，我们可以看到每一层是上一层的 2 倍：<code>fib(6)</code>展开为<code>fib(5)</code>+<code>fib(4)</code>，然后<code>fib(5)</code>和<code>fib(4)</code>又展开了两个。</li>
+<li>所以<code>fibonacci</code>的执行次数就是一个<code>指数级 - O(2^n)</code></li>
+<li>这里我们也可以看到<code>fib(3)</code>、<code>fib(4)</code>等等，都被重复计算了多次，所以这个计算的<strong>复杂度高达 2 的 6 次方</strong>；</li>
+<li>所以在做题和面试的时候就<strong>不要运用上面的代码实例</strong>，我们要加入缓存机制，<strong>缓存重复计算的结果</strong>或者用<strong>一个循环来写</strong>，从而降低这个程序的复杂度。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="主定理-Master-Theorem"><a href="#主定理-Master-Theorem" class="headerlink" title="主定理 Master Theorem"></a>主定理 Master Theorem</h1><blockquote>
+<p>任何一个<strong>分治</strong>或者<strong>递归函数</strong>都可以通过这个定理来算出它们的<strong>时间复杂度</strong>。这个定理里面有 4 种最常用的，只要记住这 4 种就可以了。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>算法 (Algorithm)</strong></th>
+<th><strong>时间复杂度 (Run time)</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>二分查找 (Binary search)</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>二叉树遍历 (Binary tree traversal)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>排序二维矩阵 (Optimal sorted matrix search)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>归并排序 (Merge sort)</td>
+<td>O(n log n)</td>
+</tr>
+</tbody></table>
+<h1 id="常见面试题"><a href="#常见面试题" class="headerlink" title="常见面试题"></a>常见面试题</h1><ul>
+<li><strong>二叉树遍历中的前序、中序、后序：时间复杂度是多少？</strong><ul>
+<li>时间复杂度是 <code>O(n)</code>，无论是前序、中序或者后序每一个节点都会访问一次，并且仅访问一次；</li>
+<li>所以就是二叉树的节点总数，也就是<code>O(n)</code>的线性时间复杂度；</li>
+</ul>
+</li>
+<li><strong>图的遍历：时间复杂度是多少？</strong><ul>
+<li>时间复杂也是<code>O(n)</code>, 这里的<code>n</code>就是图里面的节点总数；</li>
+</ul>
+</li>
+<li><strong>搜索算法：DFS、BFS 时间复杂度是多少？</strong><ul>
+<li>DFS 是深度优先，BFS 是广度优先算法。</li>
+<li>不管是深度优先还是广度优先，因为访问的节点只访问一次，所以时间复杂度也是<code>O(n)</code>的。（<code>n</code>指的是搜索空间里面的节点总数）</li>
+</ul>
+</li>
+<li><strong>二分查找：时间复杂度是多少？</strong><ul>
+<li>答案是<code>O(log n)</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020050422480843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RyaURpYW1vbmQ2,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><strong>程序复杂度：Big O Notation</strong><ul>
+<li><strong>O (1)</strong>，<strong>O(log n)</strong>， <strong>O(n)</strong>，<strong>O(n^2)</strong>, … 等等，越复杂程序性能越差；</li>
+<li>分析复杂度法则：分析代码的逻辑，找到程序中运行的次数；</li>
+<li>降低程序时间和空间复杂度可以提升代码的质量，同时优化程序的性能；</li>
+</ul>
+</li>
+<li><strong>主定理：</strong><ul>
+<li>所有的<strong>分治</strong>或者<strong>递归函数</strong>都可以通过<strong>主定理</strong>来分析出它的<strong>时间复杂度</strong>；</li>
+</ul>
+</li>
+<li><strong>常见面试题：</strong><ul>
+<li><strong>二叉树遍历中的前序、中序、后序：时间复杂度是多少？</strong> - <code>O(n)</code></li>
+<li><strong>图的遍历：时间复杂度是多少？</strong> - <code>O(n)</code></li>
+<li><strong>搜索算法：DFS、BFS 时间复杂度是多少？</strong> - <code>O(n)</code></li>
+<li><strong>二分查找：时间复杂度是多少？</strong> - <code>O(log n)</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>我是<font color="#60AAF8"><b>三钻</b></font>，一个在<font color="#60AAF8"><b>技术银河</b></font>中等你们一起来终身漂泊学习。<br>点赞是力量，关注是认可，评论是关爱！下期再见 👋！</p>
+</blockquote>
+<blockquote>
+<p>公众号《<strong>技术银河</strong>》回复”算法资料”，可以获得这个系列文章的<strong>PDF 版</strong>和<strong>其他资料</strong>！</p>
+</blockquote>
+<h2 id="推荐专栏"><a href="#推荐专栏" class="headerlink" title="推荐专栏"></a>推荐专栏</h2><p>小伙伴们可以<strong>查看或者订阅相关的专栏</strong>，从而集中阅读相关知识的文章哦。</p>
+<ul>
+<li><p>📖 <a href="https://blog.csdn.net/tridiamond6/category_10036942.html" target="_blank" rel="noopener">《据结构与算法》</a> — 到了如今，如果想成为一个高级开发工程师或者进入大厂，不论岗位是前端、后端还是 AI，算法都是重中之重。也无论我们需要进入的公司的岗位是否最后是做算法工程师，前提面试就需要考算法。</p>
+</li>
+<li><p>📖 <a href="https://blog.csdn.net/tridiamond6/category_9782493.html" target="_blank" rel="noopener">《FCC 前端集训营》</a> — 根据 FreeCodeCamp 的学习课程，一起深入浅出学习前端。稳固前端知识，一起在 FreeCodeCamp 获得证书</p>
+</li>
+<li><p>📖 <a href="https://blog.csdn.net/tridiamond6/category_9782493.html" target="_blank" rel="noopener">《前端星球》</a> — 以实战为线索，深入浅出前端多维度的知识点。内含有多方面的前端知识文章，带领不懂前端的童鞋一起学习前端，在前端开发路上童鞋一起燃起心中那团火 🔥</p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>三·钻 TriDiamond</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">30 <p>文章</p></a></li>
+                    <li><a href="/categories">13 <p>分类</p></a></li>
+                    <li><a href="/tags">40 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#复杂度指标-Big-O-Notation"><span class="toc-number">2.</span> <span class="toc-text">复杂度指标 Big O Notation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何看时间复杂度"><span class="toc-number">2.1.</span> <span class="toc-text">如何看时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Complexity-例子"><span class="toc-number">2.2.</span> <span class="toc-text">Complexity 例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间复杂度曲线"><span class="toc-number">2.3.</span> <span class="toc-text">时间复杂度曲线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#降低时间和空间复杂度"><span class="toc-number">2.3.1.</span> <span class="toc-text">降低时间和空间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断时间和空间复杂度"><span class="toc-number">2.3.2.</span> <span class="toc-text">判断时间和空间复杂度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主定理-Master-Theorem"><span class="toc-number">3.</span> <span class="toc-text">主定理 Master Theorem</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见面试题"><span class="toc-number">4.</span> <span class="toc-text">常见面试题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐专栏"><span class="toc-number">5.1.</span> <span class="toc-text">推荐专栏</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            三·钻 TriDiamond
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.4" target="_blank" rel="noopener">v1.4.4</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+</html>
