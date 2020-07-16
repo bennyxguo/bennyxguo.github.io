@@ -2756,7 +2756,7 @@ h1.title {
   list-style: none;
   margin: 5px 0;
   position: relative;
-  padding: 1em;
+  padding: 0 0 0 1em;
 }
 .content ul li:before {
   position: absolute;
