@@ -1236,6 +1236,7 @@ footer .copyright a {
   background-color: #201c29;
   margin: calc(28.87px + 1rem) 1rem;
   transition: all 500ms ease-in-out;
+  padding: 0;
 }
 .category-list .category-list-item.active {
   z-index: 11;
