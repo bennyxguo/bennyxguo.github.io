@@ -130,7 +130,7 @@
             animation-duration: 2.8s;
             background-image:
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
-                url(https://img-blog.csdnimg.cn/20200807160832237.jpg);">
+                url(https://img-blog.csdnimg.cn/20200815152729473.png);">
         </div>
     </div>
     
@@ -140,60 +140,45 @@
             <a href="/categories/FrontEnd"><b>「
                 </b>FRONTEND<b> 」</b></a>
             
-            八月 07, 2020
+            八月 15, 2020
         </p>
         <h3 class="post-title animated fadeInDown">
-            <a href="/2020/08/07/frontend/frontend-study.html" title="一篇文章搞懂前端学习方法与构建知识体系" class="posttitle">一篇文章搞懂前端学习方法与构建知识体系</a></h3>
+            <a href="/2020/08/15/frontend/browser-working-logic-1.html" title="浏览器工作原理 — 之 HTTP 请求与解析" class="posttitle">浏览器工作原理 — 之 HTTP 请求与解析</a></h3>
         
         <p class="post-count animated fadeInDown">
             
             <span>
                 <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                11k
+                27k
             </span>
             
             
             <span>
                 <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                10 mins.
+                25 mins.
             </span>
             
             
         </p>
         
         
-        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/FrontEnd/" rel="tag">FrontEnd</a></li></ul>
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Browser/" rel="tag">Browser</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-            <p>在大前端的成长路上，很多的同学都非常的迷茫，看到一座座越来越高的山。慢慢在工作中也对自己的职业发展也特别迷茫。有些粉丝也私信我问过我一些职业发展的问题，还有“我应该学习什么技术？”，“学习到什么层级才是个头”。</p>
-<p>这次我给大家带来一遍文章，给大家讲讲怎么样才是一个优秀的前端工程师，怎么做自己的职业规划，如何学习和构建知识体系。</p>
+            <p></p>
+<p>浏览器工作原理是一块非常重要的内容，我们经常看到的 <code>重绘</code> 、<code>重排</code> 或者一些讲解 CSS 属性的时候，都会用到一些浏览器工作原理的知识来讲解。理论化学习浏览器工作原理，效果不是很大，而且很枯燥，所以这里我们从零开始用 <code>JavaScript</code> 来实现一个浏览器。</p>
+<p>通过自己实现一遍简单的浏览器，我们会对浏览器的基本原理有更为深刻的理解。</p>
 <p></p>
 <p></p>
 <ul>
-<li>熟练掌握 Vue React</li>
-<li>Web 标准</li>
-<li>会用 Webpack Babel</li>
-<li>十年经验</li>
-<li>性能优化</li>
-<li>闭包，函数式编程</li>
-<li>会写 NodeJS</li>
-</ul>
-<blockquote>
-<p>这些其实都是错误的认知！</p>
-</blockquote>
-<p>明确衡量的标准：</p>
-<ul>
-<li>领域知识<ul>
-<li>不同工程师的工种有不一样的领域</li>
-<li>领域知识是互相关联的，不能只一方面很强</li>
-</ul>
-</li>
-<li>能力和潜力<ul>
-<li>能力 —— 明确的能力要求，或者角色的要求，能力达标就能进入下一个级别。</li>
-<li>潜力 —— 能力的上限，同...</li></ul></li></ul>
+<li>首先浏览器是由 5 个步骤完成的整体渲染</li>
+<li>我们从 URL 访问一个网页，经过浏览器的解析和渲染后成为了 Bitmap</li>
+<li>最后通过我们的显卡驱动设配出去画面，让我们看到完成的页面</li>
+<li>这是一个浏览器的渲染流程</li>
+<li>这里我们只实现一个简单的基础流程，但是真正的浏览器还包含了...</li></ul>
             
-            <span class="read-more"><a href="/2020/08/07/frontend/frontend-study.html" title="查看全文" class="posttitle">查看全文</a>
+            <span class="read-more"><a href="/2020/08/15/frontend/browser-working-logic-1.html" title="查看全文" class="posttitle">查看全文</a>
                 <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
@@ -214,6 +199,67 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(https://img-blog.csdnimg.cn/20200807160832237.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/FrontEnd">
+                  <b>「 </b>FRONTEND<b> 」</b>
+                </a>
+            
+            八月 07, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/08/07/frontend/frontend-study.html" title="一篇文章搞懂前端学习方法与构建知识体系" class="posttitle">一篇文章搞懂前端学习方法与构建知识体系</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                        11k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                        10 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/FrontEnd/" rel="tag">FrontEnd</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>在大前端的成长路上，很多的同学都非常的迷茫，看到一座座越来越高的山。慢慢在工作中也对自己的职业发展也特别迷茫。有些粉丝也私信我问过我一些职业发展的问题，还有“我应该学习什么技术？”，“学习到什么层级才是个头”。</p>
+<p>这次我给大家带来一遍文章，给大家讲讲怎么样才是一个优秀的前端工程师，怎么做自己的职业规划，如何学习和构建知识体系。</p>
+<p></p>
+<p></p>
+<ul>
+<li>熟练掌握 Vue React</li>
+<li>Web 标准</li>
+<li>会用 Webpack Babel</li>
+<li>十年经验</li>
+<li>性能优化</li>
+<li>闭包，函数式编程</li>
+<li>会写 NodeJS</li>
+</ul>
+<blockquote>
+<p>这些其实都是错误的认知！</p>
+...</blockquote>
+            
+            <span class="read-more"><a href="/2020/08/07/frontend/frontend-study.html" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
 <div class="post" id="post">
     <div class="post-cover animated fadeIn" style="
             background-image:
@@ -619,54 +665,6 @@
 <p>到了后面遇到有一个项目需要我做 APP 开发，但是不可能去学 IOS 开发和安卓开发，因为项目时间也不可能给我们这么充裕的学习时间。所以当时的我深入分析了几个混合 APP 开发的框架。分析对象包括当时基于 AngularJs 的 Ionic 框架和 React Native。综...</p>
             
             <span class="read-more"><a href="/2020/05/09/frontend/fcc-html5-basics.html" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-</div>
-
-
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(https://img-blog.csdnimg.cn/2020032811170475.png);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="/categories/Tools">
-                  <b>「 </b>TOOLS<b> 」</b>
-                </a>
-            
-            五月 01, 2020
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/05/01/tools/vscode-setting-sync.html" title="VSCode配置同步" class="posttitle">VSCode配置同步</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        21k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        19 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/VSCode/" rel="tag">VSCode</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/VSCode-Settings/" rel="tag">VSCode Settings</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <p>在上两篇文章中，我们学到了VSCode是怎么使用快捷键让我们编写代码时更灵活便捷，甚至是可以基本脱离鼠标。还介绍了很多常用的插件让我们如虎添翼，就像VSCode穿上了传奇级别的装配一样。</p>
-<p>还没有阅读以上说到的两篇文章<a href="https://tridiamond.blog.csdn.net/article/details/105455341" target="_blank" rel="noopener">《VSCode常用快捷键大全》</a>，<a href="https://tridiamond.blog.csdn.net/article/details/105604427" target="_blank" rel="noopener">《VSCode插件大全》</a>，可以先过去学习学习哈。</p>
-<p>有了武功秘籍（快捷键）和高深的内功心法（插件），那VSCode是不是应该是无敌了呢？天灾难逃，人祸难免，我们电脑可能会坏或者电脑还可能要退休，甚至是我们有多台电脑的可能。那这个时候我们精心配置的VSCode...</p>
-            
-            <span class="read-more"><a href="/2020/05/01/tools/vscode-setting-sync.html" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>
