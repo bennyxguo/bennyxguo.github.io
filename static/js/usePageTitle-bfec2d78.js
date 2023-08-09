@@ -1,0 +1,1 @@
+import{r as i,u as l,N as m,y as p,O as f}from"./index_prod-7a7a95b2.js";function g(){const t=i(),n=l(),c=m(),r=p(),a=e=>{const u=(e??n.locale)==="cn"?"cn":"en",s=String(r.name),o=n.themeConfig.menu.menus[s.charAt(0).toUpperCase()+s.slice(1)];t.value=o.i18n&&o.i18n[u]||o.name,c.setTitle(t.value)};return f(()=>n.locale,e=>{e&&a(e)}),{pageTitle:t,updateTitle:a}}export{g as u};
