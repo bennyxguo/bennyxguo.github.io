@@ -2,43 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://bennyxguo.com/post/tools/vscode-plugins.html</loc>
-    
-    <lastmod>2023-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bennyxguo.com/post/tools/vscode-setting-sync.html</loc>
-    
-    <lastmod>2023-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bennyxguo.com/post/tools/vscode-shortcuts.html</loc>
-    
-    <lastmod>2023-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bennyxguo.com/about/index.html</loc>
-    
-    <lastmod>2023-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bennyxguo.com/friends/index.html</loc>
+    <loc>https://bennyxguo.com/links/index.html</loc>
     
     <lastmod>2023-09-16</lastmod>
     
@@ -209,6 +173,15 @@
   </url>
   
   <url>
+    <loc>https://bennyxguo.com/post/notes/learn-programming-more-effectively.html</loc>
+    
+    <lastmod>2023-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://bennyxguo.com/post/server/aliyun-webhook-setup.html</loc>
     
     <lastmod>2023-09-16</lastmod>
@@ -218,7 +191,43 @@
   </url>
   
   <url>
-    <loc>https://bennyxguo.com/post/notes/learn-programming-more-effectively.html</loc>
+    <loc>https://bennyxguo.com/post/tools/vscode-plugins.html</loc>
+    
+    <lastmod>2023-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennyxguo.com/post/tools/vscode-setting-sync.html</loc>
+    
+    <lastmod>2023-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennyxguo.com/post/tools/vscode-shortcuts.html</loc>
+    
+    <lastmod>2023-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennyxguo.com/about/index.html</loc>
+    
+    <lastmod>2023-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennyxguo.com/post/Operating-System.html</loc>
     
     <lastmod>2023-09-16</lastmod>
     
@@ -342,6 +351,27 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>https://bennyxguo.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennyxguo.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennyxguo.com/tags/408/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>https://bennyxguo.com/tags/Linked-List/</loc>
@@ -589,20 +619,6 @@
   </url>
   
   <url>
-    <loc>https://bennyxguo.com/tags/Gitlab/</loc>
-    <lastmod>2023-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://bennyxguo.com/tags/Webhook/</loc>
-    <lastmod>2023-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://bennyxguo.com/tags/Learning/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -618,6 +634,20 @@
   
   <url>
     <loc>https://bennyxguo.com/tags/Notes/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennyxguo.com/tags/Gitlab/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennyxguo.com/tags/Webhook/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -654,6 +684,13 @@
 
   
   <url>
+    <loc>https://bennyxguo.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://bennyxguo.com/categories/Algorithm/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -682,13 +719,6 @@
   </url>
   
   <url>
-    <loc>https://bennyxguo.com/categories/FrontEnd/Tips/</loc>
-    <lastmod>2023-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://bennyxguo.com/categories/Interview/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -703,14 +733,21 @@
   </url>
   
   <url>
-    <loc>https://bennyxguo.com/categories/FrontEnd/Vue/</loc>
+    <loc>https://bennyxguo.com/categories/Laravel/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://bennyxguo.com/categories/Laravel/</loc>
+    <loc>https://bennyxguo.com/categories/FrontEnd/Tips/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennyxguo.com/categories/FrontEnd/Vue/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -724,14 +761,14 @@
   </url>
   
   <url>
-    <loc>https://bennyxguo.com/categories/%E8%BF%90%E7%BB%B4/</loc>
+    <loc>https://bennyxguo.com/categories/Notes/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://bennyxguo.com/categories/Notes/</loc>
+    <loc>https://bennyxguo.com/categories/%E8%BF%90%E7%BB%B4/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
